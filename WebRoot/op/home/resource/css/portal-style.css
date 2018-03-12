@@ -1,0 +1,304 @@
+@charset "utf-8";
+body {
+	margin:0px auto;
+	padding:0px 0 0;
+	padding-bottom:0em; 
+	height:100%;
+	width:100%;
+	font-size:12px;
+	position:absolute;
+	background-attachment:fixed;
+}
+
+.portalIframe{width:100%;}
+
+
+/*-- ----搜索条样式--begin---- --*/		
+#searDiv{  
+	width:1100px;	
+	margin:0 auto;
+	float:left;		
+	/*background: url(../images/search1.gif) repeat-x;*/
+	background: url(../images/search3.gif) repeat-x; 	
+	height:5px; /*--2012-11-30 由40px改为5px */
+}
+#sarch_input{width: 230px;heigh:50px;margin-top:10px;margin-left:10px;float:left;}
+#sarch_sel{width: 80px;heigh:50px;margin-top:11px;margin-left:10px;float:left;}
+#sarch_button{width: 80px;heigh:50px;margin-top:10px;margin-left:10px;float:left;}
+#sarch_his{heigh:50px;margin-top:12px;margin-left:10px;float:left;font-size:13px;}
+/*-- ----搜索条样式--end---- --*/		
+
+	
+/*-- ----定义居中布局--begin---- --*/	
+#maindiv{
+	margin:0 auto;
+	padding:0;
+	text-align:center;
+}
+/*-- ----定义居中布局--end---- --*/	
+
+
+/*-- ----当前时间样式--- --*/
+#currTime{height:20px;font-size:14px;text-align:right;margin-top: 20px;padding-right:5px}
+/*-- ----工作空间功能模块配置栏样式--- --*/
+#workzonesiteconfigNav{
+	height:20px;
+	/*margin-top: 40px;*/
+	font-size:13px;
+	text-align:right;
+	}
+
+/*-- ----LOGO样式--begin---- --*/	
+#logoDiv{
+	width:160px;
+	height:60px;
+	left:0px;
+	float:left;
+	top:0px;
+	}
+/*-- ----LOGO样式--end---- --*/		
+	
+/*-- ----门户工作区外框--begin---- --*/	
+#maininnerdiv{  
+	/**width:1100px;*/
+	width:100%;
+	margin:0px auto; /* -- 2012-11-30 由5px改为0 */
+	border:0px solid #bfd4f0;
+	background-color:white;
+}
+/*-- ----门户工作区外框--end---- --*/	
+	
+
+/*-- ----系统名称样式--begin---- --*/	
+#systemName{
+	float:left;
+	TEXT-ALIGN: left;
+	FONT-STYLE: normal; 
+	FONT-FAMILY: 微软雅黑; 
+	COLOR: #000000; 
+	FONT-SIZE: 37px; 
+	FONT-WEIGHT: bold; 
+	TEXT-DECORATION: none;
+}
+/*-- ----系统名称样式--end---- --*/	
+
+/*-- ----工作空间名称样式--begin---- --*/	
+#workzoneName{
+	margin-top:26px;
+	margin-left:5px;
+	float:left;
+	FONT-STYLE: normal; 
+	FONT-FAMILY: 微軟正黑體; 
+	COLOR: #000000; 
+	FONT-SIZE: 19px; 
+	FONT-WEIGHT: bold; 
+	TEXT-DECORATION: none;
+}
+/*-- ----工作空间名称样式--end---- --*/
+
+/*-------------工作空间左边导航nav----------------begin--*/
+
+
+#topNavWrapper {
+	width:100%;	
+	text-align: left;
+	height: 30px;
+	margin: 0px;
+	padding: 0px;
+	margin: 0px auto;
+	z-index:100;
+	_position: relative ;
+	_top:0px;
+}
+#topNav {
+	margin: 0px;
+	padding: 0px;
+	width:100%;
+	float: left;
+	display: block;
+	z-index: 100;
+	overflow: visible;
+	position: fixed;
+	top: 0px; /* position fixed for IE6 */
+	_position: absolute;
+	_top: expression(documentElement.scrollTop + "px");
+	height: 30px;
+}
+
+
+#nav_div {
+width:100%;
+/*background: url(../images/nav1.gif) repeat-x ;*/
+background: url(../images/white-top-bottom.gif) repeat-x ;
+font-family:"微软雅黑"; font-size:12px;
+/*
+position:fixed;
+_position:absolute;_top:expression_r(eval_r(document.documentElement.scrollTop));
+z-index:9999999999;
+left:0;
+top:0;
+*/
+}
+#nav { display: block; margin: 0; padding: 0; position: relative; } 
+#nav li { display: block; list-style: none; margin: 0; padding: 0; float: left; position: relative; }
+/* #nav a { display: block; font-size:14px;color:#fff;}*/
+#nav ul { display: none; position: absolute; left: 0; margin: 0; padding: 0; }
+* html #nav ul { line-height: 0; } /* IE6 "fix" */
+#nav ul a { zoom: 1; } /* IE6/7 fix */
+#nav ul li { float: none; }
+#nav ul ul { top: 0; }    
+/* Essentials - configure this */
+#nav ul { width: 130px; }
+#nav ul ul { left: 131px;}
+/* Everything else is theming */
+ 
+ .liSelected{
+ background: url(../images/nav2.gif) repeat-x; 
+ font-weight: bold;
+ color: #23508E;
+ }
+ 
+#nav {height: 30px; float:left;}
+#nav *:hover { background-color: none; }
+#nav a { border-right: 1px solid white; font-size:14px;color:#23508E; display: block; padding: 6px 15px 10px 5px; line-height: 1; }
+#nav li.hover a { background: url(../images/nav2.gif) repeat-x; }
+
+#nav ul { top: 25px; }
+#nav ul li a { background: url(../images/nav2.gif) repeat-x; }
+#nav ul a.hover { background: url(../images/nav2.gif) repeat-x; }
+#nav ul a { border-bottom: 0.5px solid white; border-right: none; opacity: 2; filter: alpha(opacity=90); }
+/* #nav ul a { border-bottom: none; } - I also needed this for IE6/7 */
+
+
+#nav a:link{text-decoration:none ; color:#23508E ;}
+#nav a:visited {text-decoration:none ; color:#23508E;}
+#nav a:hover {text-decoration:none ; color:white;}
+#nav a:active {text-decoration:none ; color:#23508E;}
+
+
+/*-------------工作空间左边导航----------------end--*/
+
+	
+/*-------------工作空间导航条右边nav2用户信息及相关按钮链接----------------begin--*/
+#nav2 {height:30px;line-height: 30px;float:right;margin-right:20px;position: relative;z-index:99999;font-size:12px; font-family:"微软雅黑";}
+#nav2 a:link{text-decoration:none ; color:#23508E ;font-weight:bold;}
+#nav2 a:visited {text-decoration:none ; color:black;font-weight:bold;}
+#nav2 a:hover {text-decoration:none ; color:#000;}
+#nav2 a:active {text-decoration:none ; color:#23508E;font-weight: bold;}
+
+.navButton {
+	-moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px opx 0px 0px #ffffff;
+	box-shadow:inset 0px 0px 0px 0px #ffffff;
+	background-color:#cccccc;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #AAAAAA;
+	display:inline-block;
+	color:#777777;
+	FONT-FAMILY: 微软雅黑; 
+	font-size:12px;
+	font-weight:bold;
+	padding:1px 1px;
+	text-decoration:none;
+	line-height: 20px;
+	/*text-shadow:1px 1px 0px #ffffff;*/
+}.navButton:hover {
+	background-color:#dfdfdf;
+}.navButton:active {
+	position:relative;
+	top:1px;
+}
+
+/*-------------工作空间导航条右边用户信息及相关按钮链接---------------begin--*/
+
+
+
+
+/*-------------工作空间功能模块导航标签栏----------------begin--*/
+#systemTabDiv{  
+		float:left;
+		margin:0 auto 0px auto;
+		/*background:transparent url(../images/menu1.gif) repeat-x top left;*/
+		/*background: transparent url(../images/TabPanel/tab-bg-active.gif) repeat-x;*/
+}
+
+#nav_search { display: block; margin: 0; padding:0; position: relative;}
+#nav_search li { display: block; list-style: none; margin: 0; padding: 0; float: left; position: relative; }
+#nav_search a { display: block; }
+#nav_search ul { display: none; position: absolute; left: 0; margin: 0; padding: 0; }
+* html #nav_search ul { line-height: 0; } /* IE6 "fix" */
+#nav_search ul a { zoom: 1; } /* IE6/7 fix */
+#nav_search ul li { float: none; }
+#nav_search ul ul { top: 0; }    
+/* Essentials - configure this */
+
+#nav_search ul { width: 130px; }
+#nav_search ul ul { left: 131px; }
+
+/* Everything else is theming */
+ 
+ .liSelected2{
+background: url(../images/menu2.gif) repeat-x top left; 
+ }
+ 
+#nav_search { height: 28px; }
+#nav_search *:hover { background-color: none; }
+#nav_search a { border-right: 1px solid white; color: black; font-size: 14px; padding: 6px 15px 10px 5px; line-height: 1; }
+#nav_search li.hover a { background-color: #E1E1E1; }
+#nav_search ul { top: 25px; }
+#nav_search ul li a { background: url(../images/menu1.gif) repeat-xtop left; }
+#nav_search ul a.hover { background: url(../images/menu3.gif) repeat-x; }
+#nav_search ul a { border-bottom: 1px solid white; border-right: none; opacity: 0.9; filter: alpha(opacity=90); }
+/* #nav_search ul a { border-bottom: none; } - I also needed this for IE6/7 */
+
+#nav_search a:link{text-decoration:none ; color:black ;}
+#nav_search a:visited {text-decoration:none ; color:black;}
+#nav_search a:hover {text-decoration:none ; color:black;}
+#nav_search a:active {text-decoration:none ; color:#black;} 
+/*-------------工作空间功能模块导航标签栏----------------end--*/
+
+
+
+/*-- ----友情链接及底部版权信息区--begin---- --*/
+#footermaindiv{margin:0;padding:0;text-align:center;}
+.page2{width:1100px; margin:5px auto;}
+.hotlink a:link{text-decoration:none ; color:white;}
+.hotlink a:visited{text-decoration:none ; color:white;}
+.hotlink a:hover{text-decoration:none ; color:#000;}
+
+
+dl.hotlink{
+width:1100px;
+line-height:35px;
+padding:2px;
+border:#000 1px solid;
+margin:5px auto; 
+overflow:hidden;
+background: url(../images/hotlink1.gif)  repeat-x;}
+dl.hotlink dt{width:95px;height:35px; float:left; text-indent:-9999px;}
+dl.hotlink dd{margin:0 10px;float:left;}
+/*-- ----友情链接及底部版权信息区--end---- --*/
+
+/* 清除浮动 */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+/*-- ----消息盒子样式 开始-------------- --*/
+.img1{background:url("../images/alarm1.jpg") no-repeat; width:30px; height:30px; display: inline-block;float:left;}
+.img2{background:url("../images/alarm2.gif") no-repeat; width:30px; height:30px; display: inline-block;float:left;}
+.top_p{float:left;margin:0px;}
+/*-- ----消息盒子样式 结束-------------- --*/
+
+/*-- ----新物理网络资源标签 样式 开始-------------- --*/
+.new{ background:url(../images/newnetworkresource.png) no-repeat; height:30px; width:26px;position:absolute; margin-left: -9px;margin-top: -11px;z-index:2}
+/*-- ----新物理网络资源标签 样式 结束-------------- --*/
+
+/*-- ---跟在工作空间后面的 集中调度的样式 开始----  --*/
+#tailofnav{
+	float:left;
+	margin:2px 0px 0px 5px;
+	}
+/*-- ---跟在工作空间后面的 集中调度的样式 开始----  --*/

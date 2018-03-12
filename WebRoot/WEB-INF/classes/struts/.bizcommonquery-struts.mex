@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="commonQuery" location="10,10" size="280,140">
+    <action name="testQueryIndexAction" location="65,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="testCommonQueryIndex.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="testCommonQueryIndex.jsp" path="testCommonQueryIndex.jsp" location="57,205" size="150,55" />
+</Struts2Diagram>
+

@@ -1,0 +1,104 @@
+/* CSS Document */
+
+.gantt {
+	position:relative;
+	padding:2px;
+	background:#fff;
+	font-family:"微软雅黑", Verdana, Geneva, sans-serif;
+}
+.gantt_point {
+	position:absolute;
+	height:8px;
+	width:16px;
+	overflow:hidden;
+	margin-left:48px;
+	margin-top:-16px;
+	color:#ccc;
+}
+.gantt_title{
+	position:relative;
+	top:3px;
+	text-align:center;
+	}
+.gantt_title span h4{position:relative; top:-8px;}
+.gantt_point .gantt_point_front {
+	font-size:16px;
+	position: absolute;
+	color:#ccc;
+}
+.gantt_point .gantt_point_back {
+	color: #FFFFFF;
+	margin-left: 2px;
+	margin-top:2px;
+	position: absolute;
+}
+.gantt_main {
+	width:300px;
+	background:#fff url(../gantt/images/time_line_small.png) no-repeat;
+}
+.gantt_top {
+	width:100%;
+	height:36px;
+}
+.now_time {
+	position:absolute;
+	height:8px;
+	width:14px;
+	background:url(../gantt/images/time_pointer.png) no-repeat;
+	margin-top:29px;
+}
+.gantt_content {
+	width:100%;
+}
+.gantt_line {
+	height:4px;
+	background:blue;
+	border:1px solid #063;
+	margin-top:2px;
+	position:relative;
+	filter:Alpha(Opacity=70);
+	opacity:0.7;
+}
+.page_up{
+	position:absolute;
+	background:url(../gantt/images/up_down1_small.png);
+	height:12px;
+	width:16px;
+	cursor:pointer;
+	}
+.page_down{
+	position:absolute;
+	margin-top:12px;
+	background:url(../gantt/images/up_down1_small.png) 0px -12px;
+	height:12px;
+	width:16px;
+	cursor:pointer;
+	}
+.dd_show{
+	z-index:2;
+	cursor:pointer; 
+	position:absolute; 
+	line-height:18px;
+	width:32px;
+	right:4px; 
+	margin-top:3px; 
+	padding:0px 16px 0px 4px;
+	border:1px solid #aaa; 
+	border-radius:3px; 
+	background:#ddd url(../gantt/images/dd_down.png) right 0px no-repeat; 
+	font-weight:bold;
+	-moz-user-select:none;   
+}
+.red{color:red;}
+.green{color:green;}
+
+.dd_show:hover{
+	border:1px solid #999;
+	box-shadow:1px 1px 2px #ccc;
+}
+
+/*甘特图 日期控件 字体颜色*/
+.bg_green{background:green;}
+.bg_red{background:red;}
+
+.ctDatepicker .ui-widget{*+width:300px;}

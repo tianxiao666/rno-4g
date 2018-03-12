@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/base.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/public.css"/>
+<link rel="stylesheet" type="text/css" href="css/input.css" />
+<link rel="stylesheet" type="text/css" href="css/search_bar.css" />
+<script type="text/javascript" src="../../jslib/jquery/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="jslib/commonUtil.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(":button,:submit").mousedown(function(){
+		$(this).addClass("input_button_down");
+	})
+	$(":button,:submit").mouseup(function(){
+		$(this).removeClass("input_button_down");
+	})
+	
+	$(".gd_select").change(function(){
+		var index = $(this).get(0).selectedIndex;
+		if(index == 1){
+			$(".gd_select_toggle").show();
+		}else{
+			$(".gd_select_toggle").hide();
+		}
+	});
+	
+	//点击查询按钮
+	$("#btnSubmit").click(function(){
+		submitQuery();
+	});
+
+	
+	//提交查询
+	function submitQuery(){
+		var formValue="";
+		var queryData=getInputsByForm("form1");
+		formValue=jsonToStr(queryData);
+		var resultItemId=window.parent.subPage_resultItemId;
+		var gridStore=window.parent.Ext.getCmp(resultItemId+"_grid").getStore();
+		gridStore.baseParams= {queryParams:formValue};
+		gridStore.reload();
+	}
+	
+	//获取受理专业数据字典
+	var acceptProfessionalData=getDictionaryDataByTreeId(6);
+	constructSelectData("select_acceptProfessional",acceptProfessionalData);
+	
+})
+
+
+</script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="search_bar">
+            <h4>查询条件</h4>
+            <form id="form1">
+	            <table class="search_table">
+	                <tr>
+	                	<td>
+	                    	<span class="td_m">工单类型：</span>
+	                    	<select name="woType" class="gd_select">
+	                        	<option value="">请选择工单类型</option>
+	                        	<option value="抢修">抢修工单</option>
+	                        	<option value="修缮">修缮工单</option>
+	                        </select>
+	                        <input name="woType_operator" type="hidden" value="=" />
+	                        <input name="woType_type" type="hidden" value="select" />
+	                    </td>
+	                	<td>
+	                    	<span class="td_m">工单状态：</span>
+	                    	<select name="status">
+	                        	<option value="">请选择工单状态</option>
+	                        	<option value="2">待受理</option>
+	                        	<option value="3">处理中</option>
+	                        	<option value="6">已派发</option>
+	                        	<option value="7">已结束</option>
+	                        </select>
+	                        <input name="status_operator" type="hidden" value="=" />
+	                        <input name="status_type" type="hidden" value="text" />
+	                    </td>
+	                	<td>
+	                    	<span class="td_m">工单主题：</span>
+	                    	<input name="woTitle" type="text" placeholder="请输入工单主题" />
+	                    	<input name="woTitle_operator" type="hidden" value="like" />
+	                        <input name="woTitle_type" type="hidden" value="text" />
+	                    </td>
+	                </tr>
+	                <tr class="gd_select_toggle" style="display:none;">
+	                	<td>
+	                    	<span class="td_m">基站类型：</span>
+	                    	<select id="select_baseStationType" name="baseStationType">
+	                        	<option value="">请选择基站类型</option>
+	                        	<option>2G主设备</option>
+	                        	<option>2G直放站</option>
+	                            <option>TD主设备</option>
+	                            <option>TD直放站</option>
+	                        </select>
+	                        <input name="baseStationType_operator" type="hidden" value="=" />
+	                        <input name="baseStationType_type" type="hidden" value="select" />
+	                    </td>
+	                	<td>
+	                    	<span class="td_m">受理专业：</span>
+	                    	<select id="select_acceptProfessional" name="acceptProfessional">
+	                        	<option value="">请选择受理专业</option>
+	                        	<!-- <option value="无线">无线</option>
+	                        	<option value="传输">传输</option>
+	                        	<option value="主设备">主设备</option> -->
+	                        </select>
+	                        <input name="acceptProfessional_operator" type="hidden" value="=" />
+	                        <input name="acceptProfessional_type" type="hidden" value="select" />
+	                    </td>
+	                	<td>
+	                    	<span class="td_m">基站名称：</span>
+	                    	<input name="faultStationName" type="text" placeholder="请输入基站名称" />
+	                    	<input name="faultStationName_operator" type="hidden" value="like" />
+	                        <input name="faultStationName_type" type="hidden" value="text" />
+	                    </td>
+	                </tr>
+	                <tr>
+	                	<td class="tc" colspan="3">
+	                    	<input name="btnSubmit" id="btnSubmit" type="button" value="查询" />
+	                    </td>
+	                </tr>
+	            </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

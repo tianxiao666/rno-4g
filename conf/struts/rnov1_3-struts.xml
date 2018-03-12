@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="rnov1_3" extends="struts-default">
+	<!-- 正在施工页面 -->
+		<action name="initBuildingPageAction" class="rnoCommonAction"
+			method="initBuildingPageAction">
+			<result name="success">/op/rno/building.jsp</result>
+		</action>
+		<!-- 初始化LTE小区管理 -->
+		<action name="initLteCellManageAction" class="rnoLteCellManageAction"
+			method="initLteCellManageAction">
+			<result name="success">/op/rno/rno_lte_cellmanage_entry.jsp</result>
+		</action>
+		<!-- lte小区分页查询 -->
+		<action name="queryLteCellByPageForAjaxAction" class="rnoLteCellManageAction"
+			method="queryLteCellByPageForAjaxAction">
+		</action>
+		<!-- 查询下倾以及同站小区的详情 -->
+		<action name="queryLteCellAndCositeCellsDetailForAjaxAction"
+			class="rnoLteCellManageAction" method="queryLteCellAndCositeCellsDetailForAjaxAction">
+		</action>
+		<!-- 编辑Lte小区的详情 -->
+		<action name="updateLteCellAndCoSiteCellDetailForAjaxAction"
+			class="rnoLteCellManageAction" method="updateLteCellAndCoSiteCellDetailForAjaxAction">
+		</action>
+
+
+		<!-- LTE小区地图展示模块 start -->
+		<action name="initRnoLteMapOperAction" class="rnoLteMapOperAction"
+			method="initRnoLteMapOperAction">
+			<result name="success">/op/rno/rno_lte_cell_map.jsp</result>
+		</action>
+		<action name="getLteCellByPageForAjaxAction" class="rnoLteMapOperAction"
+			method="getLteCellByPageForAjaxAction">
+		</action>
+		<action name="getLteCellAndCositeCellsDetailForAjaxAction"
+			class="rnoLteMapOperAction" method="getLteCellAndCositeCellsDetailForAjaxAction">
+		</action>
+		<action name="updateLteCellDetailsForAjaxAction" class="rnoLteMapOperAction"
+			method="updateLteCellDetailsForAjaxAction">
+		</action>
+		<action name="getLteCellDetailForAjaxAction" class="rnoLteMapOperAction"
+			method="getLteCellDetailForAjaxAction">
+		</action>
+
+		<action name="getPciReuseAnalysisByPageForAjaxAction" class="rnoLteMapOperAction"
+			method="getPciReuseAnalysisByPageForAjaxAction">
+		</action>
+		<action name="getCellsWithSamePciDetailsForAjaxAction" class="rnoLteMapOperAction"
+			method="getCellsWithSamePciDetailsForAjaxAction">
+		</action>
+		<action name="getCollAndConfCellWithSamePciByPageForAjaxAction"
+			class="rnoLteMapOperAction" method="getCollAndConfCellWithSamePciByPageForAjaxAction">
+		</action>
+		<!-- LTE小区地图展示模块 end -->
+
+		<!-- Lte邻区关系管理 start -->
+		<action name="initLteNCellManagerAction" class="rnoLteCellManageAction"
+			method="initLteNCellManagerAction">
+			<result name="success">/op/rno/rno_lte_ncellmanage_entry.jsp</result>
+		</action>
+		<action name="queryLteNcellByPageForAjaxAction" class="rnoLteCellManageAction"
+			method="queryLteNcellByPageForAjaxAction">
+		</action>
+		<action name="deleteLteNcellByPageForAjaxAction" class="rnoLteCellManageAction"
+			method="deleteLteNcellByPageForAjaxAction">
+		</action>
+		<!-- Lte邻区关系管理 end -->
+
+		<!-- 删除lte小区 -->
+		<action name="deleteLteCellByIdsForAjaxAction" class="rnoLteCellManageAction"
+			method="deleteLteCellByIdsForAjaxAction">
+		</action>
+
+		<!-- 初始化LTE網絡數據管理 -->
+		<action name="initLteGridManageAction" class="rnoLteSceneManageAction"
+			method="initLteGridManageAction">
+			<result name="success">/op/rno/rno_4g_grid_manage.jsp</result>
+		</action>
+		<!-- 分頁查询lte网格数据信息 -->
+		<action name="queryLteGridDataByPageAjaxAction" class="rnoLteSceneManageAction"
+			method="queryLteGridDataByPageAjaxAction">
+		</action>
+		<!-- 通過城市查询lte网格数据信息 -->
+		<action name="queryLteGridDataByCityAjaxAction" class="rnoLteSceneManageAction"
+			method="queryLteGridDataByCityAjaxAction">
+		</action>
+		<!-- 通过城市导出lte网格数据信息 -->
+		<action name="exportLteGridDataByCityAjaxAction" class="rnoLteSceneManageAction"
+			method="exportLteGridDataByCityAjaxAction">
+				<result name="fail" >
+                    /op/rno/rno_fail.jsp
+             </result>
+             <result name="success" type="stream">
+                          <param name="contentType">application/octet-stream</param>
+                          <param name="inputName">exportInputStream</param>
+                          <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                          <param name="bufferSize">4096</param>
+                          <param name="maximumSize">52428800</param> 
+              </result>
+		</action>
+		<!-- 初始化LTE網絡數據管理 -->
+		<action name="initLteGridMapDisplayAction" class="rnoLteSceneManageAction"
+			method="initLteGridMapDisplayAction">
+			<result name="success">/op/rno/rno_4g_grid_map_display.jsp</result>
+		</action>
+		<!-- 初始化LTE路测数据管理 -->
+		<action name="initLteDtAnaManageAction" class="rnoLteDtAnaAction"
+			method="initLteDtAnaManageAction">
+			<result name="success">/op/rno/rno_4g_dt_manage.jsp</result>
+		</action>
+		<!-- 新的 查询4G 路测描述信息的action -->
+		<action name="queryG4DtDescAjaxAction" class="rnoLteDtAnaAction"
+			method="queryG4DtDescAjaxAction">
+		</action>
+		<!-- 初始化LTE路测分析地图页面 -->
+		<action name="initLteDtAnaMapAction" class="rnoLteDtAnaAction"
+			method="initLteDtAnaMapAction">
+			<result name="success">/op/rno/rno_4g_dt_analysis_map.jsp</result>
+		</action>
+		<!-- 通过条件查询某一天的DT描述信息返回分析页面 -->
+		<action name="queryG4DtDescForMapAjaxAction" class="rnoLteDtAnaAction"
+			method="queryG4DtDescForMapAjaxAction">
+		</action>
+		<!-- 通过条件查询某一天的DT詳情信息返回分析页面 -->
+		<action name="queryG4DtDetailInfoForMapAjaxAction" class="rnoLteDtAnaAction"
+			method="queryG4DtDetailInfoForMapAjaxAction">
+		</action>
+		<!-- 通过条件分頁查询某一天的DT詳情信息返回分析页面 -->
+		<action name="queryG4DtDetailDataInDescIdByPageAjaxAction"
+			class="rnoLteDtAnaAction" method="queryG4DtDetailDataInDescIdByPageAjaxAction">
+		</action>
+		
+		<!--初始化LTE地理场景管理页面 -->
+		<action name="initLteRegionSceneManagerAction" class="rnoLteSceneManageAction"
+			method="initLteRegionSceneManagerAction">
+			<result name="success">/op/rno/rno_4g_region_scene_manage.jsp</result>
+		</action>
+		<!--获得LTE地理场景管理信息 -->
+		<action name="getLteRegionSceneInfoListForAjaxAction" class="rnoLteSceneManageAction"
+			method="getLteRegionSceneInfoListForAjaxAction">
+		</action>
+		<!--更新LTE地理场景管理信息 -->
+		<action name="updateLteRegionSceneDataForAjaxAction" class="rnoLteSceneManageAction"
+			method="updateLteRegionSceneDataForAjaxAction">
+		</action>
+		<!--获取LTE地理场景管理名称列表 -->
+		<action name="getLteRegionSceneNameListForAjaxAction" class="rnoLteSceneManageAction"
+			method="getLteRegionSceneNameListForAjaxAction">
+		</action>
+		<!--删除LTE地理场景管理信息 -->
+		<action name="deleteLteRegionSceneDataForAjaxAction" class="rnoLteSceneManageAction"
+			method="deleteLteRegionSceneDataForAjaxAction">
+		</action>
+		<!--插入LTE地理场景管理信息 -->
+		<action name="insertLteRegionSceneDataForAjaxAction" class="rnoLteSceneManageAction"
+			method="insertLteRegionSceneDataForAjaxAction">
+		</action>
+
+		<!--初始化LTE时间场景管理页面 -->
+		<action name="initLteTimeSceneManagerAction" class="rnoLteSceneManageAction"
+			method="initLteTimeSceneManagerAction">
+			<result name="success">/op/rno/rno_4g_time_scene_manage.jsp</result>
+		</action>
+		<!--获得LTE时间场景管理信息 -->
+		<action name="getLteTimeSceneInfoListForAjaxAction" class="rnoLteSceneManageAction"
+			method="getLteTimeSceneInfoListForAjaxAction">
+		</action>
+		<!--更新LTE时间场景管理信息 -->
+		<action name="updateLteTimeSceneDataForAjaxAction" class="rnoLteSceneManageAction"
+			method="updateLteTimeSceneDataForAjaxAction">
+		</action>
+		<!--获取LTE时间场景管理名称列表 -->
+		<action name="getLteTimeSceneNameListForAjaxAction" class="rnoLteSceneManageAction"
+			method="getLteTimeSceneNameListForAjaxAction">
+		</action>
+		<!--删除LTE时间场景管理信息 -->
+		<action name="deleteLteTimeSceneDataForAjaxAction" class="rnoLteSceneManageAction"
+			method="deleteLteTimeSceneDataForAjaxAction">
+		</action>
+		<!--插入LTE时间场景管理信息 -->
+		<action name="insertLteTimeSceneDataForAjaxAction" class="rnoLteSceneManageAction"
+			method="insertLteTimeSceneDataForAjaxAction">
+		</action>
+		
+		<!-- 4G话统模块 start -->
+		<action name="initLtePmDataAnaAction" class="rnoLteStsAnaAction"
+			method="initLteStsDataAnaAction">
+			<result name="success">/op/rno/rno_4g_sts_manage.jsp</result>
+		</action>
+		<!-- 4G话统Lte指标 start -->
+		<action name="initLtePmQuotaAnaAction" class="rnoLteStsAnaAction"
+			method="initLteStsQuotaAnaAction">
+			<result name="success">/op/rno/rno_4g_sts_monitor_quota_map.jsp</result>
+		</action>
+		<!-- 4G话统Lte指标和参数查询 start -->
+		<action name="initLteStsIndexDisplayQueryPageAction" class="rnoLteStsAnaAction"
+			method="initLteStsParaQueryAction">
+			<result name="success">/op/rno/rno_4g_sts_index_display_query.jsp</result>
+		</action>
+		<!-- 新的 查询4G 话统信息的action -->
+		<action name="queryG4StsDataAjaxAction" class="rnoLteStsAnaAction"
+			method="queryG4StsDataAjaxAction">
+		</action>
+		<!-- 新的 查询4G 话统指标的action -->
+		<action name="queryG4StsQuotaAjaxAction" class="rnoLteStsAnaAction"
+			method="queryG4StsQuotaAjaxAction">
+		</action>
+		<!-- 新的 查询4G 话统指标小区列表action -->
+		<action name="getLteCellByMapGridWithStsCellListForAjaxAction" class="rnoLteStsAnaAction"
+			method="getLteCellByMapGridWithStsCellListForAjaxAction">
+		</action>
+		<!-- 获取4G话统指标项-->
+		<action name="getRno4GStsIndexDescForAjaxAction" class="rnoLteStsAnaAction"
+			method="getRno4GStsIndexDescForAjaxAction">
+		</action>
+		<!-- 初始化lte KPI指标图表展现小区查看页面 -->
+		<action name="initLteKpiIndexDisplayCellQueryPageAction" class="rnoIndexDisplayAction" method="initLteKpiIndexDisplayCellQueryPageAction">
+		   <result name="success">/op/rno/rno_lte_kpi_index_display.jsp</result>
+		</action>
+		<!-- 初始化4G话统指标展示页面 -->
+		<action name="initLteStsIndexDisplayQueryPageAction" class="rnoIndexDisplayAction" method="initLteStsIndexDisplayQueryPageAction">
+			<result name="success">/op/rno/rno_4g_sts_index_display_query.jsp</result>
+		</action>
+		<action name="searchLteKpiCellIndexForAjaxAction" class="rnoIndexDisplayAction" method="searchLteKpiCellIndexForAjaxAction">
+		</action>
+		<action name="searchLteStsCellIndexForAjaxAction" class="rnoIndexDisplayAction" method="searchLteStsCellIndexForAjaxAction">
+		</action>
+		<!-- 通过城市id获取let enodeb和小区信息的映射 -->
+		<action name="getAllLteCellsByCityIdInMapForAjaxAction" class="rnoCommonAction"
+			method="getAllLteCellsByCityIdInMapForAjaxAction">
+		</action>
+		<action name="downloadLteStsCellIndexFileAction" class="rnoIndexDisplayAction"
+			method="downloadLteStsCellIndexFileAction">
+				<result name="fail" >
+                   /op/rno/rno_fail.jsp
+             </result>
+             <result name="success" type="stream">
+                          <param name="contentType">application/octet-stream</param>
+                          <param name="inputName">exportInputStream</param>
+                          <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                          <param name="bufferSize">4096</param>
+                          <param name="maximumSize">52428800</param> 
+              </result>
+		</action>
+	</package>
+</struts>

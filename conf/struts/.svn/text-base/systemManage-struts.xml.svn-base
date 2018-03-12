@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="systemmanage" extends="struts-default">
+	
+	    <!-- 初始化系统管理首页 -->
+	    
+	    <!-- ajax初始化权限树资源 -->
+		<action name="ajaxInitPermissionTreeAction" class="systemManageAction" method="ajaxInitPermissionTreeAction">
+		</action>
+		<!-- ajax根据角色获取全部权限类型 -->
+		<action name="ajaxInitPermissionTreeByRoleAction" class="systemManageAction" method="ajaxInitPermissionTreeByRoleAction">
+		</action>
+		
+		<action name="ajaxLoadPermissionTreeByRoleAction" class="systemManageAction" method="ajaxLoadPermissionTreeByRoleAction">
+		</action>
+		
+		
+		
+		<!-- ajax添加权限 -->
+		<action name="ajaxAddPermissionAction" class="systemManageAction" method="ajaxAddPermissionAction">
+		</action>
+		<!-- ajax修改权限 -->
+		<action name="ajaxModifyPermissionAction" class="systemManageAction" method="ajaxModifyPermissionAction">
+		</action>
+		<!-- ajax删除权限 -->
+		<action name="ajaxDeletePermissionAction" class="systemManageAction" method="ajaxDeletePermissionAction">
+		</action>
+		<!-- ajax获取全部权限类型 -->
+		<action name="ajaxGetPermissionType" class="systemManageAction" method="ajaxGetPermissionType">
+		</action>
+		
+		<!-- ajax获取第一级全部权限类型 -->
+		<action name="ajaxGetRootPermissionType" class="systemManageAction" method="ajaxGetRootPermissionType">
+		</action>
+		
+		<!-- ajax保存角色权限关联 -->
+		<action name="ajaxSaveRoleRelaPermissionAction" class="systemManageAction" method="ajaxSaveRoleRelaPermissionAction">
+		</action>
+		
+		
+		<!-- ajax保存角色权限关联 -->
+		<action name="ajaxSaveRoleRelaPermissionsAction" class="systemManageAction" method="ajaxSaveRoleRelaPermissionsAction">
+		</action>
+		
+		<!-- ajax添加角色 -->
+		<action name="ajaxAddRoleAction" class="systemManageAction" method="ajaxAddRoleAction">
+		</action>
+		
+		<!-- ajax修改角色 -->
+		<action name="ajaxModifyRoleAction" class="systemManageAction" method="ajaxModifyRoleAction">
+		</action>
+		
+		<!-- ajax删除角色 -->
+		<action name="ajaxDeleteRoleAction" class="systemManageAction" method="ajaxDeleteRoleAction">
+		</action>
+	    
+	    <action name="initSystemManageHomePageAction" class="systemManageAction" method="initSystemManageHomePageAction">
+	      <result name="success">../system/systemManageHomePage.jsp</result>
+	    </action>
+		
+		<!-- 获取某类型的角色，结合组织级别、业务模块条件 -->
+		<action name="getRolesByTypeForAjaxAction" class="systemManageAction" method="getRolesByTypeForAjaxAction"></action>
+		
+		<!-- 获取角色关联的权限 -->	
+		<action name="getUserRoleAndPermissionAction" class="systemManageAction" method="getUserRoleAndPermissionAction">
+	      <result name="success">../system/userSetRoleAndPermission.jsp</result>
+	    </action>
+		
+				<!-- ajax根据角色获取全部权限类型 -->
+		<action name="ajaxInitPermissionTreeByRolesAction" class="systemManageAction" method="ajaxInitPermissionTreeByRolesAction">
+		</action>		
+		<!-- ajax根据用户获取全部权限类型 -->
+		<action name="ajaxInitPermissionTreeByUserAction" class="systemManageAction" method="ajaxInitPermissionTreeByUserAction">
+	    </action>
+		<!-- 设置用户角色和权限 -->
+		<action name="setUserRelaPermissionAction" class="systemManageAction" method="setUserRelaPermissionAction">
+	    </action>
+	</package>
+</struts>

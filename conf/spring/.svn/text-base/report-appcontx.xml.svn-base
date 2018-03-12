@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- dao开始 -->
+	<bean id="urgentRepairReportDao" class="com.iscreate.op.dao.report.UrgentRepairReportDaoImpl" singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="portalReportDao" class="com.iscreate.op.dao.report.PortalReportDaoImpl" singleton="false">
+	</bean>
+	<bean id="commentReportDao" class="com.iscreate.op.dao.report.CommentReportDaoImpl" singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<!-- dao结束 -->
+	<!-- service开始 -->
+	<bean id="urgentRepairReportService" class="com.iscreate.op.service.report.UrgentRepairReportServiceImpl" singleton="false">
+		<property name="urgentRepairReportDao" ref="urgentRepairReportDao" />
+		<property name="dataDictionaryService" ref="dataDictionaryService" />
+		<property name="informationManageNetworkResourceDao" ref="informationManageNetworkResourceDao" />
+		<property name="networkResourceInterfaceService" ref="networkResourceService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<!-- du.hw -->
+		<property name="sysOrganizationDao" ref="sysOrganizationDao" />
+	</bean>
+	<bean id="portalReportService" class="com.iscreate.op.service.report.PortalReportServiceImpl" singleton="false">
+		<property name="workOrderCommonService" ref="workOrderCommonService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	<bean id="commentReportService" class="com.iscreate.op.service.report.CommentReportServiceImpl" singleton="false">
+		<property name="commentReportDao" ref="commentReportDao" />
+	</bean>
+	<bean id="gisDispatchReportService" class="com.iscreate.op.service.report.GisDispatchReportServiceImpl" singleton="false">
+		<property name="networkResourceInterfaceService" ref="networkResourceService" />
+		<property name="cardispatchCarDao" ref="cardispatchCarDao" />
+		<property name="cardispatchDriverDao" ref="cardispatchDriverDao" />
+		<property name="workManageService" ref="workManageService" />
+		<property name="cardispatchTerminalDao" ref="cardispatchTerminalDao"/>
+		<property name="sysOrgUserService" ref="sysOrgUserService"></property>
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<property name="informationManageNetworkResourceDao" ref="informationManageNetworkResourceDao" />
+		<property name="networkResourceManageDao" ref="networkResourceManageDao" />
+		
+		
+	</bean>
+	<bean id="netReportService" class="com.iscreate.op.service.report.NetReportServiceImpl" singleton="false">
+		<property name="networkResourceInterfaceService" ref="networkResourceService" />
+		<property name="informationManageNetworkResourceDao" ref="informationManageNetworkResourceDao"></property>
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<!-- du.hw -->
+		<property name="sysOrganizationDao" ref="sysOrganizationDao" />
+	</bean>
+	<!-- service结束 -->
+	<!-- action开始 -->
+	<bean id="commentReportAction" class="com.iscreate.op.action.report.CommentReportAction" singleton="false">
+		<property name="commentReportService" ref="commentReportService" />
+	</bean>
+	<bean id="portalReportAction" class="com.iscreate.op.action.report.PortalReportAction" singleton="false">
+		<property name="portalReportService" ref="portalReportService" />
+	</bean>
+	<bean id="urgentRepairReportAction" class="com.iscreate.op.action.report.UrgentRepairReportAction" singleton="false">
+		<property name="urgentRepairReportService" ref="urgentRepairReportService" />
+		<property name="routineinspectionReportService" ref="routineinspectionReportService"/>
+		<property name="sysOrganizationService" ref="sysOrganizationService"/>	
+		
+	</bean>
+	<bean id="commonReportAction" class="com.iscreate.op.action.report.CommonReportAction" singleton="false">
+	</bean>
+	<bean id="gisDispatchReportAction" class="com.iscreate.op.action.report.GisDispatchReportAction" singleton="false">
+		<property name="gisDispatchReportService" ref="gisDispatchReportService"/>
+	</bean>
+	<bean id="netReportAction" class="com.iscreate.op.action.report.NetReportAction" singleton="false">
+		<property name="netReportService" ref="netReportService"/>
+	</bean>
+	<!-- action结束 -->
+	
+	
+	<!-- 车辆报表 begin -->
+	<bean id="carCensusReportAction" class="com.iscreate.op.action.report.CarCensusReportAction" singleton="false">
+	    <property name="carCensusReportService" ref="carCensusReportService" />
+ 		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	<bean id="carCensusReportService" class="com.iscreate.op.service.report.CarCensusReportServiceImpl" >
+		<property name="carCensusReportDao" ref="carCensusReportDao" />
+		<property name="cardispatchWorkorderDao" ref="cardispatchWorkorderDao" />
+		<property name="cardispatchTerminalDao" ref="cardispatchTerminalDao" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<!-- du.hw -->
+		<property name="sysOrganizationDao" ref="sysOrganizationDao" />
+	</bean>
+	<bean id="carCensusReportDao" class="com.iscreate.op.dao.report.CarCensusReportDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<!-- 车辆报表 end -->
+	
+	
+	<!-- 人员 -->
+	<!-- dao开始 -->
+	<bean id="orgWorkOrderCountMonthReportDao" class="com.iscreate.op.dao.report.OrgWorkOrderCountMonthReportDaoImpl" singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="staffTaskCountMonthReportDao" class="com.iscreate.op.dao.report.StaffTaskCountMonthReportDaoImpl" singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="orgStaffCountMonthReportDao" class="com.iscreate.op.dao.report.OrgStaffCountMonthReportDaoImpl" singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<!-- dao结束 -->
+	<!-- service开始 -->
+	<bean id="orgWorkOrderCountMonthReportService" class="com.iscreate.op.service.report.OrgWorkOrderCountMonthReportServiceImpl" singleton="false">
+		<property name="orgWorkOrderCountMonthReportDao" ref="orgWorkOrderCountMonthReportDao" />
+		<property name="staffTaskCountMonthReportDao" ref="staffTaskCountMonthReportDao"/>
+		<property name="orgStaffCountMonthReportService" ref="orgStaffCountMonthReportService" />
+		<property name="urgentRepairReportService" ref="urgentRepairReportService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<!-- ou.jh -->
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+		<!-- du.hw -->
+		<property name="sysOrganizationDao" ref="sysOrganizationDao" />
+	</bean>
+	<bean id="orgStaffCountMonthReportService" class="com.iscreate.op.service.report.OrgStaffCountMonthReportServiceImpl" singleton="false">
+		<property name="orgStaffCountMonthReportDao" ref="orgStaffCountMonthReportDao"/>
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<!-- du.hw -->
+		<property name="sysOrganizationDao" ref="sysOrganizationDao" />
+	</bean>
+	<!-- service结束 -->
+	<!-- action开始 -->
+	<bean id="orgWorkOrderCountMonthReportAction" class="com.iscreate.op.action.report.OrgWorkOrderCountMonthReportAction" singleton="false">
+		<property name="orgWorkOrderCountMonthReportService" ref="orgWorkOrderCountMonthReportService" />
+	</bean>
+	<bean id="orgStaffCountMonthReportAction" class="com.iscreate.op.action.report.OrgStaffCountMonthReportAction" singleton="false">
+		<property name="orgStaffCountMonthReportService" ref="orgStaffCountMonthReportService" />
+	</bean>
+	<!-- action结束 -->
+	
+	
+	<!-- 基站TOP/每百 -->
+	<!-- service -->
+	<bean id="faultBaseStationTopTenReportService" class="com.iscreate.op.service.report.FaultBaseStationTopTenReportServiceImpl">
+		<property name="faultBaseStationTopTenReportDao" ref="faultBaseStationTopTenReportDao"></property>
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<!-- du.hw -->
+		<property name="sysOrganizationDao" ref="sysOrganizationDao" />
+		
+	</bean>
+	
+	<bean id="analyseFaultCountAndResourceBalanceReportService" class="com.iscreate.op.service.report.AnalyseFaultCountAndResourceBalanceReportServiceImpl">
+		<property name="analyseFaultCountAndResourceBalanceReportDao" ref="analyseFaultCountAndResourceBalanceReportDao"></property>
+		<property name="urgentRepairReportService" ref="urgentRepairReportService"></property>
+		<property name="informationManageNetworkResourceService" ref="informationManageNetworkResourceService"></property>
+		
+		<property name="informationManageNetworkResourceDao" ref="informationManageNetworkResourceDao"></property>
+		<property name="networkResourceInterfaceService" ref="networkResourceService"></property>
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<!-- du.hw -->
+		<property name="sysOrganizationDao" ref="sysOrganizationDao" />
+	</bean>
+	
+	
+	<!-- dao -->
+	<bean id="faultBaseStationTopTenReportDao" class="com.iscreate.op.dao.report.FaultBaseStationTopTenReportDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="analyseFaultCountAndResourceBalanceReportDao" class="com.iscreate.op.dao.report.AnalyseFaultCountAndResourceBalanceReportDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+
+
+	<!-- action -->
+	<bean id="faultBaseStationTopTenReportAction" class="com.iscreate.op.action.report.FaultBaseStationTopTenReportAction" singleton="false">
+		<property name="faultBaseStationTopTenReportService" ref="faultBaseStationTopTenReportService"></property>
+	</bean>
+	
+	
+	<bean id="analyseFaultCountAndResourceBalanceReportAction" class="com.iscreate.op.action.report.AnalyseFaultCountAndResourceBalanceReportAction" singleton="false">
+		<property name="analyseFaultCountAndResourceBalanceReportService" ref="analyseFaultCountAndResourceBalanceReportService"></property>
+	</bean>
+
+	
+	<!-- 基站退服率 -->
+	<bean id="baseStationOutDao" class="com.iscreate.op.dao.report.BaseStationOutDaoImpl" singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="baseStationOutService" class="com.iscreate.op.service.report.BaseStationOutServiceImpl" singleton="false">
+		<property name="baseStationOutDao" ref="baseStationOutDao" />
+		<property name="informationManageNetworkResourceDao" ref="informationManageNetworkResourceDao"></property>
+		<property name="urgentRepairReportDao" ref="urgentRepairReportDao"></property>
+		<property name="networkResourceInterfaceService" ref="networkResourceService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<!-- du.hw -->
+		<property name="sysOrganizationDao" ref="sysOrganizationDao" />
+	</bean>
+	<bean id="baseStationOutAction" class="com.iscreate.op.action.report.BaseStationOutAction" singleton="false">
+		<property name="baseStationOutService" ref="baseStationOutService" />
+	</bean>
+	
+	
+	<!-- 故障数Top-N最差基站分布 -->
+	<!-- service -->
+	<bean id="countFaultBaseStationTopFiveTenByOrgReportService" class="com.iscreate.op.service.report.CountFaultBaseStationTopFiveTenByOrgReportServiceImpl">
+		<property name="countFaultBaseStationTopFiveTenByOrgReportDao" ref="countFaultBaseStationTopFiveTenByOrgReportDao"></property>
+		<property name="networkResourceInterfaceService" ref="networkResourceService"></property>
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<!-- du.hw -->
+		<property name="sysOrganizationDao" ref="sysOrganizationDao" />
+	</bean>
+	
+	
+	<!-- dao -->
+	<bean id="countFaultBaseStationTopFiveTenByOrgReportDao" class="com.iscreate.op.dao.report.CountFaultBaseStationTopFiveTenByOrgReportDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+
+	<!-- action -->
+	<bean id="countFaultBaseStationTopFiveTenByOrgReportAction" class="com.iscreate.op.action.report.CountFaultBaseStationTopFiveTenByOrgReportAction" singleton="false">
+		<property name="countFaultBaseStationTopFiveTenByOrgReportService" ref="countFaultBaseStationTopFiveTenByOrgReportService"></property>
+	</bean>
+
+
+<!-- ======================================= -->
+<bean id="networkReportAction" class="com.iscreate.op.action.networkresourcemanage.NetworkReportAction"  singleton="false">
+		<property name="structureCommonService" ref="structureCommonService"></property>	
+		<property name="dictionary" ref="dictionary"></property>
+		<property name="quickSort" ref="quickSort"></property>
+		<property name="staffOrganizationService" ref="staffOrganizationService"></property>
+	</bean>
+</beans>

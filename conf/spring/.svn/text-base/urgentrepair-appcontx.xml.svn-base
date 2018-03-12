@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 工单 DAO层 -->
+	<bean id="urgentRepairWorkOrderDao" class="com.iscreate.op.dao.urgentrepair.UrgentRepairWorkOrderDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<!-- 客户工单 DAO层 -->
+	<bean id="urgentRepairCustomerWorkOrderDao" class="com.iscreate.op.dao.urgentrepair.UrgentRepairCustomerWorkOrderDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<!-- 客户工单 Service层 -->
+	<bean id="urgentRepairCustomerWorkOrderService" class="com.iscreate.op.service.urgentrepair.UrgentRepairCustomerWorkOrderServiceImpl">
+		<property name="urgentRepairCustomerWorkOrderDao" ref="urgentRepairCustomerWorkOrderDao" />
+	</bean>
+	
+	<!-- 工单 Service层 -->
+	<bean id="urgentRepairWorkOrderService" class="com.iscreate.op.service.urgentrepair.UrgentRepairWorkOrderServiceImpl">
+		<property name="urgentRepairWorkOrderDao" ref="urgentRepairWorkOrderDao" />
+		<property name="urgentRepairCustomerWorkOrderDao" ref="urgentRepairCustomerWorkOrderDao" />
+		<property name="urgentRepairSenceTaskOrderDao" ref="urgentRepairSenceTaskOrderDao" />
+		<property name="workManageService" ref="workManageService" />
+		<property name="workOrderAssnetResourceDao" ref="workOrderAssnetResourceDao" />
+		<property name="workOrderCommonService" ref="workOrderCommonService" />
+		<property name="staffDutyService" ref="staffDutyService" />
+		<property name="commonService" ref="commonService" />
+		<property name="dataDictionaryService" ref="dataDictionaryService" />
+		<property name="urgentRepairTechSupportTaskOrderDao" ref="urgentRepairTechSupportTaskOrderDao" />
+		<property name="workorderinterfaceWangyouWorkorderRelationService" ref="workorderinterfaceWangyouWorkorderRelationService" />
+		<property name="bizMessageService" ref="bizMessageService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+	</bean>
+	<!-- 工单 Action层 -->
+	<bean id="urgentRepairWorkOrderAction" class="com.iscreate.op.action.urgentrepair.UrgentRepairWorkOrderAction" singleton="false">
+		<property name="urgentRepairWorkOrderService" ref="urgentRepairWorkOrderService" />
+		<property name="workManageService" ref="workManageService" />
+		<property name="urgentRepairSenceTaskOrderService" ref="urgentRepairSenceTaskOrderService" />
+		<property name="networkResourceService" ref="networkResourceService" />
+		<property name="bizMessageService" ref="bizMessageService" />
+		<property name="workOrderAssnetResourceDao" ref="workOrderAssnetResourceDao" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	
+	<!-- 现场任务单 DAO层 -->
+	<bean id="urgentRepairSenceTaskOrderDao" class="com.iscreate.op.dao.urgentrepair.UrgentRepairSenceTaskOrderDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<!-- 现场任务单 Service层 -->
+	<bean id="urgentRepairSenceTaskOrderService" class="com.iscreate.op.service.urgentrepair.UrgentRepairSenceTaskOrderServiceImpl">
+		<property name="urgentRepairSenceTaskOrderDao" ref="urgentRepairSenceTaskOrderDao" />
+		<property name="urgentRepairTechSupportTaskOrderDao" ref="urgentRepairTechSupportTaskOrderDao" />
+		<property name="workManageService" ref="workManageService" />
+		<property name="workOrderCommonService" ref="workOrderCommonService" />
+		<property name="taskOrderCommonService" ref="taskOrderCommonService" />
+		<property name="staffDutyService" ref="staffDutyService" />
+		<property name="commonService" ref="commonService" />
+		<property name="urgentRepairWorkOrderDao" ref="urgentRepairWorkOrderDao" />
+		<property name="dataDictionaryService" ref="dataDictionaryService" />
+		<property name="workorderinterfaceWangyouWorkorderRelationService" ref="workorderinterfaceWangyouWorkorderRelationService" />
+		<property name="bizMessageService" ref="bizMessageService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+		
+	</bean>
+	<!-- 现场任务单 Action层 -->
+	<bean id="urgentRepairSenceTaskOrderAction" class="com.iscreate.op.action.urgentrepair.UrgentRepairSenceTaskOrderAction" singleton="false">
+		<property name="urgentRepairSenceTaskOrderService" ref="urgentRepairSenceTaskOrderService" />
+		<property name="workManageService" ref="workManageService" />
+		<property name="urgentRepairWorkOrderService" ref="urgentRepairWorkOrderService" />
+		<property name="workOrderAssnetResourceDao" ref="workOrderAssnetResourceDao" />
+		<property name="bizMessageService" ref="bizMessageService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	
+	<!-- 专家任务单 DAO层 -->
+	<bean id="urgentRepairTechSupportTaskOrderDao" class="com.iscreate.op.dao.urgentrepair.UrgentRepairTechSupportTaskOrderDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<!-- 专家任务单 Service层 -->                                                                        
+	<bean id="urgentRepairTechSupportTaskOrderService" class="com.iscreate.op.service.urgentrepair.UrgentRepairTechSupportTaskOrderServiceImpl">
+		<property name="urgentRepairSenceTaskOrderDao" ref="urgentRepairSenceTaskOrderDao" />
+		<property name="urgentRepairSenceTaskOrderService" ref="urgentRepairSenceTaskOrderService" />
+		<property name="workManageService" ref="workManageService" />
+		<property name="taskOrderCommonService" ref="taskOrderCommonService" />
+		<property name="workOrderCommonService" ref="workOrderCommonService" />
+		<property name="urgentRepairTechSupportTaskOrderDao" ref="urgentRepairTechSupportTaskOrderDao" />
+		<property name="staffDutyService" ref="staffDutyService" />
+		<property name="commonService" ref="commonService" />
+		<property name="urgentRepairWorkOrderDao" ref="urgentRepairWorkOrderDao" />
+		<property name="dataDictionaryService" ref="dataDictionaryService" />
+		<property name="workorderinterfaceWangyouWorkorderRelationService" ref="workorderinterfaceWangyouWorkorderRelationService" />
+		<property name="bizMessageService" ref="bizMessageService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+	</bean>
+	<!-- 专家任务单 Action层 -->
+	<bean id="urgentRepairTechSupportTaskOrderAction" class="com.iscreate.op.action.urgentrepair.UrgentRepairTechSupportTaskOrderAction">
+		<property name="urgentRepairTechSupportTaskOrderService" ref="urgentRepairTechSupportTaskOrderService" />
+		<property name="workManageService" ref="workManageService" />
+		<property name="urgentRepairWorkOrderService" ref="urgentRepairWorkOrderService" />
+		<property name="workOrderAssnetResourceDao" ref="workOrderAssnetResourceDao" />
+		<property name="bizMessageService" ref="bizMessageService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	
+	<!-- for mobile -->
+	<!-- 现场任务单 Action层 -->
+	<bean id="urgentRepairSenceTaskOrderActionForMobile" class="com.iscreate.op.action.urgentrepair.UrgentRepairSenceTaskOrderActionForMobile" singleton="false">
+		<property name="urgentRepairSenceTaskOrderService" ref="urgentRepairSenceTaskOrderService" />
+		<property name="workManageService" ref="workManageService" />
+		<property name="urgentRepairWorkOrderService" ref="urgentRepairWorkOrderService" />
+		<property name="taskTracingRecordService" ref="taskTracingRecordService" />
+		<property name="urgentRepairTechSupportTaskOrderService" ref="urgentRepairTechSupportTaskOrderService" />
+		<property name="networkResourceService" ref="networkResourceService" />
+		<property name="workOrderAssnetResourceDao" ref="workOrderAssnetResourceDao" />
+		<property name="bizMessageService" ref="bizMessageService" />
+		<property name="dataDictionaryService" ref="dataDictionaryService" />
+		<property name="workOrderCommonService" ref="workOrderCommonService" />
+		<property name="urgentRepairCustomerWorkOrderService" ref="urgentRepairCustomerWorkOrderService" />
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	
+	<!-- 专家任务单 Action层 -->
+	<bean id="urgentRepairTechSupportTaskOrderActionForMobile" class="com.iscreate.op.action.urgentrepair.UrgentRepairTechSupportTaskOrderActionForMobile">
+		<property name="urgentRepairTechSupportTaskOrderService" ref="urgentRepairTechSupportTaskOrderService" />
+		<property name="taskTracingRecordService" ref="taskTracingRecordService" />
+		<property name="urgentRepairWorkOrderService" ref="urgentRepairWorkOrderService" />
+		<property name="workManageService" ref="workManageService" />
+		<property name="networkResourceService" ref="networkResourceService" />
+		<property name="workOrderAssnetResourceDao" ref="workOrderAssnetResourceDao" />
+		<property name="bizMessageService" ref="bizMessageService" />
+		<property name="dataDictionaryService" ref="dataDictionaryService" />
+		<property name="workOrderCommonService" ref="workOrderCommonService" />
+		<property name="urgentRepairCustomerWorkOrderService" ref="urgentRepairCustomerWorkOrderService" />
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	<!-- for mobile -->
+
+</beans>

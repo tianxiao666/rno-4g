@@ -1,0 +1,78 @@
+/* CSS Document */
+* {margin:0;padding:0;}
+body{font: 12px/1.5 Tahoma,'Microsoft Yahei','Simsun';}
+ul,ol,li {list-style:none outside none;}h1,h2,h3,h4,h5,h6 {font-weight:400;}
+a {text-decoration:none;}
+a:hover{ text-decoration:underline;}
+.clearfix:before,.clearfix:after {content:"\0020";display:block;height:0;overflow:hidden;}
+.clearfix:after {clear:both;}
+.clearfix {zoom:1;}
+.dialog-box {position:absolute;top:10px;left:10px;}
+.dialog-popup {position:relative;float:left;}
+.dialog-bar-m {width: 302px;}
+.dialog-title-bar h2 {font-size:14px;font-weight:700;line-height:40px;}
+.dialog-title-bar a.close-dialog {background-color:#FFF;border:1px solid #999;display:block;font-size:14px;font-weight:700;height:18px;line-height:18px;position:absolute;right:15px;top:10px;width:18px;color:#999;text-align:center;text-decoration:none;}
+.dialog-title-bar a.close-dialog:hover {color:#333;text-decoration:none;}
+.dialog-bar-m {padding-bottom:5px;}
+.dialog-bar-m h3{ padding: 2px 0;}
+.dialog-bar-m b{ display: inline-block; font-weight:bold ;text-align: right;vertical-align: middle;min-width:50px; }
+.dialog-bar-m label{font-weight:bold ;display: inline-block;text-align: right;vertical-align: middle;min-width:40px;}
+.dialog-bar-m span{word-break: break-all; color: #666;text-align: left;vertical-align: middle;}
+.dialog-content {width:325px;}
+.dialog-content-box {background-color:#fff;border-top:none;}
+.dialog-content-info,.dialog-content-main{font-size:12px;padding:3px 8px;}
+.dialog-tabmenu li {background:#f0f0f0;cursor: pointer; float: left; height: 24px; line-height: 24px;text-align: center;width: 107px;border-left: 1px solid #CCCCCC; border-top: 1px solid #CCCCCC;}
+.dialog-tabmenu li.on {background:#fff;color:#111;border-bottom:1px solid #fff; margin-bottom:-1px;}
+.dialog-tabcontent dd { margin:0 auto;padding:2px;height:130px;overflow-y:scroll;}
+.dialog-tabcontent .dialog-task{overflow-x: hidden;overflow-y: auto;}
+.dialog-tabcontent dd table{width:100%;border-collapse: collapse; border-spacing: 0;}
+.dialog-tabcontent dd table td{border: 1px solid #FFFFFF;padding:3px 0; text-align:left;}
+.dd_bottom{ text-align:center;padding-top:10px;clear:both; }
+.dialog-tabcontent dd h4{ margin-bottom:5px;font-weight:bold;}
+.dialog-foot {height:45px;margin:0 20px 0 50px;}
+.dialog-foot-l {width:50px;height:45px;float:left;margin-left:-50px;}
+.dialog-foot-r {width:20px;height:45px;float:right;margin-right:-20px;}
+.dialog-foot-i {width:50px;height:45px;left:100px;position:relative;}
+.dialog-right {height:140px;float:left;position:absolute;bottom:0;right:-90px;width:90px;}
+.dialog-ji{float: right;padding-left: 75px;}
+.dialog-tabcontent{border: 1px solid #CCCCCC;}
+
+
+/*图标上文字阴影*/
+.icon_shadow{
+	background: none repeat scroll 0 0 #FFFFFF;
+    color: #000000;
+    display: inline-block;
+    font-size: 12px;
+    height: 18px;
+    line-height: 19px;
+    opacity: 0.6;
+    padding: 0 2px;
+    text-shadow: 4px 5px 7px #000000;
+}
+.page_ctr{
+	background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #CCCCCC;
+    cursor: pointer;
+    height: 22px;
+    width: 30px;
+}
+.page_ctr:hover{border:1px solid #bbb; background:#ccc;}
+.dd_ul li{line-height:30px;}
+.dd_ul li em{min-width:65px;text-align:right; display:inline-block;}
+
+.dialog-skill li{list-style: square outside none; margin-left: 20px;}
+.dialog-but{border: 1px solid #999999; cursor: pointer; padding: 3px;}
+.dialog-but:hover, .dialog-content .dialog-but:active{background: none repeat scroll 0 0 #E0E0E0;}
+.dialog-task li{padding:2px 0;}
+.dialog-locus {position: absolute; right: 10px;}
+
+.architecture ul li{padding:3px 0;}
+.architecture label{display: block;float: left; text-align: right;vertical-align: middle; width:60px;font-weight:bold ;}
+.architecture span{word-break: break-all; color: #666;display: block; padding-left:5px;text-align: left;vertical-align: middle; margin-left:60px;}
+.blue{ color:blue;}
+.red{ color:red;padding:0 3px;}
+
+.create-orders li{float:left;width:140px; text-align:center;padding: 3px 0;}
+
+

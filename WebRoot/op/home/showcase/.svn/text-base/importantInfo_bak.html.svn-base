@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../../home/resource/js/jquery-1.5.1.min.js"></script>
+<style type="text/css">
+<!--
+.word {
+font-family: "宋体";/*字体*/
+color: #000000;/*字体颜色*/
+text-decoration: none;
+border-top-width: 1px;/*这几个1PX为虚线粗线,单产像素*/
+border-right-width: 1px;
+border-bottom-width: 1px;
+border-left-width: 1px;
+border-top-style: none;
+border-right-style: none;
+border-bottom-style: dashed;
+border-left-style: none;
+border-top-color: #b3dcfd;/*这些值为虚线颜色*/
+border-right-color: #b3dcfd;
+border-bottom-color: #b3dcfd;
+border-left-color: #b3dcfd;
+}
+-->
+</style>
+
+<script type="text/javascript">  
+
+</script>  
+
+</head>
+<body>
+<div style="margin:0 0 0 20;font-size:12px;">
+<table width="100%" id="mytab" border="0" >
+<tr>
+<td width="60%" class="word" >
+重要公告告文标题和概要信息(滚动显示)
+</td>
+<td width="40%" class="word" align="right">
+[2011年5月12日 13:20:13]
+</td>
+</tr>
+<tr>
+<td width="60%" class="word" >
+重要公告告文标题和概要信息(滚动显示)
+</td>
+<td width="40%" class="word" align="right">
+[2011年5月12日 13:20:13]
+</td>
+</tr>
+<tr>
+<td width="60%" class="word" >
+重要公告告文标题和概要信息(滚动显示)
+</td>
+<td width="40%" class="word" align="right">
+[2011年5月12日 13:20:13]
+</td>
+</tr>
+<tr>
+<td width="60%" class="word" >
+重要公告告文标题和概要信息(滚动显示)
+</td>
+<td width="40%" class="word" align="right">
+[2011年5月12日 13:20:13]
+</td>
+</tr>
+<tr>
+<td width="60%" class="word" >
+重要公告告文标题和概要信息(滚动显示)
+</td>
+<td width="40%" class="word" align="right">
+[2011年5月12日 13:20:13]
+</td>
+</tr>
+</table>
+
+</div>
+
+</body>
+</html>

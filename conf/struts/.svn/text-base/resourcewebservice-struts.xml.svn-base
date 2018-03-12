@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="resourcewebservice" extends="struts-default">
+
+
+	<action name="getBaseStationByAreaAction" class="resourceWebServiceAction" method="getBaseStationByAreaAction">
+	</action>
+	<action name="getAreaByBaseStationAction" class="resourceWebServiceAction" method="getAreaByBaseStationAction">
+	</action>
+	<action name="getResourceByAssociatedTypeAction" class="resourceWebServiceAction" method="getResourceByAssociatedTypeAction">
+	</action>
+	<action name="getResourceByreIdAndreTypeAction" class="resourceWebServiceAction" method="getResourceByreIdAndreTypeAction">
+	</action>
+	<action name="getStationByBaseStationAction" class="resourceWebServiceAction" method="getStationByBaseStationAction">
+	</action>
+	<action name="getBaseStationByStationAction" class="resourceWebServiceAction" method="getBaseStationByStationAction">
+	</action>
+	<action name="getStationCountByAreaAction" class="resourceWebServiceAction" method="getStationCountByAreaAction">
+	</action>
+	<action name="getBaseStationCountByAreaAction" class="resourceWebServiceAction" method="getBaseStationCountByAreaAction">
+	</action>
+	<action name="getEntityListRingByAetgAndGPSDistanceAndPagingAction" class="resourceWebServiceAction" method="getEntityListRingByAetgAndGPSDistanceAndPagingAction">
+	</action>
+	<action name="getReportResourceListAction" class="resourceWebServiceAction" method="getReportResourceListAction">
+	</action>
+	<action name="getCellByNameAction" class="resourceWebServiceAction" method="getCellByNameAction">
+	</action>
+	<action name="getBaseStationByNameAction" class="resourceWebServiceAction" method="getBaseStationByNameAction">
+	</action>
+	<action name="getAppArrsByRecursionForSrcAction" class="resourceWebServiceAction" method="getAppArrsByRecursionForSrcAction">
+	</action>
+	<action name="getRoomByAreasAction" class="resourceWebServiceAction" method="getRoomByAreasAction">
+	</action>
+	<action name="getResourceEntitysByAetgsAction" class="resourceWebServiceAction" method="getResourceEntitysByAetgsAction">
+	</action>
+	<action name="getResByAreasAction" class="resourceWebServiceAction" method="getResByAreasAction">
+	</action>
+	<action name="getResByAreasRecursionAction" class="resourceWebServiceAction" method="getResByAreasRecursionAction">
+	</action>
+	
+	</package>
+</struts>

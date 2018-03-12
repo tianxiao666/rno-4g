@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- StructureCommonService  --> 
+	<bean id="resourceWebServiceAction" class="com.iscreate.op.action.networkresourcemanage.ResourceWebServiceAction"  singleton="false">
+		<property name="structureCommonService" ref="structureCommonService"></property>
+		<property name="dictionary" ref="dictionary"></property>
+		<property name="quickSort" ref="quickSort"></property>
+		<property name="staffOrganizationService" ref="staffOrganizationService"></property>
+	</bean>
+</beans>

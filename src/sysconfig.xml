@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SystemConfig>
+	<name>怡创移动通信4G网络优化软件平台</name>
+	<comment></comment>
+	<version>V1.0.0 Beta</version>
+	<!-- d:dev,t:test,u:uat,p:prod -->
+	<Enviroment>d</Enviroment>
+	<EmailSetting>
+		<mailServerHost>mail.iscreate.com</mailServerHost>
+		<mailServerPort>25</mailServerPort>
+		<validate>true</validate>
+		<userName>iosm@iscreate.com</userName>
+		<password>iscreate321*</password>
+		<fromAddress>iosm@iscreate.com</fromAddress>
+	</EmailSetting>
+	<outlinking>
+		<d>			
+			<ops>
+				<projname>ops</projname>
+				<desc></desc>
+				<url>http://127.0.0.1:8080/ops/</url>
+			</ops>
+		</d>
+		<t>			
+			<ops>
+				<projname>ops</projname>
+				<desc></desc>
+				<url>http://192.168.206.107:8080/ops/</url>
+			</ops>
+		</t>
+		<u>			
+			<ops>
+				<projname>ops</projname>
+				<desc></desc>
+				<url>http://uatapp.iosm.cn:8080/ops/</url>
+			</ops>
+		</u>
+		<p>			
+			<ops>
+				<projname>ops</projname>
+				<desc></desc>
+				<url>http://ag1.iosm.cn/ops/</url>
+			</ops>
+		</p>
+	</outlinking>
+	<!-- 终端版本更新信息 -->
+	<Terminalupdatemess>
+		<versionCode>29</versionCode>
+		<versionName>4.23t</versionName>
+		<description>更新信息</description>
+		<updateTimeValue>2013-06-25 12:12:12</updateTimeValue>
+		<url>http://192.168.206.230:8080/ops/IOSM.apk</url>
+	</Terminalupdatemess>
+	<MapSetting>
+		<Map>BaiduMap</Map>
+		<!--
+			GoogleMap:使用GoogleMap地图 MapABC:使用MapABC地图
+		-->
+		<GoogleMap>
+			<url>http://maps.google.cn/maps/api/js?v=3.2&amp;sensor=false</url>
+			<key></key>
+		</GoogleMap>
+		<MapABC>
+			<url>http://app.mapabc.com/apis?&amp;t=flashmap&amp;v=2.2&amp;key=
+			</url>
+			<key>ccf2b5a59dc7314d746c48a73f5036db7762ef52a8d5273a3b632aaca20b857e8ab510c1dc8334a3
+			</key>
+		</MapABC>
+		<BaiduMap>
+			<url>http://api.map.baidu.com/api?v=1.3</url>
+			<key></key>
+		</BaiduMap>
+		<GoogleMapCorrectionList>
+			<LatLng id="jinshanDasha">
+				<accurateLat>23.14651977</accurateLat>
+				<accurateLng>113.34106554</accurateLng>
+				<offsetLat>-0.00255757</offsetLat>
+				<offsetLng>0.00537783</offsetLng>
+				<remarks>金山大厦</remarks>
+			</LatLng>
+			<LatLng id="fulijunyueDasjiudian">
+				<accurateLat>23.12434</accurateLat>
+				<accurateLng>113.3181</accurateLng>
+				<offsetLat>-0.00255757</offsetLat>
+				<offsetLng>0.00537783</offsetLng>
+				<remarks>富力君悦大酒店</remarks>
+			</LatLng>
+			<LatLng id="xiancunZonghelou">
+				<accurateLat>23.12486</accurateLat>
+				<accurateLng>113.325821</accurateLng>
+				<offsetLat>-0.00255757</offsetLat>
+				<offsetLng>0.00537783</offsetLng>
+				<remarks>冼村综合楼</remarks>
+			</LatLng>
+			<LatLng id="zhonghaiGuanyuanGuoji">
+				<accurateLat>23.12542235</accurateLat>
+				<accurateLng>113.3351851</accurateLng>
+				<offsetLat>-0.00255757</offsetLat>
+				<offsetLng>0.00537783</offsetLng>
+				<remarks>中海观园国际</remarks>
+			</LatLng>
+		</GoogleMapCorrectionList>
+
+		<BaiduMapCorrectionList>
+			<LatLng id="jinshanDasha">
+				<accurateLat>23.14651977</accurateLat>
+				<accurateLng>113.34106554</accurateLng>
+				<offsetLat>0.003197</offsetLat>
+				<offsetLng>0.011987</offsetLng>
+				<remarks>金山大厦</remarks>
+			</LatLng>
+			<LatLng id="fulijunyueDasjiudian">
+				<accurateLat>23.12434</accurateLat>
+				<accurateLng>113.3181</accurateLng>
+				<offsetLat>0.003197</offsetLat>
+				<offsetLng>0.011987</offsetLng>
+				<remarks>富力君悦大酒店</remarks>
+			</LatLng>
+			<LatLng id="xiancunZonghelou">
+				<accurateLat>23.12486</accurateLat>
+				<accurateLng>113.325821</accurateLng>
+				<offsetLat>0.003197</offsetLat>
+				<offsetLng>0.011987</offsetLng>
+				<remarks>冼村综合楼</remarks>
+			</LatLng>
+			<LatLng id="zhonghaiGuanyuanGuoji">
+				<accurateLat>23.12542235</accurateLat>
+				<accurateLng>113.3351851</accurateLng>
+				<offsetLat>0.003197</offsetLat>
+				<offsetLng>0.011987</offsetLng>
+				<remarks>中海观园国际</remarks>
+			</LatLng>
+		</BaiduMapCorrectionList>
+	</MapSetting>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments></arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+</SystemConfig>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datas>
+	<titles>
+		<Car>
+			<title name="车牌" col="carNumber" notnull="true"/>
+			<title name="品牌" col="brand"/>
+			<title name="车辆型号" col="carModel"/>
+			<title name="车辆类型" col="type" notnull="true"/>
+			<title name="座位数量" col="seatCount"/>
+			<title name="载客数量" col="passengerNumber"/>
+			<title name="租凭费用" col="leasePay"/>
+			<title name="保管费用" col="custodyFee"/>
+			<title name="车龄" col="carAge"/>
+			<title name="车辆厂家" col="carMarker"/>
+		</Car>
+		<CarBizBizunit>
+			<title name="车辆所属区域" col="bizunitInstanceId" notnull="true"/>
+		</CarBizBizunit>
+		<Driver>
+			<title name="司机姓名" col="name" notnull="true"/>
+			<title name="司机账号" col="accountId" notnull="true"/>
+			<title name="司机身份证" col="identificationId"/>
+			<title name="司机电话" col="phone"/>
+			<title name="司机年龄" col="age"/>
+			<title name="驾照类型" col="driverLicenseType"/>
+			<title name="司机工资" col="wage"/>
+			<title name="司机住址" col="address"/>
+		</Driver>
+		<DriverBizunit>
+			<title name="司机所属区域" col="bizunitInstanceId" notnull="true"/>
+		</DriverBizunit>
+		<Mobile>
+			<title name="终端电话(SIM卡号)" col="telphoneNo"/>
+			<title name="GPS终端号（ID）" col="clientimei" notnull="true"/>
+			<title name="终端类型" col="mobileType"/>
+			<title name="开通时间" col="launchedTime"/>
+		</Mobile>
+	</titles>
+</datas>
+
+
+

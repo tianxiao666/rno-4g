@@ -1,0 +1,11 @@
+/* CSS Document */
+#selectSkill{ display:none; width:730px; position:absolute; left:50%;  margin-left:-365px; top:70px; background:#fff; border:5px solid #666; border-radius:5px; z-index:350;}
+.input-span1{ background: url("../image/cmp-bg2.gif") repeat-x scroll 0 0 transparent;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px 4px 4px 4px;
+    display: block;
+    margin: 8px auto;
+    padding: 2px 0 2px 5px;
+    width: 700px;}
+.input-span1 select{ width:100px; padding-bottom:0px;}
+.show-Card{ color:#999; width:160px;}

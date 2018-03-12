@@ -1,0 +1,4 @@
+@CHARSET "UTF-8";
+.checked{background-image:url(../images/default/menu/checked.gif)}
+.unchecked{background-image:url(../images/default/menu/unchecked.gif)} 
+.x-grid3-row-radioBtn{background-image:url(../images/default/grid/row-radio-sprite.gif); /*一个radio图片*/} 

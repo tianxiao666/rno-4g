@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>公司重要公告</title>
+<link rel="stylesheet" type="text/css" href="../../home/showcase/news_roller/javascript/roller.css" />
+<script type="text/javascript" src="../../home/resource/js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="../../home/showcase/news_roller/javascript/jquery.roller.js"></script>
+<style type="text/css">
+<!--
+.word {
+font-family: "宋体";/*字体*/
+color: #000000;/*字体颜色*/
+text-decoration: none;
+border-top-width: 1px;/*这几个1PX为虚线粗线,单产像素*/
+border-right-width: 1px;
+border-bottom-width: 1px;
+border-left-width: 1px;
+border-top-style: none;
+border-right-style: none;
+border-bottom-style: dashed;
+border-left-style: none;
+border-top-color: #b3dcfd;/*这些值为虚线颜色*/
+border-right-color: #b3dcfd;
+border-bottom-color: #b3dcfd;
+border-left-color: #b3dcfd;
+cursor: pointer;
+}
+
+.ellipsis_row{
+width:550px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+-->
+</style>
+
+
+
+</head>
+<body style="margin:0px auto;padding:0px 0 0 0px;">
+<div id="container" style="margin:0 0 0 10px;font-size:12px;">
+</div>
+<script type="text/javascript">
+		$('#container').roller({
+		 	showNum:4,
+		 	interval: 3000,
+			direction: 'up', //滚动方向
+		 	items: [{
+				title: '中央气象台继续发布暴雨蓝色预警，提醒事业部、项目密切留意当地天气预报，做好预防措施，保证安全',  			//a的title属性 
+				html: '<div  style="float:left;" class="word ellipsis_row" >中央气象台继续发布暴雨蓝色预警，提醒事业部、项目密切留意当地天气预报，做好预防措施，保证安全</div><div style="float:left;padding:0 0 0 20px;" class="word" >2011-08-22</div>', //a的innerHTML
+				target: '_blank', 					//a的target
+				href: ''	//a的href
+			},{
+				title: '中央气象台21日发布今年第4号热带风暴预计将于22日夜间到23日上午在广东台山到徐闻一带沿海登陆。提醒事业部、项目密切留意当地天气预报，做好预防措施，保证安全！',
+				html: '<div  style="float:left;" class="word ellipsis_row" >中央气象台21日发布今年第4号热带风暴预计将于22日夜间到23日上午在广东台山到徐闻一带沿海登陆。提醒事业部、项目密切留意当地天气预报，做好预防措施，保证安全！</div><div style="float:left;padding:0 0 0 20px;" class="word" >2011-08-22</div>',   
+				target: '_blank', 	
+				href: 'http://www.nmc.gov.cn/publish/typhoon/warning.htm'
+			},{
+				title: '华南持续高温天气，室外作业注意预防中暑，高空坠落',
+				html: '<div  style="float:left;" class="word ellipsis_row" >华南持续高温天气，室外作业注意预防中暑，高空坠落</div><div style="float:left;padding:0 0 0 20px;" class="word" >2011-08-22</div>',   
+				target: '_blank', 	
+				href: 'http://www.nmc.gov.cn/publish/typhoon/warning.htm'
+			},{
+				title: '近期四川盆地、云南部分地区有强降水，请提前做好保障措施，注意抢修安全',
+				html: '<div  style="float:left;" class="word ellipsis_row" >近期四川盆地、云南部分地区有强降水，请提前做好保障措施，注意抢修安全</div><div style="float:left;padding:0 0 0 20px;" class="word" >2011-08-22</div>',   
+				target: '_blank', 	
+				href: 'http://www.nmc.gov.cn/publish/typhoon/warning.htm'
+			}, {
+				title: '近期发生多起基站被盗案件，幕后涉及合作单位的个别人员。提醒及时收回申请离职人员的员工证、出入证以及基站钥匙等',
+				html: '<div  style="float:left;" class="word ellipsis_row" >近期发生多起基站被盗案件，幕后涉及合作单位的个别人员。提醒及时收回申请离职人员的员工证、出入证以及基站钥匙等</div><div style="float:left;padding:0 0 0 20px;" class="word" >2011-08-22</div>',   
+				target: '_blank', 	
+				href: 'http://www.nmc.gov.cn/publish/typhoon/warning.htm'
+			}, {
+				title: '近期江南、华南、西南东部持续高温，天燥心不燥、确保安全最重要',
+				html: '<div  style="float:left;" class="word ellipsis_row" >近期江南、华南、西南东部持续高温，天燥心不燥、确保安全最重要</div><div style="float:left;padding:0 0 0 20px;" class="word" >2011-08-22</div>',   
+				target: '_blank', 	
+				href: 'http://www.nmc.gov.cn/publish/typhoon/warning.htm'
+			}]
+		});
+	</script> 
+</body>
+</html>

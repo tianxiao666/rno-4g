@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="systemStaff" extends="struts-default" namespace="/op/system">
+	
+	    
+	    <action name="getProviderSystemStaffByOrgIdAction" class="sysOrgUserAction" method="getProviderSystemStaffByOrgIdAction">
+	      <result name="success">/op/organization/providerOrgAccountPage.jsp</result>
+	    </action>
+	    
+	    <action name="getProviderSystemAccountAjaxAction" class="sysOrgUserAction" method="getProviderSystemAccountAjaxAction">
+	    </action>
+	    
+	    <action name="getSysRoleByUserGroupAjaxAction" class="sysOrgUserAction" method="getSysRoleByUserGroupAjaxAction">
+	    </action>
+	    
+	    <!--检测账号是否存在 -->
+		<!--<action name="checkProviderAccountAjaxAction" class="providerOrganizationAction" method="checkProviderAccountAjaxAction">
+		</action>-->
+		
+		 <!--检测账号是否可用或者账号异常 -->
+	    <action name="checkAccountAjaxAction" class="sysOrgUserAction" method="checkAccountAjaxAction">
+	    </action>
+	    
+	    <action name="getProviderSystemStaffAction" class="sysOrgUserAction" method="getProviderSystemStaffAction">
+	   		<result name="success">/op/staffMultiDivPage.jsp</result>
+	    </action>
+	    
+	    <action name="getAllSysRoleAction" class="sysOrgUserAction" method="getAllSysRoleAction">
+	    </action>
+	    
+	    
+	    <action name="updateStaffAndUserRoleAction" class="sysOrgUserAction" method="updateStaffAndUserRoleAction">
+	    </action>
+	    
+	    <action name="getSysEnterpriseUrlDictionaryAjaxAction" class="sysOrgUserAction" method="getSysEnterpriseUrlDictionaryAjaxAction">
+	    </action>
+	    
+	    <action name="createStaffAndUserRoleAction" class="sysOrgUserAction" method="createStaffAndUserRoleAction">
+	    </action>
+	    
+	    <!-- 解锁用户账号 -->
+	    <action name="setNormalAccountAction" class="sysOrgUserAction" method="setNormalAccountAction">
+	    </action>
+	    
+	    
+		</package>
+</struts>

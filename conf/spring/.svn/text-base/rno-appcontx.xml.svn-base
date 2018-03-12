@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+     <!-- 登录 -->
+     <bean id="rnoLoginAction" class="com.iscreate.op.action.rno.RnoLoginAction" singleton="false">
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+		<property name="sysPermissionDao" ref="sysPermissionDao" />
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	    <property name="sysAccountService" ref="sysAccountService" />
+	    <property name="sysPermissionService" ref="sysPermissionService" />
+	    <property name="sysSuperAdminService" ref="sysSuperAdminService" />
+	    <property name="sysUserRelaPermissionService" ref="sysUserRelaPermissionService" />
+	    <property name="xmlService" ref="xmlService" />
+		<property name="rnoCommonService" ref="rnoCommonService" />
+	</bean>
+	
+	<!-- ######################### dao ######################### 开始 -->
+	<bean id="rnoBscDao" class="com.iscreate.op.dao.rno.RnoBscDaoImpl"
+		singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="rnoCellDao" class="com.iscreate.op.dao.rno.RnoCellDaoImpl"
+		singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="rnoTrafficStaticsDao" class="com.iscreate.op.dao.rno.RnoTrafficStaticsDaoImpl"
+		singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 渲染规则 -->
+	<bean id="rnoRendererRuleDao" class="com.iscreate.op.dao.rno.RnoRendererRuleDaoImpl"
+		singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="rnoStsDao"
+		class="com.iscreate.op.dao.rno.RnoStsDaoImpl" singleton="false" >
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="rnoStsDescriptorDao" class="com.iscreate.op.dao.rno.RnoStsDescriptorDaoImpl"
+		singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 话务性能渲染配置 -->
+	<bean id="rnoTrafficRendererDao" class="com.iscreate.op.dao.rno.RnoTrafficRendererDaoImpl"
+		singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+
+	<bean id="rnoCommonDao"
+		class="com.iscreate.op.dao.rno.RnoCommonDaoImpl" singleton="false" >
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 总干扰分析Dao -->
+	<bean id="rnoInterferenceAnalysisDao"
+		class="com.iscreate.op.dao.rno.RnoInterferenceAnalysisDaoImpl" singleton="false" >
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="rnoPlanDesignDao"
+		class="com.iscreate.op.dao.rno.RnoPlanDesignDaoImpl" singleton="false" >
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+		<property name="rnoStructureAnalysisDao" ref="rnoStructureAnalysisDao"></property>
+	</bean>
+	<!-- DT分析Dao -->
+	<bean id="rnoDtDao"
+		class="com.iscreate.op.dao.rno.RnoDtDaoImpl" singleton="false" >
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 资源管理 -->
+	<bean id="rnoResourceManageDao" class="com.iscreate.op.dao.rno.RnoResourceManageDaoImpl" singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="rnoResourceManageHbaseDao" class="com.iscreate.op.dao.rno.RnoResourceManageHbaseDaoImpl" singleton="false">
+		
+	</bean>
+	<!-- ######################### dao ######################### 结束 -->
+
+	<!-- ######################### 文件解析器 ######################### 开始 -->
+	<!-- 解析器管理器 -->
+	<bean id="fileParserManager" class="com.iscreate.op.service.rno.parser.FileParserManager"
+		singleton="true" init-method="init">
+	</bean>
+	<!-- bean id="excelFileParserBase" class="com.iscreate.op.service.rno.parser.ExcelFileParserBase" 
+		abstract="true"> </bean> -->
+	<!-- gsm小区数据解析器 -->
+	<bean id="gsmCellFileParser" class="com.iscreate.op.service.rno.parser.GsmCellFileParser"
+		singleton="true">
+		<property name="excelService" ref="excelService"></property>
+		<property name="rnoCommonService" ref="rnoCommonService">
+		</property>
+		<property name="rnoBscDao" ref="rnoBscDao"></property>
+		<property name="memCached" ref="memCached"></property>
+		<property name="fileParserManager" ref="fileParserManager"></property>
+		<property name="sysAreaDao" ref="sysAreaDao"></property>
+	</bean>
+	<!-- gsm小区配置数据解析器 -->
+	<bean id="gsmPlanCellFileParser" class="com.iscreate.op.service.rno.parser.GsmPlanCellFileParser"
+		singleton="true">
+		<property name="excelService" ref="excelService"></property>
+		<property name="rnoCommonService" ref="rnoCommonService">
+		</property>
+		<property name="rnoBscDao" ref="rnoBscDao"></property>
+		<property name="memCached" ref="memCached"></property>
+		<property name="fileParserManager" ref="fileParserManager"></property>
+		<property name="sysAreaDao" ref="sysAreaDao"></property>
+	</bean>
+	<!-- gsm小区简明描述数据解析器 -->
+	<bean id="gsmCellBriefFileParser"
+		class="com.iscreate.op.service.rno.parser.GsmCellBriefFileParser"
+		singleton="true">
+		<property name="excelService" ref="excelService"></property>
+		<property name="memCached" ref="memCached"></property>
+		<property name="fileParserManager" ref="fileParserManager"></property>
+	</bean>
+	<!-- gsm城市网络质量指标解析器 -->
+	<bean id="gsmCityNetQualityFileParser"
+		class="com.iscreate.op.service.rno.parser.GsmCityNetQualityFileParser"
+		singleton="true">
+		<property name="excelService" ref="excelService"></property>
+		<property name="fileParserManager" ref="fileParserManager"></property>
+		<property name="rnoTrafficStaticsDao" ref="rnoTrafficStaticsDao"></property>
+		<property name="memCached" ref="memCached"></property>
+	</bean>
+	<!-- gsm邻区数据解析器 -->
+	<bean id="gsmNcellFileParser" class="com.iscreate.op.service.rno.parser.GsmNcellFileParser"
+		singleton="true">
+		<property name="excelService" ref="excelService"></property>
+		<property name="rnoCellDao" ref="rnoCellDao"></property>
+		<property name="rnoBscDao" ref="rnoBscDao"></property>
+		<property name="memCached" ref="memCached"></property>
+		<property name="fileParserManager" ref="fileParserManager"></property>
+		<property name="sysAreaDao" ref="sysAreaDao"></property>
+	</bean>
+	<!-- gsm语音数据解析类 -->
+	<bean id="gsmAudioTrafficStaticsFileParser" class="com.iscreate.op.service.rno.parser.GsmAudioTrafficStaticsFileParser" singleton="true">
+	    <property name="excelService" ref="excelService"></property>
+	    <property name="fileParserManager" ref="fileParserManager"></property>
+	    <property name="rnoBscDao" ref="rnoBscDao"></property>
+	    <property name="memCached" ref="memCached"></property>
+	</bean>
+	<!-- gsm数据业务数据解析类 -->
+	<bean id="gsmDataTrafficStaticsFileParser" class="com.iscreate.op.service.rno.parser.GsmDataTrafficStaticsFileParser" singleton="true">
+	    <property name="excelService" ref="excelService"></property>
+	    <property name="fileParserManager" ref="fileParserManager"></property>
+	    <property name="rnoBscDao" ref="rnoBscDao"></property>
+	    <property name="memCached" ref="memCached"></property>
+	</bean>
+	
+	<!-- 干扰数据的导入excel处理类 -->
+	<bean id="gsmInterferenceExcelFileParser" class="com.iscreate.op.service.rno.parser.GsmInterferenceExcelFileParser" singleton="true">
+	    <property name="excelService" ref="excelService"></property>
+	    <property name="fileParserManager" ref="fileParserManager"></property>
+	    <property name="memCached" ref="memCached"></property>
+	    <property name="sysAreaDao" ref="sysAreaDao"></property>
+	</bean>
+	<!-- 切换统计数据的导入excel处理类 -->
+	<bean id="gsmChannelSwitchStatisticsFileParser" class="com.iscreate.op.service.rno.parser.GsmChannelSwitchStatisticsFileParser" singleton="true">
+	    <property name="excelService" ref="excelService"></property>
+	    <property name="fileParserManager" ref="fileParserManager"></property>
+	    <property name="memCached" ref="memCached"></property>
+	    <property name="sysAreaDao" ref="sysAreaDao"></property>
+	    <property name="rnoPlanDesignDao" ref="rnoPlanDesignDao"></property>
+	</bean>
+	<!-- ncs excel数据导入解析程序 -->
+	<bean id="gsmNcsExcelFileParser" class="com.iscreate.op.service.rno.parser.GsmNcsExcelFileParser" singleton="true">
+	    <property name="excelService" ref="excelService"></property>
+	    <property name="fileParserManager" ref="fileParserManager"></property>
+	    <property name="memCached" ref="memCached"></property>
+	    <property name="sysAreaDao" ref="sysAreaDao"></property>
+	</bean>
+	
+	<!-- 小区结构指标 excel数据导入解析程序 -->
+	<bean id="gsmCellStructureExcelFileParser" class="com.iscreate.op.service.rno.parser.GsmCellStructureExcelFileParser" singleton="true">
+	    <property name="excelService" ref="excelService"></property>
+	    <property name="fileParserManager" ref="fileParserManager"></property>
+	    <property name="memCached" ref="memCached"></property>
+	    <property name="sysAreaDao" ref="sysAreaDao"></property>
+	</bean>
+	
+	<!-- dt log数据解析 -->
+	<bean id="gsmDTDLTxtFileParser" class="com.iscreate.op.service.rno.parser.GsmDTDLTxtFileParser" singleton="true">
+	    <property name="fileParserManager" ref="fileParserManager"></property>
+	    <property name="memCached" ref="memCached"></property>
+	    <property name="rnoCommonService" ref="rnoCommonService"></property>
+	</bean>
+	<!-- ######################### 文件解析器 ######################### 结束 -->
+
+
+
+	<!-- ######################### service ######################### 开始 -->
+	<bean id="rnoResourceManagerService"
+		class="com.iscreate.op.service.rno.RnoResourceManagerServiceImpl">
+		<property name="rnoCellDao" ref="rnoCellDao"></property>
+		<property name="memCached" ref="memCached"></property>
+		<property name="rnoBscDao" ref="rnoBscDao"></property>
+		<property name="sysAreaService" ref="sysAreaService" />
+		<property name="sysAreaDao" ref="sysAreaDao" />
+		<property name="rnoResourceManageDao" ref="rnoResourceManageDao" />
+	</bean>
+	<bean id="rnoTrafficStaticsService"
+		class="com.iscreate.op.service.rno.RnoTrafficStaticsServiceImpl">
+		<property name="rnoTrafficStaticsDao" ref="rnoTrafficStaticsDao"></property>
+		<property name="memCached" ref="memCached"></property>
+		<property name="rnoStsDao"
+			ref="rnoStsDao">
+		</property>
+		<property name="sysAreaService" ref="sysAreaService"></property>
+		<property name="sysAreaDao" ref="sysAreaDao"></property>
+		<property name="rnoReportDao" ref="rnoReportDao" />
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 渲染规则  -->
+    <bean id="rnoRendererRuleService" class="com.iscreate.op.service.rno.RnoRendererRuleServiceImpl">
+        <property name="rnoRendererRuleDao" ref="rnoRendererRuleDao"></property>
+    </bean>
+    
+    <!-- 通用service -->
+    <bean id="rnoCommonService" class="com.iscreate.op.service.rno.RnoCommonServiceImpl">
+        <property name="sysAreaDao" ref="sysAreaDao" />
+        <property name="sysAreaService" ref="sysAreaService" />
+        <property name="fileParserManager" ref="fileParserManager"></property>
+        <property name="memCached" ref="memCached"></property>
+        <property name="rnoCellDao" ref="rnoCellDao"></property>
+	    <property name="rnoCommonDao" ref="rnoCommonDao"></property>
+    </bean>
+    
+    <!-- 话务性能渲染配置 -->
+	<bean id="rnoTrafficRendererService" class="com.iscreate.op.service.rno.RnoTrafficRendererServiceImpl"
+		singleton="false">
+		<property name="rnoTrafficRendererDao" ref="rnoTrafficRendererDao"></property>
+	</bean>
+	
+	<!-- 总干扰分析Service -->
+	<bean id="rnoInterferenceAnalysisService"
+		class="com.iscreate.op.service.rno.RnoInterferenceAnalysisServiceImpl" singleton="false" >
+		<property name="rnoInterferenceAnalysisDao" ref="rnoInterferenceAnalysisDao"></property>
+		<property name="memCached" ref="memCached"></property>
+	</bean>
+	<bean id="rnoPlanDesignService" class="com.iscreate.op.service.rno.RnoPlanDesignServiceImpl"
+		singleton="false">
+		<property name="rnoPlanDesignDao" ref="rnoPlanDesignDao"></property>
+		<property name="rnoTaskDao" ref="rnoTaskDao"></property>
+		<property name="memCached" ref="memCached"></property>
+	</bean>
+	<bean id="rnoDtService" class="com.iscreate.op.service.rno.RnoDtServiceImpl"
+		singleton="false">
+		<property name="rnoDtDao" ref="rnoDtDao"></property>
+	</bean>
+		<bean id="rnoResourceManagerHbaseService"
+		class="com.iscreate.op.service.rno.RnoResourceManagerHbaseServiceImpl">
+		<property name="rnoResourceManageHbaseDao" ref="rnoResourceManageHbaseDao" />
+	</bean>
+   	<!-- ######################### service ######################### 结束 -->
+
+	<!-- ######################### action ######################### 开始 -->
+	<!-- 资源配置管理 -->
+	<bean id="rnoResourceManagerAction" class="com.iscreate.op.action.rno.RnoResourceManagerAction" singleton="false">
+		<property name="rnoResourceManagerService" ref="rnoResourceManagerService">
+		</property>
+		<property name="rnoTrafficStaticsService" ref="rnoTrafficStaticsService"></property>
+		<property name="rnoCommonService" ref="rnoCommonService"></property>
+		<property name="rnoResourceManagerHbaseService" ref="rnoResourceManagerHbaseService">
+		</property>
+	</bean>
+
+	<!-- 地图基础功能 -->
+	<bean id="rnoMapGroundSupportAction" class="com.iscreate.op.action.rno.RnoMapGroundSupportAction"  singleton="false">
+		<property name="rnoResourceManagerService" ref="rnoResourceManagerService">
+		</property>
+		<property name="rnoTrafficStaticsService" ref="rnoTrafficStaticsService"></property>
+		<property name="rnoCommonService" ref="rnoCommonService"></property>
+		</bean>
+	<!-- 通信指标功能 -->
+	<bean id="rnoTrafficStaticsAction" class="com.iscreate.op.action.rno.RnoTrafficStaticsAction"  singleton="false">
+		<property name="rnoResourceManagerService" ref="rnoResourceManagerService">
+		</property>
+		<property name="rnoTrafficStaticsService" ref="rnoTrafficStaticsService"></property>
+		<property name="memCached" ref="memCached"></property>
+		<property name="rnoCommonService" ref="rnoCommonService"></property>
+	</bean>
+	<!-- 渲染规则  -->
+	<bean id="rnoRendererRuleAction" class="com.iscreate.op.action.rno.RnoRendererRuleAction"  singleton="false">
+		<property name="rnoRendererRuleService" ref="rnoRendererRuleService">
+		</property>
+	</bean>
+	<!--通用功能action -->
+	<bean id="rnoCommonAction" class="com.iscreate.op.action.rno.RnoCommonAction"  singleton="false">
+	    <property name="rnoCommonService" ref="rnoCommonService"></property>
+	    
+	</bean>
+	<!--通用功能action -->
+	<bean id="rnoTrafficRendererAction" class="com.iscreate.op.action.rno.RnoTrafficRendererAction"  singleton="false">
+	    <property name="rnoTrafficRendererService" ref="rnoTrafficRendererService"></property>
+	</bean>
+	
+
+	
+	<!-- 总干扰分析Action -->
+	<bean id="rnoInterferenceAnalysisAction"
+		class="com.iscreate.op.action.rno.RnoInterferenceAnalysisAction" singleton="false" >
+		<property name="rnoCommonService" ref="rnoCommonService"></property>
+	    <property name="rnoTrafficStaticsService" ref="rnoTrafficStaticsService"></property>
+	    <property name="rnoResourceManagerService" ref="rnoResourceManagerService"></property>
+	    <property name="rnoInterferenceAnalysisService" ref="rnoInterferenceAnalysisService"></property>
+	</bean>
+	<!-- 优化规划 -->
+	<bean id="rnoPlanDesignAction" class="com.iscreate.op.action.rno.RnoPlanDesignAction"  singleton="false">
+	    <property name="rnoPlanDesignService" ref="rnoPlanDesignService"></property>
+	    <property name="rnoCommonService" ref="rnoCommonService"></property>
+	    <property name="rnoResourceManagerService" ref="rnoResourceManagerService"></property>
+	    <property name="rnoStructureService" ref="rnoStructureService"></property>
+	</bean>
+	<!-- DT分析 -->
+	<bean id="rnoDtAction" class="com.iscreate.op.action.rno.RnoDtAction"  singleton="false">
+	    <property name="rnoDtService" ref="rnoDtService"></property>
+	    <property name="rnoCommonService" ref="rnoCommonService"></property>
+	</bean>
+	
+	<!-- ######################### action ######################### 开始 -->
+</beans>

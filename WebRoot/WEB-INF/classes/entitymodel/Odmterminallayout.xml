@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 模块 端子默认布局 -->
+<entity>
+ <name>Odmterminallayout</name>
+ <attribute type="java.lang.Long" length="128" primary="TRUE" index="TRUE" nullable="FALSE" regex="">id</attribute>
+ <attribute type="java.lang.String" length="30" primary="FALSE" index="FALSE" nullable="FALSE" regex="">odmupdownorder</attribute>
+ <attribute type="java.lang.String" length="30" primary="FALSE" index="FALSE" nullable="FALSE" regex="">odmleftrightorder</attribute>
+ <attribute type="java.lang.Integer" length="11" primary="FALSE" index="FALSE" nullable="FALSE" regex="">odmorderflag</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="FALSE" regex="">odmrowcount</attribute>
+ <attribute type="java.lang.String" length="30" primary="FALSE" index="FALSE" nullable="FALSE" regex="">terminalorder</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="FALSE" regex="">terminalrowcount</attribute>
+ <attribute type="java.lang.Long" length="128" primary="FALSE" index="FALSE" nullable="FALSE" regex="">resourceid</attribute>
+ <attribute type="java.lang.String" length="255" primary="FALSE" index="FALSE" nullable="FALSE" regex="">resourcetype</attribute>
+
+</entity>

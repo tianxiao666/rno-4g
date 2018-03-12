@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="workmanage_initworkflow" extends="iscreate-struts-default">
+		
+		<!-- 初始化系统工作流数据action -->
+		<action name="initSystemWorkflowAction" class="initWorkflowAction" method="initSystemWorkflowAction">
+			<result name="success">op/workmanage/success.jsp</result>
+		</action>
+		
+	</package>
+</struts>

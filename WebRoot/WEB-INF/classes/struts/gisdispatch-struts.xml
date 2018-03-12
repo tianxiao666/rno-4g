@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="gisdispatch" extends="struts-default">
+		<!-- 初始化地图 Action -->
+		<action name="initMapAction" class="gisDispatchAction" method="initMapAction"></action>
+		
+		<!-- 获取用户图层树配置 Action -->
+		<action name="getLayerTreeConfigAction" class="gisDispatchAction" method="getLayerTreeConfigAction"></action>
+		
+		<!-- 保存用户图层树配置 Action -->
+		<action name="savePicLayerConfigAction" class="gisDispatchAction" method="savePicLayerConfigAction"></action>
+		
+		<!-- 获取当前登录人区域信息 Action -->
+		<action name="getCurrentUserAreaAction" class="gisDispatchAction" method="getCurrentUserAreaAction"></action>
+		
+		<!-- 获取用户工单列表 Action -->
+		<action name="getWorkOrderListOfUserForGisDispatch" class="gisDispatchAction" method="getWorkOrderListOfUserForGisDispatch"></action>
+		
+		<!-- 获取用户任务单列表 Action -->
+		<action name="getTaskOrderListOfUserForGisDispatch" class="gisDispatchAction" method="getTaskOrderListOfUserForGisDispatch"></action>
+		
+		<!-- 地图缩放级别响应 Action -->
+		<action name="responseZoomLevelChangeAction" class="gisDispatchAction" method="responseZoomLevelChangeAction"></action>
+		
+		<!-- 获取图元详细任务信息 Action -->
+		<action name="getTaskDetailInfoOfGraphElementAction" class="gisDispatchAction" method="getTaskDetailInfoOfGraphElementAction"></action>
+		
+		<!-- 按条件搜索资源 Action -->
+		<action name="getResourceByConditionsAction" class="gisDispatchAction" method="getResourceByConditionsAction"></action>
+		
+		
+		<!-- 刷新图元 Action -->
+		<action name="refreshGraphElementAction" class="gisDispatchAction" method="refreshGraphElementAction"></action>
+		
+		<!-- 图元连线派发任务 Action -->
+		<action name="assignTaskOnPicUnitAction" class="gisDispatchAction" method="assignTaskOnPicUnitAction"></action>
+		
+		<!-- 获取特定图元信息 Action -->
+		<action name="getSpecifiedResourceInfoAction" class="gisDispatchAction" method="getSpecifiedResourceInfoAction"></action>
+		
+		<!-- 基于图元创建工单 Action -->
+		<action name="createWorkOrderOnPicUnitAction" class="gisDispatchAction" method="createWorkOrderOnPicUnitAction">
+			<result name="urgentrepair" type="redirect">
+				<param name="location">op/urgentrepair/loadCreateUrgentRepairWorkOrderPageForGISAction</param>
+				<param name="baseStationId">${baseStationId}</param>
+				<param name="baseStationType">${baseStationType}</param>
+			</result>
+			<result name="cardispatch" type="redirect">
+				<param name="location">op/cardispatch/cardispatch_applyworkorder.jsp</param>
+				<param name="baseStationId">${baseStationId}</param>
+				<param name="baseStationType">${baseStationType}</param>
+			</result>
+			<result name="fail">../../error.jsp</result>
+		</action>
+		
+		<!-- 初始化数据 -->
+		<action name="initGisDataAction" class="gisDispatchAction" method="initGisDataAction"></action>
+		
+		<!-- 获取监控资源 Action  -->
+		<action name="getMonitorResourceAction" class="gisDispatchAction" method="getMonitorResourceAction"></action>
+		
+		<!-- 刷新集中调度cache数据 Action  -->
+		<action name="refreshCacheDataAction" class="gisDispatchAction" method="refreshCacheDataAction"></action>
+	
+		
+		<!-- wang.ja2 BEGIN gisDispatchAreaAction -->
+		<action name="gis_area" class="gisDispatchAreaResourceAction"></action>
+		<!-- wang.ja2 END -->
+		
+	</package>
+</struts>

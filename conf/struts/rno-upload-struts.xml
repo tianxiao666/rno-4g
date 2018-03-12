@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="rno-upload" extends="struts-default">
+	
+	<!-- 初始化用户爱立信ncs数据管理页面 -->
+	 <action name="initRno2GEriNcsManageAction" class="rnoResourceManagerAction"
+			method="initRno2GEriNcsManageAction">
+			<result name="success">/op/rno/rno_res_2g_eri_ncs.jsp</result>
+		</action>
+	<!-- 初始化用户爱立信mrr数据管理页面 -->
+	<action name="initRno2GEriMrrManageAction" class="rnoResourceManagerAction"
+			method="initRno2GEriMrrManageAction">
+			<result name="success">/op/rno/rno_res_2g_eri_mrr.jsp</result>
+	</action>
+	<!-- 初始化用户爱立信fas数据管理页面 -->
+	<action name="initRnoEriFasManageAction" class="rnoResourceManagerAction"
+			method="initRnoEriFasManageAction">
+			<result name="success">/op/rno/rno_res_eri_fas.jsp</result>
+	</action>
+	<!-- 询问此时是否可以上传文件  -->
+	<action name="ifAllowedUploadFileAjaxAction" class="rnoFileUploadAction"
+			method="ifAllowedUploadFileAjaxAction">
+	</action>
+	<!-- 询问是否接收待上传的文件 -->
+	<action name="ifFileAcceptableAjaxAction" class="rnoFileUploadAction"
+			method="ifFileAcceptableAjaxAction">
+	</action>
+	<!-- 查询上传进度 -->
+	<action name="queryUploadFileProgressAction" class="rnoFileUploadAction"
+			method="queryUploadFileProgressAction">
+	</action>
+	<!-- 离线上传 -->
+	<action name="batchUploadFileAjaxAction" class="rnoFileUploadAction"
+			method="batchUploadFileAjaxAction">
+	</action>
+	<!-- 查询上传的数据记录 -->
+	<action name="queryUploadRecAjaxAction" class="rnoFileUploadAction"
+			method="queryUploadRecAjaxAction">
+	</action>
+	
+	<!-- 查询报告 -->
+	<action name="queryJobReportAjaxAction" class="rnoFileUploadAction" method="queryJobReportAjaxAction"></action>
+
+	<!-- 初始化lte爱立信切换数据管理页面 -->
+	<action name="initRno4GEriHoManageAction" class="rnoResourceManagerAction"
+			method="initRno4GEriHoManageAction">
+			<result name="success">/op/rno/rno_res_lte_eri_ho.jsp</result>
+		</action>
+	<!-- 初始化lte中兴切换数据管理页面 -->
+	<action name="initRno4GZteHoManageAction" class="rnoResourceManagerAction"
+			method="initRno4GZteHoManageAction">
+			<result name="success">/op/rno/rno_res_lte_zte_ho.jsp</result>
+		</action>
+		
+	<!-- 初始化lte切换数据管理页面 -->			
+		 <action name="initRno4GHoManageAction" class="rnoResourceManagerAction"
+			method="initRno4GHoManageAction">
+			<result name="success">/op/rno/rno_res_lte_ho.jsp</result>
+		</action>
+		
+	<!-- 初始化华为ncs数据管理页面 -->
+	 <action name="initRno2GHwNcsManageAction" class="rnoResourceManagerAction"
+			method="initRno2GHwNcsManageAction">
+			<result name="success">/op/rno/rno_res_2g_hw_ncs.jsp</result>
+		</action>
+	<!-- 初始化华为mrr数据管理页面 -->
+	 <action name="initRno2GHwMrrManageAction" class="rnoResourceManagerAction"
+			method="initRno2GHwMrrManageAction">
+			<result name="success">/op/rno/rno_res_2g_hw_mrr.jsp</result>
+		</action>
+		<!-- 初始化爱立信2G小区数据管理页面 -->
+	 <action name="init2GEriCellManagerPageAction" class="rno2GEriCellManageAction"
+			method="init2GEriCellManagerPageAction">
+			<result name="success">/op/rno/rno_2g_eri_cell_manage.jsp</result>
+		</action>
+		<!-- 初始化华为2G小区数据管理页面 -->
+	 <action name="init2GHwCellManagerPageAction" class="rno2GHwCellManageAction"
+			method="init2GHwCellManagerPageAction">
+			<result name="success">/op/rno/rno_2g_hw_cell_manage.jsp</result>
+		</action>
+			<!-- 初始化4G MR数据管理页面 -->
+	 <action name="initRno4GMrManageAction" class="rnoResourceManagerAction"
+			method="initRno4GMrManageAction">
+			<result name="success">/op/rno/rno_res_4g_mr.jsp</result>
+		</action>
+		<!-- 初始化4G KPI数据管理页面 -->
+	 <action name="initRno4GKpiManageAction" class="rnoResourceManagerAction"
+			method="initRno4GKpiManageAction">
+			<result name="success">/op/rno/rno_res_4g_kpi.jsp</result>
+		</action>
+	 <!-- 查询 KPI数据描述信息的action-->
+	 <action name="queryKpiDescAjaxAction" class="rnoResourceManagerAction"
+		method="queryKpiDescAjaxAction">
+	 </action>
+	</package>
+</struts>

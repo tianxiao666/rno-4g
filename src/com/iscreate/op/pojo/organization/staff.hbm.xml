@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iscreate.op.pojo.organization.Staff" table="STAFF" >
+        <id name="id">
+            <column name="id" />
+            <generator class="sequence">
+            	<param name="sequence">
+            		SEQ_STAFF
+            	</param>
+            </generator>
+        </id>
+        <property name="jobNumber" column="jobNumber" />
+        <property name="name" column="name" />
+        <property name="sex" column="sex" />        
+        <property name="identityCard" column="identityCard" />   
+        <property name="contactPhone" column="contactPhone" /> 
+        <property name="cellPhoneNumber" column="cellPhoneNumber" /> 
+        <property name="qqNumber" column="qqNumber" /> 
+        <property name="age" column="age" /> 
+        <property name="birthday" column="birthday" /> 
+        <property name="graduateDate" column="graduateDate" /> 
+        <property name="description" column="description" /> 
+        <property name="picture" column="picture" />   
+        <property name="degree" column="degree" />  
+        <property name="enterpriseId" column="enterpriseId" />       
+    </class>
+</hibernate-mapping>

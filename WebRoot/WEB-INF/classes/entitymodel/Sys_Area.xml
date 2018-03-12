@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+ <name>Sys_Area</name>
+ <attribute type="java.lang.Long" length="128" primary="TRUE" index="TRUE" nullable="FALSE" regex="">area_id</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="FALSE" regex="">name</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">area_level</attribute>
+ <attribute type="java.lang.Double" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">longitude</attribute>
+ <attribute type="java.lang.Double" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">latitude</attribute>
+ <attribute type="java.lang.Long" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">parent_id</attribute>
+ <attribute type="java.lang.String" length="256" primary="FALSE" index="FALSE" nullable="TRUE" regex="">path</attribute>
+</entity>

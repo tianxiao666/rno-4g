@@ -1,0 +1,70 @@
+/* CSS Document */
+
+.handle_content{color: #444444;position:relative;}
+.handle_title{background:#eee;color: #000; border-left: 1px solid #CCCCCC; border-right: 1px solid #CCCCCC;  line-height: 30px; padding-left: 10px;}
+.handle_form h3{background:#eee; border-top: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC; line-height: 30px; padding-left: 10px; font-weight: normal;}
+.handle_form2 h3{background-color: #e8e8e8; border-top: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC; line-height: 35px; padding-left: 10px; font-weight: normal;}
+.handle_form .fb, .handle_form2 .fb{font-weight: bold;}
+.handle_opinion p{margin:10px;}
+.handle_opinion span{font-weight:normal; text-align: right; width: 100px;}
+.personnel_assign h3 input{position:relative;top:2px;}
+.personnel_assign .gis_a{display: inline-block; margin-left: 30px; text-decoration: underline;}
+.personnel_info_table table{margin: 0 auto; width: 100%; border-bottom:1px dotted #CCCCCC; }
+.personnel_info_table table tr:nth-child(2n){background:#eee; }
+.personnel_info_table th { font-weight:bold;border-bottom: 1px dotted #CCCCCC;color: #444444; line-height: 30px; padding: 0 10px;white-space: nowrap;}
+.personnel_info_table tr td { color: #000000; line-height: 21px; padding: 6px;vertical-align: middle; white-space: nowrap;}
+.personnel_info_table tr td a{cursor: pointer;}
+.personnel_info_but{margin:8px 0; text-align: center;}
+/*选择组织架构样式*/
+#selectWorkPlace_right_e, #selectWorkPlace_right_c, #selectWorkPlace_right{ display:none;z-index: 9; position:absolute; right:30px; overflow:auto; background:#fff; border:1px solid #ccc; border-top:none;width: 190px; min-height:186px; text-align:left;margin-top:1px; line-height:18px;}
+.select_button {background: url("../images/select.png") no-repeat scroll;display: inline-block;height: 24px;margin:5px 0 0 -29px;position: absolute;width: 24px;}
+#tree span{ cursor:pointer;}
+#tree span:hover{ background:#eee;}
+#tree2 span{ cursor:pointer;}
+#tree2 span:hover{ background:#eee;}
+/* 关闭弹窗 */
+a.close_handle_content{display:inline-block;background:#fff url("../images/2011122704363364_easyicon_cn_24.png") 2px 2px no-repeat; height:18px; width:18px; position:absolute;right: 4px;top:4px; border:1px solid #ccc; border-radius:3px; padding:2px;}
+a.close_handle_content:hover{ border:1px solid #aaa; box-shadow:1px 1px 3px #aaa;}
+
+/* 工单、任务单进度显示 */
+.list_pic{ display:block;width:100%;margin:8px 8px 0px 4px;}
+.list_pic ul{ display:block; clear:both; margin-bottom:5px; height:28px;}
+.list_pic ul li{ float:left;}
+.list_pic_li{display:inline-block; background:#eee; border:1px solid #ccc; border-radius:5px; width:100px; line-height:25px; text-align:center;}
+.list_pic_li_on{ background:greenyellow; border:1px solid lightgreen;}
+.list_pic_li_now{ background:orange;}
+.next_ico{ display:inline-block;height:16px; width:95px; background:url("../images/list_right.png") 8px 2px no-repeat; margin-right:5px;position: relative;top:4px;}
+
+/* 弹出框 */
+.alert_select{position:fixed; z-index:5; display:none; }
+.alert_select_cover{background:#fff;position:fixed; width:100%; height:100%;  opacity:0.5;}
+.alert_select_container{ background:#fff;width:500px;border:1px solid #ccc; border-radius:5px; position:fixed;left:50%; top:150px; margin-left:-250px; box-shadow:2px 2px 5px #000;}
+.alert_select_head{line-height:32px; border-bottom:1px solid #ccc; padding-left:10px; background:powderblue;}
+.alert_select_main{height:310px;}
+.alert_select_main_left{width:140px;height:270px; border-right:1px solid #ccc; border-bottom:1px solid #ccc; overflow:auto; float:left;}
+.alert_select_main_left h4{line-height:32px; background:#eee;border-bottom:1px solid #ccc;padding-left:8px; font-weight:normal;}
+.alert_select_main_right{overflow:hidden; height:270px;width:358px; border-bottom:1px solid #ccc;}
+.alert_table_scroll{overflow-y:auto; height:238px;}
+.alert_select_main_bottom{height:40px;line-height:40px; text-align:center; width:100%; clear:both; background:#eee;}
+.alert_table{width:100%;}
+.alert_table th{ border-bottom:1px solid #ccc;line-height:32px; width:50%; background:#eee;}
+.alert_table td{ border-bottom:1px solid #ccc;line-height:30px; width:50%;}
+
+/* a标签切换样式 */
+.a_tabs_on{color:#F00;}
+
+.search_button {background: url("../images/search_ico.png") no-repeat scroll -1px -1px transparent;cursor: pointer; display: inline-block;height: 22px;width: 22px;
+ position: relative;left: -3px;top: 6px;}
+  
+.main-table1 tr.changeBackColor td{background:#D4E4EE;}
+/*tree*/
+.personnel_tree{float:left; height:260px; width:200px; border-right:1px solid #ccc; overflow:auto;}
+ 
+.not_sb{display:inline-block; cursor:pointer; height:16px; width:24px; line-height:18px; text-align:center; background:pink; border:1px solid #ccc;border-radius:3px;}
+.is_sb{display:inline-block;cursor:pointer; height:16px; width:24px; line-height:18px; text-align:center; background:#6F6; border:1px solid #ccc;border-radius:3px;}
+.showGantt_a{font-weight:700; font-size:14px; text-decoration:none;}
+#ui-datepicker-div{ display:none;}
+
+.button_tabs_content{display:none; position:absolute;right:51px; top:37px;width:300px; background:#fff; border:1px solid #999;}
+.button_tabs_content_title{text-align:left; padding-left:6px; background:#dfe8f6; border-bottom:1px solid #ccc; line-height:32px;}
+.tip_top{display:block; position:absolute; height:10px; width:16px; top:-10px; right:18px; background:url(../images/tip_top.png) no-repeat;}

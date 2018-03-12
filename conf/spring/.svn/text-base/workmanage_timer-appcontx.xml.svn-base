@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+
+	<!--定义业务工作Job-->
+	<bean id="workManageTimer" class="com.iscreate.op.service.workmanage.WorkManageTimer">
+		<property name="dataSelectUtil" ref="dataSelectUtil"></property>
+		<property name="bizMessageService" ref="bizMessageService"></property>
+		<property name="workManageService" ref="workManageService"></property>
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="workManageJobDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		
+		<property name="targetObject" ref="workManageTimer"></property>
+		<property name="targetMethod">
+			<value>execute</value>
+		</property>
+	</bean>
+	
+	<bean id="quartzTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<!--声明要运行的实体-->
+		<property name="jobDetail" ref="workManageJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 0/10 * * * ?</value>
+			<!-- <value>*/10 * * * * ?</value> -->
+		</property>
+		<property name="startDelay">
+			<value>5000</value>
+		</property>
+	</bean>
+	
+	
+	
+	<!-- test######### begin -->
+	<!-- <bean id="workManageTimerTest" class="com.iscreate.op.service.workmanage.WorkManageTimerTest"/>
+	
+	<bean id="workManageJobDetailTest"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="workManageTimerTest"></property>
+		<property name="targetMethod">
+			<value>execute</value>
+		</property>
+	</bean>
+	
+	<bean id="quartzTriggerTest"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		声明要运行的实体
+		<property name="jobDetail" ref="workManageJobDetailTest"></property>
+		<property name="cronExpression">
+			<value>0/7 * * * * ?</value>
+		</property>
+		<property name="startDelay">
+			<value>0</value>
+		</property>
+	</bean> -->
+	
+	
+	
+	<!-- test######### end -->
+	
+	
+	<!--配置调度器-->
+	<!-- <bean id="quartzScheduler"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="quartzTrigger" />
+				 <ref local="quartzTriggerTest" />
+			</list>
+		</property>
+	</bean> -->
+
+</beans>

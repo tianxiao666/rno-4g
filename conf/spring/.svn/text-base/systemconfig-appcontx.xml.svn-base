@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- <bean id="systemConfigService" class="com.iscreate.op.service.publicinterface.SystemConfigService"
+		init-method="init">
+	</bean> -->
+	
+	<!-- 站址数据查询定时器 -->
+	<!-- <bean id="stationQueryTimer" class="com.iscreate.op.service.publicinterface.StationQueryTimerService"
+		>
+		<property name="networkResourceService" ref="networkResourceService"></property>
+		<property name="gisDispatchDao" ref="gisDispatchDao"></property>
+	</bean> -->
+	<!-- 定义要执行的业务实体 -->
+	<!-- <bean id="stationQueryJobDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		
+		<property name="targetObject" ref="stationQueryTimer"></property>
+		<property name="targetMethod">
+			<value>execute</value>
+		</property>
+	</bean> -->
+	<!-- 定义定时器 -->
+	<!-- <bean id="stationQuartzTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="stationQueryJobDetail"></property>
+		<property name="cronExpression">
+			每天凌晨12点半启动
+			<value>0 30 0 * * ?</value>
+		</property>
+		<property name="startDelay">
+			<value>5000</value>
+		</property>
+	</bean>
+	 -->
+	<!--配置调度器 -->
+	<!-- <bean id="stationQuartzScheduler"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="stationQuartzTrigger" />
+			</list>
+		</property>
+	</bean> -->
+	
+		
+
+	
+</beans>

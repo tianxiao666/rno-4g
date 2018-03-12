@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/base.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/public.css"/>
+<link rel="stylesheet" type="text/css" href="css/car_search.css" />
+<link rel="stylesheet" type="text/css" href="../../jslib/jquery/css/jquery.treeview.css" />
+<script type="text/javascript" src="../../jslib/jquery/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="../../jslib/common.js"></script>
+<script type="text/javascript" src="../../jslib/jquery/jquery.treeview.js" ></script>
+<script type="text/javascript" src="../jslib/generateTree.js"></script>
+<script type="text/javascript" src="jslib/commonUtil.js"></script>
+<title>车辆信息</title>
+
+<script type="text/javascript">
+
+$(function(){
+	/* checkbox点击隐藏 */
+	$(".container-tab2 ul li:eq(0)").css("border-left","1px solid #ccc");
+	
+	/* tab门 */
+	$(".container-tab2 ul li").each(function(index){
+		$(this).click(function(){
+			$(this).parent().find($("li")).removeClass("tab2-li-show");
+			$(this).addClass("tab2-li-show");
+			$(this).parent().parent().parent().find($(".container-main-table1-tab")).hide();
+			$(this).parent().parent().parent().find($(".container-main-table1-tab")).eq(index).show();
+		})
+	})
+	$("#select_tree").treeview({
+		collapsed: true,
+		control:"#sidetreecontrol",
+		persist: "location"
+	});
+	/*$(".search_zuzhi").focusin(function(){
+		$(".select_tree_div").show();
+	});*/
+	
+
+	//点击查询按钮
+	$("#btnSubmit").click(function(){
+		submitQuery();
+	});
+
+	
+	//提交查询
+	function submitQuery(){
+		var formValue="";
+		var queryData=getInputsByForm("form1");
+		formValue=jsonToStr(queryData);
+
+		var tabPanel = window.parent.Ext.getCmp('result_tab');
+		var activeTab=tabPanel.getActiveTab();
+		var grid=activeTab.items.itemAt(0);
+		
+		var store = grid.getStore();	
+		store.baseParams = {queryParams:formValue}  
+		store.reload();
+	};
+	
+	
+	searchProviderOrgTree();
+	
+	/*绑定按钮，弹出组织架构树*/
+	$("#chooseAreaButton").click(function(){
+		$("#wrap_treeDiv").toggle("fast");
+	});
+});
+
+//生成组织架构树
+function searchProviderOrgTree(){
+	var orgId = "16";
+	var values = {"orgId":orgId}
+	var myUrl = "../organization/getProviderOrgTreeByOrgIdAction";
+	$.post(myUrl,values,function(data){
+		createOrgTree(data,"treeDiv","carSearch_org_div","a","searchOrgTreeClick");
+	},"json");
+}
+
+//选择组织
+function searchOrgTreeClick(dataStr,tableId){
+	var data = eval( "(" + dataStr + ")" ) ;
+	var orgId = data.orgId;
+	$("#searchBizunitNameText").val(data.name);
+	$("#searchBizunitIdText").val(data.orgId);
+	$("#treeDiv").slideUp("fast");
+}
+</script>
+</head>
+
+<body>
+	<form id="form1">
+    <div id="container">
+    	<div class="container-tab1">
+            <div class="container-main">
+                <h4 class="search_bar clearfix">
+
+                    <label>组织：</label>
+                    <input type="hidden" id="searchBizunitIdText" />
+                    <input type="text" class="search_zuzhi" id="searchBizunitNameText" onfocus="$('#wrap_treeDiv').toggle('fast');" readonly="readonly" />
+                    <a href="javascript:void(0);" style="margin-top:2px; margin-left:-29px;" class="select_button selectWorkPlaceButton" id="chooseAreaButton" title="选择组织"></a>
+                    <input name="useCarPersonId" type="text" placeholder="请输入用车人姓名或工单号" />
+                    <input type="text" placeholder="请输入用车时间" />
+                    <input name="btnSubmit" id="btnSubmit" type="button" value="查询" />
+                    <input name="useCarPersonId_operator" type="hidden" value="like" />
+                  	<input name="useCarPersonId_type" type="hidden" value="text" />
+                    <div class="select_tree_div" style="display:none;" id="wrap_treeDiv">
+                        	<div id="treeDiv">
+	        					<!-- 放置组织架构树 -->
+	        				</div>
+                     </div>
+                </h4>
+            </div>
+        </div>
+     </div>
+    </form>
+</body>
+</html>

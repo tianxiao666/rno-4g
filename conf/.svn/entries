@@ -1,0 +1,58 @@
+9
+
+dir
+12376
+http://svn.iscreate.com:8088/srcsvn/source/iosm/4g_rno_branches/v1/conf
+http://svn.iscreate.com:8088/srcsvn/source
+
+
+
+2015-07-27T07:42:28.411843Z
+12372
+chao.xj
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+f7628612-1de5-0147-986c-5ff4a2e890d6
+
+dump
+dir
+
+entityStructure
+dir
+
+entitymodel
+dir
+
+log4j
+dir
+
+mapping
+dir
+
+properties
+dir
+
+spring
+dir
+
+struts
+dir
+
+sysconfig
+dir
+
+workflow
+dir
+

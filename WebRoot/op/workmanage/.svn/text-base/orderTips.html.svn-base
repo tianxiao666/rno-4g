@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>提示信息</title>
+
+<style>
+html ,body{margin:0; padding:0; border:medium none;}
+.c_task, .c_time{font-size: 12px;}
+.c_task{left: 240px; position: absolute;}
+.c_time{right: 10px; position: absolute;}
+.c_task .c_z{background-color:#AA3E14}
+.c_task b{font-style: normal; }
+.c_task em, .c_time em{width:26px; height:14px;display: inline-block;vertical-align: middle; margin:0 5px; padding:3px; border-radius:15px;}
+
+.c_task .c_f{color: #000; border:1px solid #000;}
+.c_time .c_blue{background-color:blue;}
+.c_time .c_red{background-color:red;}
+.c_b{margin:0 10px;}
+.c_button{position:absolute; right:10px;}
+.c_m{font-size: 12px; font-style: normal;}
+.va_m{vertical-align: middle;}
+</style>
+<script type="text/javascript" src="../../jslib/jquery/jquery-1.6.2.min.js"></script>
+<!-- <SCRIPT language="JavaScript" src="workManage/extjs/adapter/ext/ext-base.js" type="text/javascript"></SCRIPT>
+<link href="workManage/extjs/resources/css/ext-all.css" rel="stylesheet" type="text/css" />
+<SCRIPT language="JavaScript" src="workManage/extjs/ext-all.js" type="text/javascript"></SCRIPT> -->
+<script type="text/javascript">
+var gisURL="../../op/gisdispatch/gisDispatchPage.jsp";
+var circleId;
+
+
+$(function(){
+	/*var reuqestGisUrl="getGisUrlAction";
+	$.ajax({
+			url : reuqestGisUrl,
+			type : "POST",
+			success : function(result) {
+				gisURL=result;
+			}
+	});*/
+	
+	$("#btnGoGis").click(function(){
+		window.open(gisURL);
+	});
+	
+	$("#ck_refresh").click(function(){
+		var flag=$(this).get(0).checked;
+		if(flag){
+			var time=$("#autoRefreshTime").val();
+			if(!(circleId && circleId!="")){
+				circleId=setInterval("grid_refresh()",parseInt(time));
+			}
+		}else{
+			clearInterval(circleId);
+			circleId=null;
+		}
+	})
+
+	var flag=$("#ck_refresh").get(0).checked;
+	if(flag){
+		var time=$("#autoRefreshTime").val();
+		if(!(circleId && circleId!="")){
+			circleId=setInterval("grid_refresh()",parseInt(time));
+		}
+	}else{
+		clearInterval(circleId);
+		circleId=null;
+	}
+})
+
+function grid_refresh(){
+	var resultItemId=window.parent.subPage_resultItemId;
+	//alert("resultItemId=="+resultItemId);
+	window.parent.Ext.getCmp(resultItemId+"_grid").getStore().reload();
+}
+
+</script>
+
+</head>
+<body>
+	<div style="margin-top:5px;">
+		<span>
+			<input type="checkbox" checked="checked" id="ck_refresh" class="va_m"/><em class="c_m">刷新</em>
+			<select id="autoRefreshTime">
+				<option value="60000">1分钟</option>
+				<option value="120000">2分钟</option>
+				<option value="300000">5分钟</option>
+			</select>
+			<!-- <input type="button" value="test" onclick="refresh();"/> -->
+		</span>
+		<span><input id="btnGoGis" type="button" value="集中调度"/></span>
+	    <span class="c_task">工单主题：<em class="c_f"><b>粗体</b></em>新任务<em class="c_z"></em>子任务变化</span>
+		<span class="c_time">要求完成时间：<em class="c_red"></em>已超时<em class="c_blue"></em>快超时</span>
+	</div>
+</body>
+</html>

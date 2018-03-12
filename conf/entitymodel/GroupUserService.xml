@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+ <name>GroupUserService</name>
+ <attribute type="java.lang.Long" length="128" primary="TRUE" index="TRUE" nullable="FALSE" regex="">id</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="FALSE" regex="">name</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">label</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">serviceType</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">bandwidth</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">porttype</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">onlineStatus</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">ONUPort</attribute>
+ <attribute type="java.lang.Integer" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">SVLAN</attribute>
+ <attribute type="java.lang.Integer" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">CVLAN</attribute>
+ <attribute type="java.lang.String" length="100" primary="FALSE" index="FALSE" nullable="TRUE" regex="">OLTName</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">Swpair</attribute>
+ <attribute type="java.lang.String" length="100" primary="FALSE" index="FALSE" nullable="TRUE" regex="">ONUSite</attribute>
+ <attribute type="java.lang.String" length="100" primary="FALSE" index="FALSE" nullable="TRUE" regex="">ONURoom</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">ONUName</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">ONUSerial</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">ONUModel</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">PrimaryPONPort</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">SecondaryPONPort</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">RefOpticSwitcher</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">passcheckingWOid</attribute>
+</entity>

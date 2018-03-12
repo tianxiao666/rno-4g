@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- dao开始 -->
+	<bean id="routineinspectionReportDao" class="com.iscreate.op.dao.report.RoutineinspectionReportDaoImpl" singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<!-- dao结束 -->
+	<!-- service开始 -->
+	<bean id="routineinspectionReportService" class="com.iscreate.op.service.report.RoutineinspectionReportServiceImpl" singleton="false">
+		<property name="routineinspectionReportDao" ref="routineinspectionReportDao" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	<!-- service结束 -->
+	<!-- action开始 -->
+	<bean id="routineinspectionReportAction" class="com.iscreate.op.action.report.RoutineinspectionReportAction" singleton="false">
+		<property name="routineinspectionReportService" ref="routineinspectionReportService" />
+	</bean>
+	<!-- action结束 -->
+</beans>

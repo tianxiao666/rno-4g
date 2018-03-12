@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name="com.iscreate.op.pojo.gisdispatch.GisDispatch_LittleIcon" table="gis_littleicon" >
+        <id name="id">
+            <column name="id" />
+        </id>
+        <property name="geType_id" column="geType_id" />
+        <property name="littleiconName" column="littleiconName" />
+        <property name="position" column="position" />
+        <property name="icon" column="icon" />
+    </class>
+</hibernate-mapping>

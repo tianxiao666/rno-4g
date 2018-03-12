@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+ <name>Tower</name>
+ <attribute type="java.lang.Long" length="128" primary="TRUE" index="TRUE" nullable="FALSE" regex="">id</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="FALSE" regex="">name</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="TRUE" regex="">label</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">usestatus</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">category</attribute>
+ <attribute type="java.lang.String" length="100" primary="FALSE" index="FALSE" nullable="TRUE" regex="">addresscategory</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">scenerytype</attribute>
+ <attribute type="java.lang.Integer" length="8" primary="FALSE" index="FALSE" nullable="TRUE" regex="">iscooperated</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">sharingparty</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">sharedparty</attribute>
+ <attribute type="java.lang.Double" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">height</attribute>
+ <attribute type="java.lang.Double" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">selfheight</attribute>
+ <attribute type="java.lang.Integer" length="8" primary="FALSE" index="FALSE" nullable="TRUE" regex="">isonbuildingtop</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">platformnum</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">platformnuminuse</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">platformnumidle</attribute>
+ <attribute type="java.lang.Double" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">serviceyears</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">manufactory</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">polenum</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">polenumidle</attribute>
+ <attribute type="java.lang.Integer" length="8" primary="FALSE" index="FALSE" nullable="TRUE" regex="">withinguardrail</attribute>
+ <attribute type="java.lang.Double" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">earthresistance</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">rustproofcondition</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">roomreference</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="TRUE" regex="">barcode</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="TRUE" regex="">assettag</attribute>
+</entity>

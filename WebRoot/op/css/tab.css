@@ -1,0 +1,5 @@
+.tab_menu{clear: both;height: 25px;}
+.tab_menu ul{position: absolute; z-index: 2;}
+.tab_menu ul li{background: none repeat scroll 0 0 #EEEEEE;border-right: 1px solid #99BBE8;border-top: 1px solid #99BBE8;cursor: pointer; float: left;line-height: 24px; padding: 0 3px; position: relative; text-align: center; width: 100px;}
+.tab_menu ul li.selected{background: none repeat scroll 0 0 #FFFFFF; border-top: 3px solid #99BCE8; height: 23px; line-height: 22px;}
+.tab_middle{}

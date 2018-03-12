@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+	<bean id="bizMessageDao" class="com.iscreate.op.dao.bizmsg.BizMessageDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<bean id="bizMessageService" class="com.iscreate.op.service.bizmsg.BizMessageServiceImpl">
+		<property name="bizMessageDao" ref="bizMessageDao" />
+	</bean>
+	
+	<bean id="bizMessageActionForMobile" class="com.iscreate.op.action.bizmsg.BizMessageActionForMobile">
+		<property name="bizMessageService" ref="bizMessageService" />
+	</bean>
+	
+	<bean id="bizMessageAction" class="com.iscreate.op.action.bizmsg.BizMessageAction">
+		<property name="bizMessageService" ref="bizMessageService" />
+	</bean>
+</beans>

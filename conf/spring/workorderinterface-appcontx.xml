@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- service -->
+	
+	<bean id="workorderinterfaceWangyouWorkorderRelationService" class="com.iscreate.op.service.workorderinterface.wangyou.WorkorderinterfaceWangyouWorkorderRelationServiceImpl">
+		<property name="workorderinterfaceWangyouWorkorderRelationDao" ref="workorderinterfaceWangyouWorkorderRelationDao"></property>
+	</bean>
+	
+	
+	
+	<!-- dao -->
+	<bean id="workorderinterfaceWangyouWorkorderRelationDao" class="com.iscreate.op.dao.workorderinterface.wangyou.WorkorderinterfaceWangyouWorkorderRelationDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+
+	<!-- action -->
+
+	<bean id="workOrderAccessAction" class="com.iscreate.op.action.workorderinterface.WorkOrderAccessAction">
+		<property name="urgentRepairWorkOrderDao" ref="urgentRepairWorkOrderDao"></property>
+		<property name="urgentRepairWorkOrderService" ref="urgentRepairWorkOrderService"></property>
+		<property name="urgentRepairCustomerWorkOrderDao" ref="urgentRepairCustomerWorkOrderDao"></property>
+		<property name="workManageService" ref="workManageService"></property>
+		<property name="networkResourceInterfaceService" ref="networkResourceService"></property>
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+	</bean>
+	
+
+</beans>

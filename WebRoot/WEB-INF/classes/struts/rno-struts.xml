@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="rno" extends="struts-default">
+	
+	    <!-- -##################### 登录入口相关     ###################### -->
+	    <action name="rnoUserLogin" class="rnoLoginAction"
+			method="rnoUserLogin">
+			<result name="success">/op/rno/login.jsp</result>
+		</action>
+		
+		<action name="rnoAuthenticate" class="rnoLoginAction"
+			method="rnoAuthenticate"><!-- 用父类的方法 -->
+			<result name="success" type="redirect">${goingToURL}</result>
+			<result name="failed" type="chain">rnoUserLogin</result>
+			
+		</action>
+	    <!-- rno首页 -->
+	    <action name="rnoUserIndexAction" class="rnoLoginAction" method="rnoUserIndexAction">
+			<result name="success">/op/rno/index.jsp</result>
+		</action>
+		
+		<action name="rnoLogoutAction" class="rnoLoginAction"
+			method="logout">
+			<result name="success" type="redirect">/op/rno/rnoUserLogin.action</result>
+		</action>
+		<!-- 保存用户配置 -->
+        <action name="saveUserConfigAction" class="rnoCommonAction"
+			method="saveUserConfigAction">
+		</action>
+		<!-- 所有页面链接列表 -->
+		<action name="gotoPageListsAction" class="rnoResourceManagerAction"
+			method="gotoPageListsAction">
+			<result name="success">/op/rno/rno_pages_lists.jsp</result>
+		</action>
+        <!-- 通用功能 -->
+        <!-- 获取子区域 -->
+        <action name="getSubAreaByParentAreaForAjaxAction" class="rnoCommonAction"
+			method="getSubAreaByParentAreaForAjaxAction">
+		</action>
+		<!-- 公用定时任务：完成定时刷新页面功能 -->
+		<action name="commonTimedRefreshTaskAction" class="rnoCommonAction"
+			method="commonTimedRefreshTaskAction">
+		</action>
+        <!-- 上传文件解析 -->
+		<action name="uploadFileAjaxAction" class="rnoCommonAction"
+			method="uploadFileAjaxAction">
+		</action>
+		<!-- 查询文件解析进度 -->
+		<action name="queryUploadStatusAjaxAction" class="rnoCommonAction"
+			method="queryUploadStatusAjaxAction">
+		</action>
+		<!-- 获取文件解析结果 -->
+		<action name="getUploadResultAjaxAction" class="rnoCommonAction"
+			method="getUploadResultAjaxAction">
+		</action>
+		<!-- yuan.yw  -->
+		 <!-- 文件下载 start-->
+		<action name="fileDownloadAction" class="rnoCommonAction" method="fileDownloadAction">
+             <result name="fail" >
+                   /op/rno/rno_fail.jsp
+             </result>
+             <result name="success" type="stream">
+                          <param name="contentType">application/octet-stream</param>
+                          <param name="inputName">inputStream</param>
+                          <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                          <param name="bufferSize">4096</param>
+                          <param name="maximumSize">52428800</param> 
+              </result>
+		</action>
+		<!-- 文件下载 end-->
+		<!-- 小区管理 -->
+		<!-- 初始化小区管理页面 -->
+		<action name="initCellManagerPageAction" class="rnoResourceManagerAction"
+			method="initCellManagerPageAction">
+			<result name="success">/op/rno/rnocellmanager.jsp</result>
+		</action>
+		
+		<!-- ou.jh -->
+		
+		<!-- 上传小区语音业务指标文件解析 -->
+		<!-- 小区管理 -->
+		<!-- 初始化小区管理页面 -->
+		<action name="initTrafficStaticsImportPageAction" class="rnoTrafficStaticsAction"
+			method="initTrafficStaticsImportPageAction">
+			<result name="success">/op/rno/rnoTrafficStaticsimport.jsp</result>
+		</action>
+		<!-- <action name="uploadTrafficStaticsFileAjaxAction" class="rnoTrafficStaticsAction"
+			method="uploadTrafficStaticsFileAjaxAction">
+		</action>
+		查询小区语音业务指标文件解析进度
+		<action name="queryUploadTrafficStaticsStatusAjaxAction" class="rnoTrafficStaticsAction"
+			method="queryUploadTrafficStaticsStatusAjaxAction">
+		</action>
+		获取小区语音业务指标文件解析结果
+		<action name="getUploadTrafficStaticsResultAjaxAction" class="rnoTrafficStaticsAction"
+			method="getUploadTrafficStaticsResultAjaxAction">
+		</action> -->
+		
+
+		<!-- 根据区域获取其下的bsc列表 -->
+		<action name="getBscsResideInAreaForAjaxAction" class="rnoResourceManagerAction"
+			method="getBscsResideInAreaForAjaxAction">
+		</action>
+		<!-- 分页查询小区 -->
+		<action name="queryCellByPageForAjaxAction" class="rnoResourceManagerAction"
+			method="queryCellByPageForAjaxAction">
+		</action>
+		<!-- 根据小区id获取小区信息，跳转到修改页面 -->
+		<action name="initModifyCellPageAction" class="rnoResourceManagerAction"
+			method="initModifyCellPageAction">
+			<result name="success">/op/rno/modifyCellPage.jsp</result>
+		</action>
+		<!-- 更新小区信息，成功跳转至小区管理页面，失败返回本页面 -->
+		<action name="updateCellInfoByIdAction" class="rnoResourceManagerAction"
+			  method="updateCellInfoByIdAction">
+			<result name="success" type="chain">initCellManagerPageAction</result>
+			<result name="fail" type="chain">initModifyCellPageAction</result>
+		</action>
+		<!-- 初始化小区区域导入经纬度信息页面 -->
+		<action name="initMapSpotDataImportPageAction" class="rnoMapGroundSupportAction"
+			method="initMapSpotDataImportPageAction">
+			<result name="success">/op/rno/importCellToBufferForMap.jsp</result>
+		</action>
+		<!-- 邻区管理 -->
+		<!-- 初始化邻区管理页面 -->
+		<action name="initNCellManagerPageAction" class="rnoResourceManagerAction"
+			method="initNCellManagerPageAction">
+			<result name="success">/op/rno/rnoncellmanager.jsp</result>
+		</action>
+
+		<!-- 分页查询邻小区 -->
+		<action name="queryNCellByPageForAjaxAction" class="rnoResourceManagerAction"
+			method="queryNCellByPageForAjaxAction">
+		</action>
+		<!-- 删除邻区 -->
+		<action name="deleteNcellForAjaxAction" class="rnoResourceManagerAction"
+			method="deleteNcellForAjaxAction">
+		</action>
+
+		<!-- 初始化BSC管理页面 -->
+		<action name="initBscManagerAction" class="rnoResourceManagerAction"
+			method="initBscManagerAction">
+			<result name="success">/op/rno/rno_bsc_manager.jsp</result>
+		</action>
+		<!-- 分页查询BSC -->
+		<action name="queryBscByPageForAjaxAction" class="rnoResourceManagerAction"
+			method="queryBscByPageForAjaxAction">
+		</action>
+		<!-- 删除BSC -->
+		<action name="deleteBscByNameForAjaxAction" class="rnoResourceManagerAction"
+			method="deleteBscByNameForAjaxAction">
+		</action>
+		<!-- 增加单个BSC -->
+		<action name="addSingleBscAjaxForAction" class="rnoResourceManagerAction"
+			method="addSingleBscAjaxForAction">
+		</action>				
+
+		<!-- 小区展现 -->
+		<!-- 初始化地图展现数据 -->
+		<action name="initGisCellDisplayAction" class="rnoResourceManagerAction"
+			method="initGisCellDisplayAction">
+			<result name="success">/op/rno/rnogiscelldisplay.jsp</result>
+		</action>
+		<!-- 导入小区入memcached,地图打点 -->
+		<!-- action name="importCellToBufferAjaxAction" class="rnoResourceManagerAction"
+			method="importCellToBufferAjaxAction">
+		</action -->
+		
+		<!-- 以地图网格形式获取ltecell  start-->
+		<action name="getLteCellByMapGridForAjaxAction" class="rnoResourceManagerAction"
+			method="getLteCellByMapGridForAjaxAction">
+		</action>
+		<!-- 获取指定LTE小区的详情 -->
+		<action name="getLteCellDetailByBusCellIdForAjaxAction" class="rnoResourceManagerAction"
+			method="getLteCellDetailByBusCellIdForAjaxAction">
+		</action>
+		<!-- 以地图网格形式获取giscell  start-->
+		<action name="getGisCellByMapGridForAjaxAction" class="rnoResourceManagerAction"
+			method="getGisCellByMapGridForAjaxAction">
+		</action>
+		<!-- 在地图预加载对应labels的小区 -->
+		<action name="getRelaCellByLabelsAndCityIdForAjaxAction" class="rnoResourceManagerAction"
+			method="getRelaCellByLabelsAndCityIdForAjaxAction">
+		</action>
+		<!-- 在地图预加载对应参数的小区 -->
+		<action name="getRelaCellByCellParamAndAreaIdForAjaxAction" class="rnoResourceManagerAction"
+			method="getRelaCellByCellParamAndAreaIdForAjaxAction">
+		</action>
+		<!-- 在地图预加载邻区 -->
+		<action name="getNcellDetailsByCellAndAreaIdForAjaxAction" class="rnoResourceManagerAction"
+			method="getNcellDetailsByCellAndAreaIdForAjaxAction">
+		</action>
+		<!-- 以地图网格形式获取giscell  end-->
+		
+		<!-- 获取giscell -->
+		<action name="getGisCellByPageForAjaxAction" class="rnoResourceManagerAction"
+			method="getGisCellByPageForAjaxAction">
+		</action>
+		<!-- 获取Gis小区信息通过配置数据或区域数据 -->
+		<action name="getGisCellUseConfigIdOrAreaByPageForAjaxAction" class="rnoResourceManagerAction"
+			method="getGisCellUseConfigIdOrAreaByPageForAjaxAction">
+		</action>
+		<!-- 获取指定小区的详情 -->
+		<action name="getCellDetailForAjaxAction" class="rnoResourceManagerAction"
+			method="getCellDetailForAjaxAction">
+		</action>
+		<!-- 地图基础功能 -->
+		<!-- 进入地图操作页面 -->
+		<action name="initRnoMapSearchAction" class="rnoMapGroundSupportAction"
+			method="initRnoMapSearchAction">
+			<result name="success">/op/rno/rnogiscellsearchpage.jsp</result>
+		</action>
+		
+		<!-- 搜索指定小区的邻区 -->
+		<action name="searchNcellByCellForAjaxAction" class="rnoMapGroundSupportAction"
+			method="searchNcellByCellForAjaxAction">
+		</action>
+		
+		<!-- 话务管理 开始 yuan.yw-->
+		<!-- 初始化话务性能查询页面 -->
+		<action name="initRnoStsManagerPageAction" class="rnoTrafficStaticsAction"
+			method="initRnoStsManagerPageAction">
+			<result name="success">/op/rno/rnostsmanager.jsp</result>
+		</action>
+		<!-- 获取纠偏后的GPS经纬度 -->
+		<action name="getLngLatCorrectValueAction" class="rnoCommonAction"
+			method="getLngLatCorrectValueAction">
+		</action>
+		<!-- 分页查询话务数据 -->
+		<action name="queryRnoStsListByPageAction" class="rnoTrafficStaticsAction"
+			method="queryRnoStsListByPageAction">
+		</action>
+		<!-- 查询话务数据 导出excel文件 BEGIN -->
+		<action name="exportRnoStsListAction" class="rnoTrafficStaticsAction" method="exportRnoStsListAction" >
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">attachment;filename=${fileName}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		<!-- 查询话务数据 导出excel文件 END -->
+	<!-- 话务管理 结束 yuan.yw-->
+	
+		<!-- 导入话统 -->
+		<!-- 初始化加载话务性能页面 -->
+		<action name="initLoadTeleTrafficCapabilityPageAction" class="rnoTrafficStaticsAction"
+			method="initLoadTeleTrafficCapabilityPageAction">
+			<result name="success">/op/rno/loadteletrafficcapability.jsp</result>
+		</action>
+		<!-- 通过传递省份Ajax加载市区信息 -->
+		<action name="getSpecifyCityAreaAction" class="rnoTrafficStaticsAction"
+			method="getSpecifyCityAreaAction">
+		</action>
+		<!-- 通过传递省份Ajax加载县区信息 -->
+		<action name="getSpecifyRegionAction" class="rnoTrafficStaticsAction"
+			method="getSpecifyRegionAction">
+		</action>
+		<!-- ##########################话统分析 开始##################### -->
+		<!-- 根据渲染规则名称获取渲染详情 -->
+		<action name="getRendererRuleForAjaxAction" class="rnoRendererRuleAction"
+			method="getRendererRuleForAjaxAction">
+		</action>
+		<!-- 初始化话务专题统计页面 -->
+		<action name="initRnoTrafficStaticsPageAction" class="rnoTrafficStaticsAction" method="initRnoTrafficStaticsPageAction">
+		   <result name="success">/op/rno/rnotrafficstatics.jsp</result>
+		</action>
+		<!-- 获取加载的分析列表 -->
+		<action name="getLoadedAnalysisListForAjaxAction" class="rnoTrafficStaticsAction" method="getLoadedAnalysisListForAjaxAction">
+		</action>
+		<!-- 改造：从加载的分析列表中删除指定的列表 -->
+		<action name="removeTrafficStaticItemFromLoadedListForAjaxAction" class="rnoTrafficStaticsAction" method="removeTrafficStaticItemFromLoadedListForAjaxAction">
+		</action>
+		<!-- 从加载的分析列表中删除指定的列表 -->
+		<action name="removeAnalysisItemFromLoadedListForAjaxAction" class="rnoTrafficStaticsAction" method="removeAnalysisItemFromLoadedListForAjaxAction">
+		</action>
+		<!-- 重选分析列表 -->
+		<action name="reselectAnalysisListForAjaxAction" class="rnoTrafficStaticsAction" method="reselectAnalysisListForAjaxAction"></action>
+		<!-- 获取选中的分析列表对应的小区gis信息 -->
+		<action name="getToBeAnaCellGisInfoFromSelAnaListForAjaxAction" class="rnoTrafficStaticsAction" method="getToBeAnaCellGisInfoFromSelAnaListForAjaxAction"></action>
+		<!-- 返回指定的统计信息 -->
+		<action name="staticsResourceUtilizationRateForAjaxAction" class="rnoTrafficStaticsAction" method="staticsResourceUtilizationRateForAjaxAction"></action>
+		<!-- 统计符合某指标条件的小区 -->
+		<action name="staticsSpecialCellForAjaxAction" class="rnoTrafficStaticsAction" method="staticsSpecialCellForAjaxAction"></action>
+		<!-- 初始化忙小区邻区分析页面 -->
+		<action name="initHeavyLoadCellAnalyPageAction" class="rnoTrafficStaticsAction" method="initHeavyLoadCellAnalyPageAction">
+		   <result name="success">/op/rno/rnostsheavyloadcellanapage.jsp</result>
+		</action>
+		<!-- 获取某区域的忙小区 -->
+		<action name="getHeavyLoadCellWithAreaForAjaxAction" class="rnoTrafficStaticsAction" method="getHeavyLoadCellWithAreaForAjaxAction"></action>
+		<!-- 获取某区域的指定忙小区的邻区情况 -->
+		<action name="getNcellInfoOfHeavyLoadCellForAjaxAction" class="rnoTrafficStaticsAction" method="getNcellInfoOfHeavyLoadCellForAjaxAction"></action>
+		<!-- 查询加载话统数据 -->
+		<action name="queryAndLoadStsPeriodDataForAjaxAction" class="rnoTrafficStaticsAction" method="queryAndLoadStsPeriodDataForAjaxAction"></action>
+		<!-- 刷新按钮查询加载话统数据 -->
+		<action name="refreshQueryAndLoadStsPeriodDataForAjaxAction" class="rnoTrafficStaticsAction" method="refreshQueryAndLoadStsPeriodDataForAjaxAction"></action>
+		<!-- 改造：分页查询话统:小区语音或数据业务指标描述数据 -->
+		<action name="queryCellAudioOrDataDescListByPageAction" class="rnoTrafficStaticsAction" method="queryCellAudioOrDataDescListByPageAction"></action>
+		<!-- 改造：将选中的话统指标描述加入分析列表 -->
+		<action name="addCellAudioOrDataDescToAnalysisListForAjaxAction" class="rnoTrafficStaticsAction" method="addCellAudioOrDataDescToAnalysisListForAjaxAction"></action>
+		<!-- ou.jh -->
+		<!-- 查询加载话统数据 -->
+		<action name="getRnoTrafficRendererAction" class="rnoTrafficRendererAction" method="getRnoTrafficRendererAction"></action>
+		<!-- 查询加载话统数据 -->
+		<action name="updateOrAddrnoTrafficRendererAction" class="rnoTrafficRendererAction" method="updateOrAddrnoTrafficRendererAction"></action>
+		<!-- 通过小区名获取邻区:在忙小区的邻区分析模块下通过右键查询 -->
+		<action name="getNcellforNcellAnalysisOfBusyCellByCellForAjaxAction" class="rnoTrafficStaticsAction" method="getNcellforNcellAnalysisOfBusyCellByCellForAjaxAction"></action>
+		
+		<!-- ##########################话统分析 结束##################### -->
+		
+		<!-- ##########################总干扰分析 开始##################### -->
+		<!-- 初始化总干扰分析页面 -->
+		<action name="initInterferenceAnalysisPageAction" class="rnoInterferenceAnalysisAction" method="initInterferenceAnalysisPageAction">
+		   <result name="success">/op/rno/rnointerferenceanalysispage.jsp</result>
+		</action>
+		
+		<!-- 获取指定区域的小区干扰数据 -->
+		<action name="getAnalysisGisCellByPageForAjaxAction" class="rnoInterferenceAnalysisAction" method="getAnalysisGisCellByPageForAjaxAction">
+		</action>
+		<!-- top-N 最大干扰小区标注 -->
+		<action name="getRnoGisCellInAreaTopNAction" class="rnoInterferenceAnalysisAction" method="getRnoGisCellInAreaTopNAction">
+		</action>
+		<!-- 小区干扰分析 -->
+		<action name="getCellInterferenceAnalysisAction" class="rnoInterferenceAnalysisAction" method="getCellInterferenceAnalysisAction">
+		</action>
+		
+		<!-- ##########################总干扰分析 结束##################### -->
+		<!-- ##########################规划优化 开始##################### -->
+		<!-- 初始化小区加载配置数据导入页面 -->
+		<action name="initCellLoadConfigureImportPageAction" class="rnoTrafficStaticsAction"
+			method="initCellLoadConfigureImportPageAction">
+			<result name="success">/op/rno/rnocellloadconfigureimport.jsp</result>
+		</action>
+		<!-- yuan.yw start -->
+		<!-- 初始化频率复用分析页面 -->
+		<action name="initRnoFreqReusePageAction" class="rnoPlanDesignAction" method="initRnoFreqReusePageAction">
+		   <result name="success">/op/rno/rnofreqreuse.jsp</result>
+		</action>
+		<!-- 获取小区配置加载的分析列表 -->
+		<action name="getCellConfigAnalysisListForAjaxAction" class="rnoPlanDesignAction"
+			method="getCellConfigAnalysisListForAjaxAction">
+		</action>
+		<!--获取小区干扰加载的分析列表  -->
+		<action name="getCellInterferenceAnalysisListForAjaxAction" class="rnoPlanDesignAction"
+			method="getCellInterferenceAnalysisListForAjaxAction">
+		</action>
+		<!--改造：从小区干扰加载的分析列表中删除若干项  -->
+		<action name="removeInterferenceItemsFromLoadedListForAjaxAction" class="rnoPlanDesignAction"
+			method="removeInterferenceItemsFromLoadedListForAjaxAction">
+		</action>
+		<!--统计指定区域范围小区的频率复用情况-->
+		<action name="staticsFreqReuseInfoForAjaxAction" class="rnoPlanDesignAction"
+			method="staticsFreqReuseInfoForAjaxAction">
+		</action>
+		<!--从加载列表中移除选定的加载项-->
+		<action name="removeCellAnalysisItemFromListForAjaxAction" class="rnoPlanDesignAction"
+			method="removeCellAnalysisItemFromListForAjaxAction">
+		</action>
+		<!-- 重选挑选需要分析的小区配置或小区干扰列表-->
+		<action name="reselectCellAnalysisListForAjaxAction" class="rnoPlanDesignAction"
+			method="reselectCellAnalysisListForAjaxAction">
+		</action>
+		<!-- 改造：分页查询干扰指标描述数据-->
+		<action name="queryInterferenceDescListByPageAction" class="rnoPlanDesignAction"
+			method="queryInterferenceDescListByPageAction">
+		</action>
+		<!-- 改造：将选中的干扰指标描述加入分析列表-->
+		<action name="addInterferenceDescToAnalysisListForAjaxAction" class="rnoPlanDesignAction"
+			method="addInterferenceDescToAnalysisListForAjaxAction">
+		</action>
+		<!-- 根据类型获取选择的小区配置或小区干扰中分析列表中的小区的gis信息-->
+		<action name="getFreqReuseCellGisInfoFromSelAnaListForAjaxAction" class="rnoPlanDesignAction"
+			method="getFreqReuseCellGisInfoFromSelAnaListForAjaxAction">
+		</action>
+		
+		<!-- yuan.yw end-->
+		<!-- 初始化干扰数据导入和加载 -->
+		<action name="initPlandesignInterferenceDataImportPageAction" class="rnoPlanDesignAction"
+			method="initPlandesignInterferenceDataImportPageAction">
+			<result name="success">/op/rno/rnointerferenceload.jsp</result>
+		</action>
+		
+		
+	    <!-- 获取指定区域下的干扰配置项 -->
+		<action name="getInterferenceDescriptorInAreaForAjaxAction" class="rnoPlanDesignAction"
+			method="getInterferenceDescriptorInAreaForAjaxAction">
+		</action>
+		<!-- 将选定干扰配置项加入分析列表 -->
+		<action name="queryAndLoadInterferenceListForAjaxAction" class="rnoPlanDesignAction"
+			method="queryAndLoadInterferenceListForAjaxAction">
+		</action>
+		<!-- 刷新按钮查询分析列表中的干扰配置 -->
+		<action name="refreshQueryAndLoadInterferenceListForAjaxAction" class="rnoPlanDesignAction"
+			method="refreshQueryAndLoadInterferenceListForAjaxAction">
+		</action>
+		<!-- 从干扰分析列表中移除指定的一项干扰配置 -->
+		<action name="removeInterferenceItemFromLoadedListForAjaxAction" class="rnoPlanDesignAction"
+			method="removeInterferenceItemFromLoadedListForAjaxAction">
+		</action>
+		<!-- 查询小区配置系统方案和临时方案 -->
+		<action name="queryCellConfigForAjaxAction" class="rnoPlanDesignAction"
+			method="queryCellConfigForAjaxAction">
+		</action>
+		<!-- 增加小区配置到分析列表中 -->
+		<action name="addCellConfigToAnalysisListForAjaxAction" class="rnoPlanDesignAction"
+			method="addCellConfigToAnalysisListForAjaxAction">
+		</action>
+		<!-- 从加载的小区配置Ccs列表中，删除指定的若干项 -->
+		<action name="removeCcsItemFromLoadedListForAjaxAction" class="rnoPlanDesignAction"
+			method="removeCcsItemFromLoadedListForAjaxAction">
+		</action>
+		<!-- 从加载的小区配置分析列表中删除指定的列表 -->
+		<action name="removeCellConfigAnalysisItemFromLoadedListForAjaxAction" class="rnoPlanDesignAction" method="removeCellConfigAnalysisItemFromLoadedListForAjaxAction">
+		</action>
+		<!-- 小区展现 -->
+		<!-- 初始化Cobsic小区地图展现数据 -->
+		<action name="initCoBsicAnalyseAction" class="rnoPlanDesignAction"
+			method="initCoBsicAnalyseAction">
+			<result name="success">/op/rno/rnocobsicanalyse.jsp</result>
+		</action>
+		<!-- 将获得指定区域的Cobsic小区数据通过ajax方式返回页面 -->
+		<action name="getSpecifyAreaCoBsicCellsForAjaxAction" class="rnoPlanDesignAction"
+			method="getSpecifyAreaCoBsicCellsForAjaxAction">
+		</action>
+		<!-- 将获得指定区域/配置ID的全网Cobsic小区数据通过ajax方式返回页面 -->
+		<action name="getSpecifyAreaWholeNetCoBsicCellsForAjaxAction" class="rnoPlanDesignAction"
+			method="getSpecifyAreaWholeNetCoBsicCellsForAjaxAction">
+		</action>
+		<!-- 初始化小区切换统计指标页面 -->
+		<action name="initChannelSwitchStatisticsAction" class="rnoPlanDesignAction"
+			method="initChannelSwitchStatisticsAction">
+			<result name="success">/op/rno/rnoChannelSwitchStatisticsimport.jsp</result>
+		</action>
+		<!-- ncs导入加载功能 -->
+		<action name="initNcsImportAndLoadPageAction" class="rnoPlanDesignAction"
+			method="initNcsImportAndLoadPageAction">
+			<result name="success">/op/rno/rno_plan_ncs_importandloadpage.jsp</result>
+		</action>
+		<!--从ncs分析列表移除一项  -->
+		<action name="removeNcsItemFromLoadedListForAjaxAction" class="rnoPlanDesignAction"
+			method="removeNcsItemFromLoadedListForAjaxAction">
+		</action>
+		<!-- 获取所有已经加载的分析列表 -->
+		<action name="getAllLoadedNcsListForAjaxAction" class="rnoPlanDesignAction"
+			method="getAllLoadedNcsListForAjaxAction">
+		</action>
+		<!-- 增加一项到分析列表 -->
+		<action name="addOneNcsItemToListForAjaxAction" class="rnoPlanDesignAction"
+			method="addOneNcsItemToListForAjaxAction">
+		</action>
+		<!-- 按条件查询分析列表 -->
+		<action name="queryNcsDescriptorByPageWithConditionForAjaxAction" class="rnoPlanDesignAction"
+			method="queryNcsDescriptorByPageWithConditionForAjaxAction">
+		</action>
+		
+		<!-- 小区结构数据导入页面 -->
+		<action name="initCellStructImportAndLoadPageAction" class="rnoPlanDesignAction"
+			method="initCellStructImportAndLoadPageAction">
+			<result name="success">/op/rno/rno_plan_cellstruct_importandloadpage.jsp</result>
+		</action>
+		<!-- 获取已经加载的小区结构数据列表 -->
+		<action name="getAllLoadedCellStructListForAjaxAction" class="rnoPlanDesignAction"
+			method="getAllLoadedCellStructListForAjaxAction">
+		</action>
+		<!-- 从小区结构指标分析列表中删除指定项 -->
+		<action name="removeCellStructItemFromLoadedListForAjaxAction" class="rnoPlanDesignAction"
+			method="removeCellStructItemFromLoadedListForAjaxAction">
+		</action>
+		<!-- 添加到分析列表 -->
+		<action name="addCellStructItemToListForAjaxAction" class="rnoPlanDesignAction"
+			method="addCellStructItemToListForAjaxAction">
+		</action>
+		<!-- 获取小区配置分析列表 -->
+		<action name="getCellConfigureAnalysisListForAjaxAction" class="rnoPlanDesignAction"
+			method="getCellConfigureAnalysisListForAjaxAction">
+		</action>
+		<!-- 分页查询小区结构指标数据 -->
+		<action name="queryCellStructDescriptorByPageWithConditionForAjaxAction" class="rnoPlanDesignAction"
+			method="queryCellStructDescriptorByPageWithConditionForAjaxAction">
+		</action>
+		<!-- 将获得指定日期范围的切换统计指标数据通过ajax方式返回页面 -->
+		<action name="queryRnoHandOverDescListByPageAction" class="rnoPlanDesignAction"
+			method="queryRnoHandOverDescListByPageAction">
+		</action>
+		<!-- 改造：从小区切换加载列表中，删除指定的若干项 -->
+		<action name="removeHandOverItemFromLoadedListForAjaxAction" class="rnoPlanDesignAction"
+			method="removeHandOverItemFromLoadedListForAjaxAction">
+		</action>
+		<!-- 将获得指定区域和模糊方案查询的小区配置描述数据通过ajax方式返回页面 -->
+		<action name="queryCellConfigureDescListByPageAction" class="rnoPlanDesignAction"
+			method="queryCellConfigureDescListByPageAction">
+		</action>
+		<!-- 添加切换统计描述数据至分析列表通过ajax方式返回页面 -->
+		<action name="appendRnoHandOverDescListForAjaxAction" class="rnoPlanDesignAction"
+			method="appendRnoHandOverDescListForAjaxAction">
+		</action>
+		<!-- 改造：添加小区配置描述数据至分析列表通过ajax方式返回页面 -->
+		<action name="addCellConfigDescToAnalysisListForAjaxAction" class="rnoPlanDesignAction"
+			method="addCellConfigDescToAnalysisListForAjaxAction">
+		</action>
+		<!-- 刷新按钮获取切换统计描述数据至分析列表通过ajax方式返回页面 -->
+		<action name="getCellHandOverAnalysisListForAjaxAction" class="rnoPlanDesignAction"
+			method="getCellHandOverAnalysisListForAjaxAction">
+		</action>
+		<!-- 从小区切换统计加载列表中移除选定的加载项通过ajax方式返回页面 -->
+		<action name="removeChannelSwitchAnalysisItemFromLoadedListForAjaxAction" class="rnoPlanDesignAction"
+			method="removeChannelSwitchAnalysisItemFromLoadedListForAjaxAction">
+		</action>
+		<!-- gumh begin-->
+		<!-- 进入邻区分析的页面 -->
+		<action name="initPlanNcellAnalysisPageAction" class="rnoPlanDesignAction"
+			method="initPlanNcellAnalysisPageAction">
+			<result name="success">/op/rno/rno_plan_ncell_analysis.jsp</result>
+		</action>
+		<!-- 从session 列表移除一项的通用方法 -->
+		<action name="removeItemFromLoadedListForAjaxAction" class="rnoPlanDesignAction"
+			method="removeItemFromLoadedListForAjaxAction">
+		</action>
+		<!-- 选中一项 -->
+		<action name="selectCheckedAnalysisItemForAjaxAction" class="rnoPlanDesignAction"
+			method="selectCheckedAnalysisItemForAjaxAction">
+		</action>
+		<!-- 分析某项小区的邻区情况 -->
+		<action name="analysisNcellOfCellForAjaxAction" class="rnoPlanDesignAction"
+			method="analysisNcellOfCellForAjaxAction">
+		</action>
+		<!-- 全网的邻区分析 -->
+		<action name="analysisAllNcellInWholeNetForAjaxAction" class="rnoPlanDesignAction" method="analysisAllNcellInWholeNetForAjaxAction"></action>
+		<!-- gumh end-->
+		
+		<!-- ##########################规划优化 结束##################### -->
+		<!-- ##########################DT分析 开始##################### -->
+		<!-- 通过描述ID加载sample数据 -->
+		<action name="querySampleDataInAreaForAjaxAction" class="rnoDtAction" method="querySampleDataInAreaForAjaxAction"></action>
+		<!-- 通过描述ID分页查询采样点数据 -->
+		<action name="querySampleDataInAreaByPageForAjaxAction" class="rnoDtAction" method="querySampleDataInAreaByPageForAjaxAction"></action>
+		<!-- 初始化DT专题分析页面 -->
+		<action name="initRnoDtThematicMapAnalysisPageAction" class="rnoDtAction" method="initRnoDtThematicMapAnalysisPageAction">
+		   <result name="success">/op/rno/rno_dt_thematicmap_analysis.jsp</result>
+		</action>
+		<!-- 初始化dt导入页面 -->
+		<action name="initRnoDtImportAndLoadPageAction" class="rnoDtAction" method="initRnoDtImportAndLoadPageAction">
+		     <result name="success">/op/rno/rno_dt_dl_importandloadpage.jsp</result>
+		</action>
+		
+		<!-- 从分析列表移除指定dt分析项 -->
+		<action name="removeDtItemFromAnalysisListForAjaxAction" class="rnoDtAction" method="removeDtItemFromAnalysisListForAjaxAction" ></action>
+		<!-- 添加选择的dt到分析列表 -->
+		<action name="addDtItemToListForAjaxAction" class="rnoDtAction" method="addDtItemToListForAjaxAction"></action>
+		<!-- 获取所有的dt分析列表项 -->
+		<action name="getAllLoadedDtListForAjaxAction" class="rnoDtAction" method="getAllLoadedDtListForAjaxAction"></action>
+		<!-- 分页查询dt数据 -->
+		<action name="queryDtDescriptorByPageWithConditionForAjaxAction" class="rnoDtAction" method="queryDtDescriptorByPageWithConditionForAjaxAction"></action>
+		
+		
+		<!-- ##########################DT分析 结束##################### -->
+		</package>
+</struts>

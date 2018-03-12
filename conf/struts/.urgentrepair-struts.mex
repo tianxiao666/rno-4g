@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="urgentrepair" location="10,165" size="1400,560">
+    <action name="createUrgentRepairWorkOrderAction" location="940,373" size="150,40" />
+    <action name="createUrgentRepairSenceTaskOrderAction" location="940,478" size="150,40" />
+    <action name="acceptUrgentRepairWorkOrderAction" location="1185,478" size="150,40" />
+    <action name="finalReplyUrgentRepairWorkOrderAction" location="1185,58" size="150,40" />
+    <action name="loadUrgentRepairWorkOrderPageAction" location="800,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="handleWorkOrder.jsp" />
+      </result>
+    </action>
+    <action name="acceptUrgentRepairSenceTaskOrderAction" location="800,163" size="150,40" />
+    <action name="createUrgentRepairTechSupportTaskOrderAction" location="1045,163" size="150,40" />
+    <action name="finalReplyUrgentRepairSenceTaskOrderAction" location="1045,268" size="150,40" />
+    <action name="loadUrgentRepairSenceTaskOrderPageAction" location="555,267" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="handleSenceTaskOrder.jsp" />
+      </result>
+    </action>
+    <action name="acceptUrgentRepairTechSupportTaskOrderAction" location="310,268" size="150,40" />
+    <action name="finalReplyUrgentRepairTechSupportTaskOrderAction" location="310,373" size="150,40" />
+    <action name="loadUrgentRepairTechSupportTaskOrderPageAction" location="65,372" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="handleTechSupportTaskOrder.jsp" />
+      </result>
+    </action>
+    <action name="loadTeamLeadersInfoAction" location="0,0" size="0,0" />
+  </package>
+  <webResource name="handleWorkOrder.jsp" path="handleWorkOrder.jsp" location="810,10" size="150,55" />
+  <webResource name="handleSenceTaskOrder.jsp" path="handleSenceTaskOrder.jsp" location="550,10" size="150,55" />
+  <webResource name="handleTechSupportTaskOrder.jsp" path="handleTechSupportTaskOrder.jsp" location="40,780" size="150,55" />
+</Struts2Diagram>
+

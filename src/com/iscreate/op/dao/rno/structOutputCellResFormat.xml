@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+<!-- 从哪个表读取，如果为空，表示不是从表读取出来的 -->
+<!-- 组合成sql的时候的语句 -->
+<!-- sql产生的field的名称 -->
+<!-- 输出到文件的标题 -->
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>CELL</fieldSql>
+		<fieldCode>CELL</fieldCode>
+		<outputTitle>小区</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>FREQ_CNT</fieldSql>
+		<fieldCode>FREQ_CNT</fieldCode>
+		<outputTitle>小区频点数</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>ROUND(BE_INTERFER,5) AS BE_INTERFER</fieldSql>
+		<fieldCode>BE_INTERFER</fieldCode>
+		<outputTitle>被干扰系数</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>ROUND(NET_STRUCT_FACTOR,5) AS NET_STRUCT_FACTOR</fieldSql>
+		<fieldCode>NET_STRUCT_FACTOR</fieldCode>
+		<outputTitle>网络结构指数</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>ROUND(REDUNT_COVER_FACT,5) AS REDUNT_COVER_FACT</fieldSql>
+		<fieldCode>REDUNT_COVER_FACT</fieldCode>
+		<outputTitle>冗余覆盖指数</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>ROUND(OVERLAP_COVER,5) AS OVERLAP_COVER</fieldSql>
+		<fieldCode>OVERLAP_COVER</fieldCode>
+		<outputTitle>重叠覆盖度</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>ROUND(SRC_INTERFER,5) AS SRC_INTERFER</fieldSql>
+		<fieldCode>SRC_INTERFER</fieldCode>
+		<outputTitle>干扰源系数</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>ROUND(OVERSHOOTING_FACT,5) AS OVERSHOOTING_FACT</fieldSql>
+		<fieldCode>OVERSHOOTING_FACT</fieldCode>
+		<outputTitle>过覆盖系数</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>DETECT_CNT</fieldSql>
+		<fieldCode>DETECT_CNT</fieldCode>
+		<outputTitle>小区检测次数</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>DETECT_CNT_EXINDR</fieldSql>
+		<fieldCode>DETECT_CNT_EXINDR</fieldCode>
+		<outputTitle>小区检测次数（不含室分）</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>ROUND(EXPECTED_COVER_DIS,5) AS EXPECTED_COVER_DIS</fieldSql>
+		<fieldCode>EXPECTED_COVER_DIS</fieldCode>
+		<outputTitle>理想覆盖距离</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>INTERFER_NCELL_CNT</fieldSql>
+		<fieldCode>INTERFER_NCELL_CNT</fieldCode>
+		<outputTitle>关联邻小区数</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>INTERFER_NCE_CNT_EXINDR</fieldSql>
+		<fieldCode>INTERFER_NCE_CNT_EXINDR</fieldCode>
+		<outputTitle>关联邻小区数（不含室分）</outputTitle>
+	</field>
+	<field>
+		<fromTable></fromTable>
+		<fieldSql>IN_CLUSTER_CNT</fieldSql>
+		<fieldCode>IN_CLUSTER_CNT</fieldCode>
+		<outputTitle>所属连通簇数量</outputTitle>
+	</field>
+	<field>
+		<fromTable></fromTable>
+		<fieldSql>IN_BAD_CLUSTER_CNT</fieldSql>
+		<fieldCode>IN_BAD_CLUSTER_CNT</fieldCode>
+		<outputTitle>问题连通簇数量</outputTitle>
+	</field>
+	<field>
+		<fromTable>rno_cell_city_t</fromTable>
+		<fieldSql>CHINESENAME</fieldSql>
+		<fieldCode>CHINESENAME</fieldCode>
+		<outputTitle>小区中文名</outputTitle>
+	</field>
+	<field>
+		<fromTable>rno_cell_city_t</fromTable>
+		<fieldSql>ROUND(LNG,5) AS LNG</fieldSql>
+		<fieldCode>LNG</fieldCode>
+		<outputTitle>经度</outputTitle>
+	</field>
+	<field>
+		<fromTable>rno_cell_city_t</fromTable>
+		<fieldSql>ROUND(LAT,5) AS LAT</fieldSql>
+		<fieldCode>LAT</fieldCode>
+		<outputTitle>纬度</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>ROUND(UL_QUALITY,5) AS UL_QUALITY</fieldSql>
+		<fieldCode>UL_QUALITY</fieldCode>
+		<outputTitle>上行质量</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>ROUND(DL_QUALITY,5) AS DL_QUALITY</fieldSql>
+		<fieldCode>DL_QUALITY</fieldCode>
+		<outputTitle>下行质量</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>ROUND(UL_POOR_QUALITY,5) AS UL_POOR_QUALITY</fieldSql>
+		<fieldCode>UL_POOR_QUALITY</fieldCode>
+		<outputTitle>上行质差</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>ROUND(DL_POOR_QUALITY,5) AS DL_POOR_QUALITY</fieldSql>
+		<fieldCode>DL_POOR_QUALITY</fieldCode>
+		<outputTitle>下行质差</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>ROUND(UL_COVERAGE,5) AS UL_COVERAGE</fieldSql>
+		<fieldCode>UL_COVERAGE</fieldCode>
+		<outputTitle>上行覆盖率</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>ROUND(DL_COVERAGE,5) AS DL_COVERAGE</fieldSql>
+		<fieldCode>DL_COVERAGE</fieldCode>
+		<outputTitle>下行覆盖率</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>ROUND(UL_POOR_COVERAGE,5) AS UL_POOR_COVERAGE</fieldSql>
+		<fieldCode>UL_POOR_COVERAGE</fieldCode>
+		<outputTitle>上行弱覆盖</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>ROUND(DL_POOR_COVERAGE,5) AS DL_POOR_COVERAGE</fieldSql>
+		<fieldCode>DL_POOR_COVERAGE</fieldCode>
+		<outputTitle>下行弱覆盖</outputTitle>
+	</field>
+	<field>
+		<fromTable>RNO_NCS_CELL_ANA_RESULT_MID</fromTable>
+		<fieldSql>ROUND(TA_AVERAGE,5) AS TA_AVERAGE</fieldSql>
+		<fieldCode>TA_AVERAGE</fieldCode>
+		<outputTitle>平均TA </outputTitle>
+	</field>
+
+
+</table>

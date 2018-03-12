@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+ <name>PolelineSection</name>
+ <attribute type="java.lang.Long" length="128" primary="TRUE" index="TRUE" nullable="FALSE" regex="">id</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="FALSE" regex="">name</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">belongtype</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">userorg</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">belongowner</attribute>
+ <attribute type="java.lang.Integer" length="8" primary="FALSE" index="FALSE" nullable="TRUE" regex="">iscooperated</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">cooporg</attribute>
+ <attribute type="java.lang.Integer" length="8" primary="FALSE" index="FALSE" nullable="TRUE" regex="">isshared</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">shareorg</attribute>
+ <attribute type="java.lang.Double" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">len</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">status</attribute>
+</entity>

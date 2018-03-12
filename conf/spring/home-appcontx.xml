@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>	  
+	<bean id="homeItemDao" class="com.iscreate.op.dao.home.HomeItemDaoImpl" singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	
+	<bean id="homeItemService" class="com.iscreate.op.service.home.HomeItemServiceImpl" singleton="false">
+		<property name="homeItemDao" ref="homeItemDao" />
+		<property name="sysRoleDao" ref="sysRoleDao"></property>
+	</bean>
+	
+	
+	<bean id="homeItemAction" class="com.iscreate.op.action.home.HomeItemAction" singleton="false">
+		<property name="homeItemService" ref="homeItemService" />
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+		<property name="sysPermissionDao" ref="sysPermissionDao" />
+		<property name="sysUserRelaPermissionService" ref="sysUserRelaPermissionService" />
+	</bean>
+	
+	<bean id="homeSettingsDao" class="com.iscreate.op.dao.home.HomeSettingsDaoImpl" singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<bean id="homeSettingsService" class="com.iscreate.op.service.home.HomeSettingsServiceImpl" singleton="false">
+		<property name="homeSettingsDao" ref="homeSettingsDao" />
+	</bean>
+	
+	
+	<bean id="homeSettingsAction" class="com.iscreate.op.action.home.HomeSettingsAction" singleton="false">
+		<property name="homeSettingsService" ref="homeSettingsService" />
+	</bean>
+	
+</beans>

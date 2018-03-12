@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="mobile/networkresourcemanage" extends="struts-default">
+	
+	<!-- 登陆页面的action -->
+	<action name="loginNetWorkActionForMobile" class="networkresourceActionForMobile" method="loginNetWorkActionForMobile">
+		<result name="success" type="redirect">
+			loginNetWorkSuccess.jsp
+		</result>
+		<result name="failed" type="redirect">
+			loginNetWorkFailed.jsp
+		</result>
+	</action>
+	
+	<!-- 登陆页面的action -->
+	<action name="loginPageActionForMobile" class="networkresourceActionForMobile" method="loginPageActionForMobile">
+	</action>
+	<!-- 检索查询资源 -->
+	<action name="searchResourceByLableActionForMobile" class="networkresourceActionForMobile" method="searchResourceByLableActionForMobile">
+	</action>
+	<!-- 获取资源基本信息 -->
+	<action name="loadNetWorkResourceInfoActionForMobile" class="networkresourceActionForMobile" method="loadNetWorkResourceInfoActionForMobile">
+	</action>
+	<!-- 获取资源基本信息(维护)  -->
+	<action name="loadResourcePreserveActionForMobile" class="networkresourceActionForMobile" method="loadResourcePreserveActionForMobile">
+	</action>
+	<!-- 添加资源  -->
+		<action name="loadStrutureSelationsArrayByResourceTypeActionForMobile" class="networkresourceActionForMobile" method="loadStrutureSelationsArrayByResourceTypeActionForMobile">
+		</action>
+
+	<!-- 获取资源基本信息(维护)(网络资源3.0)  -->
+	<action name="loadResPreserveActionForMobile" class="networkresourceActionForMobile" method="loadResPreserveActionForMobile">
+	</action>
+	
+	<action name="getEntityListRingByAetgAndGPSDistanceAndPagingActionForMobile" class="networkresourceActionForMobile" method="getEntityListRingByAetgAndGPSDistanceAndPagingActionForMobile">
+	</action>
+	<action name="loadNetworkResourceMaintenanceActionForMobile" class="networkresourceActionForMobile" method="loadNetworkResourceMaintenanceActionForMobile">
+	</action>
+
+	<!-- 保存或者更新一个资源  -->
+	<action name="addResourcePreserveActionForMobile" class="networkresourceActionForMobile" method="addResourcePreserveActionForMobile">
+	</action>
+	
+	
+	<action name="searchResourceByResourceTypeActionForMobile" class="networkresourceActionForMobile" method="searchResourceByResourceTypeActionForMobile">
+	</action>
+	<action name="getResourceTypesByEntitygroupActionForMobile" class="networkresourceActionForMobile" method="getResourceTypesByEntitygroupActionForMobile">
+	</action>
+	<!-- 网络资源3.0 获取资源信息 -->
+	<action name="loadNewNetWorkResourceInfoActionForMobile" class="newNetworkresourceOperaActionForMobile" method="loadNewNetWorkResourceInfoActionForMobile">
+	
+	</action>
+	<!-- 网络资源3.0 获取下级资源 -->
+	<action name="getChildResourcesForActionForMobile" class="newNetworkresourceOperaActionForMobile" method="getChildResourcesForActionForMobile">
+	
+	</action>
+	<!-- 网络资源3.0 删除资源 -->
+	<action name="deleteResourceNewActionForMobile" class="newNetworkresourceOperaActionForMobile" method="deleteResourceNewActionForMobile">
+	
+	</action>
+	<!-- 网络资源3.0 上传照片 -->
+	<action name="addPhotoResourceActionForMoblie" class="newNetworkresourceOperaActionForMobile" method="addPhotoResourceActionForMoblie">
+	
+	</action>
+	</package>
+</struts>

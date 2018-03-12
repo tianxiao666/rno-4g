@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+    <!-- 设置默认的multi解析器 -->
+    <bean type="org.apache.struts2.dispatcher.multipart.MultiPartRequest" name="rnomultipart" class="com.iscreate.op.action.rno.upload.RnoMultiPartRequest" scope="default" />
+    <constant name="struts.multipart.parser" value="rnomultipart" />
+	<constant name="struts.multipart.maxSize" value="300000000" /><!-- 300M -->
+	<include file="struts/*.xml" />
+	
+	<package name="iscreate-struts-default" extends="struts-default">
+		<global-results>
+			<result name="exError" type="redirectAction">
+				<param name="actionName">getErrorByExceptionHandlerAction</param>
+			</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="exError" exception="java.lang.Exception">
+			</exception-mapping>
+		</global-exception-mappings>
+		
+	</package>
+	
+</struts>

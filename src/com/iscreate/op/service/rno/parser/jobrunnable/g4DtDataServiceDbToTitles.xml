@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+	<field>
+		<name>MEA_TIME</name>
+		<type>Date</type>
+		<essential>1</essential>
+		<match>0</match>
+		<exceltitle>Time</exceltitle>
+	</field>
+	<field>
+		<name>FILE_NAME</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>0</match>
+		<exceltitle>FileName</exceltitle>
+	</field>
+	<field>
+		<name>LONGITUDE</name>
+		<type>double</type>
+		<essential>1</essential>
+		<match>0</match>
+		<exceltitle>Longitude</exceltitle>
+	</field>
+	<field>
+		<name>LATITUDE</name>
+		<type>double</type>
+		<essential>1</essential>
+		<match>0</match>
+		<exceltitle>Latitude</exceltitle>
+	</field>
+	<field>
+		<name>CELL_NAME</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>0</match>
+		<exceltitle>CellName</exceltitle>
+	</field>
+	<field>
+		<name>TAC</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>0</match>
+		<exceltitle>TAC</exceltitle>
+	</field>
+	<field>
+		<name>ECI</name>
+		<type>Long</type>
+		<essential>1</essential>
+		<match>0</match>
+		<exceltitle>ECI</exceltitle>
+	</field>
+	<field>
+		<name>EARFCN</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>0</match>
+		<exceltitle>EARFCN</exceltitle>
+	</field>
+	<field>
+		<name>PCI</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>0</match>
+		<exceltitle>PCI</exceltitle>
+	</field>
+	<field>
+		<name>RSRP</name>
+		<type>double</type>
+		<essential>1</essential>
+		<match>0</match>
+		<exceltitle>RSRP</exceltitle>
+	</field>
+	<field>
+		<name>RS_SINR</name>
+		<type>double</type>
+		<essential>1</essential>
+		<match>0</match>
+		<exceltitle>RS SINR</exceltitle>
+	</field>
+	<field>
+		<name>SCELL_DIST</name>
+		<type>Float</type>
+		<essential>1</essential>
+		<match>0</match>
+		<exceltitle>SCell Dist(km)</exceltitle>
+	</field>
+	<field>
+		<name>SCELL_AZIMUTH_DIFF</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>SCell Azimuth Diff</exceltitle>
+	</field>
+	<field>
+		<name>APP_SPEED</name>
+		<type>Float</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>APP Speed (Mbps)</exceltitle>
+	</field>
+	<field>
+		<name>NCELL_NAME_1</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell Name #1</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_EARFCN_1</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell EARFCN #1</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_PCI_1</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell PCI #1</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_RSRP_1</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell RSRP #1</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_NAME_2</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell Name #2</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_EARFCN_2</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell EARFCN #2</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_PCI_2</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell PCI #2</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_RSRP_2</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell RSRP #2</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_NAME_3</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell Name #3</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_EARFCN_3</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell EARFCN #3</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_PCI_3</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell PCI #3</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_RSRP_3</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell RSRP #3</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_NAME_4</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell Name #4</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_EARFCN_4</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell EARFCN #4</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_PCI_4</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell PCI #4</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_RSRP_4</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell RSRP #4</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_NAME_5</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell Name #5</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_EARFCN_5</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell EARFCN #5</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_PCI_5</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell PCI #5</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_RSRP_5</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell RSRP #5</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_NAME_6</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell Name #6</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_EARFCN_6</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell EARFCN #6</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_PCI_6</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell PCI #6</exceltitle>
+	</field>
+		<field>
+		<name>NCELL_RSRP_6</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>NCell RSRP #6</exceltitle>
+	</field>
+</table>

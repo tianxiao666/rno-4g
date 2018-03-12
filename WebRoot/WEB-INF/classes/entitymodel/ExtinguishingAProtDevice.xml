@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+ <name>ExtinguishingAProtDevice</name>
+ <attribute type="java.lang.Long" length="128" primary="TRUE" index="TRUE" nullable="FALSE" regex="">id</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="FALSE" regex="">name</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">label</attribute>
+ <attribute type="java.lang.Integer" length="8" primary="FALSE" index="FALSE" nullable="TRUE" regex="">hasoutfiringdevice</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">outfiringdevusestatus</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">outfiringdevmanufactory</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">outfiringdevmodel</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">outfiringdevsetupmethod</attribute>
+ <attribute type="java.util.Date" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">setupmethoddatebegininuse</attribute>
+ <attribute type="java.lang.Integer" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">portableextinguishercount</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">portableextinguishermodel</attribute>
+ <attribute type="java.util.Date" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">portextinguisherfactorydate</attribute>
+ <attribute type="java.lang.Integer" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">gasmaskcount</attribute>
+ <attribute type="java.util.Date" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">gasmaskfactorydate</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="TRUE" regex="">barcode</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="TRUE" regex="">assettag</attribute>
+</entity>

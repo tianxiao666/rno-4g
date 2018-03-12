@@ -1,0 +1,88 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>两个Flash焦点图片切换代码（新浪风格）下载 - 天空诚收集整理 - 中国asp之家 - http://www.aspxhome.com</title>
+<style type="text/css">
+td {font-size: 12px;color:#FF0000}
+</style>
+</head>
+
+<body>
+<p>　</p>
+<table width="629" height="272" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="239" align="center">
+<script type="text/javascript">
+imgUrl1="images/01.jpg";
+imgtext1="蔬菜广告创意01"
+imgLink1=escape("http://www.aspxhome.com");
+imgUrl2="images/02.jpg";
+imgtext2="蔬菜广告创意02"
+imgLink2=escape("http://www.aspxhome.com");
+imgUrl3="images/03.jpg";
+imgtext3="蔬菜广告创意03"
+imgLink3=escape("http://www.aspxhome.com");
+imgUrl4="images/04.jpg";
+imgtext4="蔬菜广告创意04"
+imgLink4=escape("http://www.aspxhome.com");
+imgUrl5="images/05.jpg";
+imgtext5="蔬菜广告创意05"
+imgLink5=escape("http://www.aspxhome.com");
+
+ var focus_width=240
+ var focus_height=200
+ var text_height=18
+ var swf_height = focus_height+text_height
+ 
+ var pics=imgUrl1+"|"+imgUrl2+"|"+imgUrl3+"|"+imgUrl4+"|"+imgUrl5
+ var links=imgLink1+"|"+imgLink2+"|"+imgLink3+"|"+imgLink4+"|"+imgLink5
+ var texts=imgtext1+"|"+imgtext2+"|"+imgtext3+"|"+imgtext4+"|"+imgtext5
+ 
+ document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ focus_width +'" height="'+ swf_height +'">');
+ document.write('<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="focus1.swf"><param name="quality" value="high"><param name="bgcolor" value="#F0F0F0">');
+ document.write('<param name="menu" value="false"><param name=wmode value="opaque">');
+ document.write('<param name="FlashVars" value="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'">');
+ document.write('</object>');
+ </script>
+ </td>
+    <td align="center">
+<script type="text/javascript">
+imgUrl1="images/01.jpg";
+imgtext1="蔬菜广告创意01"
+imgLink1=escape("http://www.aspxhome.com");
+imgUrl2="images/02.jpg";
+imgtext2="蔬菜广告创意02"
+imgLink2=escape("http://www.aspxhome.com");
+imgUrl3="images/03.jpg";
+imgtext3="蔬菜广告创意03"
+imgLink3=escape("http://www.aspxhome.com");
+imgUrl4="images/04.jpg";
+imgtext4="蔬菜广告创意04"
+imgLink4=escape("http://www.aspxhome.com");
+imgUrl5="images/05.jpg";
+imgtext5="蔬菜广告创意05"
+imgLink5=escape("http://www.aspxhome.com");
+
+ var focus_width=240
+ var focus_height=200
+ var text_height=18
+ var swf_height = focus_height+text_height
+ 
+ var pics=imgUrl1+"|"+imgUrl2+"|"+imgUrl3+"|"+imgUrl4+"|"+imgUrl5
+ var links=imgLink1+"|"+imgLink2+"|"+imgLink3+"|"+imgLink4+"|"+imgLink5
+ var texts=imgtext1+"|"+imgtext2+"|"+imgtext3+"|"+imgtext4+"|"+imgtext5
+ 
+ document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ focus_width +'" height="'+ swf_height +'">');
+ document.write('<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="focus2.swf"><param name="quality" value="high"><param name="bgcolor" value="#F0F0F0">');
+ document.write('<param name="menu" value="false"><param name=wmode value="opaque">');
+ document.write('<param name="FlashVars" value="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'">');
+ document.write('</object>');
+</script></td>
+  </tr>
+  <tr>
+    <td height="33" align="center">焦点图广告-样式1</td>
+    <td align="center">焦点图广告-样式2</td>
+  </tr>
+</table>
+</body>
+</html>

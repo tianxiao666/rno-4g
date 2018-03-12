@@ -1,0 +1,193 @@
+9
+
+dir
+12376
+http://svn.iscreate.com:8088/srcsvn/source/iosm/4g_rno_branches/v1/WebRoot/op/home/resource/jquery-ui/tests/unit
+http://svn.iscreate.com:8088/srcsvn/source
+
+
+
+2013-06-07T05:28:37.941134Z
+4831
+ou.jh
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+f7628612-1de5-0147-986c-5ff4a2e890d6
+
+accordion
+dir
+
+autocomplete
+dir
+
+button
+dir
+
+core
+dir
+
+datepicker
+dir
+
+dialog
+dir
+
+draggable
+dir
+
+droppable
+dir
+
+effects
+dir
+
+images
+dir
+
+index.html
+file
+
+
+
+
+2015-06-26T06:52:45.907000Z
+5576c015183b681ff5c10cc9615a23bd
+2013-06-07T05:28:37.941134Z
+4831
+ou.jh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1838
+
+menu
+dir
+
+position
+dir
+
+progressbar
+dir
+
+resizable
+dir
+
+selectable
+dir
+
+slider
+dir
+
+sortable
+dir
+
+spinner
+dir
+
+swarminject.js
+file
+
+
+
+
+2015-06-26T06:52:45.554000Z
+8f0de831e9461327d2bdf4b9138fca61
+2013-06-07T05:28:37.941134Z
+4831
+ou.jh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+334
+
+tabs
+dir
+
+testsuite.js
+file
+
+
+
+
+2015-06-26T06:52:45.713000Z
+bef574f8ac71d73966224d44e49e4582
+2013-06-07T05:28:37.941134Z
+4831
+ou.jh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2889
+
+tooltip
+dir
+
+widget
+dir
+

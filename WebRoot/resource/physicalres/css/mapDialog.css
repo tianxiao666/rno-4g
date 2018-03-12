@@ -1,0 +1,59 @@
+.gis_dialog{width:320px; border:1px solid #ccc; margin:5px;}
+.gis_dialog h2{height:30px; line-height:30px; padding:0 5px; font-weight:normal;background-color: #F0F0F0; border-bottom: 1px solid #CCCCCC;}
+.gis_dialog h2 b{display: inline-block; font-weight:bold;}
+.gis_dialog h2 span{display: inline-block; color:blue;}
+.gis_dialog h2 a{display: inline-block; float: right; text-decoration: underline;}
+
+.dialog_img_box{height:110px; margin-top:5px; overflow: hidden; position:relative; }
+.dialog_img_empty_box{height:10px; margin-top:5px; overflow: hidden; position:relative; }
+.dialog_img_arrow{position: absolute; right: 0px; top: 90px;}
+.dialog_img_left{background:url(../image/img_left.png) no-repeat;}
+.dialog_img_right{background:url(../image/img_right.png) no-repeat;}
+.dialog_img_left, .dialog_img_right{width:16px; height:16px; cursor:pointer;float: left;}
+.dialog_img_page{float: left; line-height: 16px; padding:0 3px;}
+.dialog_img_info{position:absolute; width:1800px; top:0px; left:0px;}
+.dialog_img_info ul li {float:left; display:inline; text-align:center; margin: 0 2px;}
+.dialog_img_info ul li img {display:block; height: 80px; width: 70px; border: 1px solid #999999; padding: 2px;}
+
+.dialog_info{margin-top:-10px;}
+.dialog_info_tab{border: 1px solid #ccc; border-bottom: none; float: left; width:60px;line-height: 30px;padding: 0 5px; background-color:#FFF; border-radius: 5px 5px 0 0; margin-left: 10px;}
+.dialog_info_other{margin-left: 100px; padding-top:10px;}
+.dialog_info_other a{margin: 0 10px;}
+.other_icon1, .other_icon2{width:20px; height:16px; display:inline-block; vertical-align: middle;}
+.other_icon1{background:url(../image/other_icon1.png) no-repeat;}
+.other_icon2{background:url(../image/other_icon2.png) no-repeat;}
+
+.dialog_info_detail{border-top:1px solid #ccc; margin-top: -1px; padding:10px;}
+.maintain_record, .maintain_task{margin:5px 0;}
+.maintain_record_name, .maintain_task_name{float: left; width: 70px; line-height: 20px; font-weight: bold;}
+.maintain_record_name .fc{font-weight: normal;color: #999999; font-size: 11px}
+.maintain_record_list, .maintain_task_list{float: left; width: 230px;}
+.maintain_record_list li, .maintain_task_list li{float: left; margin: 0 3px; padding: 2px 6px; background-color:#E9E9E9; border-radius:10px; } 
+.maintain_record_list li:hover, .maintain_task_list li:hover{ cursor:pointer; color:blue;  background-color:#ddd;} 
+
+.info_dialog_box{width:400px; position: absolute;  top:0px; z-index:201; background-color:#666; padding:5px;}
+.dialog_box_frame{background-color:white; padding:5px;}
+.info_dialog_title{border:1px solid #ccc; border-bottom:none; padding-left:10px; line-height:30px; background-color:#f0f0f0;}
+.info_dialog_close{background-color: #FFFFFF; border: 1px solid #666; border-radius: 10px; color: #666; cursor: pointer; display: inline-block; font-size: 16px; height: 18px; line-height: 18px; position: absolute; right: -5px;  text-align: center; top: -5px; width: 18px;}
+.info_dialog_close:hover{background-color:#666; color:#fff;}
+.info_dialog_content table{width:100%;}
+.info_dialog_table td { border: 1px solid #CCCCCC; color: #000000; padding: 5px; vertical-align: middle; white-space: nowrap; background:#FFFFFF;}
+.info_dialog_table .info_dialog_td { background-color:#ebf2f8; text-align: right;width:80px;}
+.info_dialog_black {background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5); visibility:hidden; height: 999%;left: 0; position: fixed;top: 0;width: 100%;z-index: 200;}
+
+
+.allinfo_dialog_box{width:850px; position: absolute; top:0px; z-index:201; background-color:#666; padding:5px;}
+.allinfo_dialog_table {background: none repeat scroll 0 0 #FFFFFF; margin: 0 auto 10px;width: 100%;}
+.allinfo_dialog_table tr td {background-color: #FFFFFF; border: 1px solid #ccc; line-height: 21px;text-align:center; padding: 0 2px; vertical-align: middle; white-space: pre-wrap; color: #444444; }
+.allinfo_dialog_table th {background-color:#ebf2f8; border: 1px solid #ccc; line-height: 30px; padding: 0 2px; white-space: nowrap;text-align:center;}
+
+.dialog_big_img{position:absolute; background:#F2F7FF none repeat scroll 0 0; border:1px solid #ccc; padding:5px; width:300px; height:300px;}
+.dialog_big_img span{border-bottom:14px dashed transparent; border-top:14px dashed transparent; font-size:0; height:0; line-height:0; position:absolute; width:0; display:block;}
+.dialog_big_img span span{top:-14px;}
+.dialog_big_img .leftSpan{border-right:14px solid #ccc; left:-14px;}
+.dialog_big_img .leftSpan span{border-right:13px solid #F2F7FF; left:2px;}
+.dialog_big_img .rightSpan{border-left:14px solid #ccc; left:311px;}
+.dialog_big_img .rightSpan span{border-left:13px solid #F2F7FF; left:-15px;}
+
+.dialog_info_detail ul{height: 100px; overflow: auto;padding: 5px;}
+.dialog_info_detail ul li{padding: 3px 0;}

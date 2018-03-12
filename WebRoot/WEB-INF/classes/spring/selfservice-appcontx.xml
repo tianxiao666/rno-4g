@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    
+    <!-- service -->
+    <bean id="selfService" class="com.iscreate.op.service.selfservice.SelfServiceImpl" singleton="false">
+     <property name="hibernateTemplate" ref="hibernateTemplate" />
+     <property name="sysAccountService" ref="sysAccountService" />
+     <property name="sysSecurityBizlogService" ref="sysSecurityBizlogService" />
+     <property name="sysOrgUserService" ref="sysOrgUserService" />
+     <property name="authorityPasswordEncoder" ref="authorityPasswordEncoder" />
+     
+    </bean>
+    <!-- action -->
+    <bean id="selfServiceAction" class="com.iscreate.op.action.selfservice.SelfServiceAction" singleton="false">
+     <property name="selfService" ref="selfService" />
+     <property name="sysOrgUserService" ref="sysOrgUserService" />
+     <property name="sysAccountService" ref="sysAccountService" />
+     <property name="sysAccountDao" ref="sysAccountDao" />
+     
+	</bean>
+</beans>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>	  
+	<!-- dao开始 -->
+	<bean id="cmsInfoProviderDao" class="com.iscreate.op.dao.cms.CmsInfoProviderDaoImpl" singleton="false">
+	    <property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="cmsManageDao" class="com.iscreate.op.dao.cms.CmsManageDaoImpl" singleton="false">
+	    <property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<!-- dao结束 -->
+	<!-- service开始 -->
+	<bean id="cmsInfoProviderService" class="com.iscreate.op.service.cms.CmsInfoProviderServiceImpl" singleton="false">
+	    <property name="cmsInfoProviderDao" ref="cmsInfoProviderDao" />
+	    <property name="sysOrgUserService" ref="sysOrgUserService" />
+	    <!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	    
+	</bean>
+	<bean id="cmsManageService" class="com.iscreate.op.service.cms.CmsManageServiceImpl" singleton="false">
+	   <property name="cmsManageDao" ref="cmsManageDao" />
+	    <property name="dataDictionaryService" ref="dataDictionaryService" />
+	    <property name="bizMessageService" ref="bizMessageService" />
+	    <property name="sysOrgUserService" ref="sysOrgUserService" />
+	    <property name="sysAccountService" ref="sysAccountService" />
+	    
+	    <!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		   <!-- du.hw -->
+		<property name="sysUserRelaOrgDao" ref="sysUserRelaOrgDao" />
+		<property name="sysAccountDao" ref="sysAccountDao" />
+		<property name="sysOrganizationDao" ref="sysOrganizationDao" />
+		
+	</bean>
+	<!-- service结束 -->
+	<!-- action开始 -->
+	<bean id="cmsManageAction" class="com.iscreate.op.action.cms.CmsManageAction" singleton="false">
+	    <property name="cmsManageService" ref="cmsManageService" />
+	    
+	</bean>
+	<bean id="cmsExcelAction" class="com.iscreate.op.action.cms.CmsExcelAction" singleton="false">
+	    	<property name="excelService" ref="excelService" />   
+	    	  <property name="cmsManageService" ref="cmsManageService" />
+	</bean>
+	<bean id="cmsInfoProviderAction" class="com.iscreate.op.action.cms.CmsInfoProviderAction" singleton="false">
+	    <property name="cmsInfoProviderService" ref="cmsInfoProviderService" />
+		<!-- ou.jh -->
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+	</bean>
+	<!-- action结束 -->
+</beans>

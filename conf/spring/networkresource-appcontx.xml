@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="networkResourceService" class="com.iscreate.op.service.publicinterface.NetworkResourceInterfaceServiceImpl" singleton="false">
+        <property name="informationManageNetworkResourceDao" ref="informationManageNetworkResourceDao" />
+		<property name="workOrderAssnetResourceDao" ref="workOrderAssnetResourceDao" />
+		<property name="firstLetterService" ref="firstLetterService" />
+		<property name="structureCommonService" ref="structureCommonService"></property>
+		<property name="dictionary" ref="dictionary"></property>
+		<property name="quickSort" ref="quickSort"></property>
+		<property name="staffOrganizationService" ref="staffOrganizationService"></property>
+		<property name="networkResourceMaintenanceService" ref="networkResourceMaintenanceService"></property>
+		<property name="sysOrgUserService" ref="sysOrgUserService"></property>
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<property name="projectInformationDao" ref="projectInformationDao" />
+		<!-- du.hw -->
+		<property name="networkResourceQueryDao" ref="networkResourceQueryDao" />
+		<property name="sysAreaRelaOrgDao" ref="sysAreaRelaOrgDao" />
+		<property name="sysOrganizationDao" ref="sysOrganizationDao" />
+		<property name="sysAreaDao" ref="sysAreaDao" />
+	</bean>
+	
+	<bean id="networkResourceAction" class="com.iscreate.op.action.publicinterface.NetworkResourceInterfaceAction" singleton="false">
+		<property name="networkResourceService" ref="networkResourceService" />
+	</bean>
+	<bean id="networkResourceInterfaceActionForMobile" class="com.iscreate.op.action.publicinterface.NetworkResourceInterfaceActionForMobile" singleton="false">
+		<property name="networkResourceService" ref="networkResourceService" />
+	</bean>
+	
+</beans>

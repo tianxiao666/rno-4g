@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="home" extends="struts-default" namespace="/op/home">
+	
+		
+		<action name="userIndexAction" class="homeItemAction" method="userIndexAction">
+			<result name="success">index.jsp</result>
+		</action>
+		
+		<action name="getHmoeItemByRoleIdAndAccountAction" class="homeItemAction" method="getHmoeItemByRoleIdAndAccountAction">
+		</action>
+		
+		<action name="closeUserHomeItemAction" class="homeSettingsAction" method="closeUserHomeItemAction">
+		</action>
+		
+		<action name="getPermissionModuleAction" class="homeItemAction" method="getPermissionModuleAction">
+			<result name="success">userworkbench.jsp</result>
+		</action>
+		  <!-- 获取全部门户组件 -->
+	    <action name="getAllHomeItemListAction" class="homeItemAction" method="getAllHomeItemListAction">
+	     </action>
+	      <!-- 保存门户组件 -->
+	    <action name="saveHomeItemAction" class="homeItemAction" method="saveHomeItemAction">
+	     </action>
+	      <!-- 删除门户组件 -->
+	    <action name="deleteHomeItemAction" class="homeItemAction" method="deleteHomeItemAction">
+	     </action>
+	       <!-- 获取全部角色 -->
+	    <action name="getAllRolesForHomeAction" class="homeItemAction" method="getAllRolesForHomeAction">
+	     </action>
+	    <!-- 根据角色获取门户组件 -->
+	    <action name="getRoleHomeItemListByRoleIdAction" class="homeItemAction" method="getRoleHomeItemListByRoleIdAction">
+	     </action>
+	     <!-- 获取不与指定角色的门户组件 -->
+	    <action name="getRoleHomeItemListNoAssociateRoleIdAction" class="homeItemAction" method="getRoleHomeItemListNoAssociateRoleIdAction">
+	     </action>
+	      <!-- 删除角色的门户组件 -->
+	    <action name="deleteRoleHomeItemAction" class="homeItemAction" method="deleteRoleHomeItemAction">
+	     </action>
+	       <!-- 保存角色的门户组件 -->
+	    <action name="saveRoleHomeItemAction" class="homeItemAction" method="saveRoleHomeItemAction">
+	     </action>
+	</package>
+</struts>

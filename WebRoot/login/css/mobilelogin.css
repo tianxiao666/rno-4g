@@ -1,0 +1,26 @@
+﻿* {margin: 0;padding: 0;}
+body { font:12px/1.231 微软雅黑; background-color:#fff; }
+ul, ol, li {list-style: none outside none;}
+em{font-style:normal;}
+#login .login-logo{background: url(../images/login-logo.png) no-repeat;width:220px;height:150px;margin:20px auto 30px;}
+#login .login-list{text-align: center; margin: auto 10px;}
+#login .user, #login .password{height:45px;border: 1px solid #53a5c1;background-color: #F9FDFE;}
+#login .user{ border-top-left-radius: 0.6em; border-top-right-radius:0.6em;}
+#login .password{ border-bottom-left-radius: 0.6em; border-bottom-right-radius:0.6em;border: 1px solid #53a5c1;border-top: none;}
+#login .user-name, #login .password-name {float: left;padding: 0 15px;border-right: 1px solid #53a5c1;-webkit-border-top-left-radius: 0px;-webkit-border-bottom-left-radius: 0px;font: bold 16px/45px 微软雅黑;text-align: center;background: -webkit-gradient(linear,0% 0,0% 100%,from(#95D0E7),to(#5DB3D5));color: #fff;}
+#login .user-name{border-top-left-radius: 5px;border-bottom-left-radius: 0px;}
+#login .password-name{border-top-left-radius: 0px;border-bottom-left-radius: 5px;}
+#login .user-text, #login .password-text {position: relative;z-index: 1;margin-left:63px;}
+#login .user-text{margin-right:120px;}
+#login .user-text input[type="search"], #login .user-text input[type="tel"], #login .password-text input[type="password"], #login .password-text input[type="tel"] {padding: 12px 10px;border: 0;width: 100%;font: bold 18px arial;-webkit-box-sizing: border-box;-webkit-appearance: searchfield;background-color: transparent;border-image: initial;box-sizing: border-box;}
+#login .user .email-text{background-color: #5DB3D5; cursor: pointer; display: block; font-size: 12px; height: 45px; line-height: 45px; position: absolute; top: 201px; right:11px; width: 120px; border-left: 1px solid #53A5C1; text-align:left;border-radius: 0 5px 0 0;}
+#login .user .email-text select{-webkit-border-image:url(../images/bord3.png) 0 0 0 3; border-width:0px 0px 0px 3px; height:45px; width: 120px;}
+#login .infotext {font-weight: 400;color: #666;}
+#login .xbutton {position: absolute;top: 5px;right: -35px;width: 35px;height: 35px;background: white url(images/xbutton.png) 50% 50% no-repeat;}
+#login .login-button{margin-top:25px;-webkit-border-radius: 0 0 5px 5px ; }
+#login .login-but{text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);border: 1px solid #53a5c1;-webkit-border-radius: 5px; font: 26px/45px 微软雅黑;letter-spacing: .6em;background-image: -webkit-gradient(linear,0% 0,0% 100%,from(#95d0e7),to(#5db3d5));color: white;width: 100%;}
+#login .login-tel{padding-top:40px; color:#333;}
+#login .login-tel p{line-height:25px;}
+.boot_name{background: url(../images/boot_name.png) no-repeat;height:200px; width:300px; margin:30px auto 0;}
+.boot_img{background: url(../images/boot_img.png) no-repeat;height:250px;}
+.errorTootip{display: block; color: red; position: absolute; margin-top: -30px; width: 95%; font: bold 16px 微软雅黑;}

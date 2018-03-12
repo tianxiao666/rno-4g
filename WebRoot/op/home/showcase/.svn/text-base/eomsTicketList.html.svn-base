@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="../../home/showcase/css/style.css">
+	</head>
+	<body style="margin:0 auto;">
+		<div id="tabs-1"
+			style="height: 100%; border: 0px; margin:0 auto;padding: 5px 5px 5px 5px;">
+			<table width="100%" id="mytab" border="1" class="t1">
+				<thead>
+					<th width="20%">
+						工单类别
+					</th>
+					<th width="30%">
+						主题
+					</th>
+					<th width="25%">
+						建单时间
+					</th>
+					<th width="25%">
+						处理时限
+					</th>
+					<th width="10%">
+						状态
+					</th>
+				</thead>
+				<tr class="a1">
+					<td>
+					</td>
+					<td>
+					</td>
+					<td>
+					</td>
+					<td>
+					</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+					</td>
+					<td>
+					</td>
+					<td>
+					</td>
+					<td>
+					</td>
+				</tr>
+				<tr class="a1">
+					<td>
+					</td>
+					<td>
+					</td>
+					<td>
+					</td>
+					<td>
+					</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+					</td>
+					<td>
+					</td>
+					<td>
+					</td>
+					<td>
+					</td>
+				</tr>
+			</table>
+
+		</div>
+	</body>
+</html>

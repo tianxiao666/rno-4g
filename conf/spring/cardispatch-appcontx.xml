@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>	  
+
+	<!--<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="oracleDataSource"></property>
+	</bean>
+
+
+	--><!-- 车辆工单 -->
+	<bean id="cardispatchWorkorderAction" class="com.iscreate.op.action.cardispatch.CardispatchWorkorderAction" singleton="false">
+	    <property name="cardispatchWorkorderService" ref="cardispatchWorkorderService" />
+	    <property name="cardispatchManageService" ref="cardispatchManageService" />
+	</bean>
+	<bean id="cardispatchWorkorderService" class="com.iscreate.op.service.cardispatch.CardispatchWorkorderServiceImpl" parent="baseService">
+	    <property name="cardispatchWorkorderDao" ref="cardispatchWorkorderDao" />
+	    <property name="cardispatchCarDao" ref="cardispatchCarDao" />
+	    <property name="cardispatchTerminalDao" ref="cardispatchTerminalDao" />
+	    <property name="workManageService" ref="workManageService" />
+	    <property name="taskTracingRecordService" ref="taskTracingRecordService" />
+	    <property name="bizMessageService" ref="bizMessageService" />
+	    <property name="sysOrgUserService" ref="sysOrgUserService" />
+	    <property name="sysAccountService" ref="sysAccountService" />
+	    
+	    <!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	<bean id="cardispatchWorkorderDao" class="com.iscreate.op.dao.cardispatch.CardispatchWorkorderDaoImpl" parent="baseDao">
+	</bean>
+	
+	
+	<!-- 车辆排班 -->
+	<bean id="cardispatchDutyAction" class="com.iscreate.op.action.cardispatch.CardispatchDutyAction" singleton="false">
+	    <property name="cardispatchDutyService" ref="cardispatchDutyService" />
+	</bean>
+	<bean id="cardispatchDutyService" class="com.iscreate.op.service.cardispatch.CardispatchDutyServiceImpl" parent="baseService">
+	    <property name="cardispatchDutyDao" ref="cardispatchDutyDao" />
+	    <property name="networkResourceInterfaceService" ref="networkResourceService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	<bean id="cardispatchDutyDao" class="com.iscreate.op.dao.cardispatch.CardispatchDutyDaoImpl" parent="baseDao">
+	</bean>
+	
+
+	<!-- 车辆管理 -->
+	<bean id="cardispatchManageAction" class="com.iscreate.op.action.cardispatch.CardispatchManageAction" singleton="false">
+	    <property name="cardispatchManageService" ref="cardispatchManageService" />
+	     <property name="sysOrganizationService" ref="sysOrganizationService" />
+	    
+	</bean>
+	<bean id="cardispatchManageService" class="com.iscreate.op.service.cardispatch.CardispatchManageServiceImpl" parent="baseService">
+	    <property name="cardispatchCarDao" ref="cardispatchCarDao" />
+	    <property name="cardispatchDriverDao" ref="cardispatchDriverDao" />
+	    <property name="cardispatchTerminalDao" ref="cardispatchTerminalDao" />
+	    <property name="workManageService" ref="workManageService" />
+	    <property name="cardispatchGpsDao" ref="cardispatchGpsDao" />
+	    <property name="cardispatchWorkorderDao" ref="cardispatchWorkorderDao" />
+	    <property name="sysOrgUserService" ref="sysOrgUserService" />
+	    <property name="sysAccountService" ref="sysAccountService" />
+	    <!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<!-- du.hw -->
+		<property name="sysOrganizationDao" ref="sysOrganizationDao" />
+		<!-- ou.jh -->
+		<property name="cardispatchInstrumentReadingDao" ref="cardispatchInstrumentReadingDao" />
+		<property name="cardispatchFuelBillsDao" ref="cardispatchFuelBillsDao" />
+	</bean>
+	
+	<!-- 车辆外连接 -->
+	<bean id="cardispatchForeignAction" class="com.iscreate.op.action.cardispatch.CardispatchForeignAction" singleton="false">
+	    <property name="enterpriseInformationService" ref="enterpriseInformationService" />
+	    <!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<!-- ou.jh -->
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+		
+	</bean>
+	
+	<!-- 车辆公共 -->
+	<bean id="cardispatchCommonAction" class="com.iscreate.op.action.cardispatch.CardispatchCommonAction" singleton="false">
+	    <property name="cardispatchManageService" ref="cardispatchManageService" />
+	    <property name="cardispatchCommonService" ref="cardispatchCommonService" />
+	</bean>
+	<bean id="cardispatchCommonService" class="com.iscreate.op.service.cardispatch.CardispatchCommonServiceImpl">
+	    <property name="cardispatchCommonDao" ref="cardispatchCommonDao" />
+	    <property name="informationManageAreaService" ref="informationManageAreaService" />
+	    <property name="networkResourceService" ref="networkResourceService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	<bean id="cardispatchCommonDao" class="com.iscreate.op.dao.cardispatch.CardispatchCommonDaoImpl">
+	</bean>
+	
+	
+	<!-- 车辆、司机、终端Dao -->
+	<bean id="cardispatchCarDao" class="com.iscreate.op.dao.cardispatch.CardispatchCarDaoImpl" parent="baseDao">
+	</bean>
+	<bean id="cardispatchDriverDao" class="com.iscreate.op.dao.cardispatch.CardispatchDriverDaoImpl" parent="baseDao">
+	</bean>
+	<bean id="cardispatchTerminalDao" class="com.iscreate.op.dao.cardispatch.CardispatchTerminalDaoImpl" parent="baseDao">
+	</bean>
+	<bean id="cardispatchGpsDao" class="com.iscreate.op.dao.cardispatch.CardispatchGpsDaoImpl" parent="baseDao">
+	</bean>
+
+	<!-- 油费 -->
+	<bean id="cardispatchFuelBillsDao" class="com.iscreate.op.dao.cardispatch.CardispatchFuelBillsDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<!-- 仪表读数 -->
+	<bean id="cardispatchInstrumentReadingDao" class="com.iscreate.op.dao.cardispatch.CardispatchInstrumentReadingDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- mobile begin -->
+	<bean id="cardispatchWorkorderActionForMobile" class="com.iscreate.op.action.cardispatch.CardispatchWorkorderActionForMobile" singleton="false">
+	    <property name="cardispatchManageServiceForMobile" ref="cardispatchManageServiceForMobile" />
+	    <property name="cardispatchWorkorderService" ref="cardispatchWorkorderService" />
+	    <property name="cardispatchWorkorderServiceForMobile" ref="cardispatchWorkorderServiceForMobile" />
+	    <property name="cardispatchCommonService" ref="cardispatchCommonService" />
+	    <property name="cardispatchManageService" ref="cardispatchManageService" />
+	    <property name="taskTracingRecordService" ref="taskTracingRecordService" />
+	    <!-- ou.jh -->
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+	</bean>
+	<bean id="cardispatchWorkorderServiceForMobile" class="com.iscreate.op.service.cardispatch.CardispatchWorkorderServiceImplForMobile" parent="baseService">
+	    <property name="cardispatchWorkorderDaoForMobile" ref="cardispatchWorkorderDaoForMobile" />
+	    <property name="cardispatchCarDao" ref="cardispatchCarDao" />
+	    <property name="cardispatchTerminalDao" ref="cardispatchTerminalDao" />
+	    <property name="workManageService" ref="workManageService" />
+	    <property name="taskTracingRecordService" ref="taskTracingRecordService" />
+	    <property name="bizMessageService" ref="bizMessageService" />
+	    <property name="sysOrgUserService" ref="sysOrgUserService" />
+	    <property name="sysAccountService" ref="sysAccountService" />
+	    
+	    <!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	<bean id="cardispatchManageServiceForMobile" class="com.iscreate.op.service.cardispatch.CardispatchManageServiceImplForMobile" parent="baseService">
+	    <property name="cardispatchCarDao" ref="cardispatchCarDao" />
+	    <property name="cardispatchDriverDao" ref="cardispatchDriverDao" />
+	    <property name="cardispatchTerminalDao" ref="cardispatchTerminalDao" />
+	    <property name="workManageService" ref="workManageService" />
+	    <property name="sysOrgUserService" ref="sysOrgUserService" />
+	    <property name="sysAccountService" ref="sysAccountService" />
+	    <!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<!-- du.hw -->
+		<property name="sysOrganizationDao" ref="sysOrganizationDao" />
+		
+	</bean>
+	<bean id="cardispatchWorkorderDaoForMobile" class="com.iscreate.op.dao.cardispatch.CardispatchWorkorderDaoImplForMobile" parent="baseDao">
+	</bean>
+	 <!-- yuan.yw-->
+	<bean id="cardispatchCarMonitorActionForMobile" class="com.iscreate.op.action.cardispatch.CardispatchCarMonitorActionForMobile" singleton="false">
+	    <property name="cardispatchWorkorderServiceForMobile" ref="cardispatchWorkorderServiceForMobile" />
+	    <property name="cardispatchCommonService" ref="cardispatchCommonService" />
+	</bean>
+	<!-- mobile end -->
+	
+	<!-- 车辆轨迹 BEGIN -->
+	<bean id="cardispatchCarLocusService" class="com.iscreate.op.service.cardispatch.CardispatchCarLocusServiceImpl" 
+		singleton="false">
+		<property name="cardispatchWorkorderDao" ref="cardispatchWorkorderDao"></property>
+		<property name="cardispatchCarDao" ref="cardispatchCarDao"></property>
+		<property name="cardispatchTerminalDao" ref="cardispatchTerminalDao"></property>
+	</bean>
+	<bean id="cardispatchCarLocusAction" class="com.iscreate.op.action.cardispatch.CardispatchCarLocusAction" 
+		singleton="false">
+		<property name="cardispatchCarLocusService" ref="cardispatchCarLocusService"></property>
+	</bean>
+	<!-- 车辆轨迹 END -->
+	<!-- 车辆里程导出 BEGIN -->
+		<bean id="CardispatchExportDateCar" class="com.iscreate.op.action.cardispatch.CardispatchExportExcelAction" >
+		</bean>
+	<!-- 车辆里程导出 end -->
+	
+	<!-- 车辆油费统计 yuan.yw -->
+	<bean id="carFuelReportDao" class="com.iscreate.op.dao.cardispatch.CarFuelReportDaoImpl" parent="baseDao">
+	</bean>
+	<bean id="carFuelReportService" class="com.iscreate.op.service.cardispatch.CarFuelReportServiceImpl" singleton="false">
+		<property name="carFuelReportDao" ref="carFuelReportDao"></property>
+	</bean>
+	<bean id="carFuelReportAction" class="com.iscreate.op.action.cardispatch.CarFuelReportAction" singleton="false">
+		<property name="carFuelReportService" ref="carFuelReportService"></property>
+	</bean>
+	<!-- 车辆油费统计 yuan.yw end-->	
+	
+	
+</beans>

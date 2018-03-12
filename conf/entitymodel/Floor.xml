@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+ <name>Floor</name>
+ <attribute type="java.lang.Long" length="128" primary="TRUE" index="TRUE" nullable="FALSE" regex="">id</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="FALSE" regex="">name</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">label</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">usestatus</attribute>
+ <attribute type="java.lang.String" length="100" primary="FALSE" index="FALSE" nullable="TRUE" regex="">address</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">roomstructure</attribute>
+ <attribute type="java.lang.Double" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">totalarea</attribute>
+ <attribute type="java.lang.Double" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">len</attribute>
+ <attribute type="java.lang.Double" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">width</attribute>
+ <attribute type="java.lang.Double" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">height</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">loadcapacity</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">powertype</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">electricitysupplier</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">electricityloead</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">belongType</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">roomcategory</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">keycategory</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">entrancecardcategory</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">entranceguardcode</attribute>
+ <attribute type="java.lang.Integer" length="8" primary="FALSE" index="FALSE" nullable="TRUE" regex="">islightleak</attribute>
+ <attribute type="java.lang.Integer" length="8" primary="FALSE" index="FALSE" nullable="TRUE" regex="">iswaterleak</attribute>
+ <attribute type="java.lang.Integer" length="8" primary="FALSE" index="FALSE" nullable="TRUE" regex="">isdisorderly</attribute>
+ <attribute type="java.lang.String" length="200" primary="FALSE" index="FALSE" nullable="TRUE" regex="">securitydanger</attribute>
+</entity>

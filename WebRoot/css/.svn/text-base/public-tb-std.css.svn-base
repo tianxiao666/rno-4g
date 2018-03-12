@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 完美表格  */
+.tb-transparent-standard{ display:inline;margin:auto; }
+.tb-transparent-standard td {overflow:hidden;  padding-left:5px;padding-right:5px}
+.tb-transparent-standard .tb-right-border{ border-right:solid; border-right-width:1px; }
+.tb-transparent-standard .tb-tr td {height:40px;}
+.tb-transparent-standard .tb-tr-bg-coldwhite td {height:40px; background:#effcfd;}
+.tb-transparent-standard .tb-tr-bg-warmwhite td {height:40px; background:#fbfbfb;}
+.tb-transparent-standard .tb-tr-bg{height:40px;}
+.tb-tr .td-standard-date { text-align:center;}
+.tb-tr .tb-tr-bg-coldwhite-rbc td{ background:#effcfd;border-right:solid; border-right-width:1px;  } 
+.tb-right-border . border-color-{}
+.tb-tr .tb-tr-bg-coldwhite td{ background:#effcfd; border-right:solid; border-right-width:2px; border-right-color:white} 
+/**/
+.td_nowrap{white-space:nowrap;}
+/*td边框 标准是2px*/
+.bd-right{}
+.bd-right-grey{border-right:solid; border-right-width:2px; border-right-color:grey}
+.bd-right-white{border-right:solid; border-right-width:2px; border-right-color:white}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	
+	<!-- 用户 -->
+	<bean id="sysOrgUserAction" class="com.iscreate.op.action.system.SysOrgUserAction" singleton="false">
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+		<property name="sysAccountService" ref="sysAccountService" />
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<property name="sysDictionaryService" ref="sysDictionaryService" />
+		<property name="sysUserRelaPostService" ref="sysUserRelaPostService" />
+		<property name="sysUserRelaOrgService" ref="sysUserRelaOrgService" />
+		
+	</bean>
+	
+	<!-- 账号 -->
+	 <bean id="sysAccountAction" class="com.iscreate.op.action.system.SysAccountAction">
+        <property name="sysAccountService" ref="sysAccountService"/>
+    </bean>
+</beans>

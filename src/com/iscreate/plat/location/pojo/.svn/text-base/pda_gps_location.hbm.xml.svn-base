@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iscreate.plat.location.pojo.PdaGpsLocation" table="PDA_GPS_LOCATION" >
+        <id name="id">
+            <column name="id" />
+            <generator class="sequence">
+            	<param name="sequence">
+            		SEQ_PDA_GPS_LOCATION
+            	</param>
+            </generator>
+        </id>
+        <property name="imei" column="imei" />
+        <property name="userId" column="userId" />
+        <property name="longitude" column="longitude" />
+        <property name="latitude" column="latitude" />
+        <property name="pickTime" column="pickTime" />
+        <property name="address" column="address" />
+        <property name="coorType" column="coorType" />
+        <property name="locType" column="locType" />
+        <property name="poi" column="poi" />
+        <property name="radius" column="radius" />
+        <property name="speed" column="speed" />
+        <property name="derect" column="derect" />
+        <property name="satelliteNumber" column="satelliteNumber" />
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 
+    Mapping file
+-->
+<hibernate-mapping>
+    <class name="com.iscreate.op.pojo.rno.RnoThreshold" table="RNO_THRESHOLD" schema="IOSM5">
+        <id name="id" type="java.math.BigDecimal">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="sequence" >
+              <param name="sequence">SEQ_RNO_THRESHOLD</param>
+            </generator>
+        </id>
+        <property name="orderNum" type="java.lang.Long">
+            <column name="ORDER_NUM" precision="22" scale="0" />
+        </property>
+        <property name="moduleType" type="java.lang.String">
+            <column name="MODULE_TYPE" length="64" />
+        </property>
+        <property name="code" type="java.lang.String">
+            <column name="CODE" length="128" />
+        </property>
+        <property name="descInfo" type="java.lang.String">
+            <column name="DESC_INFO" length="256" />
+        </property>
+        <property name="defaultVal" type="java.lang.String">
+            <column name="DEFAULT_VAL" length="32" />
+        </property>
+        <property name="scopeDesc" type="java.lang.String">
+            <column name="SCOPE_DESC" length="256" />
+        </property>
+    </class>
+</hibernate-mapping>

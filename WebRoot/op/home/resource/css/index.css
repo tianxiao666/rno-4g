@@ -1,0 +1,44 @@
+/* CSS Document */
+
+/********** 头部 **********/
+body{font-family:'微软雅黑',Verdana, Geneva, sans-serif}
+
+#container{margin-top:30px;}
+.header{width:100%; height:28px; position:fixed; z-index:10; top:0px;left:0px; background:url(../images/white-top-bottom.gif) repeat-x; box-shadow:2px 2px 5px #666; margin-bottom:10px; border-bottom:1px solid #99BBE8;}
+.header_nav{ width:1100px; margin:0 auto; position:relative;}
+.nav_ul li{line-height:24px;padding:0px 10px; float:left; text-align:center; font-size:13px; margin-top:2px;cursor:pointer; color:#333; border-left:1px solid transparent; border-right:1px solid transparent;}
+.nav_ul li:hover{font-weight:bold;}
+.nav_ul li.header_nav_on{font-weight:bold; background:#fff; color:#00F; border:1px solid #99BBE8; border-bottom:none; border-top-left-radius:5px; border-top-right-radius:5px;}
+.nav_ul li.jizhong{background:url(../images/jizhong.png) 6px 4px no-repeat; padding-left:38px;}
+.a_trig{display: inline-block;zoom: 1;overflow: hidden;border-width: 3px 3px 0;border-style: solid;
+border-right-color: transparent;border-left-color: transparent;border-bottom-color: transparent;_border-style: solid dotted dotted dotted;vertical-align: top;margin-left:8px;margin-top:11px;}
+
+.nav_ul_content{display:none;background:#fff;padding:8px 8px; border:1px solid #99BBE8; border-top:none; z-index:2; position:absolute; top:28px; width:80%; box-shadow:2px 2px 3px #999;border-bottom-left-radius:5px; border-bottom-right-radius:5px;}
+.nav_ul_content a{display:inline-block;height:32px; width:98px; margin-left:10px; text-align:center; line-height:32px; background:url(../images/button.png) no-repeat; color:#fff; text-decoration:none; font-size:14px; font-weight:bold;}
+.nav_ul_content a:hover{background:url(../images/button.png) -104px 0px no-repeat; color:#000;}
+.nav_ul_content a:active{background:url(../images/button.png) -208px 0px no-repeat;}
+
+.tool_bar{position:absolute; right:10px; top:0px;}
+.tool_bar span{ display:inline-block;margin-left:5px; line-height:30px; padding-left:22px; cursor:pointer; font-size:12px;}
+.tool_bar span a{ text-decoration:none;}
+.tool_bar span:hover{ color:#00F;}
+.tool_bar span.message_box{ background:url(../images/message_box.png) 0px 8px no-repeat; position:relative;}
+.message_number{display:inline-block; font-size:10px; height:12px; min-width:12px; background:orange; line-height:12px; text-align:center; border:1px solid #F00; border-radius:3px; color:#333; position:absolute; left:6px; top:2px;} 
+.tool_bar span.full_screen{background:url(../images/full_screen.png) 0px 8px no-repeat; color:#C00; font-weight:bold;}
+.tool_bar span.setting{background:url(../images/setting.png) 0px 8px no-repeat;}
+.tool_bar span.quit{background:url(../images/quit.png) 0px 8px no-repeat;}
+
+/********** logo **********/
+.logo_div{width:100%; z-index:1;margin:0px auto; position:relative; overflow:hidden;}
+.logo{float:left; padding-top:4px; cursor:pointer;}
+.system_name{float:left;}
+.now_time{position:absolute; right:10px; top:45px; font-size:14px;}
+
+/********** 主体tab **********/
+.main_nav{width:100%; margin:0 auto; height:30px; background-position: 0px 0px; background:url(../images/nav_back.png) 0 0 repeat-x;}
+.main_nav li{ width:88px;float:left; line-height:30px; text-align:center; color:#fff; background:#fff url(../images/nav_back.png) 0 0 repeat-x; cursor:pointer; }
+.main_nav li.main_nav_on{background-position:0px -35px; color:#333; font-weight:bold;}
+
+/********** 主体 **********/
+.content{background:url(../images/11111111.png) -2px 0px no-repeat; width:1100px; height:1100px; margin:0px auto;}
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>	  
+
+	
+
+	
+    <bean id="dynamicFormFieldDao" class="com.iscreate.op.dao.dynamicformfield.DynamicFormFieldDaoImpl" >
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+
+
+	
+	<bean id="dynamicFormFieldService" class="com.iscreate.op.service.dynamicformfield.DynamicFormFieldServiceImpl" >
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	    <property name="dynamicFormFieldDao" ref="dynamicFormFieldDao"></property>
+	</bean>
+	
+	
+		
+	<bean id="testAction" class="com.iscreate.op.action.dynamicformfield.DynamicFormFieldAction" singleton="false">
+	   <property name="dynamicFormFieldService" ref="dynamicFormFieldService"/>
+	</bean>
+	
+	
+	
+	
+	
+</beans>

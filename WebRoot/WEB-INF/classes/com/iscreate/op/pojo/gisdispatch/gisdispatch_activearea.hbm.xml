@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name="com.iscreate.op.pojo.gisdispatch.GisDispatch_ActiveArea" table="gis_activearea" >
+        <id name="id">
+            <column name="id"  />
+            <generator class="sequence">
+            	<param name="sequence">SEQ_GIS_ACTIVEAREA</param>
+            </generator>
+        </id>
+        <property name="areaId" column="areaId" />
+        <property name="activeNumber" column="activeNumber" />
+    </class>
+</hibernate-mapping>

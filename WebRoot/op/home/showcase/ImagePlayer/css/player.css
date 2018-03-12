@@ -1,0 +1,104 @@
+/*
+ * images player
+ * author:mr��zhong
+ * date:2010-04-19
+ */
+
+#playerBox{ 
+	width:208px; 
+	height:125px; 
+	border:0px solid #ccc; 
+}
+
+#playerImage ul{ 
+	padding:0px; 
+	margin:0px; 
+	border:0px; 
+	list-style:none; 
+	position:absolute;
+}
+
+#playerImage ul li{ 
+	padding:0px; 
+	margin:0px; 
+	border:0px; 
+	list-style:none; 
+	position:absolute;
+}
+
+#playerImage li img{ 
+	width:208px; 
+	height:125px; 
+	border:0px;
+}
+
+#playerNavAndTitle{ 
+	z-index:10; 
+	position:absolute; 
+	height:50px; 
+	width:208px; 
+	/*background-color:#000;*/
+	filter:alpha(opacity=60); 
+	-moz-opacity: 0.6; 
+	opacity: 0.6; 
+}
+
+#playerNavAndTitle #playerTitle{
+	/*width:auto; */
+	width:208px; 
+	height:20px; 
+	line-height:17px; 
+	text-indent:10px; 
+	background-color:#000;
+}
+
+#playerNavAndTitle #playerTitle a{ 
+	color:#FFFFFF; 
+	text-decoration:none; 
+	font-weight:bold; 
+	position:absolute;
+	font-size:12px;
+	font-family:宋体;
+}
+
+#playerNavAndTitle #playerTitle a:hover
+{
+	color:Yellow;
+}
+
+#playerNavAndTitle #playerNav{ 
+	float:right; 
+	text-align:right;
+}
+
+#playerNavAndTitle #playerNav a{ 
+	float:left;
+	display:block; 
+	background-color:#CC3300; 
+	border:1px solid #fff; 
+	width:15px; 
+	height:15px; 
+	margin:5px 5px; 
+	text-align:center; 
+	line-height:15px; 
+	text-decoration:none; 
+	color:#FFFFFF; 
+	cursor:pointer;
+	font-family:宋体;
+}
+
+#playerNavAndTitle #playerNav .hover{
+	background-color:#FFFFFF;
+	border:1px solid #cc3300;
+	color:#CC3300;	
+	float:left;
+	display:block; 	
+	width:15px; 
+	height:15px; 
+	margin:5px 5px; 
+	text-align:center; 
+	line-height:15px; 
+	text-decoration:none; 	
+	cursor:pointer;
+	font-family:宋体;
+}

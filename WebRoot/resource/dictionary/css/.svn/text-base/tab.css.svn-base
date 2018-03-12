@@ -1,0 +1,57 @@
+
+/*tab1 begin*/
+.tab_menu {
+	clear: both;
+	height:25px;
+	width: 98%;
+	margin:5px auto 0px;
+	position: relative;
+	left:-1px;
+}
+.tab_menu ul {
+	position:absolute;
+	z-index:2;
+}
+.tab_menu ul li {
+	float:left;
+	border-right:1px solid #ccc;
+	border-left:1px solid #eee;
+	border-top:1px solid #ccc;
+	text-align:center;
+	padding:0px 8px;
+	cursor:pointer;
+	background:#eee;
+	line-height:23px;
+	position:relative;
+}
+.tab_menu ul li.first_tab{
+	border-left:1px solid #ccc;
+	}
+.tab_menu ul li.ontab {
+	border-top:3px solid #99BCE8;
+	border-right:1px solid #99BCE8;
+	border-left:1px solid #99BCE8;
+	background:#fff;
+	height:22px;
+	line-height:20px;
+}
+.tab_content {
+	border:1px solid #99BCE8;
+	position: relative;
+	top: -1px;
+	background:#fff;
+	width:98%;
+	margin:0 auto;
+	padding:10px 5px ;
+}
+.table_top{height:30px; line-height:24px;}
+/*tab1 end*/
+
+.main_table2{ width:100%;}
+.main_table2 th{ background:#eee;border-right:1px solid #fff; height:25px; line-height:25px;border-bottom: 1px solid #CCCCCC; white-space:nowrap;}
+.main_table2 td{ border-bottom:1px solid #ccc; padding:10px 8px; color:#777; white-space:nowrap;}
+.main_table2 .menuTd{ white-space:nowrap; text-align:right; vertical-align:middle;min-width:10%; color:#000;}
+
+/*dacheng add loading*/
+.insp_black {background-color: #fff; display: none; height: 100%; left: 0; opacity: 0.5; position: fixed; top: 50%; width: 100%; z-index: 10; text-align: center;padding-top:0px;}
+.bottom_load{display: none; padding:150px 0;}

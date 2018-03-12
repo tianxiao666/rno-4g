@@ -1,0 +1,2425 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--outside资源 业务数据结构关系定义
+遗留问题：
+1、微波/自由空间传输设备及信道未融入逻辑网：光路/传输拓扑；
+-->
+<!--inside(station)资源 业务数据结构关系定义
+备注：
+
+遗留问题：
+	1、线缆等entity对象还未纳入，树资源还未梳理到很细的粒度，需要根据管理需要进行补充完善；
+-->
+<structure name="PipeAndCable_ReleatedResource">
+	<entities>
+		<entity>Sys_Area</entity><!--区域-->
+		<!--区域下8类(可能)带GIS位置的物理资源设施-->
+		<entity>Station</entity><!--站址-->
+		<entity>ManWell</entity><!--人井-->
+		<entity>Pole</entity><!--电杆-->
+		<entity>HangWall</entity><!--挂墙点-->
+		<entity>MarkPost</entity><!--标桩-->
+		<entity>FiberCrossCabinet</entity><!--光交接箱-->
+		<entity>FiberDistributionCabinet</entity><!--光分纤箱-->
+		<entity>FiberTerminalCase</entity><!--终端盒-->
+		<!--从outside角度看：物理资源设施的内部/子设施-->
+		<entity>Photo</entity><!--照片-->
+		<entity>PipeGate</entity><!--管道闸-->
+		<entity>PipeHole</entity><!--管孔-->
+		<entity>SubPipeHole</entity><!--子管孔-->
+		<entity>CableEntranceHole</entity><!--进线孔-->
+		<!--<entity>ODF</entity>--><!--ODF-->
+		<!--<entity>MicrowaveOrFSO</entity>--><!--微波/FSO-->
+		<!--<entity>ElectricalTerminal</entity>--><!--电口-->
+		<!--<entity>OpticalTerminal</entity>--><!--光口-->
+		<!--<entity>Terminal</entity>--><!--端子-->
+		<entity>Joint</entity><!--接头-->
+		<entity>VerticalPipe</entity><!--引上管-->
+		<!--<entity>ODM</entity>--><!--(光)模块-->
+		<!--从inside角度看：物理资源设施的内部/子设施-->
+		<!--<entity>Station</entity>--><!--站址-->
+		<!--Station下的一级资源设施-->
+		<entity>Room</entity><!--机房-->
+		<entity>Tower</entity><!--铁塔-->
+		<entity>Floor</entity><!--楼面-->
+		<entity>Stairs</entity><!--楼梯-->
+		<entity>Lift</entity><!--电梯-->
+		<entity>Corridor</entity><!--走廊-->
+		<entity>Passage</entity><!--过(通)道-->
+		<entity>PropertyOwnership</entity><!--物业-->
+		<entity>Transformer</entity><!--变压器-->
+		<entity>Ammeter</entity><!--电表箱-->
+		<entity>EnergySavingFacility</entity><!--节能设备-->
+		<!--Station下的二级资源设施及以下-->
+		<entity>BaseStation</entity><!--基站(预留)-->
+		<entity>BaseStation_GSM</entity><!--GSM基站-->
+		<entity>BaseStation_repeater</entity><!--直放站-->
+		<entity>BaseStation_TD</entity><!--TD基站-->
+		<entity>BaseStation_WLAN</entity><!--WLAN基站-->
+		<entity>Cell</entity><!--小区-->
+		<entity>RRU</entity><!--RRU-->
+		<entity>PrimaryEquipFrame_GSM</entity><!--GSM主设备架-->
+		<entity>EquipBoard_GSM</entity><!--GSM设备板件-->
+		<entity>PrimaryEquipFrame_TD</entity><!--TD主设备架-->
+		<entity>EquipBoard_TD</entity><!--TD设备板件-->
+		<entity>Frame_DF</entity><!--DF架-->
+		<entity>WirelessRepDevice</entity><!--无线直放设备-->
+		<entity>FiberRepLocalDevice</entity><!--光纤直放站近端机-->
+		<entity>FiberRepRemoteDevice</entity><!--光纤直放站远端机-->
+		<entity>TrunklineAmplifier</entity><!--干放设备-->
+		<entity>TowertopAmplifier</entity><!--塔放设备-->
+		<entity>CompositiveFrame</entity><!--综合机架-->
+		
+		<entity>OpticalTerminalDevice</entity><!--光端机-->
+		<entity>Switcher</entity><!--交换机-->
+		<entity>Router</entity><!--路由器-->
+		<entity>AP</entity><!--AP-->
+		<entity>AC</entity><!--AC-->
+		<entity>IDU</entity><!--IDU-->
+		<entity>ODF</entity><!--ODF架-->
+		<entity>DDF</entity><!--DDF架-->
+		<entity>PDU</entity><!--插排-->
+		<entity>CableSustainFrame</entity><!--走线架-->
+		<entity>PowerDistributionFrame</entity><!--电源列头柜-->
+		<entity>ConnectorJoint</entity><!--连接器-->
+		<entity>UPS</entity><!--UPS-->
+		<entity>UPSControlModule</entity><!--UPS控制模块-->
+		<entity>UPSBattery</entity><!--UPS电池-->
+		<entity>PowerTransducer</entity><!--电源转换器-->
+		<entity>DCBattery</entity><!--DC电池组-->
+		<entity>DCRectifyFrame</entity><!--DC整流机柜-->
+		<entity>RoomEarthConn</entity><!--机房总接地-->
+		<entity>LightningProtBox</entity><!--防雷箱-->
+		<entity>ACSwitch</entity><!--交流开关-->
+		<entity>ACFeederPanel</entity><!--AC配电屏-->
+		<entity>VoltageStabilize</entity><!--稳压器-->
+		<entity>OilEngine</entity><!--油机-->
+		<entity>EnvironmentMonitor</entity><!--环境监控箱-->
+		<entity>AirConditioning</entity><!--空调-->
+		<entity>ExtinguishingAProtDevice</entity><!--消防设备-->
+		<entity>AirExhaustDevice</entity><!--排风设备-->
+		<entity>Camera</entity><!--摄像头-->
+		<entity>Subsidiary</entity><!--配套-->
+		<entity>Antenna</entity><!--天线-->
+		<entity>ODU</entity><!--ODU-->
+		<entity>Sensor</entity><!--传感器-->
+		<entity>PowerTerminal</entity><!--电源端子-->
+		<entity>OpticalTerminalDeviceBoard</entity><!--光端机板件-->
+		<entity>EarthConnDistributionUnit</entity><!--地排-->
+		<entity>RectifyModule</entity><!--整流模块-->
+		<entity>DCControllerModule</entity><!--DC控制模块-->
+		<entity>DCLightningProtModule</entity><!--DC防雷模块-->
+		<entity>DCDistributionUnit</entity><!--DC分配单元-->
+		<entity>ACAccessUnit</entity><!--AC接入单元-->
+		<entity>EntranceGuard</entity><!--门禁-->
+		<entity>ODM</entity><!--模块-->
+		<entity>DDM</entity><!--模块-->
+		<entity>ElectricalTerminal</entity><!--电口-->
+		<entity>OpticalTerminal</entity><!--光口-->
+		<entity>Terminal</entity><!--ODF端子-->
+		<entity>DDFTerminal</entity><!--DDF端子-->
+		<entity>Attachment</entity><!--设计文件-->
+		
+		<entity>Feedcable</entity><!--馈线-->
+		<entity>Powercable</entity><!--动力电缆-->
+		<entity>EarthConnCable</entity><!--地线-->
+		
+		<!--outside角度：逻辑网元素-->
+		<entity>PipeRoute</entity><!--管道-->
+		<entity>PoleRoute</entity><!--杆路-->
+		<entity>PipelineSection</entity><!--管道段-->
+		<entity>PolelineSection</entity><!--吊线段-->
+		<entity>BuriedlineSection</entity><!--直埋段-->
+		<entity>Fiber</entity><!--光缆-->
+		<entity>FiberSection</entity><!--光缆段-->
+		<entity>FiberCore</entity><!--纤芯-->
+		<entity>OpticalRoute</entity><!--光路-->
+		<entity>OpticalRouteP2P</entity><!--光路纤芯-->
+		<entity>OpticalRouteSP2SP</entity><!--局向光纤-->
+		<entity>TransmissionNetwork</entity><!--传输系统-->
+		<entity>TransmissionSection</entity><!--传输段-->
+		<entity>WirelessChannel</entity><!--微波信道-->
+		<entity>PigtailedFiber</entity><!--尾纤，跳纤，预留后续使用，端点设施为端子、设备端口-->
+		<entity>GroupUserSite</entity><!--客户站点-->
+		<entity>GroupUserService</entity><!--客户业务-->
+		<entity>OpticalModem</entity><!--光猫-->
+		<entity>PBX</entity><!--PBX-->
+		<entity>IAD</entity><!--IAD-->
+		<entity>ONU</entity><!--ONU-->
+		<entity>Gateway</entity><!--网关-->
+		<entity>Firewall</entity><!--防火墙-->
+	</entities>
+	<entitygroups>
+		<entitygroup aetgname="GeneralBaseStation"><!--基站大类-->
+			<reference>BaseStation</reference>
+			<reference>BaseStation_GSM</reference>
+			<reference>BaseStation_repeater</reference>
+			<reference>BaseStation_TD</reference>
+			<reference>BaseStation_WLAN</reference>
+		</entitygroup>
+		<entitygroup aetgname="GeneralRoomContainer"><!--机房载体大类-->
+			<reference>Room</reference>
+			<reference>Stairs</reference>
+			<reference>Corridor</reference>
+			<reference>Passage</reference>
+			<reference>Floor</reference>
+			<reference>Lift</reference>
+		</entitygroup>
+		<entitygroup aetgname="Conn_4_PipelineSection"><!--管道段的端点连接设施-->
+			<reference>ManWell</reference>
+			<reference>Pole</reference>
+			<reference>HangWall</reference>
+			<reference>MarkPost</reference>
+			<reference>Station</reference>
+			<reference>FiberCrossCabinet</reference>
+		</entitygroup>
+		<entitygroup aetgname="Passthrough_4_PipelineSection"><!--管道段所穿越的管孔、引上管、进线孔-->
+			<reference>PipeHole</reference>
+			<reference>VerticalPipe</reference>
+			<reference>CableEntranceHole</reference>
+		</entitygroup>
+		<entitygroup aetgname="Conn_4_PolelineSection"><!--吊线段的端点连接设施-->
+			<reference>Pole</reference>
+			<reference>HangWall</reference>
+		</entitygroup>
+		<entitygroup aetgname="Conn_4_BuriedlineSection"><!--直埋段的端点连接设施-->
+			<reference>MarkPost</reference>
+			<reference>Pole</reference>
+		</entitygroup>
+		<entitygroup aetgname="Conn_4_FiberSection"><!--光缆段的端点连接设施-->
+			<reference>ODF</reference>
+			<reference>Joint</reference>
+			<reference>FiberCrossCabinet</reference>
+			<reference>FiberDistributionCabinet</reference>
+			<reference>FiberTerminalCase</reference>
+		</entitygroup>
+		<entitygroup aetgname="Passthrough_4_FiberSection"><!--光缆段所穿越的设施-->
+			<reference>PolelineSection</reference>
+			<reference>BuriedlineSection</reference>
+			<reference>SubPipeHole</reference>
+			<reference>VerticalPipe</reference>
+			<reference>CableEntranceHole</reference>
+			<reference>MarkPost</reference>
+		</entitygroup>
+		<entitygroup aetgname="Conn_4_FiberCore"><!--纤芯的端点连接设施-->
+			<reference>Terminal</reference>
+			<reference>Joint</reference>
+		</entitygroup>
+		<entitygroup aetgname="Conn_4_WirelessChannel"><!--微波信道的端点连接设施-->
+			<reference>ElectricalTerminal</reference>
+			<reference>OpticalTerminal</reference>
+		</entitygroup>
+		<entitygroup aetgname="Conn_4_OpticalRoute"><!--光路的端点连接设施-->
+			<reference>ODF</reference>
+			<reference>FiberCrossCabinet</reference>
+			<reference>FiberDistributionCabinet</reference>
+			<reference>FiberTerminalCase</reference>
+		</entitygroup>
+		<entitygroup aetgname="Conn_4_Terminal"><!--端子的连接设施-->
+			<reference>FiberCore</reference>
+			<reference>PigtailedFiber</reference>
+		</entitygroup>
+		<entitygroup aetgname="Conn_4_TransmissionPort"><!--传输端口-->
+			<reference>OpticalTerminal</reference>
+			<reference>ElectricalTerminal</reference>
+		</entitygroup>
+		<!--2013-2-20 网络资源3.0 -->
+		<!--点设施资源  -->
+		<entitygroup aetgname="Search_Facilities">
+			<reference>Station</reference>
+			<reference>BaseStation_GSM</reference>
+			<reference>BaseStation_TD</reference>
+			<reference>ManWell</reference>
+			<reference>Pole</reference>
+		</entitygroup>
+        <!--无线资源  -->
+		<entitygroup aetgname="Search_Wireless">
+			<reference>PrimaryEquipFrame_GSM</reference>
+			<reference>PrimaryEquipFrame_TD</reference>
+			<reference>Tower</reference>
+			<reference>Cell</reference>
+			<reference>BaseStation_repeater</reference>
+			<reference>RRU</reference>
+		</entitygroup>
+        <!--传输资源  -->
+        <entitygroup aetgname="Search_Transmission">
+			<reference>Frame_DF</reference>
+			<reference>ODF</reference>
+			<reference>DDF</reference>
+			<reference>OpticalTerminalDevice</reference>	
+		</entitygroup>
+		<!--动力资源  -->
+       <entitygroup aetgname="Search_Power">
+			<reference>UPS</reference>
+			<reference>UPSBattery</reference>
+			<reference>DCBattery</reference>
+			<reference>DCRectifyFrame</reference>
+			<reference>OilEngine</reference>
+		</entitygroup>
+		<!--Wlan资源  -->
+		<entitygroup aetgname="Search_Wlan">
+			<reference>BaseStation_WLAN</reference>
+			<reference>AP</reference>
+			<reference>AC</reference>
+		</entitygroup>
+		<!--环境监控资源  -->
+		<entitygroup aetgname="Search_EvironmentAndMonitoring">
+			<reference>Room</reference>
+			<reference>EnvironmentMonitor</reference>
+			<reference>AirConditioning</reference>
+			<reference>EntranceGuard</reference>
+		</entitygroup>
+		<!--集客类资源 2013-03-07  --> 
+		<entitygroup aetgname="Search_GroupUserSite">
+			<reference>GroupUserSite</reference>
+			<reference>GroupUserService</reference>
+		    <reference>OpticalModem</reference>
+		</entitygroup>
+
+		<!--为快速分类搜索定义的设施组.2012/9/4-->
+		<!--资源分类搜索.基站-->
+		<entitygroup aetgname="QuickSearch_4_Basestation">
+			<reference>BaseStation_GSM</reference>
+			<reference>BaseStation_TD</reference>
+			<reference>BaseStation_repeater</reference>
+			<reference>BaseStation_WLAN</reference>
+			<reference>BaseStation</reference>
+		</entitygroup>
+		<!--资源分类搜索.光交接设施-->
+		<entitygroup aetgname="QuickSearch_4_OptDisFac">
+			<reference>FiberCrossCabinet</reference>
+			<reference>FiberDistributionCabinet</reference>
+			<reference>ODF</reference>
+			<reference>FiberTerminalCase</reference>
+			<!--DF架是否要纳入-->
+		</entitygroup>
+		<!--资源分类搜索.通信主设备-->
+		<entitygroup aetgname="QuickSearch_4_CommPriDev">
+			<!--<reference>BaseStation_GSM</reference>
+			<reference>BaseStation_TD</reference>
+			<reference>BaseStation</reference>
+			<reference>BaseStation_repeater</reference>
+			<reference>BaseStation_WLAN</reference>-->
+			<reference>PrimaryEquipFrame_GSM</reference>
+			<reference>PrimaryEquipFrame_TD</reference>
+			<reference>WirelessRepDevice</reference>
+			<reference>FiberRepLocalDevice</reference>
+			<reference>FiberRepRemoteDevice</reference>
+			<reference>TowertopAmplifier</reference>
+			<reference>TrunklineAmplifier</reference>
+		</entitygroup>
+		<!--资源分类搜索.板件-->
+		<entitygroup aetgname="QuickSearch_4_BoardDev">
+			<reference>EquipBoard_GSM</reference>
+			<reference>EquipBoard_TD</reference>
+		</entitygroup>
+		<!--资源分类搜索.动力设备资源-->
+		<entitygroup aetgname="QuickSearch_4_PowDev">
+			<reference>OilEngine</reference>
+			<reference>Transformer</reference>
+			<reference>VoltageStabilize</reference>
+			<reference>PowerTransducer</reference>
+			<reference>DCBattery</reference>
+			<reference>DCRectifyFrame</reference>
+			<reference>UPS</reference>
+			<reference>UPSBattery</reference>
+			<reference>UPSControlModule</reference>
+			<reference>EnergySavingFacility</reference>
+		</entitygroup>
+		<!--资源分类搜索.传输设备资源-->
+		<entitygroup aetgname="QuickSearch_4_TransmDev">
+			<reference>OpticalTerminalDevice</reference>
+			<reference>Router</reference>
+			<reference>AC</reference>
+			<reference>Switcher</reference>
+			<reference>IDU</reference>
+			<reference>ODU</reference>
+		</entitygroup>
+		<!--资源分类搜索.环境监控设备资源-->
+		<entitygroup aetgname="QuickSearch_4_EvirMonitDev">
+			<reference>EnvironmentMonitor</reference>
+			<reference>EntranceGuard</reference>
+			<reference>AirConditioning</reference>
+			<reference>ExtinguishingAProtDevice</reference>
+			<reference>AirExhaustDevice</reference>
+			<reference>Camera</reference>
+			<reference>Sensor</reference>
+		</entitygroup>
+		<!--资源分类搜索.其他关键零部件/耗材资源-->
+		<entitygroup aetgname="QuickSearch_4_OthCompAccDev">
+			<reference>Joint</reference>
+			<reference>ConnectorJoint</reference>
+			<reference>Antenna</reference>
+			<reference>Feedcable</reference>
+		</entitygroup>
+		<!--资源分类搜索.机架/箱/柜-->
+		<entitygroup aetgname="QuickSearch_4_FrameDev">
+			<reference>Joint</reference>
+			<reference>ConnectorJoint</reference>
+			<reference>Antenna</reference>
+			<reference>Feedcable</reference>
+		</entitygroup>
+		<!--资源分类搜索.管线网连接类资源-->
+		<entitygroup aetgname="QuickSearch_4_LogicNetPlDev">
+			<reference>PipeRoute</reference>
+			<reference>PipelineSection</reference>
+			<reference>BuriedlineSection</reference>
+			<reference>PoleRoute</reference>
+			<reference>PolelineSection</reference>
+		</entitygroup>
+		<!--资源分类搜索.光缆网连接类资源-->
+		<entitygroup aetgname="QuickSearch_4_LogicNetFbDev">
+			<reference>Fiber</reference>
+			<reference>FiberSection</reference>
+		</entitygroup>
+		<!--资源分类搜索.光路网连接类资源-->
+		<entitygroup aetgname="QuickSearch_4_LogicNetOpDev">
+			<reference>OpticalRoute</reference>
+			<reference>OpticalRouteP2P</reference>
+			<reference>OpticalRouteSP2SP</reference>
+		</entitygroup>
+		<!--资源分类搜索.传输网连接类资源-->
+		<entitygroup aetgname="QuickSearch_4_LogicNetTransmDev">
+			<reference>TransmissionNetwork</reference>
+			<reference>TransmissionSection</reference>
+		</entitygroup>
+		
+		<!--end-为快速分类搜索定义的设施组-->
+		
+		<!--为检索定义的设施组-->
+		<!--1、区域下带经纬度的大类资源，8大类以及基站-->
+		<entitygroup aetgname="Search_4_ResWithLatLon">
+			<reference>Station</reference>
+			<reference>ManWell</reference>
+			<reference>Pole</reference>
+			<reference>HangWall</reference>
+			<reference>MarkPost</reference>
+			<reference>FiberCrossCabinet</reference>
+			<reference>FiberDistributionCabinet</reference>
+			<reference>FiberTerminalCase</reference>
+			
+			<reference>BaseStation</reference>
+			<reference>BaseStation_GSM</reference>
+			<reference>BaseStation_repeater</reference>
+			<reference>BaseStation_TD</reference>
+			<reference>BaseStation_WLAN</reference>
+		</entitygroup>
+		<!--1、区域下带经纬度的大类资源，8大类-->
+		<entitygroup aetgname="Search_8_ResWithLatLon">
+			<reference>Station</reference>
+			<reference>ManWell</reference>
+			<reference>Pole</reference>
+			<reference>HangWall</reference>
+			<reference>MarkPost</reference>
+			<reference>FiberCrossCabinet</reference>
+			<reference>FiberDistributionCabinet</reference>
+			<reference>FiberTerminalCase</reference>
+		</entitygroup>
+		<!--2、其他更多更细类型的资源-->
+		<entitygroup aetgname="Search_4_ResMore">
+			<!--a.outside逻辑网-->
+			<!--先光纤网-->
+			<reference>Fiber</reference>
+			<reference>FiberSection</reference>
+			<!--<reference>FiberCore</reference>-->
+			<!--再光路网-->
+			<reference>OpticalRoute</reference>
+			<reference>OpticalRouteP2P</reference>
+			<reference>OpticalRouteSP2SP</reference>
+			<!--再传输网-->
+			<reference>TransmissionNetwork</reference>
+			<reference>TransmissionSection</reference>
+			<!--再管道网-->
+			<reference>PipeRoute</reference>
+			<reference>PoleRoute</reference>
+			<reference>PipelineSection</reference>
+			<reference>PolelineSection</reference>
+			<reference>BuriedlineSection</reference>
+			
+			<!--b.outside子资源-->
+			<reference>Joint</reference>
+			<reference>PipeGate</reference>
+			<reference>PipeHole</reference>
+			<reference>SubPipeHole</reference>
+			<reference>CableEntranceHole</reference>
+			<reference>VerticalPipe</reference>
+			
+			<!--c.站址_全专业-->
+			<!--先容器级-->
+			<reference>Room</reference>
+			<reference>Tower</reference>
+			<reference>Floor</reference>
+			<reference>Stairs</reference>
+			<reference>Lift</reference>
+			<reference>Corridor</reference>
+			<reference>Passage</reference>
+			
+			<reference>CompositiveFrame</reference>
+			<reference>PrimaryEquipFrame_GSM</reference>
+			<reference>PrimaryEquipFrame_TD</reference>
+			<reference>Frame_DF</reference>
+			<reference>ODF</reference>
+			<reference>DDF</reference>
+			<reference>CableSustainFrame</reference>
+			<reference>PowerDistributionFrame</reference>
+			<reference>DCRectifyFrame</reference>
+			<reference>LightningProtBox</reference>
+			<reference>ACFeederPanel</reference>
+			<reference>EnvironmentMonitor</reference>
+			<reference>EntranceGuard</reference>
+			<!--再设备级-->
+			<reference>WirelessRepDevice</reference>
+			<reference>FiberRepLocalDevice</reference>
+			<reference>FiberRepRemoteDevice</reference>
+			<reference>TrunklineAmplifier</reference>
+			<reference>TowertopAmplifier</reference>
+			<reference>Switcher</reference>
+			<reference>Router</reference>
+			<reference>AP</reference>
+			<reference>AC</reference>
+			<reference>OpticalTerminalDevice</reference>
+			<reference>IDU</reference>
+			<reference>ODU</reference>
+			<reference>VoltageStabilize</reference>
+			<reference>OilEngine</reference>
+			<reference>AirConditioning</reference>
+			<reference>ExtinguishingAProtDevice</reference>
+			<reference>AirExhaustDevice</reference>
+			<reference>Camera</reference>
+			<reference>CardReader</reference>
+			<reference>Room</reference>
+			<!--再部件、板件级-->
+			<reference>EquipBoard_GSM</reference>
+			<reference>EquipBoard_TD</reference>
+			<reference>OpticalTerminalDeviceBoard</reference>
+			<reference>Antenna</reference>
+			<reference>ConnectorJoint</reference>
+			<reference>UPS</reference>
+			<reference>UPSBattery</reference>
+			<reference>UPSControlModule</reference>
+			<reference>PowerTransducer</reference>
+			<reference>DCBattery</reference>
+			<reference>Sensor</reference>
+			<reference>RectifyModule</reference>
+			<reference>DCControllerModule</reference>
+			<reference>DCDistributionUnit</reference>
+			<reference>ACAccessUnit</reference>
+			<!--再线缆级-->
+			<reference>Feedcable</reference>
+			<reference>Powercable</reference>
+			<reference>EarthConnCable</reference>
+		</entitygroup>
+		
+		<!--为资源分类定义的类型组(大概是专业概念)，用于按专业扁平化分类资源等场景，如资源查询 .2012/8/29-->
+		
+		<!--资源一级分类组.地理位置类-->
+		<entitygroup aetgname="ResGroup_4_Geographical">
+			<reference>Station</reference>
+			<reference>ManWell</reference>
+			<reference>Pole</reference>
+			<reference>HangWall</reference>
+			<reference>MarkPost</reference>
+			<reference>FiberCrossCabinet</reference>
+			<reference>FiberDistributionCabinet</reference>
+			<reference>FiberTerminalCase</reference>
+		</entitygroup>
+		<!--资源一级分类组.传输-->
+		<entitygroup aetgname="ResGroup_4_Transmission">
+			<reference>Frame_DF</reference>
+			<reference>ODF</reference>
+			<reference>DDF</reference>
+			
+			<reference>OpticalTerminalDevice</reference>
+			<reference>Router</reference>
+			<reference>AC</reference>
+			<reference>Switcher</reference>
+			<reference>IDU</reference>
+			<reference>ODU</reference>
+			
+			<reference>Fiber</reference>
+			<reference>FiberSection</reference>
+			<reference>FiberCore</reference>
+			
+			<reference>Joint</reference>
+			<reference>ConnectorJoint</reference>
+			<reference>Feedcable</reference>
+			<reference>PigtailedFiber</reference>
+			
+			<reference>OpticalTerminalDeviceBoard</reference>
+			<reference>ODM</reference>
+			<reference>DDM</reference>
+			<reference>Terminal</reference>
+			<reference>DDFTerminal</reference>
+			<reference>OpticalTerminal</reference>
+			<reference>ElectricalTerminal</reference>
+		</entitygroup>
+		<!--资源一级分类组.动力-->
+		<entitygroup aetgname="ResGroup_4_Power">
+			<reference>UPS</reference>
+			<reference>UPSControlModule</reference>
+			<reference>UPSBattery</reference>
+			<reference>PowerTransducer</reference>
+			<!--DC子系统-->
+			<reference>DCBattery</reference>
+			<reference>DCRectifyFrame</reference>
+			<reference>RectifyModule</reference>
+			<reference>DCControllerModule</reference>
+			<reference>DCLightningProtModule</reference>
+			<reference>DCDistributionUnit</reference>
+			<reference>ACAccessUnit</reference>
+			
+			<!--AC子系统-->
+			<reference>OilEngine</reference>
+			<reference>ACFeederPanel</reference>
+			<reference>Transformer</reference>
+			<reference>Ammeter</reference>
+			<reference>VoltageStabilize</reference>
+			
+			<reference>LightningProtBox</reference>
+			<reference>RoomEarthConn</reference>
+			<reference>EarthConnDistributionUnit</reference>
+			
+			<reference>ACSwitch</reference>
+			<reference>PowerDistributionFrame</reference>
+			<reference>EnergySavingFacility</reference>
+			<reference>PowerTerminal</reference>
+			<reference>PDU</reference>
+			<reference>Powercable</reference>
+			<reference>EarthConnCable</reference>
+		</entitygroup>
+		
+		<!--资源一级分类组.无线-->
+		<entitygroup aetgname="ResGroup_4_Wireless">
+			<reference>BaseStation_GSM</reference>
+			<reference>BaseStation_TD</reference>
+			<reference>BaseStation</reference>
+			<reference>Cell</reference>
+			<reference>Tower</reference>
+			<reference>RRU</reference>
+			<reference>PrimaryEquipFrame_GSM</reference>
+			<reference>EquipBoard_GSM</reference>
+			<reference>Frame_DF</reference>
+			<reference>PrimaryEquipFrame_TD</reference>
+			<reference>EquipBoard_TD</reference>
+			<reference>TowertopAmplifier</reference>
+			<reference>Antenna</reference>
+		</entitygroup>
+		
+		<!--资源一级分类组.室分-->
+		<entitygroup aetgname="ResGroup_4_IndoorCover">
+			<reference>BaseStation_repeater</reference>
+			<reference>WirelessRepDevice</reference>
+			<reference>FiberRepLocalDevice</reference>
+			<reference>FiberRepRemoteDevice</reference>
+			<reference>TrunklineAmplifier</reference>
+			<reference>TowertopAmplifier</reference>
+			<reference>Antenna</reference>
+			<reference>ConnectorJoint</reference>
+			
+			<!--UPS子系统-->
+			<reference>UPS</reference>
+			<reference>UPSControlModule</reference>
+			<reference>UPSBattery</reference>
+			
+			<!--AC子系统-->
+			<reference>Ammeter</reference>
+			<reference>ACSwitch</reference>
+			
+			<!--室分接地系统-->
+			<reference>LightningProtBox</reference>
+			<reference>RoomEarthConn</reference>
+			<reference>EarthConnDistributionUnit</reference>
+			
+		</entitygroup>
+		<!--资源一级分类组.WLAN-->
+		<entitygroup aetgname="ResGroup_4_WLAN">
+			<reference>BaseStation_WLAN</reference>
+			<reference>AP</reference>
+			<reference>AC</reference>
+			<reference>Router</reference>
+			<reference>Switcher</reference>
+		</entitygroup>
+		<!--资源一级分类组.环境监控-->
+		<entitygroup aetgname="ResGroup_4_EvironmentAndMonitoring">
+			<reference>Room</reference>
+			<reference>EnvironmentMonitor</reference>
+			<reference>EntranceGuard</reference>
+			<reference>AirConditioning</reference>
+			<reference>ExtinguishingAProtDevice</reference>
+			<reference>AirExhaustDevice</reference>
+			<reference>Camera</reference>
+			<reference>Subsidiary</reference>
+			<reference>PropertyOwnership</reference>
+			<reference>Floor</reference>
+			<reference>Stairs</reference>
+			<reference>Lift</reference>
+			<reference>Corridor</reference>
+			<reference>Passage</reference>
+			<reference>Sensor</reference>
+		</entitygroup>
+		<!--资源一级分类组.管线-->
+		<entitygroup aetgname="ResGroup_4_PipeAndCable">
+			<reference>PipeRoute</reference>
+			<reference>PipelineSection</reference>
+			<reference>BuriedlineSection</reference>
+			<reference>PoleRoute</reference>
+			<reference>PolelineSection</reference>
+			
+			<reference>Fiber</reference>
+			<reference>FiberSection</reference>
+			<reference>FiberCore</reference>
+			<reference>PigtailedFiber</reference>
+			
+			<reference>OpticalRoute</reference>
+			<reference>OpticalRouteP2P</reference>
+			<reference>OpticalRouteSP2SP</reference>
+			
+			<reference>TransmissionNetwork</reference>
+			<reference>TransmissionSection</reference>
+			<reference>WirelessChannel</reference>
+			
+			<reference>PipeGate</reference>
+			<reference>PipeHole</reference>
+			<reference>SubPipeHole</reference>
+			<reference>CableEntranceHole</reference>
+			<reference>VerticalPipe</reference>
+			
+			<reference>Joint</reference>
+		</entitygroup>
+		<!--资源一级分类组.设备级-->
+		<entitygroup aetgname="ResGroup_4_Equipment">
+			<reference>PrimaryEquipFrame_GSM</reference>
+			<reference>PrimaryEquipFrame_TD</reference>
+			<reference>WirelessRepDevice</reference>
+			<reference>FiberRepLocalDevice</reference>
+			<reference>FiberRepRemoteDevice</reference>
+			<reference>TrunklineAmplifier</reference>
+			<reference>TowertopAmplifier</reference>
+			<reference>OpticalTerminalDevice</reference>
+			<reference>Switcher</reference>
+			<reference>Router</reference>
+			<reference>AP</reference>
+			<reference>AC</reference>
+			<reference>IDU</reference>
+			<reference>ODU</reference>
+			<reference>RectifyModule</reference>
+			<reference>Transformer</reference>
+			<reference>PowerTransducer</reference>
+			<reference>VoltageStabilize</reference>
+			<reference>OilEngine</reference>
+			<reference>AirConditioning</reference>
+			<reference>EnergySavingFacility</reference>
+			<reference>ExtinguishingAProtDevice</reference>
+			<reference>AirExhaustDevice</reference>
+		</entitygroup>
+		<!--资源一级分类组.板件级-->
+		<entitygroup aetgname="ResGroup_4_DeviceBoard">
+			<reference>EquipBoard_GSM</reference>
+			<reference>EquipBoard_TD</reference>
+			<reference>OpticalTerminalDeviceBoard</reference>
+			<reference>ODM</reference>
+			<reference>DDM</reference>
+			<reference>RectifyModule</reference>
+			<reference>DCControllerModule</reference>
+			<reference>DCDistributionUnit</reference>
+			<reference>ACAccessUnit</reference>
+		</entitygroup>
+		<!--资源一级分类组.机架/箱/柜-->
+		<entitygroup aetgname="ResGroup_4_Cabinet">
+			<reference>CompositiveFrame</reference>
+			<reference>PrimaryEquipFrame_GSM</reference>
+			<reference>PrimaryEquipFrame_TD</reference>
+			<reference>Frame_DF</reference>
+			<reference>CableSustainFrame</reference>
+			<reference>PowerDistributionFrame</reference>
+			<reference>DCRectifyFrame</reference>
+		</entitygroup>
+		<!--资源一级分类组.零部件/耗材-->
+		<entitygroup aetgname="ResGroup_4_ComponentAndAccessory">
+			<reference>Joint</reference>
+			<reference>ConnectorJoint</reference>
+			<reference>Antenna</reference>
+			<reference>Feedcable</reference>
+			<reference>PigtailedFiber</reference>
+			
+			<reference>Powercable</reference>
+			<reference>EarthConnCable</reference>
+			
+			<reference>Sensor</reference>
+			<reference>PDU</reference>
+		</entitygroup>
+		
+		<!--资源一级分类组.无线(终端)-->
+		<entitygroup aetgname="ResGroup_4_Wireless_Flattening">
+			<reference>BaseStation_GSM</reference>
+			<reference>BaseStation_TD</reference>
+			<reference>BaseStation</reference>
+			<reference>Cell</reference>
+			<reference>Tower</reference>
+			<reference>RRU</reference>
+			<reference>PrimaryEquipFrame_GSM</reference>
+			<reference>Frame_DF</reference>
+			<reference>PrimaryEquipFrame_TD</reference>
+			<reference>TowertopAmplifier</reference>
+			<reference>Antenna</reference>
+		</entitygroup>
+		<!--资源一级分类组.动力(终端)-->
+		<entitygroup aetgname="ResGroup_4_Power_Flattening">
+			<reference>UPS</reference>
+			<reference>UPSControlModule</reference>
+			<reference>UPSBattery</reference>
+			<reference>PowerTransducer</reference>
+			<!--DC子系统-->
+			<reference>DCBattery</reference>
+			<reference>DCRectifyFrame</reference>
+			<reference>DCLightningProtModule</reference>
+			<reference>DCDistributionUnit</reference>
+			<reference>ACAccessUnit</reference>
+			
+			<!--AC子系统-->
+			<reference>OilEngine</reference>
+			<reference>ACFeederPanel</reference>
+			<reference>Transformer</reference>
+			<reference>Ammeter</reference>
+			<reference>VoltageStabilize</reference>
+			
+			<reference>LightningProtBox</reference>
+			<reference>RoomEarthConn</reference>
+			<reference>EarthConnDistributionUnit</reference>
+			
+			<reference>ACSwitch</reference>
+			<reference>PowerDistributionFrame</reference>
+			<reference>EnergySavingFacility</reference>
+			<reference>PDU</reference>
+			<reference>Powercable</reference>
+			<reference>EarthConnCable</reference>
+		</entitygroup>
+		
+		<!--资源一级分类组.其他-->
+		<!--
+		<entitygroup aetgname="ResGroup_4_Other">
+		</entitygroup>
+		-->
+		<!--资源一级分类组.用于structure定义记录而已.未纳入的类型
+			Photo
+			Attachment
+		-->
+
+		<!--end-为资源分类定义的类型组(大概是专业概念)-->
+		
+		<!--为按范围跨级统计定义的资源分类组.2012/8/29-->
+		<!--统计范围.区域-->
+		<entitygroup aetgname="StatisScope_4_Area">
+			<!--光交接设施-->
+			<reference>FiberCrossCabinet</reference>
+			<reference>FiberDistributionCabinet</reference>
+			<reference>ODF</reference>
+			<reference>FiberTerminalCase</reference>
+			<reference>Joint</reference>
+			<reference>DDF</reference>
+			<!--通信网元-->
+			<reference>BaseStation_GSM</reference>
+			<reference>BaseStation_TD</reference>
+			<reference>BaseStation_repeater</reference>
+			<reference>BaseStation_WLAN</reference>
+			<reference>BaseStation</reference>
+			<reference>Cell</reference>
+			<reference>RRU</reference>
+			<!--通信主设备-->
+			<reference>PrimaryEquipFrame_GSM</reference>
+			<reference>PrimaryEquipFrame_TD</reference>
+			<reference>WirelessRepDevice</reference>
+			<reference>FiberRepLocalDevice</reference>
+			<reference>FiberRepRemoteDevice</reference>
+			<reference>TrunklineAmplifier</reference>
+			<reference>TowertopAmplifier</reference>
+			<reference>IDU</reference>
+			<reference>ODU</reference>
+			<!--传输相关设备-->
+			<reference>OpticalTerminalDevice</reference>
+			<reference>Switcher</reference>
+			<reference>Router</reference>
+			<reference>AP</reference>
+			<reference>AC</reference>
+			<!--动力与环监-->
+			<reference>OilEngine</reference>
+			<reference>ACFeederPanel</reference>
+			<reference>VoltageStabilize</reference>
+			<reference>Transformer</reference>
+			<reference>Ammeter</reference>
+			<reference>LightningProtBox</reference>
+			<reference>DCBattery</reference>
+			<reference>DCRectifyFrame</reference>
+			<reference>RectifyModule</reference>
+			<reference>DCLightningProtModule</reference>
+			<reference>EnvironmentMonitor</reference>
+			<reference>AirConditioning</reference>
+			<reference>EnergySavingFacility</reference>
+			<reference>EntranceGuard</reference>
+			<!--收发系统-->
+			<reference>Tower</reference>
+			<reference>Antenna</reference>
+			<!--管线连接逻辑设施-->
+			<reference>PipeRoute</reference>
+			<reference>PipelineSection</reference>
+			<reference>BuriedlineSection</reference>
+			<reference>PoleRoute</reference>
+			<reference>PolelineSection</reference>
+			<reference>Fiber</reference>
+			<reference>FiberSection</reference>
+			<reference>FiberCore</reference>
+			<reference>OpticalRoute</reference>
+			<reference>OpticalRouteP2P</reference>
+			<reference>OpticalRouteSP2SP</reference>
+			<reference>TransmissionNetwork</reference>
+			<reference>TransmissionSection</reference>
+		</entitygroup>
+		<!--统计范围.站址--><!--站址-基站-小区-载波-动力-->
+		<entitygroup aetgname="StatisScope_4_Station">
+			<reference>BaseStation_GSM</reference>
+			<reference>BaseStation_TD</reference>
+			<reference>BaseStation_repeater</reference>
+			<reference>BaseStation_WLAN</reference>
+			<reference>BaseStation</reference>
+			
+			<reference>Cell</reference>
+			<reference>RRU</reference>
+			<reference>EquipBoard_GSM</reference>
+			<reference>EquipBoard_TD</reference>
+			
+			<reference>DCBattery</reference>
+			<reference>DCRectifyFrame</reference>
+			<reference>RectifyModule</reference>
+			<reference>DCControllerModule</reference>
+			<reference>DCLightningProtModule</reference>
+			<reference>PowerTransducer</reference>
+			
+			<reference>OilEngine</reference>
+			<reference>ACFeederPanel</reference>
+			<reference>VoltageStabilize</reference>
+			<reference>Transformer</reference>
+			<reference>LightningProtBox</reference>
+			<reference>AirConditioning</reference>
+			<reference>EnergySavingFacility</reference>
+			
+			<reference>UPS</reference>
+			<reference>UPSBattery</reference>
+			<reference>UPSControlModule</reference>
+			
+			<reference>WirelessRepDevice</reference>
+			<reference>FiberRepLocalDevice</reference>
+			<reference>FiberRepRemoteDevice</reference>
+			<reference>TrunklineAmplifier</reference>
+			<reference>TowertopAmplifier</reference>
+			<reference>IDU</reference>
+			<reference>ODU</reference>
+			
+			<reference>Frame_DF</reference>
+			<reference>ODF</reference>
+			<reference>DDF</reference>
+		</entitygroup>
+		<!--统计范围.机房类组-->
+		<entitygroup aetgname="StatisScope_4_GeneralRoomContainer">
+			<reference>CompositiveFrame</reference>
+			<reference>ODF</reference>
+			<reference>DDF</reference>
+			<reference>PowerDistributionFrame</reference>
+			
+			<reference>Switcher</reference>
+			<reference>Router</reference>
+			<reference>AP</reference>
+			<reference>AC</reference>
+			
+			<reference>ConnectorJoint</reference>
+			
+			<reference>OilEngine</reference>
+			<reference>Transformer</reference>
+			<reference>Ammeter</reference>
+			<reference>VoltageStabilize</reference>
+			<reference>ACFeederPanel</reference>
+			<reference>UPS</reference>
+			<reference>UPSBattery</reference>
+			<reference>UPSControlModule</reference>
+			<reference>DCBattery</reference>
+			<reference>DCRectifyFrame</reference>
+			<reference>RectifyModule</reference>
+			<reference>DCControllerModule</reference>
+			<reference>DCLightningProtModule</reference>
+			<reference>LightningProtBox</reference>
+			
+			<reference>EnvironmentMonitor</reference>
+			<reference>EntranceGuard</reference>
+			<reference>AirConditioning</reference>
+			<reference>EnergySavingFacility</reference>
+			<reference>Subsidiary</reference>
+			
+		</entitygroup>
+		<!--统计范围.基站类组-->
+		<entitygroup aetgname="StatisScope_4_GeneralBaseStation">
+			<reference>PrimaryEquipFrame_GSM</reference>
+			<reference>Frame_DF</reference>
+			<reference>PrimaryEquipFrame_TD</reference>
+			<reference>WirelessRepDevice</reference>
+			<reference>FiberRepLocalDevice</reference>
+			<reference>FiberRepRemoteDevice</reference>
+			
+			<reference>Cell</reference>
+			<reference>RRU</reference>
+			<reference>EquipBoard_GSM</reference>
+			<reference>EquipBoard_TD</reference>
+			<reference>TrunklineAmplifier</reference>
+			<reference>TowertopAmplifier</reference>
+		</entitygroup>
+		<!--end-为按范围跨级统计定义的资源分类组-->
+		
+		<!--资源呈现-平面化分类导航类组.2012/9/5-->
+		<!--平面化分类导航.站址-->
+		<!--平面化分类导航.站址.概要信息:Summary-->
+		<!--<entitygroup aetgname="FlatNavigation_4_Station_4_Summary">
+			<reference>BaseStation_GSM</reference>
+			<reference>BaseStation_TD</reference>
+			<reference>BaseStation_repeater</reference>
+			<reference>BaseStation_WLAN</reference>
+			<reference>BaseStation</reference>
+			<reference>Cell</reference>
+			<reference>RRU</reference>
+			<reference>Tower</reference>
+			<reference>Photo</reference>
+		</entitygroup>-->
+		<!--平面化分类导航.站址.传输:FlatNavigation_4_Station_4_Transmission-->
+		<entitygroup aetgname="FlatNavigation_4_Station_4_Transmission">
+			<reference>Frame_DF</reference>
+			<reference>ODF</reference>
+			<reference>DDF</reference>
+			<reference>OpticalTerminalDevice</reference>
+			<reference>Router</reference>
+			<reference>AC</reference>
+			<reference>Switcher</reference>
+			<reference>IDU</reference>
+			<reference>ODU</reference>
+		</entitygroup>
+		
+		<!--平面化分类导航.站址.动力:FlatNavigation_4_Station_4_Power-->
+		<!--平面化分类导航.站址.动力.AC系统:FlatNavigation_4_Station_4_Power_ACSys-->
+		<entitygroup aetgname="FlatNavigation_4_Station_4_Power_ACSys">
+			<reference>OilEngine</reference>
+			<reference>ACFeederPanel</reference>
+			<reference>Transformer</reference>
+			<reference>VoltageStabilize</reference>
+			<reference>Ammeter</reference>
+			<reference>ACSwitch</reference>
+			<reference>PowerTransducer</reference>
+		</entitygroup>
+		<!--平面化分类导航.站址.动力.DC系统:FlatNavigation_4_Station_4_Power_DCSys-->
+		<entitygroup aetgname="FlatNavigation_4_Station_4_Power_DCSys">
+			<reference>DCRectifyFrame</reference>
+			<reference>RectifyModule</reference>
+			<reference>DCBattery</reference>
+			<reference>DCControllerModule</reference>
+			<reference>DCLightningProtModule</reference>
+			<reference>DCDistributionUnit</reference>
+			<reference>ACAccessUnit</reference>
+		</entitygroup>
+		<!--平面化分类导航.站址.动力.UPS系统:FlatNavigation_4_Station_4_Power_UPSSys-->
+		<entitygroup aetgname="FlatNavigation_4_Station_4_Power_UPSSys">
+			<reference>UPS</reference>
+			<reference>UPSBattery</reference>
+			<reference>UPSControlModule</reference>
+		</entitygroup>
+		<!--平面化分类导航.站址.动力.防雷接地与引电:FlatNavigation_4_Station_4_Power_EarthConnEtc-->
+		<entitygroup aetgname="FlatNavigation_4_Station_4_Power_EarthConnEtc">
+			<reference>LightningProtBox</reference>
+			<reference>RoomEarthConn</reference>
+			<reference>EarthConnDistributionUnit</reference>
+			<reference>PowerDistributionFrame</reference>
+			<reference>PDU</reference>
+			<reference>EnergySavingFacility</reference>
+			<reference>Powercable</reference>
+			<reference>EarthConnCable</reference>
+		</entitygroup>
+		
+		<!--平面化分类导航.站址.无线:FlatNavigation_4_Station_4_Wireless-->
+		<!--平面化分类导航.站址.无线.GSM设备:FlatNavigation_4_Station_4_Wireless_GSM-->
+		<entitygroup aetgname="FlatNavigation_4_Station_4_Wireless_GSM">
+			<reference>BaseStation_GSM</reference>
+			<reference>PrimaryEquipFrame_GSM</reference>
+			<reference>Frame_DF</reference>
+			<reference>EquipBoard_GSM</reference>
+		</entitygroup>
+		<!--平面化分类导航.站址.无线.TD设备:FlatNavigation_4_Station_4_Wireless_TD-->
+		<entitygroup aetgname="FlatNavigation_4_Station_4_Wireless_TD">
+			<reference>BaseStation_TD</reference>
+			<reference>PrimaryEquipFrame_TD</reference>
+			<reference>EquipBoard_TD</reference>
+		</entitygroup>
+		<!--平面化分类导航.站址.无线.天馈系统:FlatNavigation_4_Station_4_Wireless_AntennaSys-->
+		<entitygroup aetgname="FlatNavigation_4_Station_4_Wireless_AntennaSys">
+			<reference>Tower</reference>
+			<reference>TowertopAmplifier</reference>
+			<reference>Antenna</reference>
+			<reference>Feedcable</reference>
+			<reference>ConnectorJoint</reference>
+		</entitygroup>
+		
+		<!--平面化分类导航.站址.室分:FlatNavigation_4_Station_4_IndoorCover-->
+		<entitygroup aetgname="FlatNavigation_4_Station_4_IndoorCover">
+			<reference>BaseStation_repeater</reference>
+			<reference>WirelessRepDevice</reference>
+			<reference>FiberRepLocalDevice</reference>
+			<reference>FiberRepRemoteDevice</reference>
+			<reference>TrunklineAmplifier</reference>
+			<reference>TowertopAmplifier</reference>
+		</entitygroup>
+		
+		<!--平面化分类导航.站址.WLAN:FlatNavigation_4_Station_4_WLAN-->
+		<entitygroup aetgname="FlatNavigation_4_Station_4_WLAN">
+			<reference>BaseStation_WLAN</reference>
+			<reference>AP</reference>
+			<reference>AC</reference>
+			<reference>Router</reference>
+			<reference>Switcher</reference>
+		</entitygroup>
+		
+		<!--平面化分类导航.站址.环境监控:FlatNavigation_4_Station_4_EvironmentAndMonitoring-->
+		<entitygroup aetgname="FlatNavigation_4_Station_4_EvironmentAndMonitoring">
+			<reference>Room</reference>
+			<reference>EnvironmentMonitor</reference>
+			<reference>EntranceGuard</reference>
+			<reference>AirConditioning</reference>
+			<reference>ExtinguishingAProtDevice</reference>
+			<reference>AirExhaustDevice</reference>
+			<reference>Camera</reference>
+			<reference>Subsidiary</reference>
+			<reference>PropertyOwnership</reference>
+			<reference>Floor</reference>
+			<reference>Stairs</reference>
+			<reference>Lift</reference>
+			<reference>Corridor</reference>
+			<reference>Passage</reference>
+			<reference>Sensor</reference>
+		</entitygroup>
+		
+		
+		<!--平面化分类导航.机房——仅对Room做扁平化呈现-->
+		<!--平面化分类导航.机房.概要信息:Summary-->
+		<!-- <entitygroup aetgname="FlatNavigation_4_Room_4_Summary">
+			<reference>BaseStation_GSM</reference>
+			<reference>BaseStation_TD</reference>
+			<reference>BaseStation_repeater</reference>
+			<reference>BaseStation_WLAN</reference>
+			<reference>BaseStation</reference>
+			<reference>Photo</reference>
+			<reference>Attachment</reference>
+		</entitygroup> -->
+		<!--平面化分类导航.机房.传输:FlatNavigation_4_Room_4_Transmission-->
+		<entitygroup aetgname="FlatNavigation_4_Room_4_Transmission">
+			<reference>Frame_DF</reference>
+			<reference>ODF</reference>
+			<reference>DDF</reference>
+			<reference>OpticalTerminalDevice</reference>
+			<reference>Router</reference>
+			<reference>AC</reference>
+			<reference>Switcher</reference>
+			<reference>IDU</reference>
+			<reference>ODU</reference>
+		</entitygroup>
+		
+		<!--平面化分类导航.机房.动力:FlatNavigation_4_Room_4_Power-->
+		<!--平面化分类导航.机房.动力.AC系统:FlatNavigation_4_Room_4_Power_ACSys-->
+		<entitygroup aetgname="FlatNavigation_4_Room_4_Power_ACSys">
+			<reference>OilEngine</reference>
+			<reference>ACFeederPanel</reference>
+			<reference>Transformer</reference>
+			<reference>VoltageStabilize</reference>
+			<reference>Ammeter</reference>
+			<reference>ACSwitch</reference>
+			<reference>PowerTransducer</reference>
+		</entitygroup>
+		<!--平面化分类导航.机房.动力.DC系统:FlatNavigation_4_Room_4_Power_DCSys-->
+		<entitygroup aetgname="FlatNavigation_4_Room_4_Power_DCSys">
+			<reference>DCRectifyFrame</reference>
+			<reference>RectifyModule</reference>
+			<reference>DCBattery</reference>
+			<reference>DCControllerModule</reference>
+			<reference>DCLightningProtModule</reference>
+			<reference>DCDistributionUnit</reference>
+			<reference>ACAccessUnit</reference>
+		</entitygroup>
+		<!--平面化分类导航.机房.动力.UPS系统:FlatNavigation_4_Room_4_Power_UPSSys-->
+		<entitygroup aetgname="FlatNavigation_4_Room_4_Power_UPSSys">
+			<reference>UPS</reference>
+			<reference>UPSBattery</reference>
+			<reference>UPSControlModule</reference>
+		</entitygroup>
+		<!--平面化分类导航.机房.动力.防雷接地与引电:FlatNavigation_4_Room_4_Power_EarthConnEtc-->
+		<entitygroup aetgname="FlatNavigation_4_Room_4_Power_EarthConnEtc">
+			<reference>LightningProtBox</reference>
+			<reference>RoomEarthConn</reference>
+			<reference>EarthConnDistributionUnit</reference>
+			<reference>PowerDistributionFrame</reference>
+			<reference>EnergySavingFacility</reference>
+			<reference>PDU</reference>
+			<reference>Powercable</reference>
+			<reference>EarthConnCable</reference>
+		</entitygroup>
+		
+		<!--平面化分类导航.机房.无线:FlatNavigation_4_Room_4_Wireless-->
+		<!--平面化分类导航.机房.无线.GSM设备:FlatNavigation_4_Room_4_Wireless_GSM-->
+		<entitygroup aetgname="FlatNavigation_4_Room_4_Wireless_GSM">
+			<reference>BaseStation_GSM</reference>
+			<reference>PrimaryEquipFrame_GSM</reference>
+			<reference>Frame_DF</reference>
+			<reference>EquipBoard_GSM</reference>
+		</entitygroup>
+		<!--平面化分类导航.机房.无线.TD设备:FlatNavigation_4_Room_4_Wireless_TD-->
+		<entitygroup aetgname="FlatNavigation_4_Room_4_Wireless_TD">
+			<reference>BaseStation_TD</reference>
+			<reference>PrimaryEquipFrame_TD</reference>
+			<reference>EquipBoard_TD</reference>
+		</entitygroup>
+		<!--平面化分类导航.机房.无线.天馈系统:FlatNavigation_4_Room_4_Wireless_AntennaSys-->
+		<entitygroup aetgname="FlatNavigation_4_Room_4_Wireless_AntennaSys">
+			<reference>TowertopAmplifier</reference>
+			<reference>Antenna</reference>
+			<reference>Feedcable</reference>
+			<reference>ConnectorJoint</reference>
+		</entitygroup>
+		
+		<!--平面化分类导航.机房.室分:FlatNavigation_4_Room_4_IndoorCover-->
+		<entitygroup aetgname="FlatNavigation_4_Room_4_IndoorCover">
+			<reference>BaseStation_repeater</reference>
+			<reference>WirelessRepDevice</reference>
+			<reference>FiberRepLocalDevice</reference>
+			<reference>FiberRepRemoteDevice</reference>
+			<reference>TrunklineAmplifier</reference>
+			<reference>TowertopAmplifier</reference>
+		</entitygroup>
+		
+		<!--平面化分类导航.机房.WLAN:FlatNavigation_4_Room_4_WLAN-->
+		<entitygroup aetgname="FlatNavigation_4_Room_4_WLAN">
+			<reference>BaseStation_WLAN</reference>
+			<reference>AP</reference>
+			<reference>AC</reference>
+			<reference>Router</reference>
+			<reference>Switcher</reference>
+		</entitygroup>
+		
+		<!--平面化分类导航.机房.环境监控:FlatNavigation_4_Room_4_EvironmentAndMonitoring-->
+		<entitygroup aetgname="FlatNavigation_4_Room_4_EvironmentAndMonitoring">
+			<reference>EnvironmentMonitor</reference>
+			<reference>EntranceGuard</reference>
+			<reference>AirConditioning</reference>
+			<reference>ExtinguishingAProtDevice</reference>
+			<reference>AirExhaustDevice</reference>
+			<reference>Camera</reference>
+			<reference>Subsidiary</reference>
+			<reference>PropertyOwnership</reference>
+			<reference>Sensor</reference>
+		</entitygroup>
+		
+		
+		<!--平面化分类导航.区域--> 
+		<!--平面化分类导航.区域.地理位置类:FlatNavigation_4_Area_4_Geographical-->
+		<entitygroup aetgname="FlatNavigation_4_Area_4_Geographical">
+			<reference>Station</reference>
+			<reference>ManWell</reference>
+			<reference>Pole</reference>
+			<reference>HangWall</reference>
+			<reference>MarkPost</reference>
+		</entitygroup>
+		<!--平面化分类导航.区域.基站:FlatNavigation_4_Area_4_Basestation-->
+		<entitygroup aetgname="FlatNavigation_4_Area_4_Basestation">
+			<reference>BaseStation_GSM</reference>
+			<reference>BaseStation_TD</reference>
+			<reference>BaseStation_repeater</reference>
+			<reference>BaseStation_WLAN</reference>
+			<reference>BaseStation</reference>
+		</entitygroup>
+		<!--平面化分类导航.区域.光交接设施:FlatNavigation_4_Area_4_OptDisFac-->
+		<entitygroup aetgname="FlatNavigation_4_Area_4_OptDisFac">
+			<reference>FiberCrossCabinet</reference>
+			<reference>FiberDistributionCabinet</reference>
+			<reference>ODF</reference>
+			<reference>FiberTerminalCase</reference>
+			<!--DF架是否要纳入-->
+		</entitygroup>
+		<!--平面化分类导航.区域.通信主设备:FlatNavigation_4_Area_4_CommPriDev-->
+		<entitygroup aetgname="FlatNavigation_4_Area_4_CommPriDev">
+			<reference>PrimaryEquipFrame_GSM</reference>
+			<reference>PrimaryEquipFrame_TD</reference>
+			<reference>WirelessRepDevice</reference>
+			<reference>FiberRepLocalDevice</reference>
+			<reference>FiberRepRemoteDevice</reference>
+			<reference>TowertopAmplifier</reference>
+			<reference>TrunklineAmplifier</reference>
+			
+			<reference>EquipBoard_GSM</reference>
+			<reference>EquipBoard_TD</reference>
+			<reference>Cell</reference>
+			<reference>RRU</reference>
+		</entitygroup>
+		<!--平面化分类导航.区域.动力(核心):FlatNavigation_4_Area_4_KeyOfPower-->
+		<entitygroup aetgname="FlatNavigation_4_Area_4_KeyOfPower">
+			<reference>OilEngine</reference>
+			<reference>Transformer</reference>
+			<reference>VoltageStabilize</reference>
+			<reference>PowerTransducer</reference>
+			<reference>DCBattery</reference>
+			<reference>DCRectifyFrame</reference>
+			<reference>UPS</reference>
+			<reference>UPSBattery</reference>
+			<reference>UPSControlModule</reference>
+			<reference>DCLightningProtModule</reference>
+			<reference>LightningProtBox</reference>
+			<reference>EnergySavingFacility</reference>
+		</entitygroup>
+		<!--平面化分类导航.区域.传输(核心):FlatNavigation_4_Area_4_KeyOfTransmission-->
+		<entitygroup aetgname="FlatNavigation_4_Area_4_KeyOfTransmission">
+			<reference>OpticalTerminalDevice</reference>
+			<reference>Router</reference>
+			<reference>AC</reference>
+			<reference>Switcher</reference>
+			<reference>IDU</reference>
+			<reference>ODU</reference>
+		</entitygroup>
+		<!--平面化分类导航.区域.环境监控(核心):FlatNavigation_4_Area_4_KeyOfEvirMonit-->
+		<entitygroup aetgname="FlatNavigation_4_Area_4_KeyOfEvirMonit">
+			<reference>EnvironmentMonitor</reference>
+			<reference>EntranceGuard</reference>
+			<reference>AirConditioning</reference>
+		</entitygroup>
+		<!--平面化分类导航.区域.管线逻辑网-->
+		<!--平面化分类导航.区域.管线逻辑网.管线网:FlatNavigation_4_Area_4_LogicNet_Pl-->
+		<entitygroup aetgname="FlatNavigation_4_Area_4_LogicNet_Pl">
+			<reference>PipeRoute</reference>
+			<reference>PipelineSection</reference>
+			<reference>BuriedlineSection</reference>
+			<reference>PoleRoute</reference>
+			<reference>PolelineSection</reference>
+		</entitygroup>
+		<!--平面化分类导航.区域.管线逻辑网.光缆网:FlatNavigation_4_Area_4_LogicNet_Fb-->
+		<entitygroup aetgname="FlatNavigation_4_Area_4_LogicNet_Fb">
+			<reference>Fiber</reference>
+			<reference>FiberSection</reference>
+		</entitygroup>
+		<!--平面化分类导航.区域.管线逻辑网.光路网:FlatNavigation_4_Area_4_LogicNet_Op-->
+		<entitygroup aetgname="FlatNavigation_4_Area_4_LogicNet_Op">
+			<reference>OpticalRoute</reference>
+			<reference>OpticalRouteP2P</reference>
+			<reference>OpticalRouteSP2SP</reference>
+		</entitygroup>
+		<!--平面化分类导航.区域.管线逻辑网.传输网:FlatNavigation_4_Area_4_LogicNet_Transm-->
+		<entitygroup aetgname="FlatNavigation_4_Area_4_LogicNet_Transm">
+			<reference>TransmissionNetwork</reference>
+			<reference>TransmissionSection</reference>
+		</entitygroup>
+		<!--end-资源呈现-平面化分类导航类组-->
+	</entitygroups>
+	<nodes>
+		<!--父子关系-->
+		<node contain="Sys_Area">
+			<child>Sys_Area</child>
+			<child>Station</child>
+			<child>ManWell</child>
+			<child>Pole</child>
+			<child>HangWall</child>
+			<child>MarkPost</child>
+			<child>FiberCrossCabinet</child>
+			<child>FiberDistributionCabinet</child>
+			<child>FiberTerminalCase</child>
+			<child>GroupUserSite</child><!--集客站点-->
+		</node>
+		<node contain="Station">
+			<child>Room</child><!--机房-->
+			<child>Tower</child><!--铁塔-->
+			<child>Floor</child><!--楼面-->
+			<child>Stairs</child><!--楼梯-->
+			<child>Lift</child><!--电梯-->
+			<child>Corridor</child><!--走廊-->
+			<child>Passage</child><!--过(通)道-->
+			<child>PropertyOwnership</child><!--物业-->
+			<child>Transformer</child><!--变压器-->
+			<child>Ammeter</child><!--电表箱-->
+			<child>PipeGate</child>
+			<child>PipeHole</child>
+			<child>CableEntranceHole</child>
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="Room">
+			<child>BaseStation</child><!--基站(预留)-->
+			<child>BaseStation_GSM</child><!--GSM基站-->
+			<child>BaseStation_repeater</child><!--直放站-->
+			<child>BaseStation_TD</child><!--TD基站-->
+			<child>BaseStation_WLAN</child><!--WLAN基站-->
+			<child>CompositiveFrame</child><!--综合机架-->
+			<child>ODF</child><!--ODF架-->
+			<child>DDF</child><!--DDF架-->
+			<child>CableSustainFrame</child><!--走线架-->
+			<child>PowerDistributionFrame</child><!--电源列头柜-->
+			<child>PropertyOwnership</child><!--物业-->
+			<!--设备-->
+			<child>OpticalTerminalDevice</child><!--光端机-->
+			<child>Switcher</child><!--交换机-->
+			<child>Router</child><!--路由器-->
+			<child>AP</child><!--AP-->
+			<child>AC</child><!--AC-->
+			<child>IDU</child><!--IDU-->
+			<child>FiberTerminalCase</child>
+			<child>ConnectorJoint</child><!--连接器-->
+			<child>UPS</child><!--UPS-->
+			<child>PowerTransducer</child><!--电源转换器-->
+			<child>DCBattery</child><!--DC电池组-->
+			<child>DCRectifyFrame</child><!--DC整流机柜-->
+			<child>RoomEarthConn</child><!--机房总接地-->
+			<child>LightningProtBox</child><!--防雷箱-->
+			<child>ACSwitch</child><!--交流开关-->
+			<child>ACFeederPanel</child><!--AC配电屏-->
+			<child>Ammeter</child><!--电表箱-->
+			<child>VoltageStabilize</child><!--稳压器-->
+			<child>OilEngine</child><!--油机-->
+			<child>EnergySavingFacility</child><!--节能设备-->
+			<child>EnvironmentMonitor</child><!--环境监控箱-->
+			<child>AirConditioning</child><!--空调-->
+			<child>ExtinguishingAProtDevice</child><!--消防设备-->
+			<child>AirExhaustDevice</child><!--排风设备-->
+			<child>Camera</child><!--摄像头-->
+			<child>Subsidiary</child><!--配套-->
+			<child>Photo</child><!--照片-->
+			<child>Attachment</child><!--设计文件-->
+		</node>
+		<node contain="ManWell">
+			<child>PipeGate</child>
+			<child>PipeHole</child>
+			<child>Joint</child>
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="Pole">
+			<child>Joint</child>
+			<child>VerticalPipe</child>
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="MarkPost">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="HangWall">
+			<child>VerticalPipe</child>
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="Joint">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="FiberCrossCabinet">
+			<child>ODM</child>
+			<child>Terminal</child>
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="FiberDistributionCabinet">
+			<child>Terminal</child>
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="FiberTerminalCase">
+			<child>Terminal</child>
+		</node>
+		<node contain="GroupUserSite"><!--集客站点下可带集客业务和集客终端-->
+			<child>GroupUserService</child>
+			<child>OpticalTerminalDevice</child>
+			<child>OpticalModem</child>
+			<child>Switcher</child>
+			<child>Router</child>
+			<child>PBX</child>
+			<child>IAD</child>
+			<child>ONU</child>
+			<child>Gateway</child>
+			<child>Firewall</child>
+			<child>UPS</child>
+		</node>
+		<node contain="PipeHole">
+			<child>SubPipeHole</child>
+		</node>
+		<node contain="Tower">
+			<child>TowertopAmplifier</child><!--塔放设备-->
+			<child>Antenna</child><!--天线-->
+			<child>ODU</child><!--ODU-->
+			<child>RoomEarthConn</child><!--机房总接地-->
+			<child>Photo</child><!--照片-->
+			<child>Attachment</child><!--设计文件-->
+		</node>
+		<node contain="Floor">
+			<child>AP</child><!--AP-->
+			<child>CableSustainFrame</child><!--走线架-->
+			<child>Tower</child><!--铁塔-->
+			<child>Camera</child><!--摄像头-->
+			<child>WirelessRepDevice</child><!--无线直放设备-->
+			<child>FiberRepRemoteDevice</child><!--光纤直放站远端机-->
+			<child>ConnectorJoint</child><!--连接器-->
+			<child>Photo</child><!--照片-->
+			<child>Attachment</child><!--设计文件-->
+		</node>
+		<node contain="Stairs">
+			<child>AP</child><!--AP-->
+			<child>Antenna</child><!--天线-->
+			<child>Camera</child><!--摄像头-->
+			<child>Subsidiary</child><!--配套-->
+			<child>ConnectorJoint</child><!--连接器-->
+			<child>UPS</child><!--UPS-->
+			<child>BaseStation_GSM</child><!--GSM基站-->
+			<child>BaseStation_repeater</child><!--直放站-->
+			<child>BaseStation_TD</child><!--TD基站-->
+			<child>BaseStation_WLAN</child><!--WLAN基站-->
+			<child>Photo</child><!--照片-->
+			<child>Attachment</child><!--设计文件-->
+		</node>
+		<node contain="Corridor">
+			<child>AP</child><!--AP-->
+			<child>Antenna</child><!--天线-->
+			<child>Camera</child><!--摄像头-->
+			<child>Subsidiary</child><!--配套-->
+			<child>ConnectorJoint</child><!--连接器-->
+			<child>UPS</child><!--UPS-->
+			<child>BaseStation_GSM</child><!--GSM基站-->
+			<child>BaseStation_repeater</child><!--直放站-->
+			<child>BaseStation_TD</child><!--TD基站-->
+			<child>BaseStation_WLAN</child><!--WLAN基站-->
+			<child>Photo</child><!--照片-->
+			<child>Attachment</child><!--设计文件-->
+		</node>
+		<node contain="Passage">
+			<child>AP</child><!--AP-->
+			<child>Antenna</child><!--天线-->
+			<child>Camera</child><!--摄像头-->
+			<child>Subsidiary</child><!--配套-->
+			<child>ConnectorJoint</child><!--连接器-->
+			<child>UPS</child><!--UPS-->
+			<child>BaseStation_GSM</child><!--GSM基站-->
+			<child>BaseStation_repeater</child><!--直放站-->
+			<child>BaseStation_TD</child><!--TD基站-->
+			<child>BaseStation_WLAN</child><!--WLAN基站-->
+			<child>Photo</child><!--照片-->
+			<child>Attachment</child><!--设计文件-->
+		</node>
+		<node contain="Lift">
+			<child>AP</child><!--AP-->
+			<child>Antenna</child><!--天线-->
+			<child>Camera</child><!--摄像头-->
+			<child>AirConditioning</child><!--空调-->
+			<child>ConnectorJoint</child><!--连接器-->
+			<child>Photo</child><!--照片-->
+			<child>Attachment</child><!--设计文件-->
+		</node>
+		<node contain="BaseStation">
+			<child>CompositiveFrame</child><!--综合机架-->
+			<child>Cell</child><!--小区-->
+			<child>RRU</child><!--RRU-->
+			<child>Photo</child><!--照片-->
+			<child>Attachment</child><!--设计文件-->
+		</node>
+		<node contain="BaseStation_GSM">
+			<child>PrimaryEquipFrame_GSM</child><!--GSM主设备架-->
+			<child>Frame_DF</child><!--DF架-->
+			<child>CompositiveFrame</child><!--综合机架-->
+			<child>Cell</child><!--小区-->
+			<child>RRU</child><!--RRU-->
+			<child>Photo</child><!--照片-->
+			<child>Attachment</child><!--设计文件-->
+		</node>
+		<node contain="PrimaryEquipFrame_GSM">
+			<child>EquipBoard_GSM</child><!--GSM设备板件-->
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="BaseStation_TD">
+			<child>PrimaryEquipFrame_TD</child><!--TD主设备架-->
+			<child>Frame_DF</child><!--DF架-->
+			<child>CompositiveFrame</child><!--综合机架-->
+			<child>Cell</child><!--小区-->
+			<child>RRU</child><!--RRU-->
+			<child>Photo</child><!--照片-->
+			<child>Attachment</child><!--设计文件-->
+		</node>
+		<node contain="PrimaryEquipFrame_TD">
+			<child>EquipBoard_TD</child><!--TD设备板件-->
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="BaseStation_WLAN">
+			<child>CompositiveFrame</child><!--综合机架-->
+			<child>RRU</child><!--RRU-->
+			<child>Photo</child><!--照片-->
+			<child>Attachment</child><!--设计文件-->
+		</node>
+		<node contain="BaseStation_repeater">
+			<child>WirelessRepDevice</child><!--无线直放设备-->
+			<child>FiberRepLocalDevice</child><!--光纤直放站近端机-->
+			<child>FiberRepRemoteDevice</child><!--光纤直放站远端机-->
+			<child>TrunklineAmplifier</child><!--干放设备-->
+			<child>TowertopAmplifier</child><!--塔放设备-->
+			<child>RRU</child><!--RRU-->
+			<child>CompositiveFrame</child><!--综合机架-->
+			<child>Photo</child><!--照片-->
+			<child>Attachment</child><!--设计文件-->
+		</node>
+		<node contain="WirelessRepDevice">
+			<child>TrunklineAmplifier</child><!--干放设备-->
+			<child>TowertopAmplifier</child><!--塔放设备-->
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="FiberRepLocalDevice">
+			<child>TrunklineAmplifier</child><!--干放设备-->
+			<child>TowertopAmplifier</child><!--塔放设备-->
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="FiberRepRemoteDevice">
+			<child>TrunklineAmplifier</child><!--干放设备-->
+			<child>TowertopAmplifier</child><!--塔放设备-->
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="TrunklineAmplifier">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="TowertopAmplifier">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="CompositiveFrame">
+			<child>OpticalTerminalDevice</child><!--光端机-->
+			<child>Switcher</child><!--交换机-->
+			<child>Router</child><!--路由器-->
+			<child>AP</child><!--AP-->
+			<child>AC</child><!--AC-->
+			<child>IDU</child><!--IDU-->
+			<child>ODF</child><!--ODF架-->
+			<child>DDF</child><!--DDF架-->
+			<child>PDU</child><!--插排-->
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="Switcher">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="Router">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="AP">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="AC">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="IDU">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="CableSustainFrame">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="EnvironmentMonitor">
+			<child>EntranceGuard</child><!--门禁-->
+			<child>Sensor</child><!--传感器-->
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="PowerDistributionFrame">
+			<child>LightningProtBox</child><!--防雷箱-->
+			<child>PowerTerminal</child><!--电源端子-->
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="OpticalTerminalDevice">
+			<child>OpticalTerminalDeviceBoard</child><!--光端机板件-->
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="DDF">
+			<child>DDM</child><!--模块-->
+			<child>DDFTerminal</child><!--DDF端子-->
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="ODF">
+			<child>ODM</child><!--模块-->
+			<child>Terminal</child><!--ODF端子-->
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="DDM">
+			<child>DDFTerminal</child><!--DDF端子-->
+		</node>
+		<node contain="ODM">
+			<child>Terminal</child><!--ODF端子-->
+		</node>
+		<node contain="ACFeederPanel">
+			<child>ACSwitch</child><!--交流开关-->
+		</node>
+		<node contain="ACSwitch">
+			<child>PowerTerminal</child><!--电源端子-->
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="RoomEarthConn">
+			<child>EarthConnDistributionUnit</child><!--地排-->
+		</node>
+		<node contain="UPS">
+			<child>UPSControlModule</child><!--UPS控制模块-->
+			<child>UPSBattery</child><!--UPS电池-->
+		</node>
+		<node contain="UPSControlModule">
+			<child>PowerTerminal</child><!--电源端子-->
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="UPSBattery">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="PowerTransducer">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="DCRectifyFrame">
+			<child>RectifyModule</child><!--整流模块-->
+			<child>DCControllerModule</child><!--DC控制模块-->
+			<child>DCDistributionUnit</child><!--DC分配单元-->
+			<child>ACAccessUnit</child><!--AC接入单元-->
+			<child>DCLightningProtModule</child><!--DC防雷模块-->
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="RoomEarthConn">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="LightningProtBox">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="VoltageStabilize">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="OilEngine">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="AirConditioning">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="ExtinguishingAProtDevice">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="AirExhaustDevice">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="Camera">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="Antenna">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="ODU">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="Sensor">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="OpticalTerminalDeviceBoard">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="EarthConnDistributionUnit">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="RectifyModule">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="DCControllerModule">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="DCDistributionUnit">
+			<child>Photo</child><!--照片-->
+		</node>
+		<node contain="ACAccessUnit">
+			<child>Photo</child><!--照片-->
+		</node>
+		<!--关联关系，以本端为维护点，link表示关联端-->
+		<!--逻辑网：路由-->
+		<node contain="PipeRoute">
+			<link cardinality="1">Sys_Area</link><!--所属区域-->
+			<link></link>
+		</node>
+		<node contain="PipelineSection">
+			<link cardinality="2">Conn_4_PipelineSection</link><!--起点/终点设施-->
+			<link cardinality="1">Sys_Area</link><!--所属区域-->
+			<link cardinality="1">PipeRoute</link><!--所属管道-->
+			<link cardinality="*">Passthrough_4_PipelineSection</link><!--所穿越的孔设施-->
+		</node>
+		<node contain="BuriedlineSection">
+			<link cardinality="2">Conn_4_PipelineSection</link><!--起点/终点设施-->
+			<link cardinality="1">Sys_Area</link><!--所属区域-->
+			<link cardinality="1">PipeRoute</link><!--所属管道-->
+		</node>
+		<node contain="PoleRoute">
+			<link cardinality="1">Sys_Area</link><!--所属区域-->
+		</node>
+		<node contain="PolelineSection">
+			<link cardinality="2">Conn_4_PolelineSection</link><!--起点/终点设施-->
+			<link cardinality="1">Sys_Area</link><!--所属区域-->
+			<link cardinality="1">PoleRoute</link><!--所属杆路-->
+		</node>
+		<!--逻辑网：光缆-->
+		<node contain="Fiber">
+			<link cardinality="1">Sys_Area</link><!--所属区域-->
+		</node>
+		<node contain="FiberSection">
+			<link cardinality="2">Conn_4_FiberSection</link><!--起点/终点设施-->
+			<link cardinality="1">Sys_Area</link><!--所属区域-->
+			<link cardinality="1">Fiber</link><!--所属光缆-->
+			<link cardinality="*">Passthrough_4_FiberSection</link><!--所穿越的设施-->
+			<link cardinality="*">FiberCore</link><!--所含纤芯-->
+		</node>
+		<!--逻辑网：纤芯-->
+		<node contain="FiberCore"><!--FiberCore的第一种关系定义-->
+			<link cardinality="1">FiberSection</link><!--所属光缆段-->
+		</node>
+		<!--逻辑网：光路-->
+		<node contain="OpticalRoute">
+			<link cardinality="2">Conn_4_OpticalRoute</link><!--端点设施-->
+			<link cardinality="*">Sys_Area</link><!--所属区域-->
+		</node>
+		<node contain="OpticalRouteP2P">
+			<link cardinality="2">Terminal</link><!--端子-->
+			<link cardinality="1">OpticalRoute</link><!--所属光路-->
+			<link cardinality="*">Sys_Area</link><!--所属区域-->
+		</node>
+		<node contain="OpticalRouteSP2SP">
+			<link cardinality="2">Terminal</link><!--端子-->
+			<link cardinality="1">OpticalRouteP2P</link><!--所属光路纤芯-->
+			<link cardinality="*">Sys_Area</link><!--所属区域-->
+		</node>
+		<!--逻辑网：传输拓扑-->
+		<node contain="TransmissionNetwork">
+			<link cardinality="1">Sys_Area</link><!--所属区域-->
+		</node>
+		<node contain="TransmissionSection">
+			<link cardinality="1">Sys_Area</link><!--所属区域-->
+			<link cardinality="2">Conn_4_TransmissionPort</link><!--传输端口-->
+			<link cardinality="1">OpticalRouteP2P</link><!--关联的光路纤芯-->
+		</node>
+		<!--逻辑关系：成端连接-->
+		<node contain="FiberCore"><!--FiberCore的第二种关系定义-->
+			<link cardinality="2">Conn_4_FiberCore</link><!--端点连接设施：端子、接头-->
+		</node>
+		<node contain="Terminal">
+			<link cardinality="2">Conn_4_Terminal</link><!--端子可连接纤芯、尾纤/跳纤-->
+			<!--<link cardinality="1">FiberCore</link>--><!--端子在缆面连接光缆段的纤芯-->
+			<!--<link cardinality="1">PigtailedFiber</link>--><!--端子在纤面连接尾纤-->
+		</node>
+		<!--逻辑关系：熔纤接续-->
+		<node contain="FiberCore"><!--FiberCore的第三种关系定义-->
+			<link cardinality="2">FiberCore</link><!--纤芯接续关系-->
+		</node>
+		<!--逻辑网：传输-微波信道-->
+		<node contain="WirelessChannel">
+			<link cardinality="2">Conn_4_WirelessChannel</link>
+		</node>
+	</nodes>
+	<views>
+		<!--专业：传输-->
+		<!--备注：线缆资源不能在资源导航树上体现、需通过关联导航-->
+		<view viewname="Station_Transmission">
+			<nodes>
+				<node contain="Sys_Area">
+					<child>Sys_Area</child>
+					<child>Station</child>
+					
+					<!--其他涉及光缆的室外资源-->
+					<child>ManWell</child>
+					<child>Pole</child>
+					<child>HangWall</child>
+					<child>MarkPost</child>
+					<child>FiberCrossCabinet</child>
+					<child>FiberDistributionCabinet</child>
+					<child>FiberTerminalCase</child>
+					
+				</node>
+				<node contain="Station">
+					<child>Room</child><!--机房-->
+					<child>Tower</child><!--铁塔-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<!--区域-站址-铁塔-->
+				<node contain="Tower">
+					<child>ODU</child><!--ODU-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<!--区域-站址-铁塔-ODU-照片-->
+				<node contain="ODU">
+					<child>Photo</child><!--照片-->
+				</node>
+				<!--区域-站址-机房-->
+				<node contain="Room">
+					<child>CompositiveFrame</child><!--综合机架-->
+					<child>ODF</child><!--ODF架-->
+					<child>DDF</child><!--DDF架-->
+					<child>OpticalTerminalDevice</child><!--光端机-->
+					<child>IDU</child><!--IDU-->
+					<child>Switcher</child><!--交换机-->
+					<child>Router</child><!--路由器-->
+					<child>AC</child><!--AC-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="CompositiveFrame">
+					<child>OpticalTerminalDevice</child><!--光端机-->
+					<child>IDU</child><!--IDU-->
+					<child>Switcher</child><!--交换机-->
+					<child>Router</child><!--路由器-->
+					<child>ODF</child><!--ODF架-->
+					<child>DDF</child><!--DDF架-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="OpticalTerminalDevice">
+					<child>OpticalTerminalDeviceBoard</child><!--光端机板件-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="IDU">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="ODF">
+					<child>ODM</child><!--模块-->
+					<child>Terminal</child><!--ODF端子-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="DDF">
+					<child>DDM</child><!--模块-->
+					<child>DDFTerminal</child><!--DDF端子-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="DDM">
+					<child>DDFTerminal</child><!--DDF端子-->
+				</node>
+				<node contain="ODM">
+					<child>Terminal</child><!--ODF端子-->
+				</node>
+				<node contain="Switcher">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="Router">
+					<child>Photo</child><!--照片-->
+				</node>
+			
+				<!--室外传输资源关系，方便通过“关联资源”导航到相关光缆-->
+				<node contain="ManWell">
+					<child>Joint</child>
+					<child>PipeGate</child>
+					<child>PipeHole</child>
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="Pole">
+					<child>Joint</child>
+					<child>VerticalPipe</child>
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="Pole">
+					<child>Joint</child>
+					<child>VerticalPipe</child>
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="MarkPost">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="HangWall">
+					<child>VerticalPipe</child>
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="Joint">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="FiberCrossCabinet">
+					<child>ODM</child>
+					<child>Terminal</child>
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="FiberDistributionCabinet">
+					<child>Terminal</child>
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="FiberTerminalCase">
+					<child>Terminal</child>
+				</node>
+				<node contain="PipeHole">
+					<child>SubPipeHole</child>
+				</node>
+				<node contain="ODM">
+					<child>Terminal</child><!--ODF端子-->
+				</node>
+			</nodes>
+		</view>
+		<!--专业：动力-->
+		<view viewname="Station_Power">
+			<nodes>
+				<node contain="Sys_Area">
+					<child>Sys_Area</child>
+					<child>Station</child>
+				</node>
+				<node contain="Station">
+					<child>Room</child>
+					<child>Stairs</child>
+					<child>Corridor</child>
+					<child>Passage</child>
+					<child>Transformer</child><!--变压器-->
+					<child>Ammeter</child><!--电表箱-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="Room">
+					<child>PowerDistributionFrame</child><!--电源列头柜-->
+					<child>UPS</child><!--UPS-->
+					<child>PowerTransducer</child><!--电源转换器-->
+					<child>DCBattery</child><!--DC电池组-->
+					<child>DCRectifyFrame</child><!--DC整流机柜-->
+					<child>RoomEarthConn</child><!--机房总接地-->
+					<child>LightningProtBox</child><!--防雷箱-->
+					<child>ACSwitch</child><!--交流开关-->
+					<child>ACFeederPanel</child><!--AC配电屏-->
+					<child>Ammeter</child><!--电表箱-->
+					<child>VoltageStabilize</child><!--稳压器-->
+					<child>OilEngine</child><!--油机-->
+					<child>EnergySavingFacility</child><!--节能设备-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Stairs">
+					<child>UPS</child><!--UPS-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Corridor">
+					<child>UPS</child><!--UPS-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Passage">
+					<child>UPS</child><!--UPS-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				
+				<node contain="PowerDistributionFrame">
+					<child>LightningProtBox</child><!--防雷箱-->
+					<child>PowerTerminal</child><!--电源端子-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="UPS">
+					<child>UPSControlModule</child><!--UPS控制模块-->
+					<child>UPSBattery</child><!--UPS电池-->
+				</node>
+				<node contain="UPSControlModule">
+					<child>PowerTerminal</child><!--电源端子-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="UPSBattery">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="PowerTransducer">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="RoomEarthConn">
+					<child>EarthConnDistributionUnit</child><!--地排-->
+				</node>
+				<node contain="DCRectifyFrame">
+					<child>RectifyModule</child><!--整流模块-->
+					<child>DCControllerModule</child><!--DC控制模块-->
+					<child>DCDistributionUnit</child><!--DC分配单元-->
+					<child>ACAccessUnit</child><!--AC接入单元-->
+					<child>DCLightningProtModule</child><!--DC防雷模块-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="LightningProtBox">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="ACSwitch">
+					<child>PowerTerminal</child><!--电源端子-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="ACFeederPanel">
+					<child>ACSwitch</child><!--交流开关-->
+				</node>
+				<node contain="VoltageStabilize">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="OilEngine">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="RectifyModule">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="DCControllerModule">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="DCDistributionUnit">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="ACAccessUnit">
+					<child>Photo</child><!--照片-->
+				</node>
+			</nodes>
+		</view>
+		<!--专业：无线-->
+		<!--遗留问题：模型对“基站(通用)”没有建子资源关系-->
+		<view viewname="Station_Wireless">
+			<nodes>
+				<node contain="Sys_Area">
+					<child>Sys_Area</child>
+					<child>Station</child>
+				</node>
+				<node contain="Station">
+					<child>Room</child>
+					<child>Tower</child>
+					<child>Floor</child>
+					<child>Stairs</child>
+					<child>Corridor</child>
+					<child>Passage</child>
+					<child>Lift</child>
+				</node>
+				<node contain="Tower">
+					<child>TowertopAmplifier</child><!--塔放设备-->
+					<child>Antenna</child><!--天线-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Floor">
+					<child>Tower</child><!--铁塔-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Stairs">
+					<child>Antenna</child><!--天线-->
+					<child>BaseStation_GSM</child><!--GSM基站-->
+					<child>BaseStation_TD</child><!--TD基站-->
+					<child>BaseStation</child><!--基站(预留)-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Corridor">
+					<child>Antenna</child><!--天线-->
+					<child>BaseStation_GSM</child><!--GSM基站-->
+					<child>BaseStation_TD</child><!--TD基站-->
+					<child>BaseStation</child><!--基站(预留)-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Passage">
+					<child>Antenna</child><!--天线-->
+					<child>BaseStation_GSM</child><!--GSM基站-->
+					<child>BaseStation_TD</child><!--TD基站-->
+					<child>BaseStation</child><!--基站(预留)-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Lift">
+					<child>Antenna</child><!--天线-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Room">
+					<child>BaseStation_GSM</child><!--GSM基站-->
+					<child>BaseStation_TD</child><!--TD基站-->
+					<child>BaseStation</child><!--基站(预留)-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="BaseStation_GSM">
+					<child>PrimaryEquipFrame_GSM</child><!--GSM主设备架-->
+					<child>Frame_DF</child><!--DF架-->
+					<child>Cell</child><!--小区-->
+					<child>RRU</child><!--RRU-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="PrimaryEquipFrame_GSM">
+					<child>EquipBoard_GSM</child><!--GSM设备板件-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="BaseStation_TD">
+					<child>PrimaryEquipFrame_TD</child><!--TD主设备架-->
+					<child>Frame_DF</child><!--DF架-->
+					<child>Cell</child><!--小区-->
+					<child>RRU</child><!--RRU-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="PrimaryEquipFrame_TD">
+					<child>EquipBoard_TD</child><!--TD设备板件-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="BaseStation">
+					<child>CompositiveFrame</child><!--综合机架-->
+					<child>Cell</child><!--小区-->
+					<child>RRU</child><!--RRU-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="TowertopAmplifier">
+					<child>Photo</child><!--照片-->
+				</node>
+			</nodes>
+		</view>
+		<!--专业：室分-->
+		<!--遗留问题：其他动力设备子设备，室分专业视图模型梳理中未提到的，是否要纳入-->
+		<view viewname="Station_IndoorCover">
+			<nodes>
+				<node contain="Sys_Area">
+					<child>Sys_Area</child>
+					<child>Station</child>
+				</node>
+				<node contain="Station">
+					<child>Room</child>
+					<child>Tower</child>
+					<child>Floor</child>
+					<child>Stairs</child>
+					<child>Corridor</child>
+					<child>Passage</child>
+					<child>Lift</child>
+				</node>
+				<node contain="Tower">
+					<child>TowertopAmplifier</child><!--塔放设备-->
+					<child>Antenna</child><!--天线-->
+					<child>RoomEarthConn</child><!--机房总接地-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Floor">
+					<child>Tower</child><!--铁塔-->
+					<child>WirelessRepDevice</child><!--无线直放设备-->
+					<child>FiberRepRemoteDevice</child><!--光纤直放站远端机-->
+					<child>ConnectorJoint</child><!--连接器-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Stairs">
+					<child>Antenna</child><!--天线-->
+					<child>ConnectorJoint</child><!--连接器-->
+					<child>UPS</child><!--UPS-->
+					<child>BaseStation_repeater</child><!--直放站-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Corridor">
+					<child>Antenna</child><!--天线-->
+					<child>ConnectorJoint</child><!--连接器-->
+					<child>UPS</child><!--UPS-->
+					<child>BaseStation_repeater</child><!--直放站-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Passage">
+					<child>Antenna</child><!--天线-->
+					<child>ConnectorJoint</child><!--连接器-->
+					<child>UPS</child><!--UPS-->
+					<child>BaseStation_repeater</child><!--直放站-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Lift">
+					<child>Antenna</child><!--天线-->
+					<child>ConnectorJoint</child><!--连接器-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Room">
+					<child>BaseStation_repeater</child><!--直放站-->
+					<child>ConnectorJoint</child><!--连接器-->
+					<child>UPS</child><!--UPS-->
+					<child>ACSwitch</child><!--交流开关-->
+					<child>Ammeter</child><!--电表箱-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="BaseStation_repeater">
+					<child>WirelessRepDevice</child><!--无线直放设备-->
+					<child>FiberRepLocalDevice</child><!--光纤直放站近端机-->
+					<child>FiberRepRemoteDevice</child><!--光纤直放站远端机-->
+					<child>TrunklineAmplifier</child><!--干放设备-->
+					<child>TowertopAmplifier</child><!--塔放设备-->
+					<child>RRU</child><!--RRU-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="WirelessRepDevice">
+					<child>TrunklineAmplifier</child><!--干放设备-->
+					<child>TowertopAmplifier</child><!--塔放设备-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="FiberRepLocalDevice">
+					<child>TrunklineAmplifier</child><!--干放设备-->
+					<child>TowertopAmplifier</child><!--塔放设备-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="FiberRepRemoteDevice">
+					<child>TrunklineAmplifier</child><!--干放设备-->
+					<child>TowertopAmplifier</child><!--塔放设备-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="TrunklineAmplifier">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="TowertopAmplifier">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="UPS">
+					<child>UPSControlModule</child><!--UPS控制模块-->
+					<child>UPSBattery</child><!--UPS电池-->
+				</node>
+				<node contain="UPSControlModule">
+					<child>PowerTerminal</child><!--电源端子-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="UPSBattery">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="ACSwitch">
+					<child>PowerTerminal</child><!--电源端子-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="RoomEarthConn">
+					<child>EarthConnDistributionUnit</child><!--地排-->
+				</node>
+				<node contain="EarthConnDistributionUnit">
+					<child>Photo</child><!--照片-->
+				</node>
+				<!--其他动力设备子设备，室分专业视图模型梳理中未提到的-->
+			</nodes>
+		</view>
+		<!--专业：WLAN-->
+		<view viewname="Station_WLAN">
+			<nodes>
+				<node contain="Sys_Area">
+					<child>Sys_Area</child>
+					<child>Station</child>
+				</node>
+				<node contain="Station">
+					<child>Room</child>
+					<child>Floor</child>
+					<child>Stairs</child>
+					<child>Corridor</child>
+					<child>Passage</child>
+					<child>Lift</child>
+				</node>
+				<node contain="Floor">
+					<child>AP</child><!--AP-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Stairs">
+					<child>AP</child><!--AP-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Corridor">
+					<child>AP</child><!--AP-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Passage">
+					<child>AP</child><!--AP-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Lift">
+					<child>AP</child><!--AP-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Room">
+					<child>BaseStation_WLAN</child><!--WLAN基站-->
+					<child>CompositiveFrame</child><!--综合机架-->
+					<child>Switcher</child><!--交换机-->
+					<child>Router</child><!--路由器-->
+					<child>AP</child><!--AP-->
+					<child>AC</child><!--AC-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="BaseStation_WLAN">
+					<child>CompositiveFrame</child><!--综合机架-->
+					<child>RRU</child><!--RRU-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="CompositiveFrame">
+					<child>Switcher</child><!--交换机-->
+					<child>Router</child><!--路由器-->
+					<child>AP</child><!--AP-->
+					<child>AC</child><!--AC-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="Switcher">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="Router">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="AP">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="AC">
+					<child>Photo</child><!--照片-->
+				</node>
+			</nodes>
+		</view>
+		<!--专业：环境监控-->
+		<view viewname="Station_EvironmentAndMonitoring">
+			<nodes>
+				<node contain="Sys_Area">
+					<child>Sys_Area</child>
+					<child>Station</child>
+				</node>
+				<node contain="Station">
+					<child>Room</child>
+					<child>Floor</child>
+					<child>Stairs</child>
+					<child>Lift</child>
+					<child>Corridor</child>
+					<child>Passage</child>
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="Room">
+					<child>EnvironmentMonitor</child><!--环境监控箱-->
+					<child>AirConditioning</child><!--空调-->
+					<child>ExtinguishingAProtDevice</child><!--消防设备-->
+					<child>AirExhaustDevice</child><!--排风设备-->
+					<child>Camera</child><!--摄像头-->
+					<child>Subsidiary</child><!--配套-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="Floor">
+					<child>Camera</child><!--摄像头-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Stairs">
+					<child>Camera</child><!--摄像头-->
+					<child>Subsidiary</child><!--配套-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Lift">
+					<child>AirConditioning</child><!--空调-->
+					<child>Camera</child><!--摄像头-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Corridor">
+					<child>Camera</child><!--摄像头-->
+					<child>Subsidiary</child><!--配套-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="Passage">
+					<child>Camera</child><!--摄像头-->
+					<child>Subsidiary</child><!--配套-->
+					<child>Photo</child><!--照片-->
+					<child>Attachment</child><!--设计文件-->
+				</node>
+				<node contain="EnvironmentMonitor">
+					<child>EntranceGuard</child><!--门禁-->
+					<child>Sensor</child><!--传感器-->
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="AirConditioning">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="ExtinguishingAProtDevice">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="AirExhaustDevice">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="Camera">
+					<child>Photo</child><!--照片-->
+				</node>
+				<node contain="Sensor">
+					<child>Photo</child><!--照片-->
+				</node>
+			</nodes>
+		</view>
+	</views>
+</structure>

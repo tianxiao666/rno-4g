@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="informationmanage" extends="struts-default">
+	
+		<!-- 企业信息管理 -->
+		<action name="enterprisemanage" class="enterpriseInformationAction" >
+			<result name="success">${url}</result>
+		</action>
+		<action name="enterprisemanage_ajax" class="enterpriseInformationAction" >
+		</action>
+		
+		<!-- 项目信息管理 -->
+		<action name="projectmanage" class="projectInformationAction" >
+			<result name="success">${url}</result>
+		</action>
+		<action name="projectmanage_ajax" class="projectInformationAction" >
+		</action>
+		
+		<!-- 外部引用类 -->
+		<action name="information_foreign_ajax" class="informationManageForeignAction" >
+		</action>
+		
+		<!-- 区域类 -->
+		<action name="information_area_ajax" class="informationManageAreaAction" >
+		</action>
+		
+		<!-- 网络资源管理 -->
+		<action name="networkresourcemanage" class="informationManageNetworkResourceAction" >
+			<result name="success">${url}</result>
+		</action>
+		<action name="networkresourcemanage_ajax" class="informationManageNetworkResourceAction" >
+		</action>
+		
+		
+		
+	</package>
+</struts>

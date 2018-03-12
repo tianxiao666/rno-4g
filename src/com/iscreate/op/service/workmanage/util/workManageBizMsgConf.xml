@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workManageBizMsgConf>
+	<!-- <area areaName="海珠东区" areaId="1492"></area> -->
+	
+	
+	<bizMsgOverTime>3600</bizMsgOverTime>
+	<!-- 3600   1小时 -->
+	<!-- 1800   半小时 -->
+	<!-- 86400  1天 -->
+</workManageBizMsgConf>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="systemOrganization" extends="iscreate-struts-default" namespace="/op/organization">
+		<!-- 服务商组织 -->
+		<!-- 根据组织Id显示组织架构 -->
+		<action name="showProviderOrgByOrgIdAction" class="sysOrganizationAction" method="showProviderOrgByOrgIdAction">
+			<result name="success">/op/organization/organizationByOrgIdPage.jsp</result>
+		</action>
+		
+		<!-- 根据组织Id获取服务商组织 -->
+		<action name="getProviderOrgByOrgIdAction" class="sysOrganizationAction" method="getProviderOrgByOrgIdAction">
+			<result name="success">/op/organization/providerOrgBaseInfoPage.jsp</result>
+		</action>
+		<!-- 组织 -->
+		<!-- 根据人获取最高级的组织 -->
+		<action name="getTheTopOrgByAccountAction" class="sysOrganizationAction" method="getTheTopOrgByAccountAction">
+		</action>
+		
+		<!-- 根据账号获取该账号以下的组织树 -->
+		<action name="getOrgTreeDownwardByAccountAction" class="sysOrganizationAction" method="getOrgTreeDownwardByAccountAction">
+		</action>
+		
+		<!--ajax保存服务商信息 -->
+		<action name="saveProviderOrgInfoAjaxAction" class="sysOrganizationAction" method="saveProviderOrgInfoAjaxAction">
+		</action>
+		<!-- ajax修改服务商组织信息 -->
+		<action name="updateProviderOrgInfoAjaxAction" class="sysOrganizationAction" method="updateProviderOrgInfoAjaxAction">
+		</action>
+		
+		<!-- ajax删除服务商组织信息 -->
+		<action name="deleteProviderOrgInfoAjaxAction" class="sysOrganizationAction" method="deleteProviderOrgInfoAjaxAction">
+		</action>
+		
+		<!-- ajax根据账号获取可操作组织架构的权限 -->
+		<action name="getAuthorityByAccountAjaxAction" class="sysOrganizationAction" method="getAuthorityByAccountAjaxAction">
+		</action>
+				
+		<!-- 获取所有最高级组织 -->
+		<action name="getAllTheTopProviderOrgAction" class="sysOrganizationAction" method="getAllTheTopProviderOrgAction">
+		</action>
+		
+		<!--获取多个服务商组织树 -->
+		<action name="getAllProviderOrgTreeAction" class="sysOrganizationAction" method="getAllProviderOrgTreeAction">
+		</action>			
+		<!-- 获取登陆人所属的企业 -->
+		<action name="getLoginIdBelongEnterpriseTypeAjaxAction" class="sysOrganizationAction" method="getLoginIdBelongEnterpriseTypeAjaxAction">
+		</action>
+		<!-- 数据字典 -->
+		<!-- 获取组织类型的数据字典 -->
+		<action name="getDictionaryByTypeAction" class="sysOrganizationAction" method="getDictionaryByTypeAction">
+		</action>
+		<!-- 获取所有没有选择过的企业 -->
+		<action name="getAllNoChoiceEnterpriseAjaxAction" class="sysOrganizationAction" method="getAllNoChoiceEnterpriseAjaxAction">
+		</action>
+		<!-- ajax根据账号获取可操作组织架构的权限 -->
+		<action name="getTheTopProviderOrgAjaxAction" class="sysOrganizationAction" method="getTheTopProviderOrgAjaxAction">
+		</action>
+			<!-- 根据账号获取该账号以下的组织集合 -->
+		<action name="getOrgTreeDownwardByAccountAction" class="sysOrganizationAction" method="getOrgTreeDownwardByAccountAction">
+		</action>
+		<!-- 生成树 -->
+		<!-- ajax根据组织ID向下获取组织树 -->
+		<action name="getProviderOrgTreeByOrgIdAction" class="sysOrganizationAction" method="getProviderOrgTreeByOrgIdAction">
+		</action>
+		
+		<!-- ajax根据企业Id获取该企业的组织树 -->
+		<action name="getProviderOrgTreeByEnterpriseIdAjaxAction" class="sysOrganizationAction" method="getProviderOrgTreeByEnterpriseIdAjaxAction">
+		</action>
+
+		
+		
+		
+		<!-- 根据组织Id获取服务商组织 -->
+		<action name="getProviderOrgByOrgIdAction" class="sysOrganizationAction" method="getProviderOrgByOrgIdAction">
+			<result name="server">/op/organization/providerOrgBaseInfoPage.jsp</result>
+			<result name="operator">/op/organization/customerOrgBaseInfoPage.jsp</result>
+		</action>
+		<!-- 获取全部区域树 -->
+		<action name="getAreaTreeAjaxAction" class="sysOrganizationAction" method="getAreaTreeAjaxAction">
+		</action>
+		
+		<!-- 根据组织Id获取人员列表数据字典 -->
+		<action name="getAccountDictionaryByOrgIdAjaxAction" class="sysOrganizationAction" method="getAccountDictionaryByOrgIdAjaxAction">
+		</action>
+		<!-- 删除组织人员 -->
+		<action name="deleteProiderAccountAndOrgAjaxAction" class="sysOrganizationAction" method="deleteProiderAccountAndOrgAjaxAction">
+		</action>
+		<!-- 删除组织与人员关系 -->
+		<action name="createOrgStaffAction" class="sysOrganizationAction" method="createOrgStaffAction">
+		</action>
+<!--test -->
+		<action name="testOrganizationAction" class="sysOrganizationAction" method="testOrganizationAction">
+		</action>
+	</package>
+</struts>

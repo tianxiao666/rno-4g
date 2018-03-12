@@ -1,0 +1,50 @@
+.availableinfo {
+	font-size: 12px;
+	font-style: normal;
+	
+	font-weight: normal;
+	float: left;
+	width:30%;
+	display: block;
+	margin-top:2px;
+	margin-left:2px;
+	margin-right:2px;
+	margin-bottom:2px;
+	border: thin solid #999999;
+	line-height:2;padding:2px;
+}
+.availableinfo table td,th{
+margin-left:2px;
+margin-bottom:2px;
+margin-right:2px;
+border:thin solid  #999999 ;
+}
+.userdefinedcondition {
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	float: right;
+	width:69%;
+	margin-top:2px;
+	border: thin solid #999999;
+	
+}
+.userdefinedcondition table{
+margin-top:2px;
+margin-left:2px;
+margin-bottom:2px;
+margin-right:2px;
+border:thin solid  #999999 ;
+}
+.userdefinedcondition table textarea{
+font-size:12px;
+}
+.userdefinedhead {
+	font-size: large;
+	font-style: italic;
+	line-height: 20px;
+	font-weight: bold;
+	color: #000000;
+	background-color: #FFFFFF;
+	border: thin solid #999999;
+}

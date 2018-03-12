@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="resource/physicalres" extends="struts-default">
+		<!-- 查询一个节点的信息(右边菜单信息栏) -->
+		<action name="getPhysicalresAction" class="physicalresAction" method="getPhysicalresAction">
+			<result name="success">showPhysicalres.jsp</result>
+			<result name="photoPage">showPhoto.jsp</result>
+			<result name="loadBasicPage">showBasicResourceInfo.jsp</result>
+		</action>
+		
+		<!-- 查询一个节点(用于对节点进行编辑操作) -->
+		<action name="getPhysicalresForOperaAction" class="physicalresAction" method="getPhysicalresForOperaAction">
+			<result name="success">operationPhysicalres.jsp</result>
+			<result name="showTaskPage">operationPhysicalresForGisDispatch.jsp</result>
+			<result name="loadBigPage">updatePhysicalresForAjax.jsp</result>
+		</action>
+		
+		<!-- 加载添加物理资源页面 -->
+		<action name="loadAddPhysicalresPageAction" class="physicalresAction" method="loadAddPhysicalresPageAction">
+			<result name="success">addPhysicalres.jsp</result>
+			<result name="loadBigPage">addPhysicalres.jspForAjax.jsp</result>
+		</action>
+		
+		<!-- 更新一个物理资源 -->
+		<action name="updatePhysicalresAction" class="physicalresAction" method="updatePhysicalresAction"></action>
+		<!-- 判断基站 站址资源是否有同名存在 -->
+		<action name="hasStationResourceRecordAction" class="physicalresAction" method="hasStationResourceRecordAction"></action>
+		
+		<!-- 添加一个物理资源 -->
+		<action name="addPhysicalresAction" class="physicalresAction" method="addPhysicalresAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">resource/physicalres/getPhysicalresForOperaAction</param>
+				<param name="currentEntityType">${currentEntityType}</param>
+				<param name="currentEntityId">${currentEntityId}</param>
+				<param name="parentEntityType">${parentEntityType}</param>
+				<param name="parentEntityId">${parentEntityId}</param>
+				<param name="areaId">${areaId}</param>
+			</result>
+		</action>
+		<!-- AJAX添加一个物理资源 -->
+		<action name="addPhysicalresForAjaxAction" class="physicalresAction" method="addPhysicalresForAjaxAction"></action>
+		
+		<!-- 删除物理资源(同时删除与其有关系的下级资源) -->
+		<action name="delPhysicalresByRecursionAction" class="physicalresAction" method="delPhysicalresByRecursionAction"></action>
+		
+		<!-- 上传文件 -->
+		<action name="uploadAction" class="fileUploadAction" method="uploadAction"></action>
+		
+		<!-- 创建当前图片对象并与其父级entity建立关系 -->
+		<action name="createPhotoAssociatedRelationAction" class="physicalresAction" method="createPhotoAssociatedRelationAction"></action>
+		
+		<!-- 修改图片，新图片与其父级entity建立关系 -->
+		<action name="updatePhotoAssociatedRelationAction" class="physicalresAction" method="updatePhotoAssociatedRelationAction"></action>
+		<!-- 加载修改纤芯成端页面 -->
+		<action name="loadUpdateFiberCoreAndTerminalAction" class="physicalresAction" method="loadUpdateFiberCoreAndTerminalAction">
+			<result name="success">operateFiberCoreAndTerminal.jsp</result>
+		</action>
+		<!-- 保存生成额外物理资源(纤芯成端、熔纤接续)成端 -->
+		<action name="saveExtraPhysicalresAction" class="physicalresAction" method="saveExtraPhysicalresAction"></action>
+		<!-- 删除纤芯成端、熔纤接续 -->
+		<action name="deleteRelationForExtraAction" class="physicalresAction" method="deleteRelationForExtraAction"></action>
+		<!-- 加载修改熔纤接续页面 -->
+		<action name="loadUpdateFiberCoreAndFiberCoreAction" class="physicalresAction" method="loadUpdateFiberCoreAndFiberCoreAction">
+			<result name="success">operateFiberCoreAndFiberCore.jsp</result>
+		</action>
+		<!-- 加载跳纤与尾纤维护页面 -->
+		<action name="loadPigtailedFiberAction" class="physicalresAction" method="loadPigtailedFiberAction">
+			<result name="success">operatePigtailedFiber.jsp</result><!-- 整个页面 -->
+			<result name="loadPartPage">operatePigtailedFiberForAjax.jsp</result><!-- AJAX局部刷新 -->
+		</action>
+		<!-- 建立跳纤或尾纤 -->
+		<action name="savePigtailedFiberAction" class="physicalresAction" method="savePigtailedFiberAction"></action>
+		<!-- 删除跳纤或尾纤 -->
+		<action name="deletePigtailedFiberAction" class="physicalresAction" method="deletePigtailedFiberAction"></action>
+		<!-- 纤芯成端、熔纤接续的删除(删除关系，只删除一个) -->
+		<action name="deleteRelationForExtraForOnlyOneAction" class="physicalresAction" method="deleteRelationForExtraForOnlyOneAction"></action>
+		
+		<!-- 资源导入(导入excel)  -->
+		<action name="resourceImportAction" class="fileUploadAction" method="resourceImportAction"></action>
+		
+		<!-- 加载资源导入页面 -->
+		<action name="loadResourceImportPageAction" class="physicalresAction" method="loadResourceImportPageAction">
+			<result name="success">resourceImport.jsp</result>
+		</action>
+		<!-- 根据选择的类型，获取关联的类型 -->
+		<action name="getAssTypeByChosenTypeAction" class="physicalresAction" method="getAssTypeByChosenTypeAction"></action>
+		<!-- 根据所选择的类型，获取该类型的字段信息 -->
+		<action name="getAttrByChosenTypeAction" class="physicalresAction" method="getAttrByChosenTypeAction"></action>
+		<!-- 创建两个物理资源的关系(导入资源与隶属资源) -->
+		<action name="createAssAppAction" class="fileUploadAction" method="createAssAppAction"></action>
+		
+		<!-- 加载资源查询页面 -->
+		<action name="loadSearchResourcePageAction" class="physicalresAction" method="loadSearchResourcePageAction">
+			<result name="success">searchResource.jsp</result>
+		</action>
+		<!-- 获取查询资源的属性 -->
+		<action name="loadSearchResourceAttrPageAction" class="physicalresAction" method="loadSearchResourceAttrPageAction">
+			<result name="success">aeMapAttrSearchForAjax.jsp</result>
+		</action>
+		<!-- 根据条件查询资源 -->
+		<action name="searchResourceAction" class="physicalresAction" method="searchResourceAction"></action>
+		<!-- 根据条件查询资源(分页) -->
+		<action name="searchResourceByPageAction" class="physicalresAction" method="searchResourceByPageAction"></action>
+		
+		<!-- 导出资源信息excel -->
+		<action name="exportBizunitRelationAction" class="physicalresAction" method="exportBizunitRelationAction">
+		    <result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param> 
+				<param name="inputName">resultInputStream</param>
+				<param name="contentDisposition">attachment;filename="${chaxunFileName}.xls"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		
+		<!-- 下载资源模板excel -->
+		<action name="downloadResourceImportModuleAction" class="fileUploadAction" method="downloadResourceImportModuleAction">
+		    <result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param> 
+				<param name="inputName">resultInputStream</param>
+				<param name="contentDisposition">attachment;filename="${moduleFileName}"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		<!-- 获取一个物理资源类型的父类型 -->
+		<action name="getPhysicalresParentTypeAction" class="physicalresAction" method="getPhysicalresParentTypeAction"></action>
+	
+	<!-- 取得端子信息 -->
+	<action name="getTerminalsAction" class="physicalresAction" method="getTerminalsAction">
+		<result name="success">addOdmsAndTerminals.jsp</result>
+		<result name="addDDF">addDDFOdmsAndTerminals.jsp</result>
+	</action>
+	
+	<!-- 批量增加端子 -->
+	<action name="addOdmTerminalLotAction" class="physicalresAction" method="addOdmTerminalLotAction">
+	</action>
+	<!-- 模块端子与端子信息（面板图显示） -->
+	<action name="getOdmAndTerminalMessageAction" class="physicalresAction" method="getOdmAndTerminalMessageAction">
+	</action>
+	<!-- 批量增加DDF端子 -->
+	<action name="addDDFOdmTerminalLotAction" class="physicalresAction" method="addDDFOdmTerminalLotAction">
+	</action>
+	<!-- 模块端子与端子信息（面板图显示）DDF -->
+	<action name="getDDFOdmAndTerminalMessageAction" class="physicalresAction" method="getDDFOdmAndTerminalMessageAction">
+	</action>
+
+	<!-- 资源管理的关联信息 -->
+		<action name="associatedResourceAction" class="physicalresAction" method="associatedResourceAction">
+			<result name="success">associatedResourceForAjax.jsp</result>
+		</action>
+		<action name="addAttachMentAction" class="physicalresAction" method="addAttachMentAction">
+			
+		</action>
+		<action name="updateAttachMentAction" class="physicalresAction" method="updateAttachMentAction">
+			
+		</action>
+		<!-- 判断附件是否存在 -->
+		<action name="hasDownLoadFileAction" class="fileDownloadAction" method="hasDownLoadFileAction">
+			<param name="downloadPath">/upload/</param>	
+		</action>
+		<!-- 文件附件下载--> 
+		<action name="downLoadFileAction" class="fileDownloadAction" method="downLoadFileAction">  
+            <!-- 设置参数-->  
+	            <param name="downloadPath">/upload/</param>	           
+            <result name="success" type="stream">  
+                <!-- 下载文件类型定义 -->  
+	                <param name="contentType">application/octet-stream</param>  
+               <!-- 下载文件处理方法 -->  
+	                <param name="contentDisposition">  
+                    attachment;filename="${fileChineseName}"  
+	                </param>  
+	                <!-- 下载文件输出流定义 -->  
+	                <param name="inputName">downloadFile</param>
+	                <param name="bufferSize">1024</param>
+	                
+	            </result>  
+       </action>  
+		<!-- 新增或更新导入 -->
+		<action name="addOrUpdateResourceForImportAction" class="fileUploadAction" method="addOrUpdateResourceForImportAction">  
+   
+       </action>  
+       <!-- 获取当前导入的数量情况 -->
+		<action name="getCurrentImportCoutAction" class="fileUploadAction" method="getCurrentImportCoutAction">  
+   
+       </action>  
+       <!-- 新增导入 -->
+		<action name="importAddResourceAction" class="fileUploadAction" method="importAddResourceAction">  
+        </action>   
+       <!-- 精确匹配或模糊匹配取得关联上级资源 -->
+		<action name="getMatchResourceToAssociateForImportAction" class="fileUploadAction" method="getMatchResourceToAssociateForImportAction">  
+           
+       </action> 
+       <!-- 获取与导入的资源有相同条件值的数据库已存在资源 -->
+		<action name="getResourcesWithSameConditionForImportAction" class="fileUploadAction" method="getResourcesWithSameConditionForImportAction">  
+           
+       </action> 
+       
+       
+       <!-- 按orderid 排序的属性key value -->
+		<action name="getAttributesByOrderIdAction" class="fileUploadAction" method="getAttributesByOrderIdAction">  
+           
+       </action>  
+       
+       <!-- 模块 端子默认布局设置 -->
+		<action name="getOdmandterminallayoutAction" class="physicalresAction" method="getOdmandterminallayoutAction">  
+        <!--<result name="success">showOdmsAndTerminalsPanel.jsp</result>-->	
+       </action>
+       <!-- 更新模块 端子默认布局设置 -->
+		<action name="updateOdmandterminallayoutAction" class="physicalresAction" method="updateOdmandterminallayoutAction">      
+       </action>
+       
+        <!-- 根据首字母获得entity中文 -->
+		<action name="getEntityChineseByFirstLetterAction" class="physicalresAction" method="getEntityChineseByFirstLetterAction">     
+       </action>
+        <!-- 根据资源组获得entity中文 -->
+		<action name="getEntityChineseByAetgAction" class="physicalresAction" method="getEntityChineseByAetgAction">     
+       </action>
+        <!-- 获得全部entity中文 -->
+		<action name="getAllEntityChineseAction" class="physicalresAction" method="getAllEntityChineseAction">     
+       </action>
+        <!-- 获得搜索entity或组中文 -->
+		<action name="getEntityChineseForSearchAction" class="physicalresAction" method="getEntityChineseForSearchAction">     
+       </action>
+      
+         <!-- 搜索某一资源（递归） -->
+		<action name="searchResourceForChoosenResourceAction" class="physicalresAction" method="searchResourceForChoosenResourceAction">     
+       </action>
+         <!-- 首页搜索某一资源（递归） -->
+		<action name="searchResourceByConditionAction" class="physicalresAction" method="searchResourceByConditionAction">     
+       </action>
+        <!-- 扁平化资源信息 -->
+		<action name="getResourceListForSrcAction" class="physicalresAction" method="getResourceListForSrcAction">     
+       <result name="success">showResourcForFlattern.jsp</result>
+       </action>
+          <!-- 扁平化信息 （集中调度）  -->
+      <action name="getResourcesForSrcForGisDispatchAction" class="physicalresAction" method="getResourcesForSrcForGisDispatchAction">     
+       </action>
+        <!-- 扁平化信息组entity中文 -->
+       <action name="getEntityChineseForFlattenInfoAction" class="physicalresAction" method="getEntityChineseForFlattenInfoAction">     
+       </action>
+       <!-- 获取搜索的entity或组中文 -->
+       <action name="getEntityChineseForSearchAction" class="physicalresAction" method="getEntityChineseForSearchAction">     
+       </action>
+       <!-- 获得特定专业组各组的实例数量-->
+       <action name="getAetgCountMessForFlattenInfoAction" class="physicalresAction" method="getAetgCountMessForFlattenInfoAction">     
+       </action>
+       <!-- 直接录入增加资源-->
+       <action name="addPhysicalresDirectlyAction" class="physicalresAction" method="addPhysicalresDirectlyAction">     
+       </action>
+       <!-- 获取excel文件sheet  -->
+      <action name="getFileSheetAction" class="fileUploadAction" method="getFileSheetAction">     
+       </action>
+        <!-- 资源全路径  -->
+      <action name="getParentResourceListAction" class="physicalresAction" method="getParentResourceListAction">     
+       </action>
+        <!-- 显示面板 取得板件  -->
+      <action name="getEquipBoardForShowPanelAction" class="physicalresAction" method="getEquipBoardForShowPanelAction">     
+      </action>
+         <!-- 取得某个资源类型是否有上级资源类型（GeneralBaseStation基站五大类，区域，站址，机房）中一个  -->
+      <action name="getDirectestParentResourceTypeAction" class="physicalresAction" method="getDirectestParentResourceTypeAction">     
+      </action>
+         <!-- 某个资源的某个类型的上级资源信息;  -->
+      <action name="getDirectestParentResourceInfoAction" class="physicalresAction" method="getDirectestParentResourceInfoAction">     
+      </action>
+      <!-- 获取查询的资源属性字段信息 -->
+      <action name="getSearchAttributesAction" class="newPhysicalresAction" method="getSearchAttributesAction">     
+      	<result name="success">aeMapAttrSearchNewForAjax.jsp</result>
+      </action>
+      <!-- 获取查询资源类型-->
+      <action name="getSearchTypeAction" class="newPhysicalresAction" method="getSearchTypeAction">     
+      </action>
+       <!-- 分页查询资源-->
+      <action name="searchResourceByPageNewAction" class="newPhysicalresAction" method="searchResourceByPageNewAction">     
+      </action>
+      <!-- 跳转gis地图显示页面 -->
+      <action name="forwardSearchResourceGisPageAction" class="newPhysicalresAction" method="forwardSearchResourceGisPageAction">     
+      	<result name="success">searchResourceListForGisMap.jsp</result>
+      	<result name="listpage">searchResourceList.jsp</result>
+      </action>
+      <!-- 网络资源3.0 导出资源信息excel -->
+		<action name="exportSearchResourceDataAction" class="newPhysicalresAction" method="exportSearchResourceDataAction">
+		    <result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param> 
+				<param name="inputName">resultInputStream</param>
+				<param name="contentDisposition">attachment;filename="${chaxunFileName}.xls"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		<!-- 加载添加资源页面 -->
+      <action name="loadAddResourcePageAction" class="newPhysicalresAction" method="loadAddResourcePageAction">     
+      	<result name="success">addResourcePageForAjax.jsp</result>
+      </action>
+		<!-- 添加资源 -->
+      <action name="addResourceNewAction" class="newPhysicalresAction" method="addResourceNewAction">     
+      
+      </action>
+      <!-- 修改资源页面 -->
+      <action name="loadUpdateResourcePageAction" class="newPhysicalresAction" method="loadUpdateResourcePageAction">     
+      	<result name="success">updateResourcePageForAjax.jsp</result>
+      </action>
+      <!-- 更新资源 -->
+      <action name="updateResourceNewAction" class="newPhysicalresAction" method="updateResourceNewAction">     
+      
+      </action>
+       <!-- 根据id String 和类型 获取资源实例 -->
+      <action name="getResourceEntitysByIdsAndTypeAction" class="newPhysicalresAction" method="getResourceEntitysByIdsAndTypeAction">     
+      
+      </action>
+      
+	</package>
+</struts>

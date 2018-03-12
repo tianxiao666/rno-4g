@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iscreate.plat.workflow.dataconfig.FlowNodeInfo" table="FLOW_NODE_INFO" >
+        <id name="node_id">
+            <column name="node_id" />
+        </id>
+        <property name="flow_Id" column="flow_Id" />
+        <property name="node_name" column="node_name" />
+        <property name="node_type" column="node_type" />
+        <property name="jspPage" column="jspPage" />
+        <property name="other_jspPage" column="other_jspPage" />
+        <property name="other_flow_ids" column="other_flow_ids" />
+         <property name="eventlist" column="eventlist" />
+        <!-- <property name="start_status" column="start_status" />
+        <property name="end_status" column="end_status" />
+        <property name="status" column="status" /> -->
+    </class>
+</hibernate-mapping>

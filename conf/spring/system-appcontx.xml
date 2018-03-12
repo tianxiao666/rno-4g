@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 加密器 -->
+	<bean id="authorityPasswordEncoder" class="com.iscreate.plat.system.util.Md5PasswordEncoder">
+	</bean>
+	<!-- 密码校验规则 -->
+	<bean id="passwordRule" class="com.iscreate.plat.system.strategy.PasswordRule">
+	</bean>
+	<!-- **************************Dao 层 start ********************************** -->
+    <!-- 用户 -->
+   	<bean id="sysUserDao" class="com.iscreate.op.dao.system.SysUserDaoImpl" singleton="false">
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    <bean id="sysOrgUserDao" class="com.iscreate.op.dao.system.SysOrgUserDaoImpl" singleton="false">
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    
+    <bean id="sysUserRelaPostDao" class="com.iscreate.op.dao.system.SysUserRelaPostDaoImpl" singleton="false">
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+   
+    
+    <bean id="sysAccountDao" class="com.iscreate.op.dao.system.SysAccountDaoImpl">
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    	<property name="authorityPasswordEncoder" ref="authorityPasswordEncoder"></property>
+    </bean>
+    
+    
+    <!-- 账号角色关系 -->
+   	<bean id="sysUserRelaRoleDao" class="com.iscreate.op.dao.system.SysUserRelaRoleDaoImpl">
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    <!-- 组织人员关系 -->
+   	<bean id="sysUserRelaOrgDao" class="com.iscreate.op.dao.system.SysUserRelaOrgDaoImpl">
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    <!-- 组织 -->
+   	<bean id="sysOrganizationDao" class="com.iscreate.op.dao.system.SysOrganizationDaoImpl">
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    <!-- 组织扩展属性 -->
+   	<bean id="sysOrgAttrExtDao" class="com.iscreate.op.dao.system.SysOrgAttrExtDaoImpl">
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    <!-- 组织区域关系 -->
+   	<bean id="sysAreaRelaOrgDao" class="com.iscreate.op.dao.system.SysAreaRelaOrgDaoImpl">
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    <!-- 区域 -->
+   	<bean id="sysAreaDao" class="com.iscreate.op.dao.system.SysAreaDaoImpl">
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    <!-- 角色 -->
+   	<bean id="sysRoleDao" class="com.iscreate.op.dao.system.SysRoleDaoImpl">
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    <!-- 角色类型 -->
+   	<bean id="sysRoleTypeDao" class="com.iscreate.op.dao.system.SysRoleTypeDaoImpl">
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    <!-- 角色权限关系 -->
+   	<bean id="sysRoleRelaPermissionDao" class="com.iscreate.op.dao.system.SysRoleRelaPermissionDaoImpl">
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    <!-- 权限 -->
+   	<bean id="sysPermissionDao" class="com.iscreate.op.dao.system.SysPermissionDaoImpl">
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    <!-- 权限类型 -->
+   	<bean id="sysPermissionTypeDao" class="com.iscreate.op.dao.system.SysPermissionTypeDaoImpl">
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    
+    	<!-- 登陆日志 -->
+	<bean id="sysSecurityLoginrecordDao" class="com.iscreate.op.dao.system.SysSecurityLoginrecordDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<!-- 业务日志 -->
+	<bean id="sysSecurityBizlogDao" class="com.iscreate.op.dao.system.SysSecurityBizlogDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<!-- 超级用户信息 -->
+	<bean id="sysSuperAdminDao" class="com.iscreate.op.dao.system.SysSuperAdminDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<!-- 用户管理 -->
+	<bean id="sysUserManagerDao" class="com.iscreate.op.dao.system.SysUserManagerDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 用户权限dao -->
+	<bean id="sysUserRelaPermissionDao" class="com.iscreate.op.dao.system.SysUserRelaPermissionDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- **************************Dao 层 end ********************************** -->
+	
+	<!-- **************************Service 层 start ********************************** -->
+	
+	<!-- 登陆日志 -->
+	<bean id="sysSecurityLoginrecordService" class="com.iscreate.op.service.system.SysSecurityLoginrecordServiceImpl">
+		<property name="sysSecurityLoginrecordDao" ref="sysSecurityLoginrecordDao" />
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+		<property name="sysRoleService" ref="sysRoleService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	
+	<!-- 业务日志 -->
+	<bean id="sysSecurityBizlogService" class="com.iscreate.op.service.system.SysSecurityBizlogServiceImpl">
+		<property name="sysSecurityBizlogDao" ref="sysSecurityBizlogDao" />
+	</bean>
+    
+    <bean id="sysUserRelaPostService" class="com.iscreate.op.service.system.SysUserRelaPostServiceImpl">
+		<property name="sysUserRelaPostDao" ref="sysUserRelaPostDao" />
+	</bean>
+     
+	
+	<!-- 权限 -->
+   	<bean id="sysPermissionService" class="com.iscreate.op.service.system.SysPermissionServiceImpl">
+   		<property name="commonDao" ref="commonDao"></property>
+    	<property name="sysRoleRelaPermissionDao" ref="sysRoleRelaPermissionDao"></property>
+    	<property name="sysPermissionDao" ref="sysPermissionDao"></property>
+    	<property name="sysPermissionTypeDao" ref="sysPermissionTypeDao"></property>
+    	<property name="sysUserRelaPermissionDao" ref="sysUserRelaPermissionDao"></property>
+    </bean>
+    
+    <!-- 角色 -->
+    <bean id="sysRoleService" class="com.iscreate.op.service.system.SysRoleServiceImpl">
+    	<property name="commonDao" ref="commonDao"></property>
+    	<property name="sysRoleDao" ref="sysRoleDao"></property>
+    	<property name="sysRoleTypeDao" ref="sysRoleTypeDao"></property>
+    	<property name="sysUserRelaRoleDao" ref="sysUserRelaRoleDao"></property>
+    </bean>
+    <!-- 账号 -->
+    <bean id="sysAccountService" class="com.iscreate.op.service.system.SysAccountServiceImpl">
+    	<property name="sysOrgUserDao" ref="sysOrgUserDao"></property>
+    	<property name="commonDao" ref="commonDao"></property>
+    	<property name="authorityPasswordEncoder" ref="authorityPasswordEncoder"></property>
+    	<property name="passwordRule" ref="passwordRule"></property>
+    	<property name="sysAccountDao" ref="sysAccountDao"></property>
+    	
+    	
+    </bean>
+    
+    <!-- 角色 -->
+    <bean id="sysOrgUserService" class="com.iscreate.op.service.system.SysOrgUserServiceImpl" singleton="false">
+    	<property name="sysOrgUserDao" ref="sysOrgUserDao"></property>
+    	<property name="commonDao" ref="commonDao"></property>
+    	<property name="authorityPasswordEncoder" ref="authorityPasswordEncoder"></property>
+    	<property name="passwordRule" ref="passwordRule"></property>
+    	<property name="firstLetterService" ref="firstLetterService"></property>
+    	<property name="enterpriseInformationDao" ref="enterpriseInformationDao"></property>
+    	<property name="sysOrganizationDao" ref="sysOrganizationDao"></property>
+    	<property name="sysRoleDao" ref="sysRoleDao"></property>
+    	<property name="sysRoleTypeDao" ref="sysRoleTypeDao"></property>
+    	<property name="sysAccountDao" ref="sysAccountDao"/>
+    	<property name="sysAccountService" ref="sysAccountService" />
+    	<property name="sysDictionaryService" ref="sysDictionaryService" />
+    </bean>
+    
+    
+     <bean id="sysAreaService" class="com.iscreate.op.service.system.SysAreaServiceImpl">
+    	<property name="sysAreaDao" ref="sysAreaDao"></property>
+    </bean>
+    
+    
+    <!-- 超级用户信息 -->
+	<bean id="sysSuperAdminService" class="com.iscreate.op.service.system.SysSuperAdminServiceImpl">
+		<property name="sysSuperAdminDao" ref="sysSuperAdminDao" />
+		<property name="authorityPasswordEncoder" ref="authorityPasswordEncoder"/>
+	</bean>
+	
+	<!-- 用户管理 -->
+	<bean id="sysUserManagerService" class="com.iscreate.op.service.system.SysUserManagerServiceImpl">
+		<property name="sysUserManagerDao" ref="sysUserManagerDao"></property>
+	</bean>
+	
+   <!-- 用户权限service -->
+	<bean id="sysUserRelaPermissionService" class="com.iscreate.op.service.system.SysUserRelaPermissionServiceImpl">
+		<property name="sysUserRelaPermissionDao" ref="sysUserRelaPermissionDao"></property>
+		<property name="sysOrganizationDao" ref="sysOrganizationDao"></property>
+		<property name="sysUserRelaPostService" ref="sysUserRelaPostService"></property>
+		<property name="commonDao" ref="commonDao"></property>
+	</bean>
+    
+    <bean id="sysUserRelaOrgService" class="com.iscreate.op.service.system.SysUserRelaOrgServiceImpl">
+		<property name="sysUserRelaOrgDao" ref="sysUserRelaOrgDao"></property>
+	</bean>
+    
+    
+    
+	<!-- **************************Service 层 end ********************************** -->
+	
+	
+		<!-- action -->
+	<bean id="systemManageAction" class="com.iscreate.op.action.system.SystemManageAction" singleton="false">
+	   <property name="sysPermissionService" ref="sysPermissionService"></property>
+		<property name="sysRoleService" ref="sysRoleService"></property>
+		<property name="sysOrgUserService" ref="sysOrgUserService"></property>
+		<property name="sysDictionaryService" ref="sysDictionaryService"></property>
+		<property name="sysUserRelaPermissionService" ref="sysUserRelaPermissionService"></property>
+	</bean>
+	<!-- 用户管理 -->
+	<bean id="sysUserManagerAction" class="com.iscreate.op.action.system.SysUserManagerAction" singleton="false">
+		<property name="sysOrganizationService" ref="sysOrganizationService"></property>
+		<property name="sysUserManagerService" ref="sysUserManagerService"></property>
+		<property name="sysOrgUserService" ref="sysOrgUserService"></property>
+		<property name="sysUserRelaPermissionService" ref="sysUserRelaPermissionService"></property>
+		<property name="sysDictionaryService" ref="sysDictionaryService"></property>
+	</bean>
+</beans>

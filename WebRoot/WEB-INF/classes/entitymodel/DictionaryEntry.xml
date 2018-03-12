@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<name>DictionaryEntry</name>
+
+	<attribute type="java.lang.String" length="0" nullable="false"
+		primary="false" index="false" regex="">attrDefine</attribute>
+
+	<attribute type="java.lang.String" length="0" nullable="false"
+		primary="false" index="false" regex="">rdn</attribute>
+		
+	<attribute type="java.lang.String" length="0" nullable="false"
+		primary="true" index="false" regex="">dn</attribute>
+
+</entity>

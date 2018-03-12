@@ -1,0 +1,111 @@
+
+.tab_menu ul li.ontab {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-left: 1px solid #99BCE8;
+    border-right: 1px solid #99BCE8;
+    border-top: 3px solid #99BCE8;
+    height: 22px;
+    line-height: 20px;
+}
+
+.tab_menu {
+    clear: both;
+    height: 25px;
+    padding-left: 5px;
+}
+
+
+.statements_tab {
+    padding-top: 10px;
+}
+
+
+
+
+
+.tab_menu ul {
+    position: absolute;
+    z-index: 2;
+}
+
+
+
+.tab_content {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-top: 1px solid #99BCE8;
+    padding: 5px 0;
+    position: relative;
+    top: -1px;
+}
+
+
+.time_tool_left {
+    background: url("../../images/tool-sprites.gif") no-repeat scroll 0 -180px transparent;
+}
+.time_tool_left, .time_tool_right {
+    cursor: pointer;
+    display: inline-block;
+    height: 15px;
+    margin: 0 5px;
+    vertical-align: middle;
+    width: 15px;
+}
+
+.statements_search_date {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.time_tool_right {
+    background: url("../../images/tool-sprites.gif") no-repeat scroll 0 -165px transparent;
+}
+
+.st_full_screen {
+    background: url("../report/images/full_screen.png") no-repeat scroll 0 0 transparent;
+    float: right;
+    margin: 5px;
+}
+.statements_back, .st_full_screen {
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    margin: 0 3px;
+    position: relative;
+    width: 16px;
+    z-index: 1000;
+}
+.st_full_screen {
+    background: url("../report/images/full_screen.png") no-repeat scroll 0 0 transparent;
+    float: right;
+    margin: 5px;
+}
+.statements_back, .st_full_screen {
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    margin: 0 3px;
+    position: relative;
+    width: 16px;
+    z-index: 1000;
+}
+
+
+.tab_menu ul li {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #EEEEEE;
+    border-color: #99BBE8 #99BBE8 -moz-use-text-color;
+    border-image: none;
+    border-radius: 3px 3px 0 0;
+    border-style: solid solid none;
+    border-width: 1px 1px medium;
+    cursor: pointer;
+    float: left;
+    line-height: 24px;
+    margin: 0 2px;
+    padding: 0 10px;
+    position: relative;
+    text-align: center;
+}

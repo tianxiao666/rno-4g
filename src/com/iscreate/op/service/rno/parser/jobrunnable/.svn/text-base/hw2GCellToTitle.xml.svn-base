@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+	<field>
+		<name>CITY_ID       </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>市       </exceltitle>
+	</field>
+	<field>
+		<name>MEA_DATE       </name>
+		<type>Date</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>日期       </exceltitle>
+	</field>
+	<field>
+		<name>BSC_ID       </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>BSC</exceltitle>
+	</field>
+	<field>
+		<name>CELL_ID</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>小区ID</exceltitle>
+	</field>
+	<field>
+		<name>CELL_NAME </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>小区中文名</exceltitle>
+	</field>
+	<field>
+		<name>LAC</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>LAC</exceltitle>
+	</field>
+		<field>
+		<name>CI</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>CI</exceltitle>
+	</field>
+	<field>
+		<name>FREQ_TYPE </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>频段 </exceltitle>
+	</field>
+	<field>
+		<name>BCCH </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>BCCH </exceltitle>
+	</field>
+	<field>
+		<name>BSIC </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>BSIC </exceltitle>
+	</field>
+	<field>
+		<name>TCH </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>TCH </exceltitle>
+	</field>
+	<field>
+		<name>LON       </name>
+		<type>double</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>经度</exceltitle>
+	</field>
+	<field>
+		<name>LAT       </name>
+		<type>double</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>纬度</exceltitle>
+	</field>
+	<field>
+		<name>BEARING   </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>天线方向</exceltitle>
+	</field>
+	<field>
+		<name>DOWNTILT  </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>天线下倾  </exceltitle>
+	</field>
+	<field>
+		<name>INDOOR_COVER_CELL    </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>是否室内覆盖小区    </exceltitle>
+	</field>
+	<field>
+		<name>HYBRID_COVER_CELL    </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>是否混合覆盖小区</exceltitle>
+	</field>
+	<field>
+		<name>HALF_POWER_ANGLE     </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>半功率角</exceltitle>
+	</field>
+	<field>
+		<name>ANT_HEIGH </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>天线高度</exceltitle>
+	</field>
+	<field>
+		<name>SITE      </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>站址名称</exceltitle>
+	</field>
+	<field>
+		<name>SITE_TYPE </name>
+		<type>String</type>
+		<essential>0</essential>
+		<match>1</match>
+		<exceltitle>基站类型 </exceltitle>
+	</field>
+	<field>
+		<name>ANT_TYPE  </name>
+		<type>String</type>
+		<essential>0</essential>
+		<match>1</match>
+		<exceltitle>天线类型</exceltitle>
+	</field>
+	<field>
+		<name>COVERAREA </name>
+		<type>String</type>
+		<essential>0</essential>
+		<match>1</match>
+		<exceltitle>覆盖范围</exceltitle>
+	</field>
+	<field>
+		<name>IMPORTANCEGRADE      </name>
+		<type>String</type>
+		<essential>0</essential>
+		<match>1</match>
+		<exceltitle>重要等级</exceltitle>
+	</field>
+	<field>
+		<name>ANT_MODEL </name>
+		<type>String</type>
+		<essential>0</essential>
+		<match>1</match>
+		<exceltitle>天线型号 </exceltitle>
+	</field>
+	<field>
+		<name>MECHANICALDOWNTILT   </name>
+		<type>int</type>
+		<essential>0</essential>
+		<match>1</match>
+		<exceltitle>机械下倾角</exceltitle>
+	</field>
+	<field>
+		<name>ELECTRICALDOWNTILT   </name>
+		<type>int</type>
+		<essential>0</essential>
+		<match>1</match>
+		<exceltitle>电调下倾角</exceltitle>
+	</field>
+	<field>
+		<name>TOWER_TYPE</name>
+		<type>String</type>
+		<essential>0</essential>
+		<match>1</match>
+		<exceltitle>杆塔类型</exceltitle>
+	</field>
+	<field>
+		<name>HEIGHT_ABOVE_SEA     </name>
+		<type>int</type>
+		<essential>0</essential>
+		<match>1</match>
+		<exceltitle>海拔高度</exceltitle>
+	</field>
+	<field>
+		<name>ANT_POLARIZATION_TYPE</name>
+		<type>String</type>
+		<essential>0</essential>
+		<match>1</match>
+		<exceltitle>极化类型</exceltitle>
+	</field>
+
+</table>

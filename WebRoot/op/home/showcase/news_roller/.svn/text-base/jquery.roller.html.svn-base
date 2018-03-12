@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery新闻滚动插件</title>
+<link rel="stylesheet" type="text/css" href="javascript/roller.css" />
+<script type="text/javascript" src="javascript/jquery-1.6.js"></script>
+<script type="text/javascript" src="javascript/jquery.roller.js"></script>
+</head>
+<body>
+	<div id="container">
+	</div>
+	<script type="text/javascript">
+		$('#container').roller({
+		 	showNum:4,
+		 	interval: 1500,
+			direction: 'down', //滚动方向
+		 	items: [{
+				title: 'ccav滚动新闻1',  			//a的title属性 
+				html: 'ccav滚动新闻1',   			//a的innerHTML
+				target: '_blank', 					//a的target
+				href: 'http://www.google.com.hk'	//a的href
+			}, {
+				title: 'ccav滚动新闻2',
+				html: 'ccav滚动新闻2',   
+				target: '_blank', 	
+				href: 'http://www.google.com.hk'
+			}, {
+				title: 'ccav滚动新闻3',  
+				html: 'ccav滚动新闻3',  
+				target: '_blank', 		
+				href: 'http://www.google.com.hk'
+			}, {
+				title: 'ccav滚动新闻4',  
+				html: 'ccav滚动新闻4',  
+				target: '_blank', 		
+				href: 'http://www.google.com.hk'
+			}, {
+				title: 'ccav滚动新闻5',  
+				html: 'ccav滚动新闻5', 
+				target: '_blank', 		
+				href: 'http://www.google.com.hk'
+			}, {
+				title: 'ccav滚动新闻6',  
+				html: 'ccav滚动新闻6',  
+				target: '_blank', 	
+				href: 'http://www.google.com.hk'
+			}]
+		});
+	</script>
+</body>
+</html>

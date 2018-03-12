@@ -1,0 +1,187 @@
+﻿body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,th,td{margin:0;padding:0}
+fieldset,img{border:0}
+:focus{outline:0}
+address,caption,code,em,strong,th{font-style:normal;font-weight:normal}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+input,button,textarea,select{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;*font-size:100%;}
+body{line-height:1.5;font:12px Arial, Helvetica, sans-serif}
+html, body {height:100%;}
+ol,ul{list-style:none}
+table{border-collapse:collapse;border-spacing:0}
+caption,th{text-align:left}
+sup,sub{font-size:100%;vertical-align:baseline}
+:link,:visited ,ins{text-decoration:none}
+/*css reset end*/
+
+body{padding-right:7px; background:#d7d7d7}
+
+#center-table .f1{ font-size:0px; background:url(../images/center-tt.gif) repeat-x;}
+#center-table .f2{ background:#f5f5f5; padding:0 4px; height:100%;height:98%\9;border-left:1px solid #b7b7b7; border-right:1px solid #b7b7b7; }
+#center-table .f3{ font-size:0px; background:url(../images/center-bb.gif) repeat-x}
+
+/*********当前位置**************/
+.current{ width:100%; min-width:500px; height:27px; background:url(../images/current-c.gif) repeat-x; }
+.current .l{height:27px; background:url(../images/current-l.gif) left top no-repeat}
+.current .r{height:27px; background:url(../images/current-r.gif) right top no-repeat;}
+.current .r p{line-height:27px; text-indent:27px; color:#666; background:url(../images/ic/curren.gif) 7px center no-repeat}
+.current .r span{color:#0070b8}
+
+/*********任务简介**************/
+.intro{ width:100%; height:30px; margin:4px 0;background:url(../images/intro-c.gif) repeat-x; color:#323033;overflow:hidden; }
+.intro .l{height:30px; background:url(../images/intro-l.gif) left top no-repeat; cursor:pointer}
+.intro .r{height:21px; background:url(../images/form-r1.gif) right top no-repeat; color:#0070b8; font-weight:bold; padding:9px 20px 0 28px; font-size:14px;}
+.tableintro{border-left:1px solid #8ac1e3;background:url(../images/intro-td.gif) 0 26px;}
+.tableintro th{ border-right:1px solid #ddd;border-bottom:1px solid #ddd; height:26px; line-height:26px;text-align:center;padding:0 5px; background:url(../images/tab03-th.gif) repeat-x; color:#656565; font-weight:bold; white-space:nowrap}
+.tableintro td{ border-right:1px solid #ddd;border-bottom:1px solid #ddd; height:22px; line-height:22px; text-align:center; }
+.tableintro .tdr{ border-right:1px solid #8ac1e3}
+.tableintro .tdb{ border-bottom:1px solid #8ac1e3;}
+
+/*********表单操作**************/
+.form{ width:100%; height:29px; background:url(../images/form-c.gif) repeat-x; margin:4px 0 0 0; color:#323033}
+.form .l{height:29px; background:url(../images/form-l.gif) left top no-repeat}
+.form .l1{height:29px; background:url(../images/form-l1.gif) left top no-repeat}
+.form .r{height:29px;background:url(../images/form-r.gif) right top no-repeat; color:#0070b8; font-weight:bold; padding-left:10px}
+.form .r span{ float:left;font-size:14px; padding:8px 0 0 20px}
+.form .r button{float:right; width:72px; height:21px; background:url(../images/add-bt.gif) no-repeat; border:0; cursor:pointer; margin:5px 10px 0 0; font-size:14px; color:#0070B8; padding:1px 0 0 19px; *padding:3px 0 0 19px; font-weight:normal}
+.form .r .derive01{ width:72px; height:21px; background:url(../images/derive01.gif) no-repeat; border:0; cursor:pointer; margin:5px 10px 0 0}
+.tp01{border:1px solid #85bfe1; line-height:20px; min-height:50px;}
+.tp01 .tp02{ padding:5px; line-height:20px}
+.tp01 .tp03{height:27px; background:url(../images/page-bj.gif) repeat-x; line-height:27px; text-indent:10px}
+
+/*********按钮***************/
+.bt00,.bt11,.bt01,.bt02,.bt03,.bt04,.addbsc{ width:72px; height:24px; background-repeat:no-repeat; border:0; margin:0 15px; cursor:pointer}
+.bt00{ width:63px; height:26px; background:url(../images/bt00.gif)}
+.bt11{ width:49px; height:20px; background:url(../images/bt11.gif)}
+.bt01{ background:url(../images/bt01.gif); text-indent:13px; padding-top:3px\9; padding-bottom:1px; vertical-align:bottom}
+.bt02{ background:url(../images/bt02.gif)}
+.bt03{ background:url(../images/bt03.gif)}
+.bt04{ background:url(../images/bt04.gif); padding:0 0 1px 10px; padding-top:4px\9;text-align:left;}
+.addbsc{ width:78px; height:21px; background:url(../images/addbsc.gif) ;margin:0 5px}
+.add03{float:right; width:72px; height:21px; background:url(../images/add-bt.gif) no-repeat; border:0; cursor:pointer; margin:1px 10px 0 0; font-size:14px; color:#0070B8; padding-left:19px; font-weight:normal}
+/*********表格样式**************/
+.tab01{ border-left:1px solid #8ac1e3;border-top:1px solid #8ac1e3}
+.tab01 td{ border-right:1px solid #ddd;border-bottom:1px solid #ddd; height:25px; line-height:25px; padding-left:3px; text-align:right;white-space:nowrap;}
+.tab01 .tdr{border-right:1px solid #8ac1e3; text-align:left}
+.tab01 .tl{ text-align:left}
+.tab01 .tc{ text-align:center}
+.tab01 .tb0{ border-bottom:0}
+.tab01 .tdb{border-bottom:1px solid #8ac1e3; height:39px; line-height:39px; background:url(../images/btbj.gif) repeat-x; padding-left:125px}
+.tab01 .tdb1{border-bottom:1px solid #8ac1e3;}
+.tab01 th{ border-right:1px solid #ddd;border-bottom:1px solid #ddd; height:26px; line-height:26px;text-align:center;padding:0 5px; background:url(../images/tab03-th.gif) repeat-x; color:#656565; font-weight:bold; white-space:nowrap; padding:0 5px}
+.tab01 a{ color:#0070b8; }
+.input-text{ border:1px solid #95b5c8; text-indent:2px; height:18px; line-height:18px; width:180px}
+.input-date{border:1px solid #95b5c8; text-indent:2px; height:18px; line-height:18px; width:180px; background:url(../images/ic/date.gif) no-repeat right top; cursor:pointer}
+.input-file{border:1px solid #95b5c8;margin-left:2px; width:227px;_width:247px;height:20px; line-height:20px;}
+.tab-textarea{ width:450px; height:100px;border:1px solid #95b5c8; margin:2px 0;*margin-left:2px; line-height:20px}
+.textarea01{ width:93%; height:20px;border:1px solid #95b5c8; margin:2px 0;*margin-left:2px; line-height:20px}
+.tab01 select{border:1px solid #95b5c8;width:182px;margin-left:2px\9; height:22px}
+
+.tdb2{border:1px solid #8ac1e3; border-top:0; height:32px; padding:7px 0 0 125px; background:url(../images/btbj.gif) repeat-x;}  /*按钮区域*/
+
+/*********邮件**************/
+.mail-text{ border:1px solid #95b5c8; text-indent:2px; height:18px; line-height:18px; width:80%}
+.mail-textarea{ width:80%; height:250px;border:1px solid #95b5c8; margin:2px 0;*margin-left:2px; line-height:20px}
+.mail-txt{ text-indent:18px; padding:0 5px}
+
+.tab03{ border-left:1px solid #8ac1e3;border-top:1px solid #8ac1e3}
+.tab03 th{ border-right:1px solid #ddd;border-bottom:1px solid #ddd; height:26px; line-height:26px;text-align:center;padding:0 5px; background:url(../images/tab03-th.gif) repeat-x; color:#656565; font-weight:bold; white-space:nowrap; padding:0 5px}
+.tab03 td{ border-right:1px solid #ddd;border-bottom:1px solid #ddd; height:25px; line-height:20px; text-align:center;white-space:nowrap;padding:0 5px}
+.tab03 .tdr{border-right:1px solid #8ac1e3;}
+.tab03 .tdb{border-bottom:1px solid #8ac1e3; height:26px; line-height:26px; background:url(../images/tab03-th.gif) repeat-x; padding:0 10px}
+.tab03 .tdb1{border-bottom:1px solid #8ac1e3;}
+.tab03 .tdb2{border-bottom:1px solid #8ac1e3; height:39px; line-height:39px; background:url(../images/btbj.gif) repeat-x; }
+.tab03 .f-l{ float:left;}
+.tab03 i{ padding:0 5px; color:#c00;}
+.tab03 .f-r{ float:right;}
+.tab03 .f-r img{ margin:0 4px}
+.tab03 .f-r .input01{ width:45px; height:20px; background:url(../images/page-input.gif) no-repeat; line-height:20px; border:0; text-indent:3px;margin-top:3px }
+.tab03 .f-r .input02{ width:34px; height:16px; background:url(../images/page-button.gif) no-repeat; border:0; cursor:pointer; margin-top:2px}
+.tab03 label{ width:38px; display:inline-block; text-align:left; }
+.tab03 p{ float:left\9;text-align:left;white-space:normal;word-wrap:break-word; overflow:hidden;display:inline-block\9;}
+
+/*********分页**************/
+#page{ border-left:0;border-top:0}
+#page td{ border-right:0;border-bottom:0; padding:0 3px}
+
+/*********对话框**************/
+#box{ width:248px; height:131px; }
+#box .boxbj{width:248px; height:131px;background:url(../images/box.png);}
+#box .title{ width:230px; height:21px; line-height:21px; text-indent:28px; padding-top:6px;}
+#box .title span{ color:#0070b8; float:left}
+#box .title .bt01{ width:16px; height:16px; background:url(../images/ic/close.gif) no-repeat; border:0; cursor:pointer; float:right; position:relative}
+#box p{ line-height:20px; height:50px; text-align:center; padding:15px 13px 0}
+#box .bt{ width:248px; float:left;  text-align:center;position:relative}
+#box .bt .bt02{ width:49px; height:20px;background:url(../images/box-bt02.gif) no-repeat; border:0; cursor:pointer; margin-right:20px}
+#box .bt .bt03{ width:49px; height:20px;background:url(../images/box-bt03.gif) no-repeat; border:0; cursor:pointer;}
+
+/*********弹出框大小适应**************/
+.boxs .t1{ font-size:0px}
+.boxs .tc{ background:url(../images/boxs-tc.gif) repeat-x;}
+.boxs .tc span{height:19px;color:#0070b8; background:url(../images/ic/i2.gif) no-repeat left center; padding:9px 0 0 18px; float:left}
+.boxs .tc i{ float:right; width:16px; height:16px; padding:5px 3px 0 0;}
+.boxs .tc i img{ cursor:pointer;}
+.boxs .tb{ border-left:1px solid #85bfe1; background:#fff}
+.boxs .cr{ width:11px; background:url(../images/boxs-cr.png) repeat-x}
+.boxs .bc{ height:9px; background:url(../images/boxs-bc.png) repeat-x}
+.boxs .bp{ padding:6px 3px 6px 0; background:#fff}
+
+/*********弹出框垂直居中**************/
+.centerdiv { display:inline-block; zoom:1; *display:inline; vertical-align:middle; text-align:left;}
+.hiddendiv { height:100%; overflow:hidden; display:inline-block; width:1px; overflow:hidden; margin-left:-1px; zoom:1; *display:inline; *margin-top:-1px; _margin-top:0; vertical-align:middle;}
+
+/*********操作成功或失败**************/
+.return-box{ border:1px solid #8ac1e3; margin:4px 0; background:#f0f6fa; text-align:center; padding:10px 0}
+.return-box p{ font-size:16px; color:#0070b8; font-weight:bold; line-height:30px;}
+.return-box .c00{ color:#c00}
+.return-box button{width:63px; height:26px; background:url(../images/fanhui.gif) no-repeat; border:0; cursor:pointer; margin-top:10px}
+
+
+/*********顶部**************/
+#top{ width:100%; height:86px; background:url(../images/top-c.gif) repeat-x 280px 0; min-width:1000px}
+#top .l{width:100%; height:86px; background:url(../images/top-l.gif) no-repeat left top}
+#top .r{width:100%; height:86px; background:url(../images/top-r.gif) no-repeat right top;}
+#top .r .timebj{width:252px; height:27px; background:url(../images/timebj.png) no-repeat; line-height:23px; color:#0070b8; text-indent:26px; position:absolute; right:12px}
+#top .r .menut{ padding:22px 8px 0 0; white-space:nowrap}
+#top .r .menut ul{float:right}
+#top .r .menut li{ float:left; display:block}
+#top .r .tips{float:left; margin:63px 0 0 7px; color:#fff}
+
+
+/*********底栏**************/
+#bottom{ width:100%; height:30px; background:url(../images/bottom-c.gif) repeat-x; float:left;margin-top:7px}
+#bottom .l{width:100%; height:30px; background:url(../images/bottom-l.gif) no-repeat left top}
+#bottom .r{width:100%; height:30px; line-height:30px; background:url(../images/bottom-r.gif) no-repeat right top; color:#fff; text-align:center}
+
+/*********左栏**************/
+#left{width:197px; height:100%; background:url(../images/left-c.gif) repeat-y;float:left;}
+#left .t{width:197px; height:100%; background:url(../images/left-t.gif) no-repeat left top}
+#left .b{height:100%; background:url(../images/left-b.gif) no-repeat left bottom; padding:0 8px}
+#left .t1{ width:181px; height:36px; background:url(../images/menu-01.gif) no-repeat left bottom;}
+#left .bg1{background:url(../images/menu-02.gif) no-repeat;color:#8b8a8a;}
+#left .bg2{background:url(../images/menu-03.gif) no-repeat;color:#0070B8}
+#left .m{width:181px;height:26px;line-height:26px; margin-top:5px;font-weight:bold; text-indent:27px; _padding-top:3px;_height:23px;_line-height:23px;cursor:pointer}
+#left .d-n{ display:none}
+#left ul{border:1px solid #b0cdde; background:#f0f6fa; margin-top:5px; padding:2px 8px;}
+#left li{ padding-left:10px;background:url(../images/li-bj.gif) left bottom repeat-x;word-wrap:break-word; line-height:25px; height:25px}
+#left li img{ vertical-align:middle;}
+#left li a{ color:#000; line-height:25px; height:25px; padding-left:7px;}
+#left li a:hover{ color:#c00}
+
+/******地图*********/
+.map-bt{ height:25px; border-bottom:1px dashed #ccc;background:#F0F6FA;}
+.map-bt button{margin:0 5px 1px 2px;}
+.hide{ float:right; margin:5px 0 0 0; width:19px; height:19px;z-index:2;}
+.map_l{position:absolute;right:12px; top:4px; width:120px; border-bottom:1px solid #A1CEE9; background:url(../images/form-c.gif) repeat-x}
+.ggmap{ width:520px; height:406px; background:url(../images/ggmap/ggmap.gif) no-repeat;}
+
+/*******登录界面**********/
+.login-bj{ height:600px; background:#83C5F5 bottom left url(../images/login/login-bj.gif) repeat-x}
+#login{width:625px;height:600px; margin:0 auto; background: url(../images/login/login-box.jpg) no-repeat; font-size:12px}
+#login .t{ text-align:right; font-size:12px; padding:5px 8px 0 0}
+#login .yzm{ font-size:12px; color:#0073aa; margin-top:5px}
+#login input{ height:21px;line-height:21px; padding-left:5px; border:0; font-size:12px} 
+#login .input01{ width:205px;background:url(../images/login/input01.gif) no-repeat; }
+#login .input02{ width:205px; background:url(../images/login/input02.gif) no-repeat;}
+#login .input03{ width:56px; background:url(../images/login/input03.gif) no-repeat;}
+#login .input04{ width:85px; height:28px; background:url(../images/login/login-bt01.gif) no-repeat; cursor:pointer}
+#login .input05{ width:70px; height:28px; background:url(../images/login/login-bt02.gif) no-repeat; margin-left:29px; cursor:pointer}

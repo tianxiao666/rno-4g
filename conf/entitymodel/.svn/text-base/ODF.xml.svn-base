@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+ <name>ODF</name>
+ <attribute type="java.lang.Long" length="128" primary="TRUE" index="TRUE" nullable="FALSE" regex="">id</attribute>
+ <attribute type="java.lang.String" length="100" primary="FALSE" index="TRUE" nullable="FALSE" regex="">name</attribute>
+ <attribute type="java.lang.String" length="100" primary="FALSE" index="TRUE" nullable="TRUE" regex="">label</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">odfType</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">manufactory</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">assetNo</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">heigh</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">maxcapacity</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">currentcapacity</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">fibercoreinuse</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">fibercoreidle</attribute>
+ <attribute type="java.lang.String" length="100" primary="FALSE" index="FALSE" nullable="TRUE" regex="">useStatus</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">belongType</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">usageDescription</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">userorg</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">belongowner</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">status</attribute>
+ <attribute type="java.util.Date" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">servicedate</attribute>
+</entity>

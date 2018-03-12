@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 树管理 -->
+	<bean id="staffOrganizationService" class="com.iscreate.op.service.networkresourcemanage.StaffOrganizationServiceImpl" singleton="false">
+		<property name="contextFactory" ref="contextFactory"></property>
+		<property name="sysOrgUserService" ref="sysOrgUserService"></property>
+		<property name="sysAreaService" ref="sysAreaService"></property>
+		<property name="sysAccountService" ref="sysAccountService"></property>
+		
+	</bean>
+</beans>

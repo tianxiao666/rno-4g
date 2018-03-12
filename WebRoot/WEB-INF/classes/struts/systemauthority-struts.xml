@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="user" extends="iscreate-struts-default">
+		<action name="loginAction" class="userAuthorityAction" method="validateUser">
+			<result name="success" type="redirect">
+				<param name="location">workManagePageIndexAction</param>
+				<param name="type">workDispatch</param>
+			</result>
+		</action>
+		
+		<action name="loginPageActionForMobile" class="userAuthorityActionForMobile" method="loginPageActionForMobile"></action>
+		
+		
+		<action name="loginActionOpsForMobile" class="userAuthorityActionForMobile" method="loginActionOpsForMobile"></action>
+		
+		
+		<action name="loginOpsActionForMobile" class="userAuthorityActionForMobile" method="loginOpsActionForMobile">
+			<result name="success" type="redirect">
+				loginOpsSuccess.jsp
+			</result>
+			<result name="failed" type="redirect">
+				loginOpsSuccess.jsp
+			</result>
+		</action>
+		
+		<action name="loadIndexPageMsgActionForMobile" class="userAuthorityActionForMobile" method="loadIndexPageMsgActionForMobile"></action>
+	</package>
+</struts>

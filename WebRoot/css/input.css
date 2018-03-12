@@ -1,0 +1,64 @@
+﻿/* 表单样式美化 */
+input, select, textarea {
+	font: 12px/1.5 Tahoma, 'Microsoft Yahei', 'Simsun';
+	outline:none;
+}
+input[type="text"] {
+	padding:4px;
+	background:url(../images/input.png) 0px -75px no-repeat;
+	border:1px solid #CDCDCD;
+	border-color: #9A9A9A #CDCDCD #CDCDCD #9A9A9A;
+}
+input[type="button"], input[type="submit"] {
+	cursor:pointer;
+	height:24px;
+	line-height: 24px;
+	padding: 2px 6px 3px;
+	border-right:1px solid #c8c8c8;
+	border-left:none;
+	border-top:none;
+	border-bottom:none;
+	background:url(../images/input.png) no-repeat;
+	background-position:0px 0px;
+	position:relative;
+	top:-1px;
+}
+input::-moz-focus-inner,input[type="submit"]::-moz-focus-inner,select::-moz-focus-inner{  
+   border:none;  
+}  
+input[type="button"]:hover,input[type="submit"]:hover {
+	background-position:0px -25px;
+	border-right:1px solid #cccbcb;
+}
+
+/* 特殊按钮样式*/
+input[type="button"].sp_button{background:lightgreen; color:#000; border:1px solid #aaa;width:50px; border-radius:5px; height:26px;}
+input[type="button"].sp_button:hover{background:seagreen; color:#fff; }
+
+/*按下按钮、提交显示样式切换*/
+input[type="button"].input_button_down,input[type="submit"].input_button_down {
+	background-position:0px -50px;
+}
+input[type="checkbox"], input[type="radio"] {
+	position:relative;
+	top:2px;
+	left:-2px;
+	cursor:pointer;
+}
+select {
+	line-height:20px;
+	padding:2px;
+	background:url(../images/input.png) no-repeat 0px -75px;
+	border:1px solid #CDCDCD;
+	border-color: #9A9A9A #CDCDCD #CDCDCD #9A9A9A;
+}
+textarea {
+	width:400px;
+	height:60px;
+	padding:2px 0px 0px 2px;
+	background:#FFF url(../images/input.png) 0px -75px repeat-x;
+	border:1px solid #cdcdcd;
+	border-color: #9A9A9A #CDCDCD #CDCDCD #9A9A9A;
+	overflow-y:auto;
+	resize: none;
+}

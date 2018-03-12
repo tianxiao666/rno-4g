@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="common" extends="iscreate-struts-default">
+		<!-- 工单信息 -->
+		<action name="getUrgentRepairWorkOrderInfoAction" class="workOrderCommonAction" method="getUrgentRepairWorkOrderInfoAction">
+			<result name="success">insert_workOrderInfo.jsp</result>
+		</action>
+		
+		<!-- 生成工单流转过程树 -->
+		<action name="createWorkOrderProcedureTreeAction" class="workOrderCommonAction" method="createWorkOrderProcedureTreeAction">
+		</action>
+		
+		<!-- 客户工单信息 -->
+		<action name="getUrgentRepairCustomerWorkOrderInfoAction" class="workOrderCommonAction" method="getUrgentRepairCustomerWorkOrderInfoAction">
+			<result name="success">insert_customerWorkOrderInfo.jsp</result>
+		</action>
+		
+		<!-- 2g工单信息 -->
+		<action name="getUrgentRepairDevice2gWorkOrderInfoAction" class="workOrderCommonAction" method="getUrgentRepairDevice2gWorkOrderInfoAction">
+			<result name="success">insert_home2g_customerWorkOrderInfo.jsp</result>
+		</action>
+		
+		<!-- td工单信息 -->
+		<action name="getUrgentRepairDevicetdWorkOrderInfoAction" class="workOrderCommonAction" method="getUrgentRepairDevicetdWorkOrderInfoAction">
+			<result name="success">insert_homeTd_customerWorkOrderInfo.jsp</result>
+		</action>
+		
+		<!-- 任务单信息 -->
+		<action name="getUrgentRepairTaskOrderInfoAction" class="workOrderCommonAction" method="getUrgentRepairTaskOrderInfoAction">
+			<result name="success">insert_taskOrderInfo.jsp</result>
+		</action>
+		
+		<!-- 根据工单Id获取服务跟踪记录 -->
+		<action name="getWorkTraceRecordAction" class="taskTracingRecordAction" method="getWorkTraceRecordAction">
+			<result name="success">/op/insert_trackedRecord.jsp</result>
+		</action>
+		
+		<!-- 根据任务单Id获取服务跟踪记录 -->
+		<action name="getTaskTraceRecordAction" class="taskTracingRecordAction" method="getTaskTraceRecordAction">
+			<result name="success">/op/insert_trackedRecord.jsp</result>
+		</action>
+		
+		<!-- 检查工单的下级任务是否全部结束 -->
+		<action name="checkAllSubTaskIsFinishedForWorkOrderAction" class="workOrderCommonAction" method="checkAllSubTaskIsFinishedForWorkOrderAction">
+		</action>
+		
+		<!-- 检查任务单的下级任务是否全部结束 -->
+		<action name="checkAllSubTaskIsFinishedForTaskOrderAction" class="workOrderCommonAction" method="checkAllSubTaskIsFinishedForTaskOrderAction">
+		</action>
+		
+		<!-- 获取数据字典-故障大类 -->
+		<action name="getFaultGeneraDictionaryAction" class="workOrderCommonAction" method="getFaultGeneraDictionaryAction">
+		</action>
+		
+		<!-- 根据故障大类获取数据字典-故障原因 -->
+		<action name="getFaultReasonDictionaryByFaultGeneraAction" class="workOrderCommonAction" method="getFaultReasonDictionaryByFaultGeneraAction">
+		</action>
+		
+		<!-- 获取数据字典-基站等级 -->
+		<action name="getBaseStationLevelDictionaryAction" class="workOrderCommonAction" method="getBaseStationLevelDictionaryAction">
+		</action>
+		
+		<!-- 获取数据字典-故障类型 -->
+		<action name="getFaultTypeDictionaryAction" class="workOrderCommonAction" method="getFaultTypeDictionaryAction">
+		</action>
+		
+		<!-- 获取数据字典-故障等级 -->
+		<action name="getFaultLevelDictionaryAction" class="workOrderCommonAction" method="getFaultLevelDictionaryAction">
+		</action>
+		
+		<!-- 获取数据字典-受理专业 -->
+		<action name="getAcceptProfessinalDictionaryAction" class="workOrderCommonAction" method="getAcceptProfessinalDictionaryAction">
+		</action>
+		
+		<!-- 获取数据字典-告警网管来源 -->
+		<action name="getAlarmNetManageSourceDictionaryAction" class="workOrderCommonAction" method="getAlarmNetManageSourceDictionaryAction">
+		</action>
+		
+		<!-- 获取数据字典-告警逻辑分类 -->
+		<action name="getAlarmLogicalClassDictionaryAction" class="workOrderCommonAction" method="getAlarmLogicalClassDictionaryAction">
+		</action>
+		
+		<!-- 根据告警逻辑分类获取数据字典-告警逻辑子类 -->
+		<action name="getAlarmLogicalSubClassDictionaryByAlarmLogicalClassAction" class="workOrderCommonAction" method="getAlarmLogicalSubClassDictionaryByAlarmLogicalClassAction">
+		</action>
+		
+		<!-- 根据故障大类获取数据字典-故障原因(终端) -->
+		<action name="getFaultReasonDictionaryByFaultGeneraActionForMobile" class="workOrderCommonAction" method="getFaultReasonDictionaryByFaultGeneraActionForMobile">
+		</action>
+		
+		<!-- 获取数据字典-下一级(网优之家) -->
+		<action name="getNextTreeNodeDictionarySHENZHENAction" class="workOrderCommonAction" method="getNextTreeNodeDictionarySHENZHENAction">
+		</action>
+		
+		<!-- 获取数据字典-故障大类（网优之家） -->
+		<action name="getFaultGeneralDictionarySHENZHEAction" class="workOrderCommonAction" method="getFaultGeneralDictionarySHENZHEAction">
+		</action>
+		
+		<!-- 获取资源任务甘特信息 -->
+		<action name="getResourceTaskGanttAction" class="ganttAction" method="getResourceTaskGanttAction"></action>
+		
+		<!-- 获取资源某月任务甘特信息 -->
+		<action name="getResourceMonthTaskAction" class="ganttAction" method="getResourceMonthTaskAction"></action>
+		
+		<!-- 登陆日志 -->
+		<action name="getLoginRecordAction" class="loginRecordAction" method="getLoginRecordAction">
+			<result name="success">/op/home/showcase/userInfo.jsp</result>
+		</action>
+		
+		
+		<!-- ============== -->
+		<action name="importNetworkResourceExcelTextOneAction" class="importNetworkResourceExcelTextService" method="importNetworkResourceExcelTextOneAction">
+        </action >
+        <action name="importNetworkResourceExcelTextTwoAction" class="importNetworkResourceExcelTextService" method="importNetworkResourceExcelTextTwoAction">
+        </action >
+        <action name="importNetworkResourceExcelTextThrAction" class="importNetworkResourceExcelTextService" method="importNetworkResourceExcelTextThrAction">
+        </action >
+        <action name="importNetworkResourceExcelTextFouAction" class="importNetworkResourceExcelTextService" method="importNetworkResourceExcelTextFouAction">
+        </action >
+        
+        <!--获取终端版本更新信息 -->
+		<action name="getTerminalUpdateVersionInfoActionForMobile" class="com.iscreate.op.action.publicinterface.TerminalUpdateVersionInfoActionForMobile" method="getTerminalUpdateVersionInfoActionForMobile">
+
+		</action>
+	</package>
+</struts>

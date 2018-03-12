@@ -1,0 +1,24 @@
+
+.architecture-dialog{background: url("../image/panel_title.png") repeat scroll 0 0 transparent; border: 1px solid #99BBE8; border-radius: 5px 5px 5px 5px; font-size: 12px; overflow: hidden;padding: 5px; left: 50%; margin-left: -270px; margin-top: 130px; position: fixed; width: 540px;z-index:99;}
+.dialog-header{ color: #15428B; font-size: 12px; font-weight: bold; line-height: 15px; padding: 2px 0 4px; position: relative;}
+.dialog-tool { position: absolute; right: 1px; top: 0px;}
+.dialog-tool div {cursor: pointer; display: block;float: right; height: 16px; margin-left: 2px; opacity: 0.6; width: 16px;}
+.dialog-tool-close {background: url("../image/panel_tools.gif") no-repeat scroll -16px 0 transparent;}
+.dialog-content{border: 1px solid #99BBE8; background-color:#fff;height:300px;}
+.d-em{display: inline-block; margin-left: 10px;}
+.dialog .but{padding-top: 10px;text-align: center;}
+.dialog-show{cursor: pointer;}
+#black {background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5); height: 100%; left: 0; opacity: 0.5; position: fixed; top: 0; width: 100%;}
+
+
+.dialog-content-menu{width:130px; height:300px;border-right:1px solid #eee; float:left; background:#f9f9f9;}
+.dialog-content-menu ul{height:290px;padding-top:3px; overflow-y:auto;}
+.dialog-content-menu li a{display:block; line-height:35px; text-align:center; margin:3px; color:#333; text-decoration:none;border:1px solid #f9f9f9;}
+.dialog-content-menu li a.selected_a{background:#eee; border:1px solid #ccc; color:#06F;}
+.dialog-content-menu li a:hover{background:#eee;border:1px solid #ccc;}
+.dialog-content-main{ width:auto; overflow:hidden; padding:5px;}
+.dialog-bottom{height:17px; padding-top:3px; text-align:center; width:100%;}
+
+.dialog-content-main-child li{ width:49%; float:left; vertical-align:middle; white-space:nowrap;line-height:38px; border:1px solid #fff; cursor:pointer;}
+.dialog-content-main-child li:hover{ border:1px solid #ddd; border-radius:5px; color:#903;}
+.li_radio_span{ display:inline-block;}

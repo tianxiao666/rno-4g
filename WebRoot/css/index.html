@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>主页</title>
+<!-- Framework CSS -->
+<link rel="stylesheet" href="./css/blueprint/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="./css/blueprint/print.css" type="text/css" media="print">
+<!--[if lt IE 8]><link rel="stylesheet" href="../../blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+<!-- Import fancy-type plugin for the sample page. -->
+<link rel="stylesheet" href="./css/blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="./css/style.css" type="text/css" media="screen, projection">
+
+<style type="text/css">
+#menu_content{
+	margin-top:43px;
+	display: none; 
+	position:absolute; 
+	z-index:999; 
+	width:auto; 
+	background:#ffffff;
+	border:solid 1px #FF6600;
+}
+</style>
+<script type="text/javascript" >
+	function showAndHideStartMenu(){
+	    var menuDiv = document.getElementById("menu_content");
+		if(menuDiv.style.display !="block"){
+			menuDiv.style.display = "block";
+		}else{
+			menuDiv.style.display = "none";
+		}
+	}
+</script>
+
+<body >
+<div class="container">
+  <!-- 头部 -->
+  <div>
+    <!-- logo 搜索栏 用户信息栏 -->
+    <div>
+      <div class="span-7">
+        <img src="images/example/logo.png" width="259" height="50" />      </div>
+      <div class="span-12" style="margin-top:20px;" > 
+	  	<form>
+        	<input  class="search_input" name="" type="text"  />
+			<input class="search_button" type="button" value="搜索"  />
+		</form>
+		
+	  </div>
+      <div class="span-4" style="margin-top:27px;" > 
+	  	<span><a class="btn_info" href="javascript:void(0)">个人中心</a></span> 
+		<span><a class="btn_info" href="javascript:void(0)" >购物车</a></span> 
+	  </div>
+    </div>
+    <hr class="space"/>
+    <!-- 导航条 -->
+    <div class="span-24 nav-primary">
+	<div class="nav-wrap">
+	  <img src="images/nav_left.gif" width="6" height="43" style="float:left;" />
+	  <img src="images/nav_right.gif" width="6" height="43" style="float:right;" />
+	  <div style="padding-left:6px; padding-right:6px; background:url(images/nav_center.gif);height:43px;">
+	  <div class="span-5" >
+	  	<a  class="menu-start" href="javascript:showAndHideStartMenu();"  onMouseOver="overStartMenu()" style="display:none;">全部商品分类</a>
+		<!-- 下拉框内容 -->
+	  </div>
+	  <div id="menu_content">
+	  	<div class="append-4">
+		<p>&nbsp;1</p>
+	    <p>&nbsp;2</p>
+	    <p>&nbsp;3</p>
+	    <p>&nbsp;4</p>
+	    <p>&nbsp;5</p>
+	    <p>&nbsp;6</p>
+	    <p>&nbsp;7</p>
+	    <p>&nbsp;8</p>
+	    <p>&nbsp;9</p>
+	    <p>&nbsp;10</p>
+	    <p>&nbsp;11</p>
+	    <p>&nbsp;12</p>
+	    <p>&nbsp;13</p>
+		</div>
+	  </div>
+	  <div class="span-17 nav-container ">
+		<ul>
+			<li><a class="current" title="Home" href="#">主页</a></li>
+			<li><a title="Home" href="#">服装城</a></li>
+			<li><a title="Home" href="#">迷你挑</a></li>
+			<li><a title="Home" href="#">团购</a></li>
+			<li><a title="Home" href="#">夺宝岛</a></li>
+			<li><a title="Home" href="#">在线游戏</a></li>
+		</ul>
+	  </div>
+	  <hr class="space"/>
+	  
+	  
+	  </div>
+	</div>
+    </div>
+  </div>
+  <!-- 换行 -->
+  <br/>
+  <!-- 企业信息 -->
+  <div class="span-5">
+
+<div style=" float:left; width:100%;" class="index_l border"> 
+   <img style="float:left" src="./images/example/category_tit.gif">
+  <div id="category_tree">
+     <ul> 
+		<li>
+		<img src="./images/example/tree1.gif"> <a href="#">女鞋</a>
+		<ul>
+		    <li><a href="#4">单鞋</a></li>
+            <li><a href="#">凉鞋</a></li>
+            <li><a href="#">拖鞋</a></li>
+            <li><a href="#">帆布鞋</a></li>
+            <li><a href="#">平跟鞋</a></li>
+            <li><a href="#">中跟鞋</a></li>
+            <li><a href="#">休闲鞋</a></li>
+            <li><a href="#">运动鞋</a></li>
+            <li><a href="#">新款区</a></li>
+            <li><a href="#">特价区</a></li>
+		</ul>
+		</li>
+		<li>
+		<img src="./images/example/tree2.gif"> <a href="#">男鞋</a>
+		<ul>
+		    <li><a href="#">凉鞋</a></li>
+            <li><a href="#">商务皮鞋</a></li>
+            <li><a href="#">拖鞋</a></li>
+            <li><a href="#">休闲皮鞋</a></li>
+            <li><a href="#">休闲鞋</a></li>
+            <li><a href="#">帆布鞋</a></li>
+            <li><a href="#">新品区</a></li>
+            <li><a href="#">特价区</a></li>
+		</ul>
+		</li>
+		<li>
+		<img src="./images/example/tree3.gif"> <a href="category.php?id=243">运动鞋</a>
+		<ul>
+		        <li><a href="#">板鞋</a></li>
+                <li><a href="#">跑步鞋</a></li>
+                <li><a href="#">帆布鞋</a></li>
+                <li><a href="#">休闲鞋</a></li>
+                <li><a href="#">篮球鞋</a></li>
+                <li><a href="#">网球鞋</a></li>
+                <li><a href="#">训练鞋</a></li>
+                <li><a href="#">足球鞋</a></li>
+                <li><a href="#">新品区</a></li>
+                <li><a href="#">特价区</a></li>
+		</ul>
+		</li>
+		<li>
+			<img src="./images/example/tree4.gif"> <a href="#">布鞋</a></dt>
+		</li>
+		<li>
+			<img src="./images/example/tree5.gif"> <a href="#">男/女装鞋</a></dt>
+		</li>
+        </ul>
+  </div>
+  </div>
+  
+  
+  
+  
+  
+
+  </div>
+  
+  <div class="span-18"><img src="images/example/info.jpg" class="span-18" /></div>
+  <!-- 水平分隔线 -->
+  <hr class="space"/>
+  <hr />
+  <!-- 展示商品 -->
+  	<!-- 商品基本信息 -->
+	<div class= "span-5 gi">
+		<a href="#"><img class="gi_img" src="images/example/ipad.jpg" width="200px" /></a>
+		<div class="gi_name"><a href="#">苹果（Apple）iPad 2 </div>
+		<div class="gi_p_market"><del>市场价：￥2999元</del></div>
+		<div class="gi_p_shop">￥1999</div>
+	</div>
+  	<div class= "span-5 gi">
+		<a href="#"><img class="gi_img" src="images/example/ipad.jpg" width="200px" /></a>
+		<div class="gi_name"><a href="#">苹果（Apple）iPad 2 </div>
+		<div class="gi_p_market"><del>市场价：￥2999元</del></div>
+		<div class="gi_p_shop">￥1999</div>
+	</div>
+	
+  	<div class= "span-5 gi">
+		<a href="#"><img class="gi_img" src="images/example/ipad.jpg" width="200px" /></a>
+		<div class="gi_name"><a href="#">苹果（Apple）iPad 2 </div>
+		<div class="gi_p_market"><del>市场价：￥2999元</del></div>
+		<div class="gi_p_shop">￥1999</div>
+	</div>
+	<div class= "span-5 gi">
+		<a href="#"><img class="gi_img" src="images/example/ipad.jpg" width="200px" /></a>
+		<div class="gi_name"><a href="#">苹果（Apple）iPad 2 </div>
+		<div class="gi_p_market"><del>市场价：￥2999元</del></div>
+		<div class="gi_p_shop">￥1999</div>
+	</div>
+	<div class= "span-5 gi">
+		<a href="#"><img class="gi_img" src="images/example/ipad.jpg" width="200px" /></a>
+		<div class="gi_name"><a href="#">苹果（Apple）iPad 2 </div>
+		<div class="gi_p_market"><del>市场价：￥2999元</del></div>
+		<div class="gi_p_shop">￥1999</div>
+	</div>
+	<hr class="space"/>
+	<hr/>
+	<div class= "span-5 gi">
+		<a href="#"><img class="gi_img" src="images/example/ipad.jpg" width="200px" /></a>
+		<div class="gi_name"><a href="#">苹果（Apple）iPad 2 </div>
+		<div class="gi_p_market"><del>市场价：￥2999元</del></div>
+		<div class="gi_p_shop">￥1999</div>
+	</div>
+  
+  
+  
+
+  <hr class="space"/>
+  <hr/>
+  <!-- 商品信息 -->
+  <!-- 左边 -->
+  <div class="span-8">
+
+    <div class="span-7 ">
+		<div class="ibx"> 
+			<div class="ibt">
+				<span>关于我们</span> 
+				<a href="http://www.360buy.com/product/741525.html" style="float:right;">详情>></a> 
+			</div>
+			<div class="ibc">
+			  凭质保证书及京东商城发票，可享受全国联保服务（奢侈品、钟表除外；奢侈品、钟表由京东联系保修，享受法定三包售后服务），与您亲临商场选购的商品享受相同的质量保证。 
+			</div>
+		</div>
+  	</div>
+	
+	<hr class="space"/>
+  </div>
+  <!-- 右边 -->
+  <div class="span-15 last">
+  </div>
+  
+  <hr class="space">
+  
+  <h2 class="alt">This sample page demonstrates a tiny fraction of what you get with Blueprint.</h2>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿/*Deson Edit*/
+@charset "utf-8";
+
+/*模块左边多级菜单*/
+.leftMenu{background:#fff;width:236px;float:left;border:1px solid #99BBE8;min-height:750px;margin-right: 5px;-moz-user-select: none;/* for Firefox */-webkit-user-select: none; /* for Chrome */} 
+.leftMenu_top{background: url("../../images/white-top-bottom.gif") repeat-x scroll 0 -1px transparent; border-bottom:1px solid #99BBE8; color: #15428B;line-height: 26px; padding: 0 5px;font-weight:bold;}
+.leftMultilevelMenu_info{position:relative;}
+.leftMultilevelMenu_info h3 {background: url("../../images/cmp-bg.gif") repeat-x scroll 0 0 #EEEEEE; border-bottom: 1px solid #CCCCCC; border-top: 1px solid #DDDDDD; cursor: pointer; line-height: 18px; margin-top: 1px; padding: 2px 0 2px 20px;}
+.leftMultilevelMenu_info ul li{line-height: 26px; padding: 0 10px 0 20px; cursor:pointer;}
+.leftMultilevelMenu_info ul li span{background: url("../../images/forum.gif") no-repeat; width:16px; height:20px; display:inline-block; margin-right: 5px; vertical-align: middle;}
+.leftMultilevelMenu_info ul .menu_selected{background-color:#D9E8FB; border:1px dotted #A3BAE9; color:#15428B; font-weight:bold;}
+.leftMultilevelMenu_info .module_up_down {cursor: pointer; left: 0; position: absolute; top: 3px; width: 198px;}
+/*模块左边一级菜单*/
+.leftLevelMenu_info li {background-color:#F0F0F0; border-bottom: 1px solid #99BCE8; margin:1px 0; line-height: 26px; padding: 0 10px 0 20px; cursor:pointer;}
+.leftLevelMenu_info li span{background: url("../../images/forum.gif") no-repeat; width:16px; height:20px; display:inline-block; margin-right: 5px; vertical-align: middle;}
+.leftLevelMenu_info .menu_selected{background-color:#d6e5f7; font-weight: bold;}
+
+.menu_title_tool .tool{background: url("../../images/tool-sprites.gif") no-repeat scroll 0 -180px transparent;cursor: pointer;width: 15px;height: 15px;float: left;margin:5px 0 0 -25px;}
+.menu_title_tool_selected { border:1px solid #99BBE8;min-height:750px;float: left;width:20px;cursor: pointer;margin-right: 5px;}
+.menu_title_tool_selected .tool{ background: url("../../images/tool-sprites.gif") no-repeat scroll 0 -165px transparent;cursor: pointer; width: 15px; height: 15px;margin: 2px 0 0 2px;}

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	 <!--  ######################### action  ######################### begin -->
+	<bean id="rnoLteCellManageAction" class="com.iscreate.op.action.rno.RnoLteCellManageAction"
+		singleton="false">
+		<property name="rnoCommonService" ref="rnoCommonService"></property>
+		<property name="rnoLteCellManageService" ref="rnoLteCellManageService"></property>
+	</bean>
+	
+	<!-- LTE小区地图展示 -->
+	<bean id="rnoLteMapOperAction" class="com.iscreate.op.action.rno.RnoLteMapOperAction"
+		singleton="false">
+		<property name="rnoCommonService" ref="rnoCommonService"></property>
+		<property name="rnoLteMapOperService" ref="rnoLteMapOperService"></property>
+		<property name="rnoLteCellManageService" ref="rnoLteCellManageService"></property>
+	</bean>
+	<!-- LTE場景管理 -->
+	<bean id="rnoLteSceneManageAction" class="com.iscreate.op.action.rno.RnoLteSceneManageAction"
+		singleton="false">
+		<property name="rnoLteSceneManageService" ref="rnoLteSceneManageService"></property>
+		<property name="rnoCommonService" ref="rnoCommonService"></property>
+	</bean>
+	<!-- LTE路测分析 -->
+	<bean id="rnoLteDtAnaAction" class="com.iscreate.op.action.rno.RnoLteDtAnaAction"
+		singleton="false">
+		<property name="rnoLteDtAnaService" ref="rnoLteDtAnaService"></property>
+		<property name="rnoCommonService" ref="rnoCommonService"></property>
+	</bean>
+	<!-- LTE话统管理 -->
+	<bean id="rnoLteStsAnaAction" class="com.iscreate.op.action.rno.RnoLteStsAnaAction"
+		singleton="false">
+		<property name="rnoLteStsAnaService" ref="rnoLteStsAnaService"></property>
+		<property name="rnoCommonService" ref="rnoCommonService"></property>
+		<property name="rnoResourceManagerService" ref="rnoResourceManagerService"></property>
+	</bean>
+	 <!--  ######################### action  ######################### end -->
+	 
+	 
+	 <!--  ######################### service  ######################### begin -->
+	 <!-- LTE小区地图展示 -->
+	 <bean id="rnoLteMapOperService" class="com.iscreate.op.service.rno.RnoLteMapOperServiceImpl"
+			singleton="false">
+			<property name="rnoLteMapOperDao" ref="rnoLteMapOperDao"></property>
+			<property name="memCached" ref="memCached"></property>
+			<property name="sysAreaService" ref="sysAreaService" />
+			<property name="sysAreaDao" ref="sysAreaDao" />
+			<property name="rnoLteCellDao" ref="rnoLteCellDao"></property>
+	 </bean>
+	 <!-- 区域锁定管理器 -->
+	 <bean id="areaLockManager" class="com.iscreate.op.service.rno.parser.AreaLockManagerImpl" singleton="true">
+	 </bean>
+	 <!-- lte小区导入的解析类 -->
+	 <bean id="rnoLteCellParser" class="com.iscreate.op.service.rno.parser.RnoLteCellParser" singleton="false">
+	    <!-- property name="excelService" ref="excelService"></property -->
+		<property name="memCached" ref="memCached"></property>
+		<property name="fileParserManager" ref="fileParserManager"></property>
+		<property name="sysAreaDao" ref="sysAreaDao"></property>
+		<property name="areaLockManager" ref="areaLockManager"></property>
+	 </bean>
+	 <!-- lte邻区关系导入的解析类 -->
+	 <bean id="rnoLteNcellParser" class="com.iscreate.op.service.rno.parser.RnoLteNcellParser" singleton="false">
+	    <property name="excelService" ref="excelService"></property>
+		<property name="memCached" ref="memCached"></property>
+		<property name="fileParserManager" ref="fileParserManager"></property>
+	 </bean>
+	  <!-- LTE場景管理 -->
+	 <bean id="rnoLteSceneManageService" class="com.iscreate.op.service.rno.RnoLteSceneManageServiceImpl"
+			singleton="false">
+			<property name="rnoLteSceneManageDao" ref="rnoLteSceneManageDao"></property>
+	 </bean>
+	  <!-- LTE路测分析 -->
+	 <bean id="rnoLteDtAnaService" class="com.iscreate.op.service.rno.RnoLteDtAnaServiceImpl"
+			singleton="false">
+			<property name="rnoLteDtAnaDao" ref="rnoLteDtAnaDao"></property>
+	 </bean>
+	 <!-- lte 小区管理service -->
+	 <!--  ######################### service  ######################### end -->
+	 <bean id="rnoLteCellManageService" class="com.iscreate.op.service.rno.RnoLteCellManageServiceImpl" singleton="false">
+	    <property name="rnoLteCellDao" ref="rnoLteCellDao"></property>
+	 </bean>
+	 	  <!-- LTE话统管理 -->
+	 <bean id="rnoLteStsAnaService" class="com.iscreate.op.service.rno.RnoLteStsAnaServiceImpl"
+			singleton="false">
+			<property name="rnoLteStsAnaDao" ref="rnoLteStsAnaDao"></property>
+			<property name="rnoCellDao" ref="rnoCellDao"></property>
+			<property name="memCached" ref="memCached"></property>
+	 </bean>
+	 <!--  ######################### dao  ######################### begin -->
+	 <!-- lte小区管理dao -->
+	 <bean id="rnoLteCellDao" class="com.iscreate.op.dao.rno.RnoLteCellDaoImpl" singleton="false">
+	     <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	 </bean>
+	 
+	 <!-- LTE小区地图展示 -->
+	 <bean id="rnoLteMapOperDao" class="com.iscreate.op.dao.rno.RnoLteMapOperDaoImpl"
+		singleton="false">
+		 <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	 </bean>
+	 <!-- lte场景管理dao -->
+	 <bean id="rnoLteSceneManageDao" class="com.iscreate.op.dao.rno.RnoLteSceneManageDaoImpl" singleton="false">
+	     <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	 </bean>
+	 <!-- lte路测分析dao -->
+	 <bean id="rnoLteDtAnaDao" class="com.iscreate.op.dao.rno.RnoLteDtAnaDaoImpl" singleton="false">
+	     <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	 </bean>
+	 <!-- lte话统管理dao -->
+	 <bean id="rnoLteStsAnaDao" class="com.iscreate.op.dao.rno.RnoLteStsAnaDaoImpl" singleton="false">
+	     <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	 </bean>
+	 <!--  ######################### dao  ######################### end -->
+</beans>

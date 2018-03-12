@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- ops登录action -->
+	<bean id="loginAction" class="com.iscreate.plat.login.action.LoginAction" singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+		<property name="sysAccountService" ref="sysAccountService" />
+		<property name="sysPermissionService" ref="sysPermissionService" />
+		<property name="sysSuperAdminService" ref="sysSuperAdminService" />
+		<property name="sysUserRelaPermissionService" ref="sysUserRelaPermissionService" />
+		
+	</bean>
+	
+	<!-- ops 资源访问控制-->
+	<bean id="accessHandler" class="com.iscreate.plat.login.controller.AccessHandler" singleton="false">
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+		<property name="sysPermissionService" ref="sysPermissionService" />
+		
+	</bean>
+	
+</beans>

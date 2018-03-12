@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+ <name>GroupUserSite</name>
+ <attribute type="java.lang.Long" length="128" primary="TRUE" index="TRUE" nullable="FALSE" regex="">id</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="FALSE" regex="">name</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">label</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">oppositeBS</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">opticTermialID</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">serviceType</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">serviceLevel</attribute>
+ <attribute type="java.util.Date" length="100" primary="FALSE" index="FALSE" nullable="TRUE" regex="">takeoverdate</attribute>
+ <attribute type="java.lang.Integer" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">ifpasschecking</attribute>
+ <attribute type="java.util.Date" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">passcheckingdate</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">serviceManager</attribute>
+ <attribute type="java.lang.Double" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">longitude</attribute>
+ <attribute type="java.lang.Double" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">latitude</attribute>
+ <attribute type="java.lang.String" length="100" primary="FALSE" index="FALSE" nullable="TRUE" regex="">customerAddress</attribute>
+ <attribute type="java.lang.String" length="100" primary="FALSE" index="FALSE" nullable="TRUE" regex="">roomAddress</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">principal</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">customerContact</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">customerContactTel</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">customerManager</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">customerManagerTel</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">networkingmethod</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">entrancemethod</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">circuitID</attribute>
+</entity>

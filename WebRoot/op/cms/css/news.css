@@ -1,0 +1,17 @@
+/* CSS Document */
+body{ background:#f7f7f7;}
+.news_container{width:960px; margin:0 auto; position:relative;}
+.news_title h1{color:red; line-height:60px; text-align:center; font-size:30px;}
+.news_info{ text-align:center; margin-top:15px;}
+.news_info em.info_m{color:#999;margin-left:10px;}
+.news_info .news_lev{position:absolute;right:30px;}
+.news_main p{padding:10px 40px; line-height:40px; margin-top:20px; text-indent:2em; font-family:"宋体"; font-size:14px;}
+.news_main_image{ text-align:center; margin:5px 0px;}
+.news_main_image_title{ color:#666; text-align:center; margin-top:10px;}
+
+.img_list {
+    background-color: #F2EADA;
+    border: 1px solid #D1C7B7;
+    margin: 5px 0;
+    padding: 5px 10px;
+}

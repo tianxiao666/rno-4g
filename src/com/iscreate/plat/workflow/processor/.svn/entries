@@ -1,0 +1,71 @@
+9
+
+dir
+12376
+http://svn.iscreate.com:8088/srcsvn/source/iosm/4g_rno_branches/v1/src/com/iscreate/plat/workflow/processor
+http://svn.iscreate.com:8088/srcsvn/source
+
+
+
+2013-04-25T06:58:58.904724Z
+4324
+du.hw
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+f7628612-1de5-0147-986c-5ff4a2e890d6
+
+FlowProcessorBean.java
+file
+
+
+
+
+2015-06-26T06:53:27.976000Z
+68d458e8ac2341e3086be98c46b53a3e
+2013-04-25T06:58:58.904724Z
+4324
+du.hw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7580
+
+constants
+dir
+
+impl
+dir
+
+jbpm
+dir
+

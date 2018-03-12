@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div style="margin:0px auto;padding:0px 0 0 10px;font-size:12px;">
+
+<span style="font-weight: bold;">待办事宜:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;待办抢修0个<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;待办巡检0个<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;待办修缮0个<br/>
+<br>
+<span style="font-weight: bold;">待审批事宜:0个</span><br/><br/>
+<span style="font-weight: bold;">待阅事宜:0个</span><br/>
+
+</div>
+</body>
+</html>

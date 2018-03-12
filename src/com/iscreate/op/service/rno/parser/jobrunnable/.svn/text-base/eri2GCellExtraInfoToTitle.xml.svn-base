@@ -1,0 +1,1705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+	<field>
+		<name>MSC</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>MSC</title>
+	</field>
+	<field>
+		<name>BSC</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>BSC</title>
+	</field>
+	<field>
+		<name>CELL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>CELL </title>
+	</field>
+	<field>
+		<name>AFLP </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>AFLP </title>
+	</field>
+	<field>
+		<name>AFRCSCC</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>AFRCSCC</title>
+	</field>
+	<field>
+		<name>AHRCSCC</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>AHRCSCC</title>
+	</field>
+	<field>
+		<name>AIRCT</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>AIRCT</title>
+	</field>
+	<field>
+		<name>ANTENNA_GAIN </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>ANTENNA_GAIN </title>
+	</field>
+	<field>
+		<name>ANTENNA_TILT </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>ANTENNA_TILT </title>
+	</field>
+	<field>
+		<name>ANTENNA_TYPE </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>ANTENNA_TYPE </title>
+	</field>
+	<field>
+		<name>AQPSKONBCCH</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>AQPSKONBCCH</title>
+	</field>
+	<field>
+		<name>ASSV </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>ASSV </title>
+	</field>
+	<field>
+		<name>ATHABIS</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>ATHABIS</title>
+	</field>
+	<field>
+		<name>ATHABISPR</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>ATHABISPR</title>
+	</field>
+	<field>
+		<name>AWBCSCC</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>AWBCSCC</title>
+	</field>
+	<field>
+		<name>BSRPWRHO </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>BSRPWRHO </title>
+	</field>
+	<field>
+		<name>BSRPWROFFSET </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>BSRPWROFFSET </title>
+	</field>
+	<field>
+		<name>CELL_DIR </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>CELL_DIR </title>
+	</field>
+	<field>
+		<name>CHMAX</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>CHMAX</title>
+	</field>
+	<field>
+		<name>CLTHV</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>CLTHV</title>
+	</field>
+	<field>
+		<name>CO </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>CO </title>
+	</field>
+	<field>
+		<name>COVERAGEE_8</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>COVERAGEE_8</title>
+	</field>
+	<field>
+		<name>CP_BCC_TSC </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>CP_BCC_TSC </title>
+	</field>
+	<field>
+		<name>DAMRCRABIS </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>DAMRCRABIS </title>
+	</field>
+	<field>
+		<name>DAMRCRABISPR </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>DAMRCRABISPR </title>
+	</field>
+	<field>
+		<name>DCDLACT</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>DCDLACT</title>
+	</field>
+	<field>
+		<name>DHASS</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>DHASS</title>
+	</field>
+	<field>
+		<name>DHASSTHRASS</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>DHASSTHRASS</title>
+	</field>
+	<field>
+		<name>DHASSTHRHO </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>DHASSTHRHO </title>
+	</field>
+	<field>
+		<name>DHPR </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>DHPR </title>
+	</field>
+	<field>
+		<name>DISPLAY_TAG</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>DISPLAY_TAG</title>
+	</field>
+	<field>
+		<name>DLPCE</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>DLPCE</title>
+	</field>
+	<field>
+		<name>DLPCE2A</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>DLPCE2A</title>
+	</field>
+	<field>
+		<name>DLPCG</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>DLPCG</title>
+	</field>
+	<field>
+		<name>DTHAMRWB_15 </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>DTHAMRWB_15 </title>
+	</field>
+	<field>
+		<name>DTXFUL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>DTXFUL </title>
+	</field>
+	<field>
+		<name>E2AFACTOR</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>E2AFACTOR</title>
+	</field>
+	<field>
+		<name>E2AINITMCS </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>E2AINITMCS </title>
+	</field>
+	<field>
+		<name>E2ALQC </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>E2ALQC </title>
+	</field>
+	<field>
+		<name>E2APDCHBR</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>E2APDCHBR</title>
+	</field>
+	<field>
+		<name>EA </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>EA </title>
+	</field>
+	<field>
+		<name>EARFCNIDLE_8</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>EARFCNIDLE_8</title>
+	</field>
+	<field>
+		<name>EC_16 </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>EC_16 </title>
+	</field>
+	<field>
+		<name>EFRCSCC</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>EFRCSCC</title>
+	</field>
+	<field>
+		<name>EFTASTATE</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>EFTASTATE</title>
+	</field>
+	<field>
+		<name>EHPRIOTHR_8 </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>EHPRIOTHR_8 </title>
+	</field>
+	<field>
+		<name>EINITMCS </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>EINITMCS </title>
+	</field>
+	<field>
+		<name>ELPRIOTHR_8 </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>ELPRIOTHR_8 </title>
+	</field>
+	<field>
+		<name>ENV_CHAR </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>ENV_CHAR </title>
+	</field>
+	<field>
+		<name>EQRXLEVMIN_8</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>EQRXLEVMIN_8</title>
+	</field>
+	<field>
+		<name>ERATPRIO_8</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>ERATPRIO_8</title>
+	</field>
+	<field>
+		<name>FASTRET3G</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>FASTRET3G</title>
+	</field>
+	<field>
+		<name>FASTRETLTE </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>FASTRETLTE </title>
+	</field>
+	<field>
+		<name>FDDARFCNIDLE_32 </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>FDDARFCNIDLE_32 </title>
+	</field>
+	<field>
+		<name>FSLOTS </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>FSLOTS </title>
+	</field>
+	<field>
+		<name>FULLAQPSK</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>FULLAQPSK</title>
+	</field>
+	<field>
+		<name>GMEASTHR </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>GMEASTHR </title>
+	</field>
+	<field>
+		<name>GRATPRIO_0 </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>GRATPRIO_0 </title>
+	</field>
+	<field>
+		<name>GTRES</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>GTRES</title>
+	</field>
+	<field>
+		<name>HEIGHT </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>HEIGHT </title>
+	</field>
+	<field>
+		<name>HRCSCC </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>HRCSCC </title>
+	</field>
+	<field>
+		<name>INITDLPCE</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>INITDLPCE</title>
+	</field>
+	<field>
+		<name>INITDLPCE2A</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>INITDLPCE2A</title>
+	</field>
+	<field>
+		<name>INITDLPCG</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>INITDLPCG</title>
+	</field>
+	<field>
+		<name>LATITUDE </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>LATITUDE </title>
+	</field>
+	<field>
+		<name>LONGITUDE</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>LONGITUDE</title>
+	</field>
+	<field>
+		<name>MAX_ALTITUDE </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>MAX_ALTITUDE </title>
+	</field>
+	<field>
+		<name>MAX_CELL_RADIUS</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>MAX_CELL_RADIUS</title>
+	</field>
+	<field>
+		<name>MINCHBW_8 </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>MINCHBW_8 </title>
+	</field>
+	<field>
+		<name>MIN_ALTITUDE </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>MIN_ALTITUDE </title>
+	</field>
+	<field>
+		<name>MSRPWRHO </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>MSRPWRHO </title>
+	</field>
+	<field>
+		<name>MSRPWROFFSET </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>MSRPWROFFSET </title>
+	</field>
+	<field>
+		<name>NCPROF_16 </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>NCPROF_16 </title>
+	</field>
+	<field>
+		<name>NCRPT</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>NCRPT</title>
+	</field>
+	<field>
+		<name>NCS</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>NCS</title>
+	</field>
+	<field>
+		<name>NCSTAT </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>NCSTAT </title>
+	</field>
+	<field>
+		<name>NUMINT </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>NUMINT </title>
+	</field>
+	<field>
+		<name>OWNBCCHINACT </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OWNBCCHINACT </title>
+	</field>
+	<field>
+		<name>OWNBCCHINIDLE</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OWNBCCHINIDLE</title>
+	</field>
+	<field>
+		<name>PCID_8</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>PCID_8</title>
+	</field>
+	<field>
+		<name>PCIDG_8 </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>PCIDG_8 </title>
+	</field>
+	<field>
+		<name>PCIDP_80</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>PCIDP_80</title>
+	</field>
+	<field>
+		<name>PDCHALLOC</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>PDCHALLOC</title>
+	</field>
+	<field>
+		<name>PLMNNAME </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>PLMNNAME </title>
+	</field>
+	<field>
+		<name>PRIOCR </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>PRIOCR </title>
+	</field>
+	<field>
+		<name>QBAFRV </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>QBAFRV </title>
+	</field>
+	<field>
+		<name>QBAHRV </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>QBAHRV </title>
+	</field>
+	<field>
+		<name>QBAWBV </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>QBAWBV </title>
+	</field>
+	<field>
+		<name>QBNAV</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>QBNAV</title>
+	</field>
+	<field>
+		<name>QDESDLOV </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>QDESDLOV </title>
+	</field>
+	<field>
+		<name>QDESULOV </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>QDESULOV </title>
+	</field>
+	<field>
+		<name>QLENDL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>QLENDL </title>
+	</field>
+	<field>
+		<name>QLENUL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>QLENUL </title>
+	</field>
+	<field>
+		<name>RAC</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>RAC</title>
+	</field>
+	<field>
+		<name>REGINTDL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>REGINTDL </title>
+	</field>
+	<field>
+		<name>REGINTUL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>REGINTUL </title>
+	</field>
+	<field>
+		<name>RIMNACC</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>RIMNACC</title>
+	</field>
+	<field>
+		<name>RME</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>RME</title>
+	</field>
+	<field>
+		<name>RO </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>RO </title>
+	</field>
+	<field>
+		<name>RTTIINITMCS</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>RTTIINITMCS</title>
+	</field>
+	<field>
+		<name>SCLDLL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SCLDLL </title>
+	</field>
+	<field>
+		<name>SCLDUL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SCLDUL </title>
+	</field>
+	<field>
+		<name>SDCCHREG </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SDCCHREG </title>
+	</field>
+	<field>
+		<name>SDCCHUL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SDCCHUL</title>
+	</field>
+	<field>
+		<name>SECTOR_ANGLE </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SECTOR_ANGLE </title>
+	</field>
+	<field>
+		<name>SIMSG1 </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SIMSG1 </title>
+	</field>
+	<field>
+		<name>SIMSG7 </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SIMSG7 </title>
+	</field>
+	<field>
+		<name>SIMSG8 </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SIMSG8 </title>
+	</field>
+	<field>
+		<name>SLCA_BCCHACL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_BCCHACL </title>
+	</field>
+	<field>
+		<name>SLCA_BCCHLVA </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_BCCHLVA </title>
+	</field>
+	<field>
+		<name>SLCA_BTSPSSDCCHACL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_BTSPSSDCCHACL </title>
+	</field>
+	<field>
+		<name>SLCA_BTSPSSDCCHLVA </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_BTSPSSDCCHLVA </title>
+	</field>
+	<field>
+		<name>SLCA_BTSPSTCHACL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_BTSPSTCHACL </title>
+	</field>
+	<field>
+		<name>SLCA_BTSPSTCHBPCACL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_BTSPSTCHBPCACL</title>
+	</field>
+	<field>
+		<name>SLCA_BTSPSTCHBPCLVA</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_BTSPSTCHBPCLVA</title>
+	</field>
+	<field>
+		<name>SLCA_BTSPSTCHLVA </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_BTSPSTCHLVA </title>
+	</field>
+	<field>
+		<name>SLCA_CBCHACL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_CBCHACL </title>
+	</field>
+	<field>
+		<name>SLCA_CBCHLVA </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_CBCHLVA </title>
+	</field>
+	<field>
+		<name>SLCA_SDCCHACL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_SDCCHACL</title>
+	</field>
+	<field>
+		<name>SLCA_SDCCHLVA</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_SDCCHLVA</title>
+	</field>
+	<field>
+		<name>SLCA_STATE </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_STATE </title>
+	</field>
+	<field>
+		<name>SLCA_TCHAMRFRACL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_TCHAMRFRACL </title>
+	</field>
+	<field>
+		<name>SLCA_TCHAMRFRLVA </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_TCHAMRFRLVA </title>
+	</field>
+	<field>
+		<name>SLCA_TCHAMRHRACL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_TCHAMRHRACL </title>
+	</field>
+	<field>
+		<name>SLCA_TCHAMRHRLVA </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_TCHAMRHRLVA </title>
+	</field>
+	<field>
+		<name>SLCA_TCHAMRWBACL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_TCHAMRWBACL </title>
+	</field>
+	<field>
+		<name>SLCA_TCHAMRWBLVA </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_TCHAMRWBLVA </title>
+	</field>
+	<field>
+		<name>SLCA_TCHBPCACL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_TCHBPCACL </title>
+	</field>
+	<field>
+		<name>SLCA_TCHBPCLVA </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_TCHBPCLVA </title>
+	</field>
+	<field>
+		<name>SLCA_TCHEFRACL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_TCHEFRACL </title>
+	</field>
+	<field>
+		<name>SLCA_TCHEFRLVA </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_TCHEFRLVA </title>
+	</field>
+	<field>
+		<name>SLCA_TCHFRACL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_TCHFRACL</title>
+	</field>
+	<field>
+		<name>SLCA_TCHFRLVA</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_TCHFRLVA</title>
+	</field>
+	<field>
+		<name>SLCA_TCHHRACL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_TCHHRACL</title>
+	</field>
+	<field>
+		<name>SLCA_TCHHRLVA</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLCA_TCHHRLVA</title>
+	</field>
+	<field>
+		<name>SLOW </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SLOW </title>
+	</field>
+	<field>
+		<name>SPERIOD</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SPERIOD</title>
+	</field>
+	<field>
+		<name>SSTHRASSV</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SSTHRASSV</title>
+	</field>
+	<field>
+		<name>SSTHRV </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SSTHRV </title>
+	</field>
+	<field>
+		<name>SS_SDCCH_STATE </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SS_SDCCH_STATE </title>
+	</field>
+	<field>
+		<name>SS_TCH_STATE </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SS_TCH_STATE </title>
+	</field>
+	<field>
+		<name>TCHFRUL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>TCHFRUL</title>
+	</field>
+	<field>
+		<name>TCHHRUL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>TCHHRUL</title>
+	</field>
+	<field>
+		<name>THRAV</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>THRAV</title>
+	</field>
+	<field>
+		<name>THRDV</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>THRDV</title>
+	</field>
+	<field>
+		<name>THRVP</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>THRVP</title>
+	</field>
+	<field>
+		<name>TILT </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>TILT </title>
+	</field>
+	<field>
+		<name>TSC</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>TSC</title>
+	</field>
+	<field>
+		<name>TSCSET1PAIRS </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>TSCSET1PAIRS </title>
+	</field>
+	<field>
+		<name>TSS</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>TSS</title>
+	</field>
+	<field>
+		<name>TXTYPE </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>TXTYPE </title>
+	</field>
+	<field>
+		<name>UHPRIOTHR_32</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>UHPRIOTHR_32</title>
+	</field>
+	<field>
+		<name>ULPRIOTHR_32</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>ULPRIOTHR_32</title>
+	</field>
+	<field>
+		<name>UMFI_ACTIVE_64</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>UMFI_ACTIVE_64</title>
+	</field>
+	<field>
+		<name>UMFI_IDLE_64</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>UMFI_IDLE_64</title>
+	</field>
+	<field>
+		<name>UQRXLEVMIN_32 </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>UQRXLEVMIN_32 </title>
+	</field>
+	<field>
+		<name>URATPRIO_32 </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>URATPRIO_32 </title>
+	</field>
+	<field>
+		<name>USERDATA </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>USERDATA </title>
+	</field>
+	<field>
+		<name>VAMOSCELLSTATE </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>VAMOSCELLSTATE </title>
+	</field>
+	<field>
+		<name>VCSCC</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>VCSCC</title>
+	</field>
+	<field>
+		<name>VHOSUCCESS </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>VHOSUCCESS </title>
+	</field>
+	<field>
+		<name>OL_CELL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_CELL</title>
+	</field>
+	<field>
+		<name>OL_BSPWRMIN</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_BSPWRMIN</title>
+	</field>
+	<field>
+		<name>OL_BSPWRT</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_BSPWRT</title>
+	</field>
+	<field>
+		<name>OL_BSTXPWR </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_BSTXPWR </title>
+	</field>
+	<field>
+		<name>OL_DTXFUL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_DTXFUL</title>
+	</field>
+	<field>
+		<name>OL_IHO </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_IHO </title>
+	</field>
+	<field>
+		<name>OL_LCOMPDL </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_LCOMPDL </title>
+	</field>
+	<field>
+		<name>OL_LCOMPUL </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_LCOMPUL </title>
+	</field>
+	<field>
+		<name>OL_MAXIHO</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_MAXIHO</title>
+	</field>
+	<field>
+		<name>OL_MSTXPWR </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_MSTXPWR </title>
+	</field>
+	<field>
+		<name>OL_NUMINT</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_NUMINT</title>
+	</field>
+	<field>
+		<name>OL_QCOMPDL </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QCOMPDL </title>
+	</field>
+	<field>
+		<name>OL_QCOMPUL </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QCOMPUL </title>
+	</field>
+	<field>
+		<name>OL_QDESDL</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QDESDL</title>
+	</field>
+	<field>
+		<name>OL_QDESDLAFR </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QDESDLAFR </title>
+	</field>
+	<field>
+		<name>OL_QDESDLAHR </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QDESDLAHR </title>
+	</field>
+	<field>
+		<name>OL_QDESDLAWB </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QDESDLAWB </title>
+	</field>
+	<field>
+		<name>OL_QDESUL</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QDESUL</title>
+	</field>
+	<field>
+		<name>OL_QDESULAFR </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QDESULAFR </title>
+	</field>
+	<field>
+		<name>OL_QDESULAHR </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QDESULAHR </title>
+	</field>
+	<field>
+		<name>OL_QDESULAWB </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QDESULAWB </title>
+	</field>
+	<field>
+		<name>OL_QLENDL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QLENDL</title>
+	</field>
+	<field>
+		<name>OL_QLENUL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QLENUL</title>
+	</field>
+	<field>
+		<name>OL_QLIMDL</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QLIMDL</title>
+	</field>
+	<field>
+		<name>OL_QLIMDLAFR </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QLIMDLAFR </title>
+	</field>
+	<field>
+		<name>OL_QLIMDLAWB </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QLIMDLAWB </title>
+	</field>
+	<field>
+		<name>OL_QLIMUL</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QLIMUL</title>
+	</field>
+	<field>
+		<name>OL_QLIMULAFR </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QLIMULAFR </title>
+	</field>
+	<field>
+		<name>OL_QLIMULAWB </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QLIMULAWB </title>
+	</field>
+	<field>
+		<name>OL_QOFFSETDL </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QOFFSETDL </title>
+	</field>
+	<field>
+		<name>OL_QOFFSETDLAFR</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QOFFSETDLAFR</title>
+	</field>
+	<field>
+		<name>OL_QOFFSETDLAWB</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QOFFSETDLAWB</title>
+	</field>
+	<field>
+		<name>OL_QOFFSETUL </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QOFFSETUL </title>
+	</field>
+	<field>
+		<name>OL_QOFFSETULAFR</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QOFFSETULAFR</title>
+	</field>
+	<field>
+		<name>OL_QOFFSETULAWB</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_QOFFSETULAWB</title>
+	</field>
+	<field>
+		<name>OL_REGINTDL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_REGINTDL</title>
+	</field>
+	<field>
+		<name>OL_REGINTUL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_REGINTUL</title>
+	</field>
+	<field>
+		<name>SDCCHOL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>SDCCHOL</title>
+	</field>
+	<field>
+		<name>OL_SDCCHREG</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SDCCHREG</title>
+	</field>
+	<field>
+		<name>OL_SLCA_BCCHACL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_BCCHACL</title>
+	</field>
+	<field>
+		<name>OL_SLCA_BCCHLVA</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_BCCHLVA</title>
+	</field>
+	<field>
+		<name>OL_SLCA_CBCHACL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_CBCHACL</title>
+	</field>
+	<field>
+		<name>OL_SLCA_CBCHLVA</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_CBCHLVA</title>
+	</field>
+	<field>
+		<name>OL_SLCA_SDCCHACL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_SDCCHACL </title>
+	</field>
+	<field>
+		<name>OL_SLCA_SDCCHLVA </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_SDCCHLVA </title>
+	</field>
+	<field>
+		<name>OL_SLCA_STATE</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_STATE</title>
+	</field>
+	<field>
+		<name>OL_SLCA_TCHAMRFRACL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_TCHAMRFRACL</title>
+	</field>
+	<field>
+		<name>OL_SLCA_TCHAMRFRLVA</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_TCHAMRFRLVA</title>
+	</field>
+	<field>
+		<name>OL_SLCA_TCHAMRHRACL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_TCHAMRHRACL</title>
+	</field>
+	<field>
+		<name>OL_SLCA_TCHAMRHRLVA</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_TCHAMRHRLVA</title>
+	</field>
+	<field>
+		<name>OL_SLCA_TCHAMRWBACL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_TCHAMRWBACL</title>
+	</field>
+	<field>
+		<name>OL_SLCA_TCHAMRWBLVA</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_TCHAMRWBLVA</title>
+	</field>
+	<field>
+		<name>OL_SLCA_TCHBPCACL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_TCHBPCACL</title>
+	</field>
+	<field>
+		<name>OL_SLCA_TCHBPCLVA</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_TCHBPCLVA</title>
+	</field>
+	<field>
+		<name>OL_SLCA_TCHEFRACL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_TCHEFRACL</title>
+	</field>
+	<field>
+		<name>OL_SLCA_TCHEFRLVA</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_TCHEFRLVA</title>
+	</field>
+	<field>
+		<name>OL_SLCA_TCHFRACL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_TCHFRACL </title>
+	</field>
+	<field>
+		<name>OL_SLCA_TCHFRLVA </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_TCHFRLVA </title>
+	</field>
+	<field>
+		<name>OL_SLCA_TCHHRACL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_TCHHRACL </title>
+	</field>
+	<field>
+		<name>OL_SLCA_TCHHRLVA </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SLCA_TCHHRLVA </title>
+	</field>
+	<field>
+		<name>OL_SSDESDL </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SSDESDL </title>
+	</field>
+	<field>
+		<name>OL_SSDESDLAFR</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SSDESDLAFR</title>
+	</field>
+	<field>
+		<name>OL_SSDESDLAHR</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SSDESDLAHR</title>
+	</field>
+	<field>
+		<name>OL_SSDESDLAWB</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SSDESDLAWB</title>
+	</field>
+	<field>
+		<name>OL_SSDESUL </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SSDESUL </title>
+	</field>
+	<field>
+		<name>OL_SSDESULAFR</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SSDESULAFR</title>
+	</field>
+	<field>
+		<name>OL_SSDESULAHR</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SSDESULAHR</title>
+	</field>
+	<field>
+		<name>OL_SSDESULAWB</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SSDESULAWB</title>
+	</field>
+	<field>
+		<name>OL_SSLENDL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SSLENDL </title>
+	</field>
+	<field>
+		<name>OL_SSLENUL </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SSLENUL </title>
+	</field>
+	<field>
+		<name>OL_SSOFFSETDL</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SSOFFSETDL</title>
+	</field>
+	<field>
+		<name>OL_SSOFFSETDLAFR </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SSOFFSETDLAFR </title>
+	</field>
+	<field>
+		<name>OL_SSOFFSETDLAWB </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SSOFFSETDLAWB </title>
+	</field>
+	<field>
+		<name>OL_SSOFFSETUL</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SSOFFSETUL</title>
+	</field>
+	<field>
+		<name>OL_SSOFFSETULAFR </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SSOFFSETULAFR </title>
+	</field>
+	<field>
+		<name>OL_SSOFFSETULAWB </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_SSOFFSETULAWB </title>
+	</field>
+	<field>
+		<name>TCHFROL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>TCHFROL</title>
+	</field>
+	<field>
+		<name>TCHHROL</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>TCHHROL</title>
+	</field>
+	<field>
+		<name>OL_TIHO</name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_TIHO</title>
+	</field>
+	<field>
+		<name>OL_TMAXIHO </name>
+		<type>int</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_TMAXIHO </title>
+	</field>
+	<field>
+		<name>OL_TSC </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_TSC </title>
+	</field>
+	<field>
+		<name>OL_USERDATA</name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<title>OL_USERDATA</title>
+	</field>
+
+</table>

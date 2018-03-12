@@ -1,0 +1,149 @@
+/* CSS Document */
+
+body{font: 12px/1.5 Tahoma,'Microsoft Yahei','Simsun';}
+#up,#down,#down2,#bottom{width:98%;margin:0 auto;}
+#down{margin-top:10px; background:#f9f9f9; border:1px solid #99BCE8; text-align: center;}
+#down2{ border:1px solid #99BCE8; border-top:none;padding-bottom:6px;}
+
+#up_top{ width:100%-2px; line-height:23px; background:url(../image/white-top-bottom.gif) repeat-x; border:1px solid #99BCE8; padding-left:5px;}
+#up_down{ width:100%-2px; border:1px solid #99bce8; height:180px;}
+
+#down_top{ padding:5px 10px;line-height:25px;}
+#down_top span h4{color:#15428B;}
+#down_left{ display:inline-block; width:53%; border-right:1px solid #ccc; height:180px; background:#f9f9f9;}
+#down_left table{ width:80%; margin:10px auto;}
+#down_right{ display:inline-block; width:43%; float:right;}
+/*#up table{ width:94%; text-align:left;}*/
+#up table{text-align:left;}
+#up table th img{ position:relative; top:3px; right:-3px; cursor:pointer;}
+#up table td{padding:8px 3px; white-space:nowrap;}
+#up table .menuTd{line-height:23px; text-align:right;}
+
+fieldset{border: 1px solid #CCCCCC;padding: 0 4px;}
+#down_right fieldset{
+    height: 175px;
+    width: 400px;}
+
+#down table {width:98%; margin:10px auto;}
+#down table td{border:1px solid #ccc;}
+#down table th{ border:1px solid #ccc; background:url(../image/cmp-bg.gif) repeat-x; line-height:21px;}
+
+	
+/*弹出框*/
+#body_div table{ width:99%; margin:3px auto; }
+#body_div table td{ padding:3px 5px;}
+.body_div_top{ width:100%-2px; line-height:23px; background:url(../image/white-top-bottom.gif) repeat-x; border:1px solid #99BCE8; padding-left:5px;}
+.body_div_bottom{ text-align:center;margin-bottom:10px;}
+
+.mt8{margin-top:8px;}
+.mt12{margin-top:12px;}
+input[type="button"].rt5{top:-5px;}
+.select_box{height:120px; border:1px solid #ccc; width:400px; overflow:auto;}
+.select_box2{height:120px; border:1px solid #ccc; width:240px;}
+.w20{width:25%;overflow:hidden;text-overflow:ellipsis;}
+.nowrap{ white-space:nowrap;}
+.pl10{padding-left:10px !important;}
+
+#min_top{
+	margin: 0 auto;
+    min-width: 974px;
+    width: 100%;
+	background: url("../image/white-top-bottom.gif") repeat-x scroll 0 0 transparent;
+    border: 1px solid #99BCE8;
+    line-height: 23px;
+}
+
+
+.down_top_left-right{
+		width: 48%; float: left;
+}
+
+
+.down_down_left-right{
+		width: 48%; float: right;
+}
+
+
+.down_top_right-left{
+		width: 48%; float: right;
+}
+
+
+.down_down_right-left{
+		width: 48%; float: left;
+}
+
+.down_top_up-down{
+		width: 96%; float: none;
+}
+
+
+.down_down_up-down{
+		width: 96%; float: left;
+}
+
+.down_top_down-up{
+		width: 96%; float: left;
+}
+
+
+.down_down_down-up{
+		width: 96%; float: none;
+}
+
+#bottom{margin-top:10px; background:#f9f9f9; border:1px solid #99BCE8; }
+
+#paging_div{
+background: url("../image/white-top-bottom.gif") repeat-x scroll 0 0 transparent;
+    border: 1px solid #99BCE8;
+    line-height: 26px;
+    margin: 0 auto;
+    min-width: 974px;
+    padding-top: 3px;
+    width: 98%;
+}
+
+#divDisplay{
+	background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    display: none;
+    margin-left: 98px;
+    margin-top: 30px;
+    position: absolute;
+    width: 280px;
+    z-index: 11;
+}
+#divDisplay1{
+	border: 1px solid #ccc;
+	background:#fff;
+    margin-left: 22px;
+    margin-top: 69px;
+    position: absolute;
+    width: 280px;
+    z-index: 10;
+    display: none;
+}
+#divDisplay1 ul li{
+	padding:5px 5px;
+}
+#divDisplay1 ul li span{
+	width:100px;
+	display:inline-block;
+}
+#divDisplay1 ul li.ul_bottom{
+	text-align:center;
+	border-top:1px solid #ccc;
+}
+.alert_top{
+    width: 100%;
+	background: url("../image/white-top-bottom.gif") repeat-x scroll 0 0 transparent;
+    border-bottom: 1px solid #99BCE8;
+    line-height: 23px;
+    text-align:center;
+}
+
+
+.tip_info{border:1px solid #ccc;background:#eee; padding:3px 8px; margin:0px 15px 8px; display:inline-block;}
+/*dacheng add loading*/
+.insp_black {background-color: #fff; display: none; height: 100%; left: 0; opacity: 0.5; position: fixed; top: 0; width: 100%; z-index: 10; text-align: center;padding-top:100px;}
+.bottom_load{display: none; padding:150px 0;}

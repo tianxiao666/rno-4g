@@ -1,0 +1,20 @@
+.roller-container {
+	border:0px solid #acacac;
+	padding:0px 4px 5px 4px;
+	
+	border-radius:5px;
+	
+	
+}
+
+.roller-item {
+	border:0px solid #dcdcdc;
+	padding:1px 1px 1px 1px;
+	margin-top:1px;
+	
+	border-radius:5px;
+		
+	font-size:12px;
+	height:18px;
+	line-height:25px;
+}

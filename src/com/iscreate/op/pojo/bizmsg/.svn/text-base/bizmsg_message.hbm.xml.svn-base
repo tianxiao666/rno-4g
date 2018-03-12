@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iscreate.op.pojo.bizmsg.BizMessage" table="MSG_MESSAGE" >
+        <id name="id">
+            <column name="id" />
+        </id>
+        <property name="content" column="content" />
+        <property name="sendTime" column="sendTime" />
+        <property name="receivePerson" column="receivePerson" />
+        <property name="sendPerson" column="sendPerson" />        
+        <property name="state" column="state" />  
+        <property name="readTime" column="readTime" />  
+        <property name="message_type_id" column="message_type_id" />  
+        <property name="type" column="type" />  
+        <property name="link" column="link" />
+        <property name="linkForMobile" column="linkForMobile" />
+        <property name="title" column="title" />
+        <property name="toId" column="toId" />
+        <property name="woId" column="woId" />
+        <property name="functionType" column="functionType" />
+    </class>
+</hibernate-mapping>

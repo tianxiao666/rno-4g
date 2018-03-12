@@ -1,0 +1,10 @@
+/* CSS Document */
+.selectStation-title{ width:100%-1px; text-align:left; padding-left:10px; border:1px solid #99BBE8; color:#15428B; font-size:13px; font-weight:bold; background:url(../../../images/white-top-bottom.gif) repeat-x; line-height:30px;}
+.selectStation-main{ width:100%; margin:10px 0; height:300px; overflow:scroll; overflow-x:hidden;}
+.selectStation-bottom{ width:100%; text-align:center; margin:5px 0;}
+.selectStation-table{ width:100%;}
+.selectStation-table tr{ border:1px solid #fff; border-bottom:1px solid #CCCCCC;}
+.selectStation-table tr td{padding:2px 5px; border-left:1px solid #fff; width:25%; white-space:nowrap;}
+.selectStation-table tr td:hover{ background:#E8EDFF; color:#0033FF; cursor:pointer; border:1px solid #ccc;}
+.info {position: absolute;border: 1px solid #000000;width: 200px;margin:15% auto,auto;left: 40%;background-color: #FFFFFF;color: #000;font-size: 20px;font-style: bold;font-family: 微软雅黑;vertical-align: middle;z-index:250;top:50%;}
+.select_tree{display:none;position:absolute;height:300px; width:200px;background:#fff; border-radius:3px;box-shadow:2px 2px 5px #000;overflow:auto;border:1px solid #ccc; z-index:2;}

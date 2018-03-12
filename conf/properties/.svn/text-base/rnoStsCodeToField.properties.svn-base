@@ -1,0 +1,5 @@
+radioresourcerate=RESOURCE_USE_RATE
+accsucrate=ACCESS_OK_RATE
+droprate=RADIO_DROP_RATE_NO_HV
+dropnum=DROP_CALL_NUM_TOGETHER
+handoversucrate=HANDOVER_SUC_RATE

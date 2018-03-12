@@ -1,0 +1,24 @@
+/* ���������񵥽����ʾ */
+.list_pic{ display:block;padding:8px 8px 0px 8px; background:mintcream; border:1px solid #ccc; border-top:none; position:relative;}
+.list_pic ul{ display:block; clear:both; margin-bottom:20px; height:28px;}
+.list_pic ul li{ float:left;position:relative;}
+.list_pic_li{display:inline-block; background:#eee; border:1px solid #ccc; border-radius:5px; width:88px; line-height:25px; text-align:center;}
+.list_pic_li_on{ background:greenyellow; border:1px solid lightgreen;}
+.list_pic_li_ing{background:orange; border:1px solid red;}
+.next_ico{ display:inline-block;height:16px; width:36px; background:url("../images/list_right.png") 2px 0px no-repeat; margin-right:5px;position: relative;top:4px;}
+.list_pic_tit{ position:absolute; left:10px; top:30px;}
+.list_pic_info{ position:absolute; right:10px; top:0px; color:blue; width:300px;}
+.list_pic_info h4{ line-height:24px; display:inline-block; vertical-align:top; margin-top:4px;}
+.list_pic_info input{ margin-top:20px; margin-left:12px;}
+
+/*table��ʽ֮һ*/
+.car_tb1{ width:100%; text-align:left; background:mintcream; line-height:27px; border:1px solid #ccc;}
+.car_tb1 td{ width:50%; padding-left:20px;}
+
+/*ɾ����*/
+.close_tr{ display:inline-block;cursor:pointer; height:16px; width:16px; vertical-align:middle; background:url(../images/delete.png) no-repeat;}
+.fieldset_span{ font-weight:bold; margin:0 3px;}
+
+/*行车轨迹按钮*/
+input[type="button"].blue_button{background:url(../images/big_button_down.gif) no-repeat; height:40px; width:80px; color:#fff; border:none; position:relative; top:-12px;}
+input[type="button"].blue_button:hover{background:url(../images/big_button.gif) no-repeat;}

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+ <name>Cell</name>
+ <attribute type="java.lang.Long" length="128" primary="TRUE" index="TRUE" nullable="FALSE" regex="">id</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="FALSE" regex="">name</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="TRUE" regex="">label</attribute>
+ <attribute type="java.lang.Integer" length="8" primary="FALSE" index="FALSE" nullable="TRUE" regex="">ifshareTG</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">covertype</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">coverarea</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">importancegrade</attribute>
+ <attribute type="java.util.Date" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">takeoverdate</attribute>
+ <attribute type="java.lang.Integer" length="8" primary="FALSE" index="FALSE" nullable="TRUE" regex="">ifpasschecking</attribute>
+ <attribute type="java.util.Date" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">passcheckingdate</attribute>
+ <attribute type="java.lang.Integer" length="8" primary="FALSE" index="FALSE" nullable="TRUE" regex="">iftranssingleline</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">GSMfrequencesection</attribute>
+ <attribute type="java.lang.Double" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">longitude</attribute>
+ <attribute type="java.lang.Double" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">latitude</attribute>
+ <attribute type="java.lang.String" length="100" primary="FALSE" index="FALSE" nullable="TRUE" regex="">address</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">LAC</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">CI</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">BSIC</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">BCCH</attribute>
+ <attribute type="java.lang.String" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">TCH</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">ANT_manufactory</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">ANT_TYPE</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">ANT_MODEL</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">ANT_GAIN</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">ANT_HEIGH</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">BASETYPE</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">DOWNTILT</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">BEARING</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">electricaldowntilt</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">mechanicaldowntilt</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">MAX_TX_BS</attribute>
+ <attribute type="java.lang.Integer" length="64" primary="FALSE" index="FALSE" nullable="TRUE" regex="">MAX_TX_MS</attribute>
+</entity>

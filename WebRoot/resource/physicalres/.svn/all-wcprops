@@ -1,0 +1,79 @@
+END
+addPhysicalres.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/resource/physicalres/addPhysicalres.jsp
+END
+aeMapAttrSearchForAjax.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/resource/physicalres/aeMapAttrSearchForAjax.jsp
+END
+addPhysicalres.jspForAjax.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/resource/physicalres/addPhysicalres.jspForAjax.jsp
+END
+updatePhysicalresForAjax.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/resource/physicalres/updatePhysicalresForAjax.jsp
+END
+aeMapAttrSearchNewForAjax.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/resource/physicalres/aeMapAttrSearchNewForAjax.jsp
+END
+addResourcePageForAjax.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/resource/physicalres/addResourcePageForAjax.jsp
+END
+searchResourceListForGisMap.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/resource/physicalres/searchResourceListForGisMap.jsp
+END
+operateResourcePanel.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/resource/physicalres/operateResourcePanel.jsp
+END
+operationPhysicalres.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/resource/physicalres/operationPhysicalres.jsp
+END
+updateResourcePageForAjax.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/resource/physicalres/updateResourcePageForAjax.jsp
+END
+resourceImport.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/resource/physicalres/resourceImport.jsp
+END
+operationPhysicalresForGisDispatch.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/resource/physicalres/operationPhysicalresForGisDispatch.jsp
+END
+searchResourceList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/resource/physicalres/searchResourceList.jsp
+END

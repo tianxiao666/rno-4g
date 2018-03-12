@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="make.war">
+
+	<property environment="SystemVariable" />
+
+	<property name="JAVA.HOME" value="${SystemVariable.JAVA_HOME}" />
+
+	<property name="build.dir" value="build" description="输出目录"></property>
+	<property name="build.web.dir" value="${build.dir}/WEB-INF" description="web配置输出目录"></property>
+	<property name="build.web.class.dir" value="${build.web.dir}/classes" description="web类输出目录"></property>
+	<property name="build.web.lib.dir" value="${build.web.dir}/lib" description="web引用jar输出目录"></property>
+					
+	<property name="war.dir" value="war" description="war输出目录"></property>	
+	<property name="src.dir" value="src" description="源代码目录"></property>
+	<property name="conf.dir" value="conf" description="配置文件目录"></property>
+	<property name="web.root.dir" value="WebRoot" description="web相关文件目录"></property>
+	<property name="project_lib" value="rno2.0" description="lib目录"></property>
+	<!-- property name="project_lib2" value="ops" description="lib目录"></property -->
+	<property name="jre_lib" value="${JAVA.HOME}/jre/lib" description="JRE基本lib"></property>
+	<property name="encoding" value="utf-8" description="文件编码"></property>
+
+	<target name="clean" description="清理输出目录">
+		<delete dir="${build.dir}"></delete>
+		<delete dir="${war.dir}"></delete>
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.web.dir}" />
+		<mkdir dir="${build.web.lib.dir}" />
+		<mkdir dir="${build.web.class.dir}" />
+	</target>
+
+	<target name = "classpath" depends="clean" description="添加classpath">
+		<path id="project.class.path">				
+			<fileset dir="${project_lib}">
+				<include name="*.jar" />
+			</fileset>
+			<!--fileset dir="${project_lib2}">
+				<include name="*.jar" />
+			</fileset-->
+			<fileset dir="${jre_lib}">
+				<include name="**/*.jar" />
+			</fileset>
+		</path>
+	</target>
+
+	<target name="complie" depends="classpath" description="编译java文件">
+		<javac srcdir="${src.dir}" executable="${JAVA.HOME}\bin\javac" encoding="${encoding}" compiler="org.eclipse.jdt.core.JDTCompilerAdapter" destdir="${build.web.class.dir}" includeantruntime="no" nowarn="true" source="1.7" target="1.7" deprecation="false">
+			<classpath refid="project.class.path"></classpath>
+			<compilerarg value="-Xlint"/> 
+		</javac>
+		
+		<!-- 生成 Hadoop MapReduce 处理的 jar 包 -->
+		<jar destfile="${build.web.lib.dir}/iscreate_hadoop_jobs.jar"
+		     basedir="${build.web.class.dir}"
+		     includes="com/iscreate/op/service/rno/mapreduce/**"
+		/>
+	</target>
+
+	<target name="copyToBuild" depends="complie" description="复制源文件到build目录">
+		<!-- 复制源代码目录中所有的非java文件 -->
+		<copy todir="${build.web.class.dir}">
+			<fileset dir="${src.dir}" excludes="**/*.java"></fileset>
+		</copy>
+		
+		<!-- 复制conf目录中所有的文件 -->
+		<copy todir="${build.web.class.dir}">
+			<fileset dir="${conf.dir}"></fileset>
+		</copy>
+		
+		<!--复制 jar -->
+		<copy todir="${build.web.lib.dir}">
+			<fileset dir="${project_lib}" ></fileset>
+			<!-- fileset dir="${project_lib2}"></fileset -->
+		</copy>
+
+		<!--复制webroot-->
+		<copy todir="${build.dir}">
+			<fileset dir="${web.root.dir}" excludes="**/*.jar"></fileset>
+		</copy>
+	</target>
+
+	<target name="make.war" depends="copyToBuild">
+		<!-- war为打包web项目压缩文件， destfile为目标输出文件，basedir为需要打包的web项目目录  -->
+		<war destfile="${war.dir}/ops.war" basedir="${build.dir}"></war>
+	</target>
+</project>

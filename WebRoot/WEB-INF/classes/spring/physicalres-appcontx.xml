@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<!-- 物理资源 -->
+<beans>
+	<bean id="physicalresService" class="com.iscreate.op.service.networkresourcemanage.PhysicalresServiceImpl">
+		<property name="structureModuleLibrary" ref="structureModuleLibrary"></property>
+		<property name="structureCommonService" ref="structureCommonService"></property>
+		<!-- yuan.yw add 2013-07-03 -->
+		<property name="networkResourceManageDao" ref="networkResourceManageDao"></property>
+	</bean>
+	
+	<bean id="importService" class="com.iscreate.op.service.networkresourcemanage.ImportServiceImpl">
+		<property name="physicalresService" ref="physicalresService"></property>
+		<property name="structureCommonService" ref="structureCommonService"></property>
+		<property name="dictionary" ref="dictionary"></property>
+		<property name="moduleLibrary" ref="moduleLibrary"></property>
+		<property name="structureModuleLibrary" ref="structureModuleLibrary"></property>
+	</bean>
+	
+	<bean id="physicalresAction" class="com.iscreate.op.action.networkresourcemanage.PhysicalresAction" singleton="false">
+		<property name="physicalresService" ref="physicalresService"></property>
+		<property name="structureCommonService" ref="structureCommonService"></property>
+		<property name="moduleLibrary" ref="moduleLibrary"></property>
+		<property name="dictionary" ref="dictionary"></property>
+		<property name="quickSort" ref="quickSort"></property>
+		<property name="resourceDictionaryService" ref="resourceDictionaryService"></property>
+		<property name="networkResourceMaintenanceService" ref="networkResourceMaintenanceService"></property>
+	</bean>
+	<bean id="newPhysicalresAction" class="com.iscreate.op.action.networkresourcemanage.NewPhysicalresAction" singleton="false">
+		
+		<property name="physicalresService" ref="physicalresService"></property>
+		<property name="structureCommonService" ref="structureCommonService"></property>
+		<property name="moduleLibrary" ref="moduleLibrary"></property>
+		<property name="dictionary" ref="dictionary"></property>
+		<property name="quickSort" ref="quickSort"></property>
+		<property name="networkResourceMaintenanceService" ref="networkResourceMaintenanceService"></property>
+		<property name="staffOrganizationService" ref="staffOrganizationService"></property>
+		
+		
+
+	</bean>
+	<bean id="fileUploadAction" class="com.iscreate.op.action.networkresourcemanage.FileUploadAction" singleton="false">
+		<property name="physicalresService" ref="physicalresService"></property>
+		<property name="structureCommonService" ref="structureCommonService"></property>
+		<property name="readExcelService" ref="readExcelService"></property>
+		<property name="dictionary" ref="dictionary"></property>
+		<property name="moduleLibrary" ref="moduleLibrary"></property>
+		<property name="quickSort" ref="quickSort"></property>
+		<property name="physicalresAction" ref="physicalresAction"></property>
+		<property name="networkResourceMaintenanceService" ref="networkResourceMaintenanceService"></property>
+		<property name="staffOrganizationService" ref="staffOrganizationService"></property>
+		<property name="importService" ref="importService"></property>
+	</bean>
+	<bean id="fileDownloadAction" class="com.iscreate.op.action.networkresourcemanage.FileDownloadAction" singleton="false">
+		
+	</bean>
+	<!-- 外部获取工单 任务单 -->
+	<bean id="outterOrdersQueryForResourceAction" class="com.iscreate.op.action.networkresourcemanage.OutterOrdersQueryForResourceAction" singleton="false">
+		<property name="workManageService" ref="workManageService"></property>
+	</bean>
+	
+	<!-- 树管理 -->
+	<bean id="resTreeManageAction" class="com.iscreate.op.action.networkresourcemanage.ResTreeManageAction" singleton="false">
+		<property name="physicalresService" ref="physicalresService"></property>
+		<property name="structureCommonService" ref="structureCommonService"></property>
+		<property name="dictionary" ref="dictionary"></property>
+		<property name="quickSort" ref="quickSort"></property>
+		<property name="staffOrganizationService" ref="staffOrganizationService"></property>
+	</bean>
+</beans>

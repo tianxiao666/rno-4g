@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="system" extends="struts-default" namespace="/op/system">
+	
+	    <!-- 加载用户添加页面(v1.1.3) -->
+	    <action name="loadAddOrgUserViewAction" class="sysOrgUserAction" method="loadAddOrgUserViewAction">
+	    	<result name="success">addSysOrgUserView.jsp</result>
+	     </action>
+	    
+	    <!-- 根据组织类型获取组织对应的岗位(v1.1.3) -->
+	    <action name="getPostByOrgTypeAction" class="sysOrgUserAction" method="getPostByOrgTypeAction">
+	     </action>
+	    
+	    <!-- 新增用户与用户岗位(v1.1.3) -->
+	    <action name="addOrgUserAndPostAction" class="sysOrgUserAction" method="addOrgUserAndPostAction">
+	     </action>
+	    
+	    
+	    <!-- 加载用户编辑页面(v1.1.3) -->
+	    <action name="loadUpdateOrgUserViewAction" class="sysOrgUserAction" method="loadUpdateOrgUserViewAction">
+	    	<result name="success">updateSysOrgUserView.jsp</result>
+	     </action>
+	     
+	     <!-- 编辑用户与用户岗位(v1.1.3) -->
+	    <action name="updateOrgUserAndPostAction" class="sysOrgUserAction" method="updateOrgUserAndPostAction">
+	     </action>
+	     
+	     
+
+	     
+	    <!-- 用户列表基本查询  -->
+		<action name="findSysUserManagerInfoAction" class="sysUserManagerAction" method="findSysUserManagerInfoAction">
+			<result name="success">systemUserManagerInfo.jsp</result>
+		</action>
+		
+		<!-- 用户列表查询 -->
+		<action name="findSysUserManagerListAction" class="sysUserManagerAction" method="findSysUserManagerListAction">
+			<result name="success">systemUserManagerList.jsp</result>
+		</action>
+	     
+	     <!-- 数据范围 start -->
+	    <!-- 用户数据范围设置页面 -->
+		<action name="viewUserDataRangeAction" class="sysUserManagerAction" method="viewUserDataRangeAction">
+			<result name="success">userDataRange.jsp</result>
+		</action>
+		<!-- 保存用户数据范围 -->
+		<action name="saveUserDataRangeAction" class="sysUserManagerAction" method="saveUserDataRangeAction"></action>
+		<!-- 数据范围 end -->
+	</package>
+</struts>

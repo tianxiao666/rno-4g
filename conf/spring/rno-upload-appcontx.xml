@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+    <!-- 文件上传action -->
+    <bean id="rnoFileUploadAction" class="com.iscreate.op.action.rno.RnoFileUploadAction" parent="rnoCommonAction" singleton="false">
+        <property name="rnoCommonService" ref="rnoCommonService"></property>
+        <property name="rnoFileUploadService" ref="rnoFileUploadService"></property>
+        <!--  -->
+	    <property name="fileAcceptables">
+	   		 <map>
+				<entry key="default"   value-ref="baseFileAcceptableImpl" ></entry>
+				<entry key="ERICSSONNCSFILE" value-ref="eriNcsFileAcceptableImpl"></entry>
+				<entry key="HUAWEINCSFILE"   value-ref="hwNcsFileAcceptableImpl" ></entry>
+				<entry key="RNO_PCI_PLAN_IMPORT"   value-ref="pciPlanImportFileAcceptableImpl" ></entry>
+				<entry key="4GDTDATASERVICEFILE"   value-ref="g4DtDataServiceFileAcceptableImpl" ></entry>
+				<entry key="4GDTSWEEPFREQFILE"   value-ref="g4DtSweepFreqFileAcceptableImpl" ></entry>
+				<entry key="4GSTSDATAFILE"   value-ref="g4StsDataFileAcceptableImpl" ></entry>
+			</map>
+	    </property>
+    </bean>
+
+    <!-- 基础判断类 -->
+    <bean id="baseFileAcceptableImpl" class="com.iscreate.op.action.rno.upload.accept.BaseFileAcceptableImpl" singleton="false"></bean>
+	<!-- 判断爱立信ncs文件是否能接收的判断器 -->
+	<bean id="eriNcsFileAcceptableImpl" class="com.iscreate.op.action.rno.upload.accept.EriNcsFileAcceptableImpl"
+		singleton="false">
+	</bean>
+	<!-- 判断华为ncs文件是否能接收的判断器 -->
+	<bean id="hwNcsFileAcceptableImpl" class="com.iscreate.op.action.rno.upload.accept.HwNcsFileAcceptableImpl"
+		singleton="false">
+	</bean>
+	<!-- 判断pci优化导入矩阵列表文件是否能接收的判断器 -->
+	<bean id="pciPlanImportFileAcceptableImpl" class="com.iscreate.op.action.rno.upload.accept.PciPlanImportFileAcceptableImpl"
+		singleton="false">
+	</bean>
+	<!-- 判断4g 路测数据业务文件是否能接收的判断器 -->
+	<bean id="g4DtDataServiceFileAcceptableImpl" class="com.iscreate.op.action.rno.upload.accept.G4DtDataServiceFileAcceptableImpl"
+		singleton="false">
+	</bean>
+	<!-- 判断4g 路测扫频文件是否能接收的判断器 -->
+	<bean id="g4DtSweepFreqFileAcceptableImpl" class="com.iscreate.op.action.rno.upload.accept.G4DtSweepFreqFileAcceptableImpl"
+		singleton="false">
+	</bean>
+		<!-- 判断4g 话统数据文件是否能接收的判断器 -->
+	<bean id="g4StsDataFileAcceptableImpl" class="com.iscreate.op.action.rno.upload.accept.G4StsDataFileAcceptableImpl"
+		singleton="false">
+	</bean>
+	
+	<!-- dao -->
+	<bean id="rnoFileUploadDao" class="com.iscreate.op.dao.rno.RnoFileUploadDaoImpl" singleton="false">
+	   <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- service -->
+	<bean id="rnoFileUploadService" class="com.iscreate.op.service.rno.RnoFileUploadServiceImpl" singleton="false">
+		<property name="rnoFileUploadDao" ref="rnoFileUploadDao"></property>
+	</bean>
+	
+</beans>

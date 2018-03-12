@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- yuan.yw -->
+	<bean id="sysDictionaryDao" class="com.iscreate.op.dao.system.SysDictionaryDaoImpl">
+    	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+	<!-- 数据字典管理 service -->
+   	<bean id="sysDictionaryService" class="com.iscreate.op.service.system.SysDictionaryServiceImpl">
+    	<property name="sysDictionaryDao" ref="sysDictionaryDao"></property>
+    </bean>
+     <!-- 数据字典管理 action-->
+   	<bean id="sysDictionaryAction" class="com.iscreate.op.action.system.SysDictionaryAction" singleton='false'>
+    	<property name="sysDictionaryService" ref="sysDictionaryService"></property>
+    </bean>
+    <!-- yuan.yw -->
+</beans>

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/srcsvn/source/!svn/ver/12894/iosm/4g_rno_branches/v1/src/com/iscreate/op/action/rno/model
+END
+Point.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/srcsvn/source/!svn/ver/12892/iosm/4g_rno_branches/v1/src/com/iscreate/op/action/rno/model/Point.java
+END
+LteStsCellQueryResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/srcsvn/source/!svn/ver/12870/iosm/4g_rno_branches/v1/src/com/iscreate/op/action/rno/model/LteStsCellQueryResult.java
+END
+LteStsIndexQueryCond.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/srcsvn/source/!svn/ver/12915/iosm/4g_rno_branches/v1/src/com/iscreate/op/action/rno/model/LteStsIndexQueryCond.java
+END
+G4MrDescQueryCond.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/srcsvn/source/!svn/ver/12886/iosm/4g_rno_branches/v1/src/com/iscreate/op/action/rno/model/G4MrDescQueryCond.java
+END
+G4HoDescQueryCond.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/srcsvn/source/!svn/ver/12886/iosm/4g_rno_branches/v1/src/com/iscreate/op/action/rno/model/G4HoDescQueryCond.java
+END
+G4StsDescQueryCond.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/srcsvn/source/!svn/ver/12870/iosm/4g_rno_branches/v1/src/com/iscreate/op/action/rno/model/G4StsDescQueryCond.java
+END
+Line.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/srcsvn/source/!svn/ver/12892/iosm/4g_rno_branches/v1/src/com/iscreate/op/action/rno/model/Line.java
+END
+LteKpiQueryCond.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/srcsvn/source/!svn/ver/12836/iosm/4g_rno_branches/v1/src/com/iscreate/op/action/rno/model/LteKpiQueryCond.java
+END
+LteStsMonitorThresholdResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/srcsvn/source/!svn/ver/12894/iosm/4g_rno_branches/v1/src/com/iscreate/op/action/rno/model/LteStsMonitorThresholdResult.java
+END
+G4KpiDescQueryCond.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/srcsvn/source/!svn/ver/12834/iosm/4g_rno_branches/v1/src/com/iscreate/op/action/rno/model/G4KpiDescQueryCond.java
+END

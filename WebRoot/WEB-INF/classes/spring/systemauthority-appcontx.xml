@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="userAuthorityAction" class="com.iscreate.op.action.login.UserAuthorityAction">
+	</bean>
+	
+	<bean id="userAuthorityActionForMobile" class="com.iscreate.op.action.login.UserAuthorityActionForMobile">
+		<property name="bizMessageService" ref="bizMessageService" />
+		<!-- yuan.yw 终端登录 -->
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+		<property name="sysAccountService" ref="sysAccountService" />
+		<property name="sysPermissionService" ref="sysPermissionService" />
+		<property name="sysSuperAdminService" ref="sysSuperAdminService" />
+	</bean>
+</beans>

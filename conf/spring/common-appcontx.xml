@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>	 		
+	<bean id="workOrderCommonService" class="com.iscreate.op.service.publicinterface.WorkOrderCommonServiceImpl">
+		<property name="urgentRepairWorkOrderDao" ref="urgentRepairWorkOrderDao" />
+		<property name="urgentRepairCustomerWorkOrderService" ref="urgentRepairCustomerWorkOrderService" />
+		<property name="workManageService" ref="workManageService" />
+		<property name="workorderinterfaceWangyouWorkorderRelationService" ref="workorderinterfaceWangyouWorkorderRelationService" />
+	</bean>	
+	
+	<bean id="taskOrderCommonService" class="com.iscreate.op.service.publicinterface.TaskOrderCommonServiceImpl">
+		<property name="workManageService" ref="workManageService" />
+	</bean>
+	
+	<bean id="commonService" class="com.iscreate.op.service.publicinterface.CommonServiceImpl">
+	</bean>
+	
+	<bean id="workOrderCommonAction" class="com.iscreate.op.action.publicinterface.WorkOrderCommonAction">
+		<property name="workOrderCommonService" ref="workOrderCommonService" />
+		<property name="taskOrderCommonService" ref="taskOrderCommonService" />
+		<property name="dataDictionaryService" ref="dataDictionaryService" />
+	</bean>
+	
+	<bean id="taskTracingRecordDao" class="com.iscreate.op.dao.publicinterface.TaskTracingRecordDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<bean id="commonDao" class="com.iscreate.op.dao.common.CommonDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<bean id="taskTracingRecordService" class="com.iscreate.op.service.publicinterface.TaskTracingRecordServiceImpl">
+		<property name="taskTracingRecordDao" ref="taskTracingRecordDao" />
+	</bean>
+	
+	<bean id="taskTracingRecordAction" class="com.iscreate.op.action.publicinterface.TaskTracingRecordAction">
+		<property name="taskTracingRecordService" ref="taskTracingRecordService" />
+	</bean>
+	
+	<bean id="workOrderAssnetResourceDao" class="com.iscreate.op.dao.publicinterface.WorkOrderAssnetResourceDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<!-- 甘特图 -->
+	<bean id="ganttService" class="com.iscreate.plat.gantt.service.GanttServiceImpl">
+		<property name="workManageService" ref="workManageService"></property>
+	</bean>
+	<bean id="ganttAction" class="com.iscreate.plat.gantt.action.GanttAction">
+		<property name="ganttService" ref="ganttService"></property>
+	</bean>
+	
+	
+
+	
+	<bean id="loginRecordAction" class="com.iscreate.op.action.publicinterface.LoginRecordAction" singleton="false">
+		<property name="sysSecurityLoginrecordService" ref="sysSecurityLoginrecordService" />
+	</bean>
+	
+	
+	
+	<!-- ========================= -->
+	
+	
+	<bean id="importNetworkResourceExcelTextService"
+		class="com.iscreate.plat.networkresource.common.service.ImportNetworkResourceExcelTextServiceImpl"
+		singleton="false">
+		<property name="readExcelService" ref="readExcelService"></property>
+		<property name="dictionary" ref="dictionary"></property>
+	</bean>
+	
+	 <!-- 读取Excel文件Service -->
+  <bean id="readExcelService" class="com.iscreate.tools.ReadExcelServiceImpl"></bean>
+</beans>

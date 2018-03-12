@@ -1,0 +1,71 @@
+9
+
+dir
+12376
+http://svn.iscreate.com:8088/srcsvn/source/iosm/4g_rno_branches/v1/WebRoot/resource/report
+http://svn.iscreate.com:8088/srcsvn/source
+
+
+
+2013-07-24T07:29:36.536910Z
+5414
+du.hw
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+f7628612-1de5-0147-986c-5ff4a2e890d6
+
+css
+dir
+
+image
+dir
+
+js
+dir
+
+networkReport.jsp
+file
+12967
+
+
+
+2015-10-08T09:41:27.098000Z
+5845ebf9a7068902f111a654a0c3b7f6
+2015-10-08T09:29:25.379081Z
+12967
+chen.c10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+79754
+

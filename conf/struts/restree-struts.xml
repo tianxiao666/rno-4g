@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="resource/restree" extends="struts-default">
+		<!-- 加载子级实体信息 -->
+		<action name="getTypeByEntityAction" class="resTreeManageAction" method="getTypeByEntityAction"></action>
+		
+		<!-- 加载子级类型信息 -->
+		<action name="getChildEntityByTypeAction" class="resTreeManageAction" method="getChildEntityByTypeAction"></action>
+		
+		<!-- 创建关系 -->
+		<action name="createRelationAction" class="resTreeManageAction" method="createRelationAction"></action>
+		
+		<!-- 加载树主页面信息 -->
+		<action name="loadTreeAction" class="resTreeManageAction" method="loadTreeAction">
+			<result name="success">showtree.jsp</result>
+		</action>
+		
+		<!-- 获取隶属资源的指定类型的子资源 -->
+		<action name="getChooseResAction" class="resTreeManageAction" method="getChooseResAction"></action>
+		
+		<!-- 通过父类型获取单向link类型信息 -->
+		<action name="getAssociatedAetNameByTypeAction" class="resTreeManageAction" method="getAssociatedAetNameByTypeAction"></action>
+		
+		<!-- 获取指定某一entity的所有子entity -->
+		<action name="getCurrentTypeChildMsgAction" class="resTreeManageAction" method="getCurrentTypeChildMsgAction"></action>
+		
+		<!-- 获取一个节点的子节点的类型(同时获取该类型下的节点数量) -->
+		<action name="getTypeAction" class="resTreeManageAction" method="getTypeAction"></action>
+		
+		<!-- 获取指定某一entity的所有LINKentity -->
+		<action name="getLinkEntityByTypeAction" class="resTreeManageAction" method="getLinkEntityByTypeAction"></action>
+
+
+		<!-- 获取某一节点下，某类型的子节点的个数 -->
+		<action name="getChildEntityCountByTypeAction" class="resTreeManageAction" method="getChildEntityCountByTypeAction"></action>
+		
+		<!-- 根据EntityGroup获取包含EntityType -->
+		<action name="getChildTypeByTypeAction" class="resTreeManageAction" method="getChildTypeByTypeAction"></action>
+		
+		<!-- 递归获取指定entity下特定类型的子应用数据对象 -->
+		<action name="getChildTypeByEntityAction" class="resTreeManageAction" method="getChildTypeByEntityAction"></action>
+		
+		<!-- 递归获取指定entity下特定类型的子应用数据对象(通用) -->
+		<action name="getTypeByEntityUniversalAction" class="resTreeManageAction" method="getTypeByEntityUniversalAction"></action>
+		
+		<!-- 获取某一节点下，某类型的子节点的个数(通用) -->
+		<action name="getChildEntityCountByTypeUniversalAction" class="resTreeManageAction" method="getChildEntityCountByTypeAction"></action>
+		
+		<!-- 根据EntityGroup获取包含EntityType(通用) -->
+		<action name="getChildEntityByTypeUniversalAction" class="resTreeManageAction" method="getChildEntityByTypeUniversalAction"></action>
+		
+		<!-- 根据资源类型与id获得资源名称或label名 -->
+		<action name="getResourceByIdAndTypeAction" class="resTreeManageAction" method="getResourceByIdAndTypeAction"></action>
+		
+		<!-- 获取省级区域 -->
+		<action name="getParentAreaAction" class="resTreeManageAction" method="getParentAreaAction"></action>
+		
+		<!-- 获取省级区域 -->
+		<action name="getUserAreaAction" class="resTreeManageAction" method="getUserAreaAction"></action>
+		
+		<!-- 获取某一节点下，某类型的子节点的个数(递归) -->
+		<action name="getChildEntityByTypeUniversalRecursionAction" class="resTreeManageAction" method="getChildEntityByTypeUniversalRecursionAction"></action>
+		
+		<!-- 扁平化信息 获取资源类型的数量 -->
+		<action name="getChildEntityByTypeUniversalRecursionForFlatternInfoAction" class="resTreeManageAction" method="getChildEntityByTypeUniversalRecursionForFlatternInfoAction"></action>
+		
+		<!--获取用户首页相关设置-->
+		<action name="getUserIndexPageSetAction" class="networkresourceHelpAction" method="getUserIndexPageSetAction"></action>
+		
+		<!-- 保存或更新用户首页相关设置 -->
+		<action name="updateOrInsertUserIndexPageSetAction" class="networkresourceHelpAction" method="updateOrInsertUserIndexPageSetAction"></action>
+		
+		
+	</package>
+</struts>

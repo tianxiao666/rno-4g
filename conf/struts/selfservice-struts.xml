@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="selfservice" extends="iscreate-struts-default">
+	    <action name="loadSelfServiceHomePageAction" class="selfServiceAction" method="loadSelfServiceHomePageAction">
+	      <result name="success">selfservicehomepage.jsp</result>
+	    </action>
+	    <!-- 加载用户信息展示页面 -->
+		<action name="loadSelfServiceInfoViewAndEditAction" class="selfServiceAction" method="loadSelfServiceInfoViewAndEditAction">
+			<result name="success">
+			   selfinfoviewandedit.jsp	
+			</result>
+		</action>
+		<!-- 保存基本信息的修改，不包括密码 -->
+		<action name="saveSelfServiceInfoForAjaxAction" class="selfServiceAction" method="saveSelfServiceInfoForAjaxAction">
+		</action>
+		<!-- 加载修改密码的页面 -->
+		<action name="loadSelfServiceChangePasswordAction" class="selfServiceAction" method="loadSelfServiceChangePasswordAction">
+			<result name="success">
+			   changepassword.jsp	
+			</result>
+		</action>
+		<!-- 修改密码 -->
+		<action name="saveNewAccountPasswordForAjaxAction" class="selfServiceAction" method="saveNewAccountPasswordForAjaxAction">
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- StructureCommonService  --> 
+	<bean id="structureCommonService" class="com.iscreate.plat.networkresource.common.service.StructureCommonServiceImpl">
+		<property name="structureModuleLibrary" ref="structureModuleLibrary"></property>
+		<property name="moduleLibrary" ref="moduleLibrary"></property>
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+		<property name="sysAreaDao" ref="sysAreaDao"></property>
+		<property name="networkResourceQueryDao" ref="networkResourceQueryDao"></property>
+		<property name="networkResourceManageDao" ref="networkResourceManageDao"></property>
+		
+	</bean>
+	
+	
+	<bean id="networkResourceManageDao" class="com.iscreate.plat.networkresource.common.dao.NetworkResourceManageDaoImpl">
+		<property name="structureModuleLibrary" ref="structureModuleLibrary"></property>
+	</bean>
+	
+
+	
+</beans>

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<link rel="stylesheet"
+			href="../../home/resource/jquery-ui/themes/base/jquery.ui.all.css">
+		<script src="../../home/resource/jquery-ui/jquery-1.5.1.js"></script>
+		<script src="../../home/resource/jquery-ui/ui/jquery.ui.core.js"></script>
+		<script src="../../home/resource/jquery-ui/ui/jquery.ui.widget.js"></script>
+		<script src="../../home/resource/jquery-ui/ui/jquery.ui.tabs.js"></script>
+		<link rel="stylesheet"
+			href="../../home/resource/jquery-ui/demos/demos.css">
+		<link rel="stylesheet" href="../../home/showcase/css/style.css">
+	<script type="text/javascript">
+    $(function() {
+		$( "input: button" ).button();
+		
+	});
+	
+	function newTask(){
+		window.open("../../home/showcase/sctd_newTask.html","right_");	
+	}
+	
+	function myTask(){
+		window.open("../../home/showcase/sctd_MyTask.html","right_");	
+	}
+	
+	
+    </script>
+</head>
+<body style="margin:0 auto;">
+<button  onclick="newTask()" style="width:215px;height:25px;margin:2px auto;">创建任务</button>
+	
+<button  onclick="myTask()"style="width:215px;height:25px;margin:2px auto;">我的任务</button>
+<table width="95%" id="mytab" border="1" class="t1">
+		<tr>
+			<td align='center'>待办任务</td>
+		</tr>
+		<tr>
+			<td align='center'>我处理的任务</td>
+		</tr>
+		<tr>
+			<td align='center'>我创建的任务</td>
+		</tr>
+		<tr>
+			<td align='center'>已归档历史任务</td>
+		</tr>
+	</table>
+<button  style="width:215px;height:25px;margin:2px auto;">个人任务统计</button>
+<button  style="width:215px;height:25px;margin:2px auto;">任务配置</button>
+</body>
+</html>

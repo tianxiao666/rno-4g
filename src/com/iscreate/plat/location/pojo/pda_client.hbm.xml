@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iscreate.plat.location.pojo.PdaClient" table="PDA_CLIENT" >
+        <id name="id">
+            <column name="id" />
+            <generator class="sequence">
+            	<param name="sequence">
+            		SEQ_PDA_CLIENT
+            	</param>
+            </generator>
+        </id>
+        <property name="userId" column="userId" />
+        <property name="imei" column="imei" />
+        <property name="time" column="time" />
+        <property name="state" column="state" />
+        <property name="telphoneNo" column="telphoneNo" />
+    </class>
+</hibernate-mapping>

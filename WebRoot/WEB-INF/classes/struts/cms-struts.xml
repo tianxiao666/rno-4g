@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="cms" extends="struts-default">
+	
+		<!-- 加载公告信息发布action -->
+		<action name="loadInfoReleaseAction" class="cmsManageAction" method="loadInfoReleaseAction">
+			<result name="success">/op/cms/showInfoRelease.jsp</result>
+			<result name="fail">../fail.jsp</result>
+		</action>
+		
+		
+		
+		<action name="loadInfoItemSMSPageAction" class="cmsManageAction" method="loadInfoItemSMSPageAction">
+			<result name="success">/op/cms/approveInfoItem.jsp</result>
+			<result name="fail">../fail.jsp</result>
+		</action>
+		
+		<!-- ajax加载公告信息发布 -->
+		<action name="loadInfoReleaseByTypeForAjaxAction" class="cmsManageAction" method="loadInfoReleaseByTypeForAjaxAction">
+		</action>
+		
+		<!-- 批量删除记录 -->
+		<action name="deleteInfoReleaseAction" class="cmsManageAction" method="deleteInfoReleaseAction">
+		</action>
+		
+		<!-- 添加短信 -->
+		<action name="addsmsInfoAction" class="cmsManageAction" method="addsmsInfoAction">
+		</action>
+		
+		
+		<!-- 跳转新增普通信息页面 -->
+		<action name="loadAddInfoItemPageAction" class="cmsManageAction" method="loadAddInfoItemPageAction">
+			<result name="success">/op/cms/addInfoItem.jsp</result>
+		</action>
+		
+		
+		
+		
+		<!-- 新增普通信息action -->
+		<action name="addInfoItemAction" class="cmsManageAction" method="addInfoItemAction">
+		</action>
+		
+		<!-- 跳转公告信息发布页面 -->
+		<action name="loadAddInfoReleasePageAction" class="cmsManageAction" method="loadAddInfoReleasePageAction">
+			<result name="success">/op/cms/addInfoRelease.jsp</result>
+		</action>
+		
+		<!-- 跳转普通信息显示页面 -->
+		<action name="loadInfoItemPageAction" class="cmsManageAction" method="loadInfoItemPageAction">
+			<result name="success">/op/cms/showInfoItem.jsp</result>
+		</action>
+		
+		<!-- 获取组织架构树 -->
+		<action name="getCmsOrgTreeActionForAjaxAction" class="cmsManageAction" method="getCmsOrgTreeActionForAjaxAction">
+		</action>
+		
+		<!-- 获取某组织下的员工 -->
+		<action name="getCmsStaffTreeByOrgAction" class="cmsManageAction" method="getCmsStaffTreeByOrgAction">
+		</action>
+		
+		<!-- 新建公共发布信息action -->
+		<action name="addInfoReleaseAction" class="cmsManageAction" method="addInfoReleaseAction">
+			<!-- <result name="success" type="redirectAction">
+				<param name="actionName">cms/loadInfoReleaseAction</param>
+			</result> 
+			<result name="success">success.jsp</result>
+			<result name="fail">fail.jsp</result>-->
+		</action>
+		
+		<!-- 跳转审批信息发布页面 -->
+		<action name="loadApproveInfoReleasePageAction" class="cmsManageAction" method="loadApproveInfoReleasePageAction">
+			<result name="success">/op/cms/approveInfoRelease.jsp</result>
+		</action>
+		
+		
+		<!-- 获取用户所属的组织和发布权限限制 -->
+		<action name="getUserOfOrganizationAndReleaseLimitAction" class="cmsManageAction" method="getUserOfOrganizationAndReleaseLimitAction">
+		</action>
+		
+		
+		<!-- 跳转权限发布设置页面action -->
+		<action name="loadReleaseLimitConfPageAction" class="cmsManageAction" method="loadReleaseLimitConfPageAction">
+			<result name="success">/op/cms/releaseLimitConf.jsp</result>
+			<result name="fail">../fail.jsp</result>
+		</action>
+		
+		
+		
+		<!-- 审核信息发布action -->
+		<action name="approveInfoReleaseAction" class="cmsManageAction" method="approveInfoReleaseAction">
+		</action>
+		
+		<!-- 驳回 -->
+		<action name="rejectInfoItemByInfoItemIdAction" class="cmsManageAction" method="rejectInfoItemByInfoItemIdAction">
+		</action>
+		
+		<!-- 获取前5条公告记录 -->
+		<action name="getTopAnnouncementAction" class="cmsInfoProviderAction" method="getTopAnnouncementAction">
+			<result name="success">/op/cms/news_list.jsp</result>
+			<result name="fail">fail.jsp</result>
+		</action>
+		<!-- 获取公告详细信息 -->
+		<action name="getAnnouncementDetailAction" class="cmsInfoProviderAction" method="getAnnouncementDetailAction">
+		    <result name="success">/op/cms/news_detail.jsp</result>
+			<result name="fail">/op/cms/errorfail.jsp</result>
+		</action>
+		<!-- 获取用户可见的时间范围有效公告数量总数 -->
+		<action name="getAllValidAnnouncementForUserCount" class="cmsInfoProviderAction" method="getAllValidAnnouncementForUserCount">
+		</action>
+		<!-- 获取指定页数的公告 -->
+		<action name="getRangeAnnouncementAction" class="cmsInfoProviderAction" method="getRangeAnnouncementAction">
+		    <result name="success">/op/cms/news_list.jsp</result>
+			<result name="fail">fail.jsp</result>
+		</action>
+		<!-- 获取用户所属的组织和发布权限限制action -->
+		<action name="getUserOfOrganizationAndReleaseLimitAction" class="cmsManageAction" method="getUserOfOrganizationAndReleaseLimitAction">
+		</action>
+		
+		<!-- 读取excel action -->
+		<action name="loadReoprtExcelAction" class="cmsExcelAction" method="loadReoprtExcelAction">
+		</action>
+		<action name="addInfoItemReportAction" class="cmsManageAction" method="addInfoItemReportAction">
+		</action>
+		<action name="getCmsPeportProjectAppraisalAction" class="cmsManageAction" method="getCmsPeportProjectAppraisalAction">
+		</action>
+		<action name="getCmsPeportProjectAppraisalTableAction" class="cmsManageAction" method="getCmsPeportProjectAppraisalTableAction">
+		</action>
+		
+	</package>
+</struts>

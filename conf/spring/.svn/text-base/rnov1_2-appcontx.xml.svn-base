@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+   
+	
+	<!-- ######################### dao ######################### 开始 -->
+	<bean id="rnoReportDao" class="com.iscreate.op.dao.rno.RnoReportDaoImpl"
+		singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+		<property name="rnoStsDao" ref="rnoStsDao"></property>
+	</bean>
+	<!-- 用户自定义指标Dao -->
+	<bean id="rnoUserDefinedDao"
+		class="com.iscreate.op.dao.rno.RnoUserDefinedDaoImpl" singleton="false" >
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 用户结构分析Dao -->
+	<bean id="rnoStructureAnalysisDao" class="com.iscreate.op.dao.rno.RnoStructureAnalysisDaoImpl"
+		singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+		<property name="rnoTaskDao" ref="rnoTaskDao"></property>
+	</bean>
+	<!-- 结构查询dao -->
+	<bean id="rnoStructureQueryDao" class="com.iscreate.op.dao.rno.RnoStructureQueryDaoImpl"
+		singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 任务dao -->
+	<bean id="rnoTaskDao" class="com.iscreate.op.dao.rno.RnoTaskDaoImpl" singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 用户结构分析Dao V2版本 -->
+	<bean id="rnoStructureAnalysisDaoV2" class="com.iscreate.op.dao.rno.RnoStructureAnalysisDaoImplV2"
+		singleton="false">
+	</bean>
+	<!-- 爱立信2G小区分析 -->
+	<bean id="rno2GCellAnalysisDao" class="com.iscreate.op.dao.rno.Rno2GCellAnalysisDaoImpl"
+		singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 爱立信2G小区数据管理 -->
+	<bean id="rno2gEriCellManageDao" class="com.iscreate.op.dao.rno.Rno2GEriCellManageDaoImpl"
+		singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 华为2G小区数据管理 -->
+	<bean id="rno2gHwCellManageDao" class="com.iscreate.op.dao.rno.Rno2GHwCellManageDaoImpl"
+		singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 小区动态覆盖DAO -->
+	<bean id="rnoNcsDynaCoverageDao" class="com.iscreate.op.dao.rno.RnoNcsDynaCoverageDaoImpl"
+		singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 爱立信2G小区MRR指标展示DAO -->
+	<bean id="rnoIndexDisplayDao" class="com.iscreate.op.dao.rno.RnoIndexDisplayDaoImpl"
+		singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 4GPci优化DAO -->
+	<bean id="rno4GPciDao" class="com.iscreate.op.dao.rno.Rno4GPciDaoImpl"
+		singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- ######################### dao ######################### 结束 -->
+
+    <!--  ######################### service  ######################### begin -->
+    <bean id="rnoReportService" class="com.iscreate.op.service.rno.RnoReportServiceImpl"
+		singleton="false">
+		<property name="rnoReportDao" ref="rnoReportDao"></property>
+	</bean>
+	<bean id="rnoUserDefinedService" class="com.iscreate.op.service.rno.RnoUserDefinedServiceImpl"
+		singleton="false">
+		<property name="rnoUserDefinedDao" ref="rnoUserDefinedDao"></property>
+	</bean>
+	
+	<!-- 爱立信ncs原始文件解析器 -->
+	<bean id="ericssonNcsParser" class="com.iscreate.op.service.rno.parser.EricssonNcsParser" singleton="false">
+	  <property name="rnoStructureAnalysisDao" ref="rnoStructureAnalysisDao"></property>
+	  <property name="memCached" ref="memCached"></property>
+	  <property name="fileParserManager" ref="fileParserManager"></property>
+	
+	</bean>
+	<!-- 爱立信mrr原始文件解析器 -->
+	<bean id="ericssonMrrParser" class="com.iscreate.op.service.rno.parser.EricssonMrrParser" singleton="false">
+	  <property name="rnoStructureAnalysisDao" ref="rnoStructureAnalysisDao"></property>
+	  <property name="memCached" ref="memCached"></property>
+	  <property name="fileParserManager" ref="fileParserManager"></property>
+	  <property name="areaLockManager" ref="areaLockManager"></property>
+	</bean>
+	<!-- 华为ncs excel解析 -->
+	<bean id="huaweiNcsParser" class="com.iscreate.op.service.rno.parser.HuaweiNcsParser" singleton="false">
+	    <property name="rnoStructureAnalysisDao" ref="rnoStructureAnalysisDao"></property>
+	    <property name="excelService" ref="excelService"></property>
+		<property name="memCached" ref="memCached"></property>
+		<property name="fileParserManager" ref="fileParserManager"></property>
+	</bean>
+	
+	<!-- ncs结构优化查询service -->
+	<bean id="rnoStructureService" class="com.iscreate.op.service.rno.RnoStructureServiceImpl" singleton="false">
+	   <property name="rnoStructureQueryDao" ref="rnoStructureQueryDao"/>
+	   <property name="rnoStructureAnalysisDao" ref="rnoStructureAnalysisDao"></property>
+	   <property name="rnoTaskDao" ref="rnoTaskDao"></property>
+	   <property name="rnoNcsGatherAnalysisWorker" ref="rnoNcsGatherAnalysisWorker"></property>
+	   <property name="memCached" ref="memCached"></property>
+	   <property name="rnoRenderer" ref="rnoRenderer"></property>
+	</bean>
+	
+	<!-- ncs汇总分析service -->
+	<bean id="rnoNcsGatherAnalysisWorker" class="com.iscreate.op.service.rno.task.worker.RnoNcsGatherAnalysisWorker" singleton="false">
+	   <property name="rnoTaskDao" ref="rnoTaskDao"></property>
+	   <property name="rnoStructureAnalysisDao" ref="rnoStructureAnalysisDao"></property>
+	   <property name="rnoRenderer" ref="rnoRenderer"></property>
+	</bean>
+	<!-- 渲染器 -->
+	<bean id="rnoRenderer" class="com.iscreate.op.service.rno.task.RnoRenderer" singleton="false">
+	   <property name="rnoTaskDao" ref="rnoTaskDao"></property>
+	   <property name="rnoStructureQueryDao" ref="rnoStructureQueryDao"></property>
+	</bean>
+	<!-- 2G华为MRR数据解析器 -->
+	<bean id="gsm2GHWMrrTxtFileParser" class="com.iscreate.op.service.rno.parser.Gsm2GHWMrrTxtFileParser"
+		singleton="true">
+		<property name="rnoCommonService" ref="rnoCommonService">
+		</property>
+		<property name="rnoBscDao" ref="rnoBscDao"></property>
+		<property name="memCached" ref="memCached"></property>
+		<property name="fileParserManager" ref="fileParserManager"></property>
+		<property name="sysAreaDao" ref="sysAreaDao"></property>
+		<property name="areaLockManager" ref="areaLockManager"></property>
+		<property name="rnoStructureAnalysisDao" ref="rnoStructureAnalysisDao"></property>
+	</bean>
+	<!-- BSC数据解析器 -->
+	<bean id="bscExcelFileParser" class="com.iscreate.op.service.rno.parser.BscExcelFileParser"
+		singleton="true">
+		<property name="excelService" ref="excelService"></property>
+		<property name="rnoCellDao" ref="rnoCellDao"></property>
+		<property name="rnoBscDao" ref="rnoBscDao"></property>
+		<property name="memCached" ref="memCached"></property>
+		<property name="fileParserManager" ref="fileParserManager"></property>
+		<property name="sysAreaDao" ref="sysAreaDao"></property>
+	</bean>
+	<!-- 爱立信2G小区分析数据导出管理类-->
+	<bean id="eriCellDataExportManager" class="com.iscreate.op.service.rno.task.EriCellDataExportManagerImpl"
+		singleton="false">
+	</bean>
+	<!-- 爱立信2G小区分析-->
+	<bean id="rno2GCellAnalysisService" class="com.iscreate.op.service.rno.Rno2GCellAnalysisServiceImpl"
+		singleton="false">
+		<property name="rno2GCellAnalysisDao" ref="rno2GCellAnalysisDao"></property>
+		<property name="eriCellDataExportManager" ref="eriCellDataExportManager"></property>
+	</bean>
+	<!-- 爱立信2G小区数据管理-->
+	<bean id="rno2gEriCellManageService" class="com.iscreate.op.service.rno.Rno2GEriCellManageServiceImpl"
+		singleton="false">
+		<property name="rno2gEriCellManageDao" ref="rno2gEriCellManageDao"></property>
+		<property name="eriCellDataExportManager" ref="eriCellDataExportManager"></property>
+	</bean>
+	<!-- 华为2G小区数据管理 -->
+	<bean id="rno2gHwCellManageService" class="com.iscreate.op.service.rno.Rno2GHwCellManageServiceImpl"
+		singleton="false">
+		<property name="rno2gHwCellManageDao" ref="rno2gHwCellManageDao"></property>
+		<property name="eriCellDataExportManager" ref="eriCellDataExportManager"></property>
+	</bean>
+	<!-- 小区动态覆盖service -->
+	<bean id="rnoNcsDynaCoverageService" class="com.iscreate.op.service.rno.RnoNcsDynaCoverageServiceImpl"
+		singleton="false">
+		<property name="rnoNcsDynaCoverageDao" ref="rnoNcsDynaCoverageDao"></property>
+		<property name="memCached" ref="memCached"></property>
+	</bean>
+	<!-- 爱立信2G小区MRR指标展示service -->
+	<bean id="rnoIndexDisplayService" class="com.iscreate.op.service.rno.RnoIndexDisplayServiceImpl"
+		singleton="false">
+		<property name="rnoIndexDisplayDao" ref="rnoIndexDisplayDao"></property>
+		<property name="memCached" ref="memCached"></property>
+	</bean>
+	<!-- 4Gpci优化service -->
+	<bean id="rno4GPciService" class="com.iscreate.op.service.rno.Rno4GPciServiceImpl"
+		singleton="false">
+		<property name="rno4gPciDao" ref="rno4GPciDao"></property>
+	</bean>
+    <!--  ######################### service  ######################### end -->
+    
+    <!--  ######################### action  ######################### begin -->
+    <bean id="rnoReportAction" class="com.iscreate.op.action.rno.RnoReportAction"
+		singleton="false">
+		<property name="rnoCommonService" ref="rnoCommonService"></property>
+		<property name="rnoReportService" ref="rnoReportService"></property>
+		<property name="rnoTrafficStaticsService" ref="rnoTrafficStaticsService"></property>
+	</bean>
+	<!-- 用户自定义指标分析 -->
+	<bean id="rnoUserDefinedAction" class="com.iscreate.op.action.rno.RnoUserDefinedAction"  singleton="false">
+	    <property name="rnoUserDefinedService" ref="rnoUserDefinedService"></property>
+	    <property name="rnoCommonService" ref="rnoCommonService"></property>
+	</bean>
+	
+	<!-- 结构优化action -->
+	
+	<bean id="rnoStructureAction" class="com.iscreate.op.action.rno.RnoStructureAction"
+		singleton="false">
+		<property name="rnoCommonService" ref="rnoCommonService"></property>
+		<property name="rnoStructureService" ref="rnoStructureService"></property>
+	</bean>
+	<!-- 爱立信2G小区分析action -->
+	<bean id="rno2GCellAnalysisAction" class="com.iscreate.op.action.rno.Rno2GCellAnalysisAction"
+		singleton="false">
+		<property name="rnoCommonService" ref="rnoCommonService"></property>
+		<property name="rnoResourceManagerService" ref="rnoResourceManagerService"></property>
+		<property name="rno2GCellAnalysisService" ref="rno2GCellAnalysisService"></property>
+	</bean>
+	<!-- 爱立信2G小区管理action -->
+	<bean id="rno2GEriCellManageAction" class="com.iscreate.op.action.rno.Rno2GEriCellManageAction"
+		singleton="false">
+		<property name="rnoCommonService" ref="rnoCommonService"></property>
+		<property name="rnoResourceManagerService" ref="rnoResourceManagerService"></property>
+		<property name="rno2gEriCellManageService" ref="rno2gEriCellManageService"></property>
+	</bean>
+	<!-- 华为2G小区管理action -->
+	<bean id="rno2GHwCellManageAction" class="com.iscreate.op.action.rno.Rno2GHwCellManageAction"
+		singleton="false">
+		<property name="rnoCommonService" ref="rnoCommonService"></property>
+		<property name="rnoResourceManagerService" ref="rnoResourceManagerService"></property>
+		<property name="rno2gHwCellManageService" ref="rno2gHwCellManageService"></property>
+	</bean>
+	<!-- 小区动态覆盖分析action -->
+	<bean id="rnoNcsDynaCoverageAction" class="com.iscreate.op.action.rno.RnoNcsDynaCoverageAction"
+		singleton="false">
+		<property name="rnoCommonService" ref="rnoCommonService"></property>
+		<property name="rnoNcsDynaCoverageService" ref="rnoNcsDynaCoverageService"></property>
+	</bean>
+	<!-- 爱立信2G小区MRR指标图表展现action -->
+	<bean id="rnoIndexDisplayAction" class="com.iscreate.op.action.rno.RnoIndexDisplayAction"
+		singleton="false">
+		<property name="rnoCommonService" ref="rnoCommonService"></property>
+		<property name="rnoIndexDisplayService" ref="rnoIndexDisplayService"></property>
+	</bean>
+	
+	<!-- 4GPci action -->
+	<bean id="rno4GPciAction" class="com.iscreate.op.action.rno.Rno4GPciAction"
+		singleton="false">
+		<property name="rnoCommonService" ref="rnoCommonService"></property>
+		<property name="rno4gPciService" ref="rno4GPciService"></property>
+	</bean>
+	 <!--  ######################### action  ######################### end -->
+</beans>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iscreate.plat.workflow.datainput.FlowInstanceInfo" table="flow_instance" >
+        <id name="instance_id">
+            <column name="instance_id" />
+        </id>
+        <property name="flow_id" column="flow_id" />
+        <property name="instance_type" column="instance_type" />
+        <property name="object_id" column="object_id" />
+        <property name="summary" column="summary" />
+        <property name="instance_status" column="instance_status" />
+        <!-- <property name="creator_type" column="creator_type" /> -->
+        <property name="create_user_id" column="create_user_id" />
+        <property name="create_time" column="create_time" type="java.util.Date" />
+        <property name="current_activity_name" column="current_activity_name" />
+        <property name="owner_instance_id" column="owner_instance_id" />
+        <property name="owner_task_id" column="owner_task_id" />
+    </class>
+</hibernate-mapping>

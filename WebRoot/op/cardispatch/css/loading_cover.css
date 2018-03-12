@@ -1,0 +1,5 @@
+/* CSS Document */
+.loading_cover{width:100%; height:100%; position:fixed; top:0px; left:0px; z-index:11;}
+.cover{height:100%; width:100%; background:#fff; opacity:0.6; filter:alpha(opacity=60);}
+.loading{ height:36px; line-height:36px; background:url(../images/loading_img.gif) no-repeat; padding-left:50px; position:absolute; top:50%; left:50%; margin-left:-100px; font-weight:normal; font-size:14px;}
+.loading_fb{padding:0px 2px; font-weight:bold; color:#00F;}

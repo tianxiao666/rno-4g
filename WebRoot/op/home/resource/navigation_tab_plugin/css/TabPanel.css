@@ -1,0 +1,182 @@
+@charset "utf-8";
+
+.tabpanel {
+  border: solid 0px #8DB2E3;
+}
+
+.tabpanel_tab_content {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  /*background-color: #E1DFE0;*/
+  background-color:#ffffff;
+  /*background:transparent url(../image/TabPanel/tab-content-bg.gif) repeat-x;*/
+ 
+  border-bottom: solid 1px #6ca9e0;
+  padding-bottom: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.tabpanel_tab_content .tabpanel_move_content {
+  width: 0px;
+  overflow: hidden;
+  
+  /* 2012-5-8 gmh 调整 用于将左滚动条放置在左边*/
+  position:absolute;
+  left:21px;
+}
+
+.tabpanel_move_content_scroll {
+  margin-left: 0px;
+  margin-right: 36px;
+}
+
+.tabpanel_mover {
+  width: 5000px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.tabpanel_mover li {
+  /*background: transparent url(../image/TabPanel/tab-bg.gif) repeat-x; */
+  background: transparent url(../../images/tab_li.gif) no-repeat;    
+  /*width: 110px;*/
+  width:106px;
+  margin-top: 9px;
+  height: 22px;  
+  line-height: 22px;
+  border: solid 0px #8DB2E3;
+  border-bottom: solid 0px #6ca9e0;
+  margin-left: 2px;
+  background-color: #EFEFEF;
+  float: left;
+  position: relative;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.tabpanel_mover li .closer {
+  background: transparent url(../image/TabPanel/tab-close.gif) no-repeat;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 11px;
+  height: 11px;
+  cursor: pointer;
+}
+
+.tabpanel_mover li .title {
+  font-size: 12px;
+  padding-left: 0px;
+  overflow: hidden;
+  width:105px;
+  float: left;
+  *height: 20px;
+  *line-height: 20px;
+  *margin-top: 2px;
+}
+
+.tabpanel_mover li div {
+  color: #23508E;  
+}
+
+.tabpanel_mover li .icon_title {
+  font-size: 12px;
+  color: #23508E;
+  padding-left: 25px;
+  background-repeat: no-repeat;
+  background-position: 5px 4px;
+  overflow: hidden;
+  float: left;
+  *height: 20px;
+  *line-height: 20px;
+  *margin-top: 2px;
+  *background-position: 5px 1px;
+}
+
+.tabpanel_mover li.active {
+  /*background: transparent url(../image/TabPanel/tab-bg-active.gif) repeat-x;*/
+  /*background: url(../../images/search1.gif) repeat-x;*/
+  /*border-bottom: solid 1px #DDEEFE;*/
+  /*background: url(../../images/nav2.gif) repeat-x;*/
+  background:transparent url(../../images/tab_active.gif) no-repeat;
+  background-color: #fff;
+  font-weight: bold;
+}
+
+.tabpanel_tab_content .tabpanel_left_scroll {
+  background: transparent url(../image/TabPanel/scroll-left.png) no-repeat 0 0;
+  position: absolute;
+  width: 22px;
+  height: 21px;
+  left: 0px;
+  /*right: 21px;*/
+  top: 9px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.tabpanel_tab_content .tabpanel_right_scroll {
+  background: transparent url(../image/TabPanel/scroll-right.png) no-repeat 0 0 ;  
+  position: absolute;
+  width: 22px;
+  height: 21px;
+  right: 0px;
+  top: 9px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.tabpanel_tab_content .tabpanel_scroll_over {
+  background-position: 0 -21px;
+  
+}
+
+.tabpanel_tab_content .tabpanel_left_scroll_disabled {
+  opacity: .5;
+  -moz-opacity: .5;
+  filter: alpha(opacity = 50);
+}
+
+.tabpanel_right_scroll_disabled {
+  opacity: .5;
+  -moz-opacity: .5;
+  filter: alpha(opacity = 50);
+}
+
+.display_none {
+  display: none;
+}
+
+.disabled {
+  color: gray;
+}
+
+.tabpanel_tab_content .tabpanel_tab_spacer {
+  border-top: 0px solid #8DB2E3;
+  height: 0px;
+  /*background: #DEECFD;*/
+  background: url(../../images/search1.gif) repeat-x;
+  font-size: 0px;
+  line-height: 0px;
+  margin-top: 0px;
+}
+
+.tabpanel_content {
+  background-color: #FFF;
+  overflow: auto;
+  position: relative;
+}
+
+.tabpanel_content .html_content {
+  width: 100%;
+  height: 100%;
+  background-color:#FFF;
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+}

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="bizMessage" extends="iscreate-struts-default">
+		<!-- 加载消息盒子内容层 -->
+		<action name="loadBizMessageAction" class="bizMessageAction" method="loadBizMessageAction">
+			<result name="success">/op/bizmsg/showBizMsg.jsp</result>
+		</action>
+		
+		<!-- 修改消息为已读 -->
+		<action name="updateMsgToHasReadAction" class="bizMessageAction" method="updateMsgToHasReadAction">
+		</action>
+		
+		<!-- 加载消息盒子内容层 -->
+		<action name="loadBizMessageByTypeForAjaxAction" class="bizMessageAction" method="loadBizMessageByTypeForAjaxAction">
+		</action>
+		
+		<!-- 批量删除消息 -->
+		<action name="deleteBizMessageAction" class="bizMessageAction" method="deleteBizMessageAction">
+		</action>
+		
+		<!-- 根据用户获取响铃消息 -->
+		<action name="getNoReadBizMessageCountAction" class="bizMessageAction" method="getNoReadBizMessageCountAction">
+		</action>
+		
+		<!-- 根据用户获取响铃数并修改响铃状态为未读 -->
+		<action name="getNoReadBizMessageCountAndUpdateBizMessageAjaxAction" class="bizMessageAction" method="getNoReadBizMessageCountAndUpdateBizMessageAjaxAction">
+		</action>
+		
+		<!-- 根据用户获取响铃数并修改响铃状态为未读 -->
+		<action name="updateSoundSessionAction" class="bizMessageAction" method="updateSoundSessionAction">
+		</action>
+	</package>
+	
+	<!-- 终端 -->
+	<package name="bizMessageForMobile" extends="struts-default">
+	
+		<!-- 加载消息盒子内容层 -->
+		<action name="loadBizMessageForMobileAction" class="bizMessageActionForMobile" method="loadBizMessageForMobileAction">
+		</action>
+		
+		<!-- 更新消息的状态，更新状态为已读 -->
+		<action name="updateMsgToHasReadForMobileAction" class="bizMessageActionForMobile" method="updateMsgToHasReadForMobileAction">
+		</action>
+		
+		<!-- 删除消息 -->
+		<action name="deleteBizMessageForMobileAction" class="bizMessageActionForMobile" method="deleteBizMessageForMobileAction">
+		</action>
+		
+		<!-- 是否响铃 -->
+		<action name="isRingableActionForMobile" class="bizMessageActionForMobile" method="isRingableActionForMobile">
+		</action>
+		
+		<!-- yuan.yw 新接口 -->
+		<!-- 获取是否有未读消息信息 -->
+		<action name="hasUnReadMessageActionForMobile" class="bizMessageActionForMobile" method="hasUnReadMessageActionForMobile">
+		</action>
+		<!-- 获取未读消息 -->
+		<action name="getUnReadMessageListActionForMobile" class="bizMessageActionForMobile" method="getUnReadMessageListActionForMobile">
+		</action>
+		<!-- 操作消息 -->
+		<action name="doOperationForMessageActionForMobile" class="bizMessageActionForMobile" method="doOperationForMessageActionForMobile">
+		</action>
+	</package>
+</struts>

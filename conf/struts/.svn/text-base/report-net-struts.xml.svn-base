@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="resource/report" extends="json-default">
+			<!-- 加载报表Action  --> 
+		<action name="loadNetworkReportAction" class="networkReportAction" method="loadNetworkReportAction">
+			<result name="success">networkReport.jsp</result>
+		</action>
+		
+			<!-- 加载指定类型下的数据Action  --> 
+		<action name="loadResourceEntityByAreaAction" class="networkReportAction" method="loadResourceEntityByAreaAction">
+		</action>
+		
+			<!-- 获取指定的类型下的子类型或关联类型或全部Action  --> 
+		<action name="loadChildRoLinkTypeBySelectResTypeAction" class="networkReportAction" method="loadChildRoLinkTypeBySelectResTypeAction">
+		</action>
+		
+		
+			<!-- 获取指定资源下指定类型数量Action  --> 
+		<action name="statisticsResourceTotalAction" class="networkReportAction" method="statisticsResourceTotalAction">
+		</action>
+		
+			<!-- 获取指定资源下指定类型的资源Action  --> 
+		<action name="getResourceEntityListAction" class="networkReportAction" method="getResourceEntityListAction">
+		</action>
+		
+		
+		<!-- 导出资源信息excel -->
+		<action name="downLoadResourceTotalAction" class="networkReportAction" method="downLoadResourceTotalAction">
+		    <result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param> 
+				<param name="inputName">resultInputStream</param>
+				<param name="contentDisposition">attachment;filename="${chaxunFileName}.xls"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		<!-- 导出资源信息excel -->
+		<action name="downLoadResourceTotalInformationReportAction" class="networkReportAction" method="downLoadResourceTotalInformationReportAction">
+		    <result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param> 
+				<param name="inputName">resultInputStream</param>
+				<param name="contentDisposition">attachment;filename="${chaxunFileName}.xls"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+ <name>RRU</name>
+ <attribute type="java.lang.Long" length="128" primary="TRUE" index="TRUE" nullable="FALSE" regex="">id</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="FALSE" regex="">name</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">label</attribute>
+ <attribute type="java.lang.String" length="20" primary="FALSE" index="FALSE" nullable="TRUE" regex="">indooroutdoor</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">model</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="TRUE" regex="">serialCode</attribute>
+ <attribute type="java.lang.String" length="100" primary="FALSE" index="FALSE" nullable="TRUE" regex="">priEquipModel</attribute>
+ <attribute type="java.lang.String" length="100" primary="FALSE" index="FALSE" nullable="TRUE" regex="">setupAddress</attribute>
+ <attribute type="java.lang.Integer" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">hasRectifyFrame</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">rectifyFrameModel</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">rectifyFrameManufactory</attribute>
+ <attribute type="java.lang.Integer" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">rectifyModuleCount</attribute>
+ <attribute type="java.util.Date" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">factorydate</attribute>
+ <attribute type="java.util.Date" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">datebegininuse</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="TRUE" regex="">barcode</attribute>
+ <attribute type="java.lang.String" length="50" primary="FALSE" index="TRUE" nullable="TRUE" regex="">assettag</attribute>
+ <attribute type="java.lang.String" length="100" primary="FALSE" index="FALSE" nullable="TRUE" regex="">description</attribute>
+</entity>

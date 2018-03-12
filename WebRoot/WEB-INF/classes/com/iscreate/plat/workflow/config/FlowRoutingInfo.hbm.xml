@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.iscreate.plat.workflow.dataconfig.FlowRoutingInfo" table="FLOW_ROUTING" >
+        <id name="routingId">
+            <column name="routingId" />
+        </id>
+        <property name="flow_Id" column="flow_Id" />
+        <property name="start_node_id" column="start_node_id" />
+        <property name="end_node_id" column="end_node_id" />
+        <property name="node_des" column="node_des" />
+    </class>
+</hibernate-mapping>

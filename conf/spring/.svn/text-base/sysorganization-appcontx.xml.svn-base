@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- yuan.yw -->
+	<!-- 组织 service -->
+   	<bean id="sysOrganizationService" class="com.iscreate.op.service.system.SysOrganizationServiceImpl">
+    	<property name="sysOrganizationDao" ref="sysOrganizationDao"></property>
+    	<property name="enterpriseInformationDao" ref="enterpriseInformationDao"></property>
+    	<property name="sysOrgUserDao" ref="sysOrgUserDao"></property>
+    	<property name="sysRoleDao" ref="sysRoleDao"></property>
+    	<property name="sysUserRelaOrgDao" ref="sysUserRelaOrgDao"></property>
+    	<property name="sysAreaDao" ref="sysAreaDao"></property>
+    	<property name="sysAreaRelaOrgDao" ref="sysAreaRelaOrgDao"></property>
+    	<!-- 项目信息dao -->
+    	<property name="projectInformationDao" ref="projectInformationDao"></property>
+    	<property name="informationManageNetworkResourceDao" ref="informationManageNetworkResourceDao"></property>
+    	<property name="commonDao" ref="commonDao"></property>
+    	<property name="sysDictionaryDao" ref="sysDictionaryDao"></property>
+    </bean>
+     <!-- 组织 action-->
+   	<bean id="sysOrganizationAction" class="com.iscreate.op.action.system.SysOrganizationAction" singleton='false'>
+    	<property name="sysOrganizationService" ref="sysOrganizationService"></property>
+    	<property name="sysAreaService" ref="sysAreaService"></property>
+    	<property name="sysOrgUserService" ref="sysOrgUserService"></property>
+    </bean>
+    <!-- 组织区域 service -->
+   	<bean id="sysAreaService" class="com.iscreate.op.service.system.SysAreaServiceImpl">
+    	<property name="sysAreaDao" ref="sysAreaDao"></property>
+    </bean>
+    <!-- yuan.yw -->
+</beans>
+
+

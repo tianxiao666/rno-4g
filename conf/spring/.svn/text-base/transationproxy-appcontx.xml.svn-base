@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"  
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:tx="http://www.springframework.org/schema/tx" 
+xmlns:aop="http://www.springframework.org/schema/aop"  
+xsi:schemaLocation="http://www.springframework.org/schema/beans    
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd   
+http://www.springframework.org/schema/tx  
+http://www.springframework.org/schema/tx/spring-tx-2.5.xsd    
+http://www.springframework.org/schema/aop   
+http://www.springframework.org/schema/aop/spring-aop-2.5.xsd"> 
+   
+   	<!-- 配置事务切面Bean，指定事务管理器 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<!-- 用于配置事务详细语义 -->
+		<tx:attributes>
+			<tx:method name="tx*" rollback-for="Exception" propagation="REQUIRED" isolation="READ_COMMITTED"/>
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<!-- 配置一个切入点，匹配test包下所有以Service结尾的类，执行所有方法 -->
+		<!-- <aop:pointcut id="testService"  expression="execution(* com.iscreate.plat.loginteceptor.service.*Advice.*Exception(..))"/> -->
+		<aop:pointcut id="txPointcut"  expression="execution(* com.iscreate.op..*.tx*(..))"/>
+		<!-- 指定在同学Advice切入点应用同学Advice事务切面 -->
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" order="3" />
+	</aop:config>
+	
+</beans>

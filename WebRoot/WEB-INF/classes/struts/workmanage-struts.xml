@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="workmanage" extends="struts-default">
+	
+		<!-- 工作管理页面入口action -->
+		<action name="workManagePageIndexAction" class="workManageAction" method="workManagePageIndexAction">
+			<result name="success">op/workmanage/workManagePageIndex.jsp</result>
+		</action>
+		
+		
+		<!-- 工作管理页面入口action -->
+		<action name="getChildrenMenuListByParentIdAndTypeAction" class="workManageAction" method="getChildrenMenuListByParentIdAndTypeAction"></action>
+		
+		
+		
+		<!-- 跳转创建抢修工单action -->
+		<action name="loadCreateUrgentRepairWorkOrderPageAction" class="workManageAction" method="loadCreateUrgentRepairWorkOrderPageAction">
+			<result name="success">op/workmanage/createUrgentRepairWorkOrderPage.jsp</result>
+		</action>
+		
+		
+		<!-- 更改工单ReadStatus状态 -->
+		<action name="updateWorkOrderReadStatusAction" class="workManageAction" method="updateWorkOrderReadStatusAction">
+		</action>
+		
+		<!-- 更改任务单ReadStatus状态 -->
+		<action name="updateTaskOrderReadStatusAction" class="workManageAction" method="updateTaskOrderReadStatusAction">
+		</action>
+		
+		<!-- 获取公共查询下拉列表数据 -->
+		<action name="getSelectDataListAction" class="workManageAction" method="getSelectDataListAction">
+		</action>
+		
+		<!-- 跳转门户待办页面 -->
+		<action name="loadPortalPendingPageAction" class="workManageAction" method="loadPortalPendingPageAction" >
+			<result name="success">op/workmanage/portalPendingPage.jsp</result>
+		</action>
+		
+		<!-- 跳转门户待办页面 -->
+		<action name="loadPortalRoutineInspectionPendingPageAction" class="workManageAction" method="loadPortalRoutineInspectionPendingPageAction" >
+			<result name="success">op/workmanage/portalRoutineInspectionPendingPage.jsp</result>
+		</action>
+		
+		
+		<!-- 加载门户页面待办action（抢修待办）  -->
+		<action name="getPendingWorkOrdersByUserId" class="workManageAction" method="getPendingWorkOrdersByUserId" >
+		</action>
+		
+		<!-- 加载门户页面待办action（抢修跟踪） -->
+		<action name="getTrackWorkOrdersByUserId" class="workManageAction" method="getTrackWorkOrdersByUserId" >
+		</action>
+		
+		<!-- 加载门户页面待办action（抢修监督） -->
+		<action name="getSuperviseWorkOrdersByUserId" class="workManageAction" method="getSuperviseWorkOrdersByUserId" >
+		</action>
+		
+		<!-- 加载门户抢修工单标签资源 -->
+		<action name="loadPortalUrgentRepairWorkOrderTabResourceAction" class="workManageAction" method="loadPortalUrgentRepairWorkOrderTabResourceAction" >
+		</action>
+		
+		
+		<!-- 加载创建抢修类型工单页面资源 -->
+		<action name="loadCreateUrgentRepairWorkOrderPageResourceAction" class="workManageAction" method="loadCreateUrgentRepairWorkOrderPageResourceAction" >
+		</action>
+		
+		
+		<!-- 获取草稿 -->
+		<action name="getDraftWorkOrdersByUserId" class="workManageAction" method="getDraftWorkOrdersByUserId" >
+		</action>
+		
+		
+		<!-- 请求数据字典的数据 -->
+		<action name="getDictionaryData" class="workManageAction" method="getDictionaryData" >
+		</action>
+		
+		<!-- 导出查询结果到excel文件 -->
+		<action name="exportQueryResultToExcelAction" class="workManageAction" method="exportQueryResultToExcelAction" >
+			<result name="success" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="inputName">queryResultStream</param>
+				<param name="contentDisposition">attachment;filename="${queryResultName}.xls"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		
+		
+		<!-- 获取巡检待办任务 -->
+		<action name="getRoutineInspectionPendingTaskOrderAction" class="workManageAction" method="getRoutineInspectionPendingTaskOrderAction" >
+		</action>
+		
+		
+		
+		
+		
+		<!-- ###################### For Mobile ##################### -->
+		<!-- 加载用户抢修待办任务 -->
+		<action name="loadUrgentRepairTaskForMobileAction" class="workManageActionForMobile" method="loadUrgentRepairTaskForMobileAction">
+		</action>
+		
+		<!-- 搜索附近设施 -->
+		<action name="searchNearByFacilitiesActionForMobile" class="workManageActionForMobile" method="searchNearByFacilitiesActionForMobile">
+		</action>
+		
+		<!-- 获取设施关联的任务单 -->
+		<action name="getFacilityAssTaskOrderActionForMobile" class="workManageActionForMobile" method="getFacilityAssTaskOrderActionForMobile">
+		</action>
+		
+		
+		<!-- 网络资源请求获取工单 任务单 -->
+		<action name="getWorkOrdersByResourceIdByStatusAction" class="workManageAction" method="getWorkOrdersByResourceIdByStatusAction" >
+		</action>
+		
+		<!-- 指定条件查询抢修任务单 -->
+		<action name="searchUrgentRepairTaskOrderByConditionAction" class="workManageActionForMobile" method="searchUrgentRepairTaskOrderByConditionAction" >
+		</action>
+		
+		
+		<!-- 加载用户巡检待办任务 -->
+		<action name="loadRoutineInspectionTaskOrderForMobileAction" class="workManageActionForMobile" method="loadRoutineInspectionTaskOrderForMobileAction">
+		</action>
+		
+		<!-- 终端获取巡检任务 -->
+		<action name="taskRoutineInspectionTaskForMobileAction" class="workManageActionForMobile" method="taskRoutineInspectionTaskForMobileAction">
+		</action>
+		
+		
+	</package>
+</struts>

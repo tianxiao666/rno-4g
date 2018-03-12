@@ -1,0 +1,121 @@
+
+.treeview, .treeview ul {
+	font-family:"微软雅黑", Verdana, Geneva, sans-serif;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	font-size:12px;
+}
+.treeview ul {
+	background-color: white;
+	margin-top: 4px;
+}
+.treeview .hitarea {
+	background: url(../images/treeview-default.gif) -64px -25px no-repeat;
+	height: 16px;
+	width: 16px;
+	margin-left: -16px;
+	float: left;
+	cursor: pointer;
+}
+/* fix for IE6 */
+* html .hitarea {
+	display: inline;
+	float:none;
+}
+.treeview li {
+	margin: 0;
+	padding: 3px 0pt 3px 16px;
+	-moz-user-select:none;
+}
+.treeview a.selected {
+	background-color: #eee;
+}
+#treecontrol {
+	margin: 1em 0;
+	display: none;
+}
+.treeview .hover {
+	color: red;
+	cursor: pointer;
+}
+.treeview li {
+	background: url(../images/treeview-default-line.gif) 0 0 no-repeat;
+}
+.treeview li.collapsable, .treeview li.expandable {
+	background-position: 0 -176px;
+}
+.treeview .expandable-hitarea {
+	background-position: -80px -3px;
+}
+.treeview li.last {
+	background-position: 0 -1766px
+}
+.treeview li.lastCollapsable, .treeview li.lastExpandable {
+	background-image: url(../images/treeview-default.gif);
+}
+.treeview li.lastCollapsable {
+	background-position: 0 -111px
+}
+.treeview li.lastExpandable {
+	background-position: -32px -67px
+}
+.treeview div.lastCollapsable-hitarea, .treeview div.lastExpandable-hitarea {
+	background-position: 0;
+}
+.treeview .placeholder {
+	background: url(../images/ajax-loader.gif) 0 0 no-repeat;
+	height: 16px;
+	width: 16px;
+	display: inline-block;
+}
+.filetree li {
+	padding: 3px 0 2px 16px;
+	
+}
+
+/* 加入元素 */
+.filetree span.folder,
+.filetree span.file,
+.filetree span.computer,
+.filetree span.phone,
+.filetree span.cangku,
+.filetree span.car,
+.filetree span.guanjin,
+.filetree span.jizhan,
+.filetree span.people,
+.filetree span.peoples,
+.filetree span.shiyebu,
+.filetree span.shiyebu,
+.filetree span.tuceng,
+.filetree span.wentidian,
+.filetree span.zhudi,
+.filetree span.zhudian,
+.filetree span.zongbu,
+.filetree span.zhibiao{
+	padding: 1px 0 1px 20px;
+	display: inline-block;
+	cursor:pointer;
+}
+.filetree li.expandable span.folder { background: url(../images/folder-closed.png) 0 0 no-repeat;}
+.filetree span.folder {background:url(../images/folder.png) 0 0 no-repeat;}
+.filetree span.file {background: url(../images/file.png) 0 0 no-repeat;}
+.filetree span.computer{background:url(../images/ico_computer.png) 0 0 no-repeat;}
+.filetree span.phone{background:url(../images/ico_phone.png) 0 0 no-repeat;}
+.filetree span.cangku {background: url(../images/ico_cangku.png) 0 0 no-repeat;}
+.filetree span.car {background: url(../images/ico_car.png) 0 0 no-repeat;}
+.filetree span.guanjin {background: url(../images/ico_guanjin.png) 0 0 no-repeat;}
+.filetree span.jizhan {background: url(../images/ico_jizhan.png) 0 0 no-repeat;}
+.filetree span.people {background: url(../images/ico_people.png) 0 0 no-repeat;}
+.filetree span.peoples {background: url(../images/ico_peoples.png) 0 0 no-repeat;}
+.filetree span.shiyebu {background: url(../images/ico_shiyebu.png) 0 0 no-repeat;}
+.filetree span.tuceng {background: url(../images/ico_tuceng.png) 0 0 no-repeat;}
+.filetree span.wentidian {background: url(../images/ico_wentidian.png) 0 0 no-repeat;}
+.filetree span.zhudi {background: url(../images/ico_zhudi.png) 0 0 no-repeat;}
+.filetree span.zhudian {background: url(../images/ico_zhudian.png) 0 0 no-repeat;}
+.filetree span.zongbu {background: url(../images/ico_zongbu.png) 0 0 no-repeat;}
+.filetree span.zhibiao {background: url(../images/ico_zhibiao.png) 0 0 no-repeat;}
+
+.filetree span.on_selected{ color:#000; font-weight:600; background-color:#ccc; padding-right: 10px;}
+
+.filetree input[type="checkbox"], input[type="radio"] { left: 0; position: relative; top: 0;}

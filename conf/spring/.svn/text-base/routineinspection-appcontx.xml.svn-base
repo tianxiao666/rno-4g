@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- 巡检任务 -->
+	<bean id="routineInspectionTaskDao" class="com.iscreate.op.dao.routineinspection.RoutineInspectionTaskDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<bean id="routineInspectionTaskService" class="com.iscreate.op.service.routineinspection.RoutineInspectionTaskServiceImpl">
+		<property name="routineInspectionTaskDao" ref="routineInspectionTaskDao" />
+		<property name="routineInspectionPlanDao" ref="routineInspectionPlanDao" />
+		<property name="networkResourceService" ref="networkResourceService" />
+		<property name="workManageService" ref="workManageService" />
+		<property name="commonQueryService" ref="commonQueryService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+	</bean>
+	
+	<bean id="routineInspectionTaskAction" class="com.iscreate.op.action.routineinspection.RoutineInspectionTaskAction" singleton="false">
+		<property name="routineInspectionTaskService" ref="routineInspectionTaskService" />
+		<property name="workFlowService" ref="workFlowService"></property>
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	
+	<bean id="routineInspectionTaskActionForMobile" class="com.iscreate.op.action.routineinspection.RoutineInspectionTaskActionForMobile">
+		<property name="routineInspectionTaskService" ref="routineInspectionTaskService" />
+		<property name="workManageService" ref="workManageService" />
+	</bean>
+	 
+	 
+	 <!-- 巡检任务记录 -->
+	 <bean id="routineInspectionTaskRecordDao" class="com.iscreate.op.dao.routineinspection.RoutineInspectionTaskRecordDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<bean id="routineInspectionTaskRecordService" class="com.iscreate.op.service.routineinspection.RoutineInspectionTaskRecordServiceImpl">
+		<property name="routineInspectionTaskRecordDao" ref="routineInspectionTaskRecordDao" />
+		<property name="routineInspectionTaskDao" ref="routineInspectionTaskDao" />
+		<property name="routineInspectionPlanDao" ref="routineInspectionPlanDao" />
+		<property name="networkResourceService" ref="networkResourceService" />
+	</bean>
+	 
+	<bean id="routineInspectionTaskRecordAction" class="com.iscreate.op.action.routineinspection.RoutineInspectionTaskRecordAction" singleton="false">
+		<property name="routineInspectionTaskRecordService" ref="routineInspectionTaskRecordService" />
+	</bean>
+	 
+	<bean id="routineInspectionTaskRecordActionForMobile" class="com.iscreate.op.action.routineinspection.RoutineInspectionTaskRecordActionForMobile" singleton="false">
+		<property name="routineInspectionTaskRecordService" ref="routineInspectionTaskRecordService" />
+		<property name="networkResourceService" ref="networkResourceService" />
+		<property name="workOrderAssnetResourceDao" ref="workOrderAssnetResourceDao" />
+	</bean>
+	
+	 <!-- 巡检任务问题点 -->
+	  <bean id="routineinspectionQuestionDao" class="com.iscreate.op.dao.routineinspection.RoutineinspectionQuestionDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	 <bean id="routineinspectionTaskorderQuestionDao" class="com.iscreate.op.dao.routineinspection.RoutineinspectionTaskorderQuestionDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<bean id="routineinspectionQuestionService" class="com.iscreate.op.service.routineinspection.RoutineinspectionQuestionServiceImpl">
+		<property name="routineInspectionTaskService" ref="routineInspectionTaskService" />
+		<property name="routineinspectionQuestionDao" ref="routineinspectionQuestionDao" />
+		<property name="commonQueryService" ref="commonQueryService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	
+	<bean id="routineinspectionTaskorderQuestionService" class="com.iscreate.op.service.routineinspection.RoutineinspectionTaskorderQuestionServiceImpl">
+		<property name="routineinspectionTaskorderQuestionDao" ref="routineinspectionTaskorderQuestionDao" />
+	</bean>
+	
+	<bean id="routineinspectionQuestionAction" class="com.iscreate.op.action.routineinspection.RoutineinspectionQuestionAction" singleton="false">
+		<property name="routineinspectionQuestionService" ref="routineinspectionQuestionService" />
+		<property name="routineinspectionTaskorderQuestionService" ref="routineinspectionTaskorderQuestionService" />
+		<property name="routineInspectionTaskService" ref="routineInspectionTaskService" />
+		<property name="routineInspectionPlanDao" ref="routineInspectionPlanDao" />
+		<property name="networkResourceService" ref="networkResourceService" />
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	
+	<bean id="routineinspectionQuestionActionForMobile" class="com.iscreate.op.action.routineinspection.RoutineinspectionQuestionActionForMobile">
+		<property name="routineinspectionQuestionService" ref="routineinspectionQuestionService" />
+		<property name="routineinspectionTaskorderQuestionService" ref="routineinspectionTaskorderQuestionService" />
+		<property name="routineInspectionTaskService" ref="routineInspectionTaskService" />
+		<property name="routineInspectionPlanDao" ref="routineInspectionPlanDao" />
+		<property name="networkResourceService" ref="networkResourceService" />
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	
+	
+	<!-- che.yd巡检计划 ########### begin  #########-->
+	<bean id="routineInspectionPlanDao" class="com.iscreate.op.dao.routineinspection.RoutineInspectionPlanDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<bean id="routineInspectionPlanService" class="com.iscreate.op.service.routineinspection.RoutineInspectionPlanServiceImpl">
+		<property name="routineInspectionPlanDao" ref="routineInspectionPlanDao" />
+		<property name="routineInspectionTaskDao" ref="routineInspectionTaskDao" />
+		<property name="workManageService" ref="workManageService" />
+		<property name="commonQueryService" ref="commonQueryService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+		<!-- du.yw -->
+		<property name="sysOrganizationDao" ref="sysOrganizationDao" />
+	</bean>
+	 
+	<bean id="routineInspectionPlanAction" class="com.iscreate.op.action.routineinspection.RoutineInspectionPlanAction" singleton="false">
+		<property name="routineInspectionPlanService" ref="routineInspectionPlanService" />
+		<property name="networkResourceInterfaceService" ref="networkResourceService" />
+		<property name="workManageService" ref="workManageService" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	
+	<!-- che.yd巡检计划 ########### end  #########-->
+
+</beans>

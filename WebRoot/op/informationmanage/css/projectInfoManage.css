@@ -1,0 +1,70 @@
+﻿/*Deson Edit*/
+@charset "utf-8";
+
+.projectInfoManage_main{ margin:5px;background:#C3D5ED;}
+.projectInfoManage_top{background: url("../../../images/white-top-bottom.gif") repeat-x scroll 0 -1px transparent; border-bottom:1px solid #99BBE8; color: #15428B;line-height: 26px; padding: 0 5px;font-weight:bold;}
+.redStar{color:red}
+.grayStar{color:gray}
+/*右边工作区*/
+.projectInfoManage_content{ border:1px solid #99BCE8;background: none repeat scroll 0 0 #FFFFFF;overflow: hidden;min-height:730px;}
+.tab_menu {clear: both;height: 25px;}
+.tab_menu ul {position: absolute; z-index: 2;}
+.tab_menu ul li { background: none repeat scroll 0 0 #EEEEEE;border: 1px solid #99BBE8;border-bottom: none;cursor: pointer; float: left;line-height: 24px; padding: 0 3px; position: relative; text-align: center; width: 100px;border-radius: 3px 3px 0 0; margin:0 2px;}
+.tab_menu ul li.selected {background: none repeat scroll 0 0 #FFFFFF; border-right: 1px solid #99BBE8;border-top: 3px solid #99BCE8; height: 23px; line-height: 22px;}
+
+/**/
+.projectInfoManage_infoList {padding: 10px;}
+.projectInfoManage_infoList h3 {line-height: 30px;}
+.projectInfoManage_infoList h3 span.name{display:block; float: left;}
+.projectInfoManage_infoList h3 span.input{display:block; float: right;}
+.projectInfoManage_infoList .main_table {background-color: #FFFFFF; text-align: center;width: 100%;}
+.projectInfoManage_infoList .main_table th {background: url("../../../images/cmp-bg2.gif") repeat-x scroll 0 0 transparent; border: 1px solid #CCCCCC; color: #444444; line-height: 30px; padding: 0 10px;font-weight: normal; white-space:nowrap;}
+.projectInfoManage_infoList .main_table tr td {background: none repeat scroll 0 0 WhiteSmoke; border: 1px solid #CCCCCC; color: #000000; line-height: 30px; padding: 5px 2px; vertical-align: middle;}
+.projectInfoManage_infoList .main_table tr td a {color: #0033FF;}
+
+/**/
+.projectService_content{border-top: 1px solid #99BBE8; padding: 10px;}
+.projectInfoManage_title{padding:0 10px;}
+.projectInfoManage_title span{display: inline-block; line-height: 40px; text-align: center; width: 30%;}
+.projectInfoManage_title .tl{text-align: left;}
+.projectInfoManage_title .tr{text-align: right;}
+.network_area{float:left; width:30%;}
+.network_area .network_area_tree{border:1px solid #99BBE8; margin:5px 10px 0 0px; padding:0 10px;}
+.network_area .network_area_tree .area_tree{height:200px; overflow: auto;}
+#network_tree input{min-height:0px;}
+.network_type{overflow: hidden;}
+.network_type .network_type_info{border:1px solid #99BBE8; height: 200px; margin-top:5px;}
+.network_type .network_type_info h3{background-color: #F0F0F0; border-top: 1px solid #99BBE8; border-bottom: 1px solid #99BBE8; line-height: 30px; padding: 0 10px; color:#555}
+.network_type .network_type_info h3:first-child{border-top:none;}
+.network_type .network_type_facility{padding: 10px;}
+.network_type .network_type_facility ul{padding-left: 20px;}
+.network_type .network_type_facility .facility_han{padding-left: 30px; color:#ccc;}
+.network_type .network_type_facility input[type="checkbox"]{*+position:static;}
+.network_type .network_type_info a{text-decoration:underline;}
+.network_type_but{padding-top:20px; text-align:center;}
+.projectSserve_info ul.filetree input[type="checkbox"], input[type="radio"] {left: 0; position: static; top: 0px; margin-top:-1px}
+/*弹出框
+.ent_dialog .dialog_table, .project_dialog .dialog_table, .entadd_dialog .dialog_table, .projectadd_dialog .dialog_table{width:1000px;}
+*/
+
+.projectadd_dialog,.project_dialog,.ent_dialog,.entadd_dialog{width:920px;}
+.dialog_table .menu_td { text-align: right; width: 80px; white-space: nowrap; }
+.dialog_table tr td {color: #000000;  padding: 5px; vertical-align: middle; width: 300px;}
+.dialog_table1 .menu_td { text-align: right; width: 100px; white-space: nowrap;}
+.dialog_table1 tr td {color: #000000;  padding: 5px; vertical-align: middle; width: 340px;}
+.project_dialog span, .ent_dialog span{word-break: normal; display: inline-block;}
+.dialog_table input[type="text"], .dialog_table1 input[type="text"]{display: inline-block; width: 150px;}
+.dialog_table input[type="button"], .dialog_table1 input[type="button"]{margin-left:5px;}
+.dialog_table select, .dialog_table1 select{display: inline-block; width: 160px;}
+.dialog_table1 .client_tree, .dialog_table1 .service_tree{display: none; background-color:#FFFFFF; border: 1px solid #CCCCCC;height: 200px; margin-top: -227px; *+margin-top: -202px; *+margin-left: -160px; overflow: auto; position: absolute; width: 200px; z-index: 1000;}
+.dialog_table1 .area_tree{display: none; background-color:#FFFFFF; border: 1px solid #CCCCCC;height: 200px; overflow: auto; position: absolute; width: 200px; z-index: 1000; margin-top:1px; *+margin-top: 22px; *+margin-left: -160px;}
+.projectInfoManage_infoList .paging_div{margin-top: 5px;}
+
+.projectSserve_content li h2{background: url("../../../images/cmp-bg2.gif") repeat-x scroll 0 0 transparent; border-bottom: 1px solid #ccc; border-top: 1px solid #ccc; cursor: pointer; display: block; height: 30px; line-height: 30px; font-weight: normal; margin-top: 5px;}
+.projectSserve_content li h2 em.parent{background: url("../images/ico_hide.gif") no-repeat;}
+.projectSserve_content li h2 em{width: 16px; height:16px; display: inline-block; vertical-align: middle; margin: -3px 5px 0;}
+.projectSserve_content li .projectSserve_info{display:none;margin: 5px;}
+
+.icon_yes, .icon_yes1{width: 16px; height:16px; display: inline-block; vertical-align: middle; margin-left:5px;}
+.icon_yes{background: url("../images/yes.png") no-repeat;}
+.icon_yes1{background: url("../images/yes1.png") no-repeat; }

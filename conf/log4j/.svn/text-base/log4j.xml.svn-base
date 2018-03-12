@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-5p] [%c] [%d] - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="info" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Threshold" value="INFO" />
+		<param name="Append" value="true" />
+		<param name="File" value="${webApp.root}/logs/ops.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d]-%m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="info" />
+			<param name="levelMax" value="fatal" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+	<!-- 解决禁止启动项目时控制台struts自输出的日志内容输出到日志文件，关掉root的控制台输出器同样能解决 -->
+	<logger name="org.apache.struts" additivity="false">
+		<level value="error"></level>
+		<appender-ref ref="stdout" />
+	</logger>
+    
+    
+    
+    <logger name="com.iscreate.op.action.rno" additivity="false">
+       <level value="error"></level>
+       <appender-ref ref="stdout"></appender-ref>
+    </logger>
+    <logger name="com.iscreate.op.service.rno.job" additivity="false">
+       <level value="debug"></level>
+       <appender-ref ref="stdout"></appender-ref>
+    </logger>
+    <logger name="com.iscreate.op.dao.rno" additivity="false">
+       <level value="error"></level>
+       <appender-ref ref="stdout"></appender-ref>
+    </logger>
+     <logger name="org.apache.hadoop.security.UserGroupInformation" additivity="false">
+       <level value="debug"></level>
+       <appender-ref ref="stdout"></appender-ref>
+    </logger>
+    
+    <logger name="org.apache.hadoop.mapred.ClientServiceDelegate" additivity="false">
+       <level value="debug"></level>
+       <appender-ref ref="stdout"></appender-ref>
+    </logger>
+    
+    <logger name="com.iscreate.op.service.rno.task" additivity="false">
+       <level value="debug"></level>
+       <appender-ref ref="stdout"></appender-ref>
+    </logger>
+
+	<root>
+		<level value="error" />
+		<appender-ref ref="info" />
+		<appender-ref ref="stdout" />
+	</root>
+</log4j:configuration>

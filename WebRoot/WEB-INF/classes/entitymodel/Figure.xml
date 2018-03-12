@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<name>Figure</name>
+	 <attribute type="java.lang.Long" length="128" primary="TRUE" index="TRUE" nullable="FALSE" regex="">figureId</attribute>
+	 <attribute type="java.lang.String" length="255" primary="FALSE" index="FALSE" nullable="FALSE" regex="">figureName</attribute>
+	<attribute type="java.lang.String" length="255" primary="FALSE" index="FALSE" nullable="FALSE" regex="">_entityType</attribute>
+</entity>

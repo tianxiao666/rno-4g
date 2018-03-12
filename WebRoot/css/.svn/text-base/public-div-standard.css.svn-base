@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*div title */
+.div_title_20px{height:20px;line-height:30px;text-align:center;border:1px solid #ddd;margin-top:5px;background-color: #FFD8B0;}
+
+.div_title_tintofyellow_20px{height:20px;line-height:20px;text-align:center;border:1px solid #ddd;margin-top:auto;background-color: #ffeaaa; padding-left:10px;}
+.div_title_tintofyellow_20px th td{ font-size:12px; vertical-align:middle; }
+.div_title_tintofmedium_20px{height:20px;line-height:20px;text-align:center;border:1px solid #ddd;margin-top:auto;background-color: #bad1ef; padding-left:10px;}
+.div_transparentstandard{margin-top:5px; width:100%}
+.div_transparentstandard_top10{margin-top:10px; width:100%; }
+.div_transparentstandard_nopaddming{width:100%; }
+/* add at 2013.10.22*/
+.div_title_24px{height:24px;line-height:24px;text-align:center;border:1px solid #ddd;margin-top:5px;background-color: #FFD8B0;}
+.div_title_24px_blue{height:24px;line-height:24px;text-align:center;border:1px solid #ddd;margin-top:5px;background-color: #bdd3ef; padding-left:5px; padding-right:5px;}
+
+/* left_main */
+.div_left_main{ margin:5px;background:#C3D5ED; min-width:500px}
+.div_left_content{ border:1px solid #99BCE8;background: none repeat scroll 0 0 #FFFFFF;overflow: hidden;min-height:730px;}
+.div_left_top{background: url("../images/white-top-bottom.gif") repeat-x scroll 0 -1px transparent; border-bottom:1px solid #99BBE8; color: #15428B;line-height: 26px; padding: 0 5px;font-weight:bold;}
+
+/*div tab*/
+.divtab_menu {clear: both;height: 25px;}
+.divtab_menu ul {position: absolute; z-index: 2;}
+.divtab_menu ul li { background: none repeat scroll 0 0 #EEEEEE;border: 1px solid #99BBE8;border-bottom: none;cursor: pointer; float: left;line-height: 24px; padding: 0 3px; position: relative; text-align: center; width: 100px;border-radius: 3px 3px 0 0; margin:0 2px;}
+.divtab_menu ul li.selected {background: none repeat scroll 0 0 #FFFFFF; border-right: 1px solid #99BBE8;border-top: 3px solid #99BCE8; height: 23px; line-height: 22px;}
+.divtab_content{border-top: 1px solid #99BBE8; padding: 10px;}
+/* */
+.divtab_menu150px {clear: both;height: 25px;}
+.divtab_menu150px ul {position: absolute; z-index: 2;}
+.divtab_menu150px ul li { background: none repeat scroll 0 0 #EEEEEE;border: 1px solid #99BBE8;border-bottom: none;cursor: pointer; float: left;line-height: 24px; padding: 0 3px; position: relative; text-align: center; width: 150px;border-radius: 3px 3px 0 0; margin:0 2px;}
+.divtab_menu150px ul li.selected {background: none repeat scroll 0 0 #FFFFFF; border-right: 1px solid #99BBE8;border-top: 3px solid #99BCE8; height: 23px; line-height: 22px;}
+
+.divtab_menu250px {clear: both;height: 25px;}
+.divtab_menu250px ul {position: absolute; z-index: 2;}
+.divtab_menu250px ul li { background: none repeat scroll 0 0 #EEEEEE;border: 1px solid #99BBE8;border-bottom: none;cursor: pointer; float: left;line-height: 24px; padding: 0 3px; position: relative; text-align: center; width: 250px;border-radius: 3px 3px 0 0; margin:0 2px;}
+.divtab_menu250px ul li.selected {background: none repeat scroll 0 0 #FFFFFF; border-right: 1px solid #99BBE8;border-top: 3px solid #99BCE8; height: 23px; line-height: 22px;}
+
+/* add 10.23*/
+.div_title_24px_grey{height:24px;line-height:24px;text-align:center;border:1px solid #ddd;background-color: #f4f4f4; padding-left:5px; padding-right:5px;}
+.div_transparent_standard_border{border:1px solid #ddd;}
+
+/*分隔 */
+.div-m-split-10px{ background:transparent; height:10px; line-height: 10px;}
+.div-m-split-20px{ background:transparent; height:20px; line-height: 20px;}
+.div-m-split-40px{ background:transparent; height:40px; line-height: 40px;}

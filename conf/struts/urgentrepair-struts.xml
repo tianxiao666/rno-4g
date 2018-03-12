@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="urgentrepair" extends="iscreate-struts-default">
+		<!-- 创建抢修工单(包括客户工单) -->
+		<action name="createUrgentRepairWorkOrderAction" class="urgentRepairWorkOrderAction" method="createUrgentRepairWorkOrderAction">
+		</action>
+		<!-- 修改工单 -->
+		<action name="modifyUrgentRepairWorkOrderAction" class="urgentRepairWorkOrderAction" method="modifyUrgentRepairWorkOrderAction">
+		</action>
+		<!-- 派发(创建)现场任务工单 -->
+		<action name="createUrgentRepairSenceTaskOrderAction" class="urgentRepairWorkOrderAction" method="createUrgentRepairSenceTaskOrderAction">
+		</action>
+		<!-- 工单流转过程 -->
+		<action name="loadWorkOrderProcedureAction" class="urgentRepairWorkOrderAction" method="loadWorkOrderProcedureAction">
+			<result name="success">insert_workOrderProcedure.jsp</result>
+		</action>
+		<!-- 撤销任务 -->
+		<action name="cancelUrgentRepairSceneTaskOrderAction" class="urgentRepairWorkOrderAction" method="cancelUrgentRepairSceneTaskOrderAction">
+		</action>
+		<!-- 重派任务 -->
+		<action name="reAssignUrgentRepairSceneTaskOrderAction" class="urgentRepairWorkOrderAction" method="reAssignUrgentRepairSceneTaskOrderAction">
+		</action>
+		<!-- 催办任务 -->
+		<action name="hastenUrgentRepairSceneTaskOrderAction" class="urgentRepairWorkOrderAction" method="hastenUrgentRepairSceneTaskOrderAction">
+		</action>
+		<!-- 受理抢修工单 -->
+		<action name="acceptUrgentRepairWorkOrderAction" class="urgentRepairWorkOrderAction" method="acceptUrgentRepairWorkOrderAction">
+			<!-- <result name="success" type="redirect">
+				<param name="location">op/urgentrepair/loadUrgentRepairWorkOrderPageAction</param>
+				<param name="WOID">${WOID}</param>
+			</result>
+			<result name="GIS" type="redirect">
+				<param name="location">op/urgentrepair/loadUrgentRepairWorkOrderPageForGISAction</param>
+				<param name="WOID">${WOID}</param>
+				<param name="accountForGIS">${accountForGIS}</param>
+				<param name="entryType">${entryType}</param>
+			</result> -->
+		</action>
+		<!-- 最终回复抢修工单 -->
+		<action name="finalReplyUrgentRepairWorkOrderAction" class="urgentRepairWorkOrderAction" method="finalReplyUrgentRepairWorkOrderAction">
+			<!--  <result name="success">../../success.html</result>-->
+		</action>
+		<!-- 阶段回复抢修工单 -->
+		<action name="stepReplyUrgentRepairWorkOrderAction" class="urgentRepairWorkOrderAction" method="stepReplyUrgentRepairWorkOrderAction">
+		</action>
+		<!-- 跳转工单页面 -->
+		<action name="loadUrgentRepairWorkOrderPageAction" class="urgentRepairWorkOrderAction" method="loadUrgentRepairWorkOrderPageAction">
+			<result name="success">handleWorkOrder.jsp</result>
+		</action>
+		<!-- 跳转工单页面(GIS) -->
+		<action name="loadUrgentRepairWorkOrderPageForGISAction" class="urgentRepairWorkOrderAction" method="loadUrgentRepairWorkOrderPageForGISAction">
+			<result name="success">handleWorkOrder.jsp</result>
+		</action>
+		
+		<!-- 跳转创建工单页面(GIS) -->
+		<action name="loadCreateUrgentRepairWorkOrderPageForGISAction" class="urgentRepairWorkOrderAction" method="loadCreateUrgentRepairWorkOrderPageForGISAction">
+			<result name="success">createWorkOrder.jsp</result>
+		</action>
+		
+		<!-- 跳转创建工单页面(快速创单) -->
+		<action name="loadCreateUrgentRepairWorkOrderPageForQuickAction" class="urgentRepairWorkOrderAction" method="loadCreateUrgentRepairWorkOrderPageForQuickAction">
+			<result name="success">createWorkOrder.jsp</result>
+		</action>
+		
+		<!-- 受理现场任务单 -->
+		<action name="acceptUrgentRepairSenceTaskOrderAction" class="urgentRepairSenceTaskOrderAction" method="acceptUrgentRepairSenceTaskOrderAction">
+			<result name="success" type="redirect">
+				<param name="location">op/urgentrepair/loadUrgentRepairSenceTaskOrderPageAction</param>
+				<param name="WOID">${WOID}</param>
+				<param name="TOID">${TOID}</param>
+			</result>
+		</action>
+		<!-- 升级为(派发)技术支援任务单 -->
+		<action name="createUrgentRepairTechSupportTaskOrderAction" class="urgentRepairSenceTaskOrderAction" method="createUrgentRepairTechSupportTaskOrderAction">
+		</action>
+		<!-- 驳回现场任务单 -->
+		<action name="rejectUrgentRepairSenceTaskOrderAction" class="urgentRepairSenceTaskOrderAction" method="rejectUrgentRepairSenceTaskOrderAction">
+			<result name="success" type="redirect">
+				<param name="location">op/urgentrepair/loadUrgentRepairSenceTaskOrderPageAction</param>
+				<param name="WOID">${WOID}</param>
+				<param name="TOID">${TOID}</param>
+			</result>
+		</action>
+		<!-- 最终回复现场任务单 -->
+		<action name="finalReplyUrgentRepairSenceTaskOrderAction" class="urgentRepairSenceTaskOrderAction" method="finalReplyUrgentRepairSenceTaskOrderAction">
+			<result name="success">../../success.html</result>
+		</action>
+		<!-- 检查现场任务单的下级任务是否全部结束 -->
+		<action name="checkAllSubTaskIsFinishedForSceneTaskOrderAction" class="urgentRepairSenceTaskOrderAction" method="checkAllSubTaskIsFinishedForSceneTaskOrderAction">
+		</action>
+		<!-- 阶段回复现场任务单 -->
+		<action name="stepReplyUrgentRepairSenceTaskOrderAction" class="urgentRepairSenceTaskOrderAction" method="stepReplyUrgentRepairSenceTaskOrderAction">
+		</action>
+		<!-- 转派现场任务单 -->
+		<action name="toSendUrgentRepairSenceTaskOrderAction" class="urgentRepairSenceTaskOrderAction" method="toSendUrgentRepairSenceTaskOrderAction">
+		</action>
+		<!-- 撤销任务 -->
+		<action name="cancelUrgentRepairTechSupportTaskOrderAction" class="urgentRepairSenceTaskOrderAction" method="cancelUrgentRepairTechSupportTaskOrderAction">
+		</action>
+		<!-- 重派任务 -->
+		<action name="reAssignUrgentRepairTechSupportTaskOrderAction" class="urgentRepairSenceTaskOrderAction" method="reAssignUrgentRepairTechSupportTaskOrderAction">
+		</action>
+		<!-- 催办任务 -->
+		<action name="hastenUrgentRepairTechSupportTaskOrderAction" class="urgentRepairSenceTaskOrderAction" method="hastenUrgentRepairTechSupportTaskOrderAction">
+		</action>
+		<!-- 获取下级任务 -->
+		<action name="getSceneTaskOrderChildrenTaskOrderAction" class="urgentRepairSenceTaskOrderAction" method="getSceneTaskOrderChildrenTaskOrderAction">
+		</action>
+		<!-- 转派现场任务组织架构树-->
+		<action name="createToSendSenceTaskOrgTreeAction" class="urgentRepairSenceTaskOrderAction" method="createToSendSenceTaskOrgTreeAction">
+		</action>
+		<!-- 加载现场任务流转过程页面 -->
+		<action name="loadSenceTaskOrderProcedureAction" class="urgentRepairSenceTaskOrderAction" method="loadSenceTaskOrderProcedureAction">
+			<result name="SECTION">insert_taskOrderProcedure.jsp</result>
+			<result name="WO_SECTION">insert_taskOrderProcedureForWorkOrder.jsp</result>
+			<result name="PAGE">showTaskOrderInfoPage.jsp</result>
+		</action>
+		<!-- 跳转现场任务单页面 -->
+		<action name="loadUrgentRepairSenceTaskOrderPageAction" class="urgentRepairSenceTaskOrderAction" method="loadUrgentRepairSenceTaskOrderPageAction">
+			<result name="success">handleSenceTaskOrder.jsp</result>
+		</action>
+		
+		<!-- 受理技术任务单 -->
+		<action name="acceptUrgentRepairTechSupportTaskOrderAction" class="urgentRepairTechSupportTaskOrderAction" method="acceptUrgentRepairTechSupportTaskOrderAction">
+			<result name="success" type="redirect">
+				<param name="location">op/urgentrepair/loadUrgentRepairTechSupportTaskOrderPageAction</param>
+				<param name="WOID">${WOID}</param>
+				<param name="TOID">${TOID}</param>
+			</result>
+		</action>
+		<!-- 驳回技术任务单 -->
+		<action name="rejectUrgentRepairTechSupportTaskOrderAction" class="urgentRepairTechSupportTaskOrderAction" method="rejectUrgentRepairTechSupportTaskOrderAction">
+			<result name="success" type="redirect">
+				<param name="location">op/urgentrepair/loadUrgentRepairTechSupportTaskOrderPageAction</param>
+				<param name="WOID">${WOID}</param>
+				<param name="TOID">${TOID}</param>
+			</result>
+		</action>
+		<!-- 最终回复技术任务单 -->
+		<action name="finalReplyUrgentRepairTechSupportTaskOrderAction" class="urgentRepairTechSupportTaskOrderAction" method="finalReplyUrgentRepairTechSupportTaskOrderAction">
+			<result name="success">../../success.html</result>
+		</action>
+		<!-- 阶段回复技术任务单 -->
+		<action name="stepReplyUrgentRepairTechSupportTaskOrderAction" class="urgentRepairTechSupportTaskOrderAction" method="stepReplyUrgentRepairTechSupportTaskOrderAction">
+		</action>
+		<!-- 跳转技术任务单页面 -->
+		<action name="loadUrgentRepairTechSupportTaskOrderPageAction" class="urgentRepairTechSupportTaskOrderAction" method="loadUrgentRepairTechSupportTaskOrderPageAction">
+			<result name="success">handleTechSupportTaskOrder.jsp</result>
+		</action>
+		<!-- 技术任务流转过程页面 -->
+		<action name="loadTechSupportTaskOrderProcedureAction" class="urgentRepairTechSupportTaskOrderAction" method="loadTechSupportTaskOrderProcedureAction">
+			<result name="SECTION">insert_taskOrderProcedure.jsp</result>
+			<result name="WO_SECTION">insert_taskOrderProcedureForWorkOrder.jsp</result>
+			<result name="PAGE">showTaskOrderInfoPage.jsp</result>
+		</action>
+		<!-- 生成转派专家任务组织树 -->
+		<action name="createToSendTechSupportTaskOrgTreeAction" class="urgentRepairTechSupportTaskOrderAction" method="createToSendTechSupportTaskOrgTreeAction">
+		</action>
+		<!-- 转派抓家任务 -->
+		<action name="toSendUrgentRepairTechSupportTaskOrderAction" class="urgentRepairTechSupportTaskOrderAction" method="toSendUrgentRepairTechSupportTaskOrderAction">
+		</action>
+		<!-- 获取维护队长 -->
+		<action name="loadTeamLeadersInfoAction" class="urgentRepairWorkOrderAction" method="loadTeamLeadersInfoAction">
+		</action>
+		
+		<!-- 获取转派工单调度员 -->
+		<action name="loadToSendDispatcherInfoListAction" class="urgentRepairWorkOrderAction" method="loadToSendDispatcherInfoListAction">
+		</action>
+		
+		<!-- 获取专家 -->
+		<action name="loadSpecialistInfoAction" class="urgentRepairSenceTaskOrderAction" method="loadSpecialistInfoAction">
+		</action>
+		
+		<!-- 获取转派代维人员 -->
+		<action name="loadToSendTeamerInfoListAction" class="urgentRepairSenceTaskOrderAction" method="loadToSendTeamerInfoListAction">
+		</action>
+		
+		<!-- 获取工单下级任务单 -->
+		<action name="getWorkOrderChildrenTaskOrderAction" class="urgentRepairWorkOrderAction" method="getWorkOrderChildrenTaskOrderAction">
+		</action>
+		
+		<!-- 获取转派专家 -->
+		<action name="loadToSendSpecialistInfoListAction" class="urgentRepairTechSupportTaskOrderAction" method="loadToSendSpecialistInfoListAction">
+		</action>
+		
+<!-- ******************************* for mobile ***************************************************** -->
+		
+		<!-- 显示现场处理单的页面内容 -->
+		<action name="loadUrgentRepairSceneTaskOrderPageActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="loadUrgentRepairSceneTaskOrderPageActionForMobile">
+		</action>
+		<!-- 加载现场处理工单 -->
+		<action name="loadUrgentRepairSceneWorkOrderPageActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="loadUrgentRepairSceneWorkOrderPageActionForMobile">
+		</action>
+		<!-- 加载现场处理相关资源 -->
+		<action name="loadUrgentRepairSceneAssResPageActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="loadUrgentRepairSceneAssResPageActionForMobile">
+		</action>
+		<!-- 加载现场处理服务跟踪记录 -->
+		<action name="loadUrgentRepairSceneTraceRecordPageActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="loadUrgentRepairSceneTraceRecordPageActionForMobile">
+		</action>
+		<!-- 受理现场处理单 -->
+		<action name="acceptUrgentRepairSceneTaskOrderActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="acceptUrgentRepairSceneTaskOrderActionForMobile">
+		</action>
+		
+		<!-- 加载驳回现场处理单 -->
+		<action name="loadRejectSceneTaskOrderActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="loadRejectSceneTaskOrderActionForMobile">
+		</action>
+		
+		<!-- 驳回现场处理单 -->
+		<action name="rejectUrgentRepairSceneTaskOrderActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="rejectUrgentRepairSceneTaskOrderActionForMobile">
+		</action>
+		
+		<!-- 转派现场处理单页面 -->
+		<action name="loadToSendUrgentRepairSceneTaskActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="loadToSendUrgentRepairSceneTaskActionForMobile">
+		</action>
+		
+		<!-- 转派维护队员列表 -->
+		<action name="getToSendTeamerInfoListActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="getToSendTeamerInfoListActionForMobile">
+		</action>
+		
+		<!-- 转派现场处理单 -->
+		<action name="toSendUrgentRepairSceneTaskOrderActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="toSendUrgentRepairSceneTaskOrderActionForMobile">
+		</action>
+		
+		<!--  跳转到派发技术支援单页面(预填任务信息) -->
+		<action name="loadUrgentRepairTechSupportTaskActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="loadUrgentRepairTechSupportTaskActionForMobile">
+		</action>
+		<!--  派发支援任务单 -->
+		<action name="createUrgentRepairTechSupportTaskOrderActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="createUrgentRepairTechSupportTaskOrderActionForMobile">
+		</action>
+		<!--  预填现场处理的最终回复信息 -->
+		<action name="preFillUrgentRepairSceneLastReplyContentActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="preFillUrgentRepairSceneLastReplyContentActionForMobile">
+		</action>
+		<!--  最终回复现场处理 -->
+		<action name="finalReplyUrgentRepairSceneTaskOrderActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="finalReplyUrgentRepairSceneTaskOrderActionForMobile">
+		</action>
+		<!--  加载阶段回复页面 -->
+		<action name="loadSceneTaskOrderStepReplyActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="loadSceneTaskOrderStepReplyActionForMobile">
+		</action>
+		<!--  现场任务阶段回复 -->
+		<action name="stepReplyUrgentRepairSceneTaskOrderActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="stepReplyUrgentRepairSceneTaskOrderActionForMobile">
+		</action>
+		
+		<!--  加载现场子任务页面 -->
+		<action name="getSubTaskOfSceneActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="getSubTaskOfSceneActionForMobile">
+		</action>
+		
+		<!--  加载催办任务页面 -->
+		<action name="loadHastenUrgentRepairTechSupportTaskOrderPageActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="loadHastenUrgentRepairTechSupportTaskOrderPageActionForMobile">
+		</action>
+		
+		<!--  催办专家任务页面 -->
+		<action name="hastenUrgentRepairTechSupportTaskOrderActionForMobile" class="urgentRepairSenceTaskOrderActionForMobile" method="hastenUrgentRepairTechSupportTaskOrderActionForMobile">
+		</action>
+		
+		<!-- 显示专家处理单的页面内容 -->
+		<action name="loadUrgentRepairTechSupportTaskOrderPageActionForMobile" class="urgentRepairTechSupportTaskOrderActionForMobile" method="loadUrgentRepairTechSupportTaskOrderPageActionForMobile">
+		</action>
+		<!-- 加载专家处理工单 -->
+		<action name="loadUrgentRepairTechSupportWorkOrderPageActionForMobile" class="urgentRepairTechSupportTaskOrderActionForMobile" method="loadUrgentRepairTechSupportWorkOrderPageActionForMobile">
+		</action>
+		<!-- 加载专家处理相关资源 -->
+		<action name="loadUrgentRepairTechSupportAssResPageActionForMobile" class="urgentRepairTechSupportTaskOrderActionForMobile" method="loadUrgentRepairTechSupportAssResPageActionForMobile">
+		</action>
+		<!-- 加载专家处理服务跟踪记录 -->
+		<action name="loadUrgentRepairTechSupportTraceRecordPageActionForMobile" class="urgentRepairTechSupportTaskOrderActionForMobile" method="loadUrgentRepairTechSupportTraceRecordPageActionForMobile">
+		</action>
+		<!-- 受理专家处理单 -->
+		<action name="acceptUrgentRepairTechSupportTaskOrderActionForMobile" class="urgentRepairTechSupportTaskOrderActionForMobile" method="acceptUrgentRepairTechSupportTaskOrderActionForMobile">
+		</action>
+		
+		<!-- 加载驳回专家处理单 -->
+		<action name="loadRejectTechSupportTaskOrderActionForMobile" class="urgentRepairTechSupportTaskOrderActionForMobile" method="loadRejectTechSupportTaskOrderActionForMobile">
+		</action>
+		
+		<!-- 驳回专家处理单 -->
+		<action name="rejectUrgentRepairTechSupportTaskOrderActionForMobile" class="urgentRepairTechSupportTaskOrderActionForMobile" method="rejectUrgentRepairTechSupportTaskOrderActionForMobile">
+		</action>
+		
+		<!-- 预填专家处理子任务的最终回复信息 -->
+		<action name="preFillUrgentRepairTechSupportLastReplyContentActionForMobile" class="urgentRepairTechSupportTaskOrderActionForMobile" method="preFillUrgentRepairTechSupportLastReplyContentActionForMobile">
+		</action>
+		<!-- 最终回复专家处理 -->
+		<action name="finalReplyUrgentRepairTechSupportTaskOrderActionForMobile" class="urgentRepairTechSupportTaskOrderActionForMobile" method="finalReplyUrgentRepairTechSupportTaskOrderActionForMobile">
+		</action>
+		<!-- 加载阶段回复页面 -->
+		<action name="loadTechSupportTaskOrderStepReplyActionForMobile" class="urgentRepairTechSupportTaskOrderActionForMobile" method="loadTechSupportTaskOrderStepReplyActionForMobile">
+		</action>
+		<!-- 阶段回复 -->
+		<action name="stepReplyUrgentRepairTechSupportTaskOrderActionForMobile" class="urgentRepairTechSupportTaskOrderActionForMobile" method="stepReplyUrgentRepairTechSupportTaskOrderActionForMobile">
+		</action>
+		<!-- 加载转派专家任务页面 -->
+		<action name="loadToSendUrgentRepairTechSupportTaskActionForMobile" class="urgentRepairTechSupportTaskOrderActionForMobile" method="loadToSendUrgentRepairTechSupportTaskActionForMobile">
+		</action>
+		<!-- 转派专家任务 -->
+		<action name="toSendUrgentRepairTechSupportTaskOrderActionForMobile" class="urgentRepairTechSupportTaskOrderActionForMobile" method="toSendUrgentRepairTechSupportTaskOrderActionForMobile">
+		</action>
+		
+		<!-- for mobile -->
+	</package>
+</struts>

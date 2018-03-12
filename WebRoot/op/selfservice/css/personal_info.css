@@ -1,0 +1,15 @@
+/* CSS Document */
+#container{font-family:'微软雅黑' ,Verdana, Geneva, sans-serif;}
+.personal_info_title{ background:#f8f8f8 url(../images/ico_account.png) 7px 3px no-repeat; padding:5px 0px 1px 38px; line-height:24px; border-top:1px solid #ccc; border-bottom:1px solid #ccc;}
+.personal_info_photo{height:240px; width:220px; float:left; border:1px solid #ccc; margin:2px;padding:2px; background:url(../images/user_background.png) center center no-repeat; position:relative;}
+.add_photo{background:#333; opacity:0.5; filter:Alpha(opacity=50); padding:10px 0px; width:100%; text-align:center; position:absolute; bottom:0px; left:0px; color:#ccc; cursor:pointer;}
+.add_photo:hover{ color:#fff;}
+.add_photo_tip{color:#666; position:absolute; padding:4px 14px; bottom:-48px; *+bottom:-58px;}
+.personal_info_ul{display:block; width:auto; overflow:hidden; border-left:1px solid #eee;}
+.personal_info_ul li{border-bottom:1px solid #eee; white-space:nowrap; font-weight:bold; line-height:30px;}
+.li_left{display:inline-block; width:120px; text-align:right; padding-right:10px; font-weight:normal;}
+.personal_info_bottom{line-height:30px; padding:4px 0px; border-bottom:1px solid #eee;text-align:center;}
+
+.now_person_info{display:none;}
+.repeat_info_right{ display:inline-block; margin-left:4px;background:url(../images/ico_right.png) 0px 8px no-repeat; padding-left:16px; color:#0C0;}
+.repeat_info_wrong{ display:inline-block; margin-left:4px; background:url(../images/ico_wrong.png) 0px 8px no-repeat;padding-left:16px; color:#F00;}

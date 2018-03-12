@@ -1,0 +1,188 @@
+@charset "utf-8";
+/* CSS Document */
+
+.main-whitetable1 th{
+	padding:0px 10px;
+	color:#444;
+	white-space:nowrap;
+	border:#CCC 1px solid;
+	line-height:30px;
+	background-color: #FFF;
+	background-image: url(../images/cmp-bg2.gif);
+	background-repeat: repeat-x;
+}
+.main-whitetable1 tr td { border:1px solid #CCC; padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#FFF;}
+
+
+.main-tablestandard{ width:100%; margin: 0px auto 10px; background:#FFF; position:relative;}
+/*.main-tablestandard tr td{ border:1px solid #CCC; padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:WhiteSmoke;}
+.main-tablestandard tr td a{ color:#03F;} */
+.main-tablestandard tr{ border:1px solid #CCC; padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:WhiteSmoke;}
+
+.main-tablestandard .main-tablestandard-title{ padding:0px 10px; background:url(../images/cmp-bg2.gif) repeat-x; color:#444; height:30px; line-height:30px;}
+.main-tablestandard .main-tablestandard-greentitle{padding:0px 10px;	color:#444;	height:30px;	line-height:30px;	background-color: #d7f2c2;	background-image: none;ackground-repeat: repeat-x;}
+.main-tablestandard .main-tablestandard-alicebluetitle{padding:0px 10px;	color:#444;	height:30px;	line-height:30px;	background-color: AliceBlue;	background-image: none;ackground-repeat: repeat-x;}
+
+.main-tablestandard .main-tablestandard-whitetr td{border:1px solid #CCC; padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#fff;}
+
+/* */
+
+.greystyle-standard{ margin:auto; padding-left:5px; width:100%}
+.greystyle-standard th{ padding:0px 10px; background:url(../images/cmp-bg2.gif) repeat-x; color:#444; white-space:nowrap; border:#CCC 1px solid; line-height:30px;}
+.greystyle-standard tr td{ border:1px solid #CCC; padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:WhiteSmoke;}
+.greystyle-standard .greenhead{ background:#d7f2c2}
+
+.greystyle-standard-noborder { margin:auto; border:none}
+.greystyle-standard-noborder th{ padding:0px 10px; background:url(../images/cmp-bg2.gif) repeat-x; color:#444; white-space:nowrap; border:#CCC 1px solid; line-height:30px;}
+.greystyle-standard-noborder tr td{	border:0px none #CCC;	padding:4px;	padding-left:6px;	color:#000;	line-height:21px;	vertical-align:middle;	background:WhiteSmoke;}
+.greystyle-standard-noborder .greenhead{ background:#d7f2c2}
+.greystyle-standard .greystyle-standard-whitetr td{border:1px solid #CCC; padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#fff; height:20px}
+.greystyle-standard .greystyle-standardcoldwhitetr td{border:1px solid #CCC; padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#f9fcfe;height:20px}
+.greystyle-standard .greystyle-standard-tintoforangetr tr{border:1px solid #red;}
+.greystyle-standard .greystyle-standard-tintoforangetr td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#fdc;height:20px}
+.greystyle-standard .greystyle-standard-boldtitle th { font-weight:bold}
+.greystyle-standard .greystyle-standard-red td{border:1px solid #CCC; padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#EFFCFD; height:20px}/*#E0E0E0*/
+/* */
+.greystyle-standard-whitetr .greystyle-standard-whitetr-textalign-right td{ text-align:right;}
+
+/* 9.3*/
+.bluestyle-standard{ margin:auto; padding-left:5px}
+.bluestyle-standard th{padding:0px 10px; background:url(../images/blue-bg2.png) repeat-x; color:#444; white-space:nowrap; border:#CCC 1px solid; line-height:30px;
+}
+.bluestyle-standard tr td{ border:1px solid #CCC; padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:WhiteSmoke; text-align:left}
+.bluestyle-standard .bluestyle-standardwhitetr td{border:1px solid #CCC; padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#fff; height:20px}
+
+.bluestyle-standard .bluestyle-standardcoldwhitetr td{border:1px solid #CCC; padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#f9fcfe;height:20px}
+
+.bluestyle-standard .bluestyle-standardcoldgraytr td{border:1px solid #CCC; padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#f9e9fa;height:20px}
+
+.bluestyle-standard .bluestyle-standardhighlighttr td{border:1px solid #CCC; padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#fe7276;height:20px}
+/* 9.25 start*/
+.bluestyle-standard .bluestyle-standardwhitetr-textalign-right td{border:1px solid #CCC; padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#fff; height:20px; text-align:right;}
+.bluestyle-standard .bluestyle-standardcoldwhitetr-textalign-right td{border:1px solid #CCC; padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#f9fcfe;height:20px;text-align:right;}
+.bluestyle-standard .bluestyle-standardcoldgraytr-textalign-right td{border:1px solid #CCC; padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#f9e9fa;height:20px;text-align:right;}
+.bluestyle-standard .bluestyle-standardhighlighttr-textalign-right td{border:1px solid #CCC; padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#fe7276;height:20px;text-align:right;}
+/* 9.25 end*/
+.greystyle-standard2{ margin:auto; padding-left:5px;}
+.greystyle-standard2 th{ padding:0px 10px; background:url(../images/cmp-bg2.gif) repeat-x; color:#444; white-space:nowrap; border:#CCC 1px solid; line-height:30px;}
+.greystyle-standard2 .greystyle-standard2-tintoforangetr tr {border:6px solid #red;}
+.greystyle-standard2 .greystyle-standard2-tintoforangetr td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#fdc;height:20px}
+
+.greystyle-standard2-noborder{ margin:auto; padding-left:5px;}
+.greystyle-standard2-noborder th{ padding:0px 0px; background:url(../images/cmp-bg2.gif) repeat-x; color:#444; white-space:nowrap;  line-height:30px; text-align:center}
+.greystyle-standard2-noborder tr td{ text-align:left}
+.greystyle-standard2-noborder .greystyle-standard2-noborder-tintoforangetr td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#ffd2bb;height:20px}
+.greystyle-standard2-noborder .greystyle-standard2-noborder-warmwhitetr td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#fee;height:20px}
+.greystyle-standard2-noborder .greystyle-standard2-noborder-tintofyellowtr td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#ff7;height:20px}
+.greystyle-standard2-noborder .greystyle-standard2-noborder-tintofcyantr td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#cff;height:20px}
+.greystyle-standard2-noborder .greystyle-standard2-noborder-tintofbluetr td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#c8e7f4;height:20px}
+.greystyle-standard2-noborder .greystyle-standard2-noborder-transparenttr td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; height:20px}
+.greystyle-standard2-noborder .greystyle-standard2-noborder-textalign-right { text-align:right;}
+.greystyle-standard2-noborder .table-td-textalign-right { text-align:right;}
+/* 9.27 add start */
+.greystyle-standard3{ margin:auto; padding-left:5px;}
+.greystyle-standard3 th{border:1px solid #ededed; padding:0px 0px; background:url(../images/cmp-bg2.gif) repeat-x; color:#444; white-space:nowrap;  line-height:30px; text-align:center; font-weight:bold}
+.greystyle-standard3 tr td{ text-align:left;border:1px solid #ededed;}
+.greystyle-standard3 .greystyle-standard3-tintoforangetr td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#ffd2bb;height:20px}
+.greystyle-standard3 .greystyle-standard3-warmwhitetr td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#fee;height:20px}
+.greystyle-standard3 .greystyle-standard3-tintofyellowtr td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#ff7;height:20px}
+.greystyle-standard3 .greystyle-standard3-tintofcyantr td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#cff;height:20px}
+.greystyle-standard3 .greystyle-standard3-tintofbluetr td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#c8e7f4;height:20px}
+.greystyle-standard3 .greystyle-standard3-transparenttr td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; height:20px}
+.greystyle-standard3 .greystyle-standard3-textalign-right { text-align:right;}
+.greystyle-standard3 .table-td-textalign-right { text-align:right;}
+.greystyle-standard3 .greystyle-standard3-1level td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#75dff4;height:20px}
+.greystyle-standard3 .greystyle-standard3-2level td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#a7eaf8;height:20px}
+.greystyle-standard3 .greystyle-standard3-3level td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#d2f4fb;height:20px}
+.greystyle-standard3 .greystyle-standard3-4level td{ padding:4px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; background:#e3f8fd;height:20px}
+
+
+/* 9.27 add end */
+
+
+
+/* 2013.09.17增加搜索结果表格*/
+.search_result_standardtable_gray {    border: none;    width: 100%;}
+.search_result_standardtable_gray th {
+    background: url("../images/cmp-bg2.gif") repeat-x scroll 0 0 transparent;
+    border-bottom: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    height: 30px;
+    line-height: 22px;
+    text-align: center;
+	font-weight: bold;
+    white-space: nowrap;
+	
+}
+.search_result_standardtable_gray td {
+    /*border-bottom: 1px solid #EEEEEE; */
+	border:1px solid #EEEEEE;
+	height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    padding: 2px 4px;
+    /*text-align: left; */
+    white-space: nowrap;
+}
+
+.search_result_standardtable_gray	.search_result_standardtable_gray_sumtitle td{
+	border:1px solid #cccccc;
+	background-color: #f4f7fc;
+	/*text-align: center;*/
+	height:28px;
+	border-bottom: 1px solid #CCCCCC;
+
+}
+.search_result_standardtable_gray .search_result_standardtable_gray_value_sytle{ text-align:right}
+.search_result_standardtable_gray .search_result_standardtable_gray_date_sytle{ text-align:center}
+/* 2013.9.23增加 */
+.bluestyle-standard .bluestyle-standard-th60px{
+	padding:0px 10px;
+	background:url(../images/blue-bg-61px.png) repeat-x;
+	color:#444;
+	white-space:nowrap;
+	border:#CCC 1px solid;
+	line-height:30px;
+	font-weight:bold;     
+}
+.bluestyle-standard .bluestyle-standard-th-top{
+	padding:0px 10px;
+	background:url(../images/blue-bg-60px-top.png) repeat-x;
+	color:#444;
+	white-space:nowrap;
+	border:#CCC 1px solid;
+	line-height:30px;
+	font-weight:bold;
+	text-align:center	
+}
+
+.bluestyle-standard .bluestyle-standard-th-bottom td{	padding:0px 10px;	background:url(../images/blue-bg-60px-bottom.png) repeat-x;	color:#444;	white-space:nowrap;border:#CCC 1px solid;line-height:30px; text-align:center}
+
+.transparent-standard {
+	margin:auto;
+	padding:0px;
+	padding-left:5px;
+	background-color: transparent;
+	width:100%;
+
+}
+.transparent-standard  tr td{
+	background-color: transparent; border:none; padding:4px; padding-left:6px;
+}
+
+.transparent-standard .tdfull{_width:expression(this.offsetParent.offsetWidth+"px");}
+
+.transparent-standard .tptr-bottom-line{
+	border-bottom-width: 1px;
+	border-bottom-color: #999;
+	border-bottom-style:solid
+}
+
+
+/* 9.25增加*/
+
+/*10.22 */
+.transparent-standard-nopadding{margin:auto;padding:0px;table-layout: fixed;}
+.transparent-standard-nopadding .tr-h30px td{ height:40px; line-height:40px; white-space:nowrap; /*border:1px solid #CCC;*/}
+
+/* */

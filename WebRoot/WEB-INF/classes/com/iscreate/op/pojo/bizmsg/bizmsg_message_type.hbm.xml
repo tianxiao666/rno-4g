@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iscreate.op.pojo.bizmsg.BizmsgMessageType" table="MSG_MESSAGE_TYPE" >
+        <id name="id">
+            <column name="id" />
+            <generator class="sequence">
+            	<param name="sequence">
+            		SEQ_MSG_MESSAGE_TYPE
+            	</param>
+            </generator>
+        </id>
+        <property name="typeKey" column="typeKey" />
+        <property name="typeName" column="typeName" />
+        <property name="_order" column="sortOrder" />
+        <property name="status" column="status" />
+    </class>
+</hibernate-mapping>

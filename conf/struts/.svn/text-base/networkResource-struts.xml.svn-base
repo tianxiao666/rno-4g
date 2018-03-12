@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="networkResource" extends="iscreate-struts-default">
+	
+		<!-- 获取基站列表 -->
+		<action name="getListBaseStationAction" class="networkResourceAction" method="getListBaseStationAction">
+		</action>
+		
+		<!-- 根据拼音获取基站列表 -->
+		<action name="getListPinyinBaseStationAction" class="networkResourceAction" method="getListPinyinBaseStationAction">
+		</action>
+		
+		<!-- 根据模糊查找基站列表 -->
+		<action name="getListFuzzyBaseStationAction" class="networkResourceAction" method="getListFuzzyBaseStationAction">
+		</action>
+		
+	</package>
+		
+		
+	<package name="networkResourceAjax" extends="struts-default">
+		<!-- 获取基础设置信息 -->
+		<action name="getBaseFacilityAction" class="networkResourceAction" method="getBaseFacilityAction">
+		</action>
+		
+		<!-- 获取资源维护记录 -->
+		<action name="getResourceMaintainRecordAction" class="networkResourceAction" method="getResourceMaintainRecordAction">
+		</action>
+		
+		<!-- 根据工单Id获取通用的服务追踪记录 -->
+		<action name="getCommonTaskTraceRecordByWoIdAction" class="networkResourceAction" method="getCommonTaskTraceRecordByWoIdAction">
+		</action>
+		
+		<!-- 根据基站Id和基站类型获取站址 -->
+		<action name="getStationByIdAndTypeAction" class="networkResourceAction" method="getStationByIdAndTypeAction">
+		</action>
+		
+		<!-- 根据基站Id和基站类型获取站址 -->
+		<action name="getAllAreaForUpByIdAction" class="networkResourceAction" method="getAllAreaForUpByIdAction">
+		</action>
+		
+		<!-- 根据工单ID获取基础设置信息 -->
+		<action name="getBaseFacilityByWoIdAction" class="networkResourceAction" method="getBaseFacilityByWoIdAction">
+		</action>
+		
+		<!-- 获取外部链接 -->
+		<action name="getNetUrlAction" class="networkResourceAction" method="getNetUrlAction">
+		</action>
+	
+		<!-- ajax根据基站名获取基站信息 -->
+		<action name="getBaseStationByBaseStationNameAjaxAction" class="networkResourceAction" method="getBaseStationByBaseStationNameAjaxAction">
+		</action>
+		
+	
+		<!-- 终端 begin -->
+		<!-- 获取所有省份 -->
+		<action name="getAllProviceForMobile" class="networkResourceInterfaceActionForMobile" method="getAllProviceForMobile" >
+		</action>
+		<!-- 根据上级区域id,获取下级信息 -->
+		<action name="getSubAreaForMobile" class="networkResourceInterfaceActionForMobile" method="getSubAreaForMobile" >
+		</action>
+		<!-- 终端 end -->
+		
+		
+		
+		<!-- 获取子级区域 -->
+		<action name="getChildTypeByEntityAction" class="networkResourceAction" method="getChildTypeByEntityAction"></action>
+		
+	</package>
+</struts>

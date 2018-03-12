@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urgentRepair>
+	<workOrderBasicInfo name="工单基本信息" code="workOrderBasicInfo">
+		<woId name="工单号"></woId>
+		<woTitle name="工单主题"></woTitle>
+		<faultStationName name="告警基站"></faultStationName>
+		<netElementName name="告警网元名称"></netElementName>
+		
+		<faultArea name="告警区域"></faultArea>
+		<stationName name="站址名称"></stationName>
+		<faultStationAddress name="站址地址"></faultStationAddress>
+		<baseStationLevel name="基站等级"></baseStationLevel>
+		
+		<acceptProfessional name="受理专业"></acceptProfessional>
+		<faultType name="故障类型"></faultType>
+		<faultLevel name="故障级别"></faultLevel>
+		<faultOccuredTime name="故障发生时间"></faultOccuredTime>
+		
+		<latestAllowedTime name="故障处理时限"></latestAllowedTime>
+		<faultDescription name="故障描述"></faultDescription>
+	</workOrderBasicInfo>
+	
+	<workOrderReplyInfo name="工单回复信息" code="workOrderReplyInfo">
+		<lastReplyPeopleName name="回复人"></lastReplyPeopleName>
+		<finalReplyTime name="回复时间"></finalReplyTime>
+		<faultGenera name="故障大类"></faultGenera>
+		<faultCause name="故障原因"></faultCause>
+		
+		<sideeffectService name="是否影响业务"></sideeffectService>
+		<affectedServiceName name="受影响业务"></affectedServiceName>
+		<faultDealResult name="故障处理结果"></faultDealResult>
+		<foreseeResolveTime name="预计解决时间"></foreseeResolveTime>
+		
+		<resonForDelayApply name="延迟解决原因"></resonForDelayApply>
+		<isAlarmClear name="告警是否清除"></isAlarmClear>
+		<faultSolveTime name="告警清除时间"></faultSolveTime>
+		<isOverTime name="工单是否超时"></isOverTime>
+	</workOrderReplyInfo>
+	
+	<taskOrderBasicInfo name="任务单信息" code="taskOrderBasicInfo">
+		<orderOwnerOrgId name="处理组织"></orderOwnerOrgId>
+		<orderOwner name="处理人"></orderOwner>
+	</taskOrderBasicInfo>
+	
+	<customerWorkOrderInfo name="客户工单信息" code="customerWorkOrderInfo">
+		<customerWoId name="客户工单编号"></customerWoId>
+		<customerWoTitle name="客户工单主题"></customerWoTitle>
+		<customerSenderDepartment name="派单人部门"></customerSenderDepartment>
+		<customerWoSender name="派单人"></customerWoSender>
+		
+		<customerWoCurrentDepartment name="处理人部门"></customerWoCurrentDepartment>
+		<customerWoCurrentHandler name="处理人"></customerWoCurrentHandler>
+		<isEmergencyFault name="是否紧急故障"></isEmergencyFault>
+		<sendWoWay name="派单方式"></sendWoWay>
+		
+		<customerSideeffectService name="是否影响业务"></customerSideeffectService>
+		<customerAffectedServiceName name="影响业务"></customerAffectedServiceName>
+		<alarmFormalName name="告警标准名"></alarmFormalName>
+		<alarmNetManageSource name="告警网管来源"></alarmNetManageSource>
+		
+		<alarmLogicalClass name="告警逻辑分类"></alarmLogicalClass>
+		<alarmLogicalSubClass name="告警逻辑子类"></alarmLogicalSubClass>
+		<alarmClass name="告警类别"></alarmClass>
+		<!-- <customerWoTitle name="网元名称"></customerWoTitle> -->
+		
+		<netmanageAlarmLevel name="网管告警级别"></netmanageAlarmLevel>
+		<alarmAssociatedId name="告警关联标识"></alarmAssociatedId>
+		<subAlarmNumber name="子告警数量"></subAlarmNumber>
+		<subAlarmInfo name="子告警信息"></subAlarmInfo>
+	</customerWorkOrderInfo>
+	
+</urgentRepair>

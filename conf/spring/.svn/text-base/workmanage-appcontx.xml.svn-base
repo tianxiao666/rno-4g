@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+	<!-- 业务service工厂 -->
+	<bean id="bizInfoFactoryService" class="com.iscreate.op.service.workmanage.BizInfoFactoryService" >
+    	<property name="bizProcessConfService" ref="bizProcessConfService"></property>
+    	<property name="workOrderHandleService" ref="workOrderHandleService"></property>
+    	<property name="taskOrderHandleService" ref="taskOrderHandleService"></property>
+    	<property name="menuService" ref="menuService"></property>
+    	<property name="commonQueryService" ref="commonQueryService"></property>
+    	<property name="dataSelectUtil" ref="dataSelectUtil"></property>
+    	
+    	<property name="workOrderAssnetResourceDao" ref="workOrderAssnetResourceDao"></property>
+    	<property name="taskTracingRecordDao" ref="taskTracingRecordDao"></property>
+    	<property name="bizMessageService" ref="bizMessageService"></property>
+	</bean>
+	
+	<!-- 工作管理对外接口service -->
+	<bean id="workManageService" class="com.iscreate.op.service.workmanage.WorkManageServiceImpl">
+		<property name="bizInfoFactoryService" ref="bizInfoFactoryService"></property>
+		<property name="workFlowService" ref="workFlowService"></property>
+		<!-- <property name="networkResourceInterfaceService" ref="networkResourceService"></property> -->
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<!-- ou.jh -->
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+		<!-- du.hw -->
+		<property name="sysOrganizationDao" ref="sysOrganizationDao" />
+	</bean>
+	
+	<!-- 业务流程配置service -->
+	<bean id="bizProcessConfService" class="com.iscreate.op.service.workmanage.BizProcessConfServiceImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	
+	<!-- 业务流程任务信息配置service -->
+	<bean id="bizprocessTaskinfoConfService" class="com.iscreate.op.service.workmanage.BizprocessTaskinfoConfServiceImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 工单处理接口service -->
+	<bean id="workOrderHandleService" class="com.iscreate.op.service.workmanage.WorkOrderHandleServiceImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+		<property name="workFlowService" ref="workFlowService"></property>
+		<property name="bizprocessTaskinfoConfService" ref="bizprocessTaskinfoConfService"></property>
+		<property name="workFlowInfoService" ref="workFlowInfoService"></property>
+		<property name="dataSelectUtil" ref="dataSelectUtil"></property>
+		<property name="workmanageStatusregService" ref="workmanageStatusregService"></property>
+		<property name="commonQueryService" ref="commonQueryService"></property>
+		<property name="sysOrgUserService" ref="sysOrgUserService"></property>
+	</bean>
+	
+	<!-- 任务单处理接口service -->
+	<bean id="taskOrderHandleService" class="com.iscreate.op.service.workmanage.TaskOrderHandleServiceImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+		<property name="workFlowService" ref="workFlowService"></property>
+		<property name="workOrderHandleService" ref="workOrderHandleService"></property>
+		<property name="workFlowInfoService" ref="workFlowInfoService"></property>
+		<property name="bizprocessTaskinfoConfService" ref="bizprocessTaskinfoConfService"></property>
+		<property name="dataSelectUtil" ref="dataSelectUtil"></property>
+		<property name="workmanageStatusregService" ref="workmanageStatusregService"></property>
+		<property name="commonQueryService" ref="commonQueryService"></property>
+		<property name="networkResourceInterfaceService" ref="networkResourceService" />
+		<property name="workOrderAssnetResourceDao" ref="workOrderAssnetResourceDao" />
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<!-- ou.jh -->
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+
+	</bean>
+	
+	
+	
+	<!-- 工作流信息获取service -->
+	<bean id="workFlowInfoService" class="com.iscreate.op.service.workmanage.WorkFlowInfoServiceImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	
+	
+	<!-- 公共查询service -->
+	<bean id="commonQueryService" class="com.iscreate.op.service.workmanage.CommonQueryServiceImpl">
+		<property name="dataSelectUtil" ref="dataSelectUtil"></property>
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	
+	<!-- 菜单service -->
+	<bean id="menuService" class="com.iscreate.op.service.workmanage.MenuServiceImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- field字段service -->
+	<bean id="fieldService" class="com.iscreate.op.service.workmanage.FieldServiceImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	
+	
+	<bean id="dataSelectUtil" class="com.iscreate.op.service.workmanage.util.DataSelectUtil" >
+    	<property name="confDataSource" ref="oracleDataSource"></property>
+	</bean>
+	
+	<bean id="workmanageStatusregService" class="com.iscreate.op.service.workmanage.WorkmanageStatusregServiceImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	
+	
+	
+	<!-- action################### begin -->
+	
+	<bean id="workManageAction" class="com.iscreate.op.action.workmanage.WorkManageAction" singleton="false">
+		<property name="bizInfoFactoryService" ref="bizInfoFactoryService"></property>
+		<property name="dataDictionaryService" ref="dataDictionaryService"></property>
+		<property name="workManageService" ref="workManageService"></property>
+		<property name="writeExcel2003Service" ref="writeExcel2003Service"></property>
+		<property name="workFlowService" ref="workFlowService"></property>
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<property name="sysUserRelaPermissionService" ref="sysUserRelaPermissionService" />
+		<property name="sysRoleDao" ref="sysRoleDao" />
+		
+	</bean>
+	
+	<bean id="commonQueryAction" class="com.iscreate.op.action.workmanage.CommonQueryAction" singleton="false">
+		<property name="menuService" ref="menuService"/>
+		<property name="fieldService" ref="fieldService"/>
+    	<property name="commonQueryService" ref="commonQueryService"/>
+    	<property name="workFlowService" ref="workFlowService"></property>
+    	<property name="workManageService" ref="workManageService"></property>
+    	<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	
+	
+	
+	
+	<bean id="workManageActionForMobile" class="com.iscreate.op.action.workmanage.WorkManageActionForMobile" >
+		<property name="bizInfoFactoryService" ref="bizInfoFactoryService"></property>
+		<property name="networkResourceService" ref="networkResourceService"></property>
+		<property name="workManageService" ref="workManageService"></property>
+	</bean>
+	
+	
+	<bean id="initWorkflowAction" class="com.iscreate.op.action.workmanage.InitWorkflowAction" >
+		<property name="workFlowService" ref="workFlowService"></property>
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	
+	
+	<!-- action################### end -->	
+
+</beans>

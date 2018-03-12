@@ -1,0 +1,12 @@
+/* CSS Document */
+body{position:absolute;background:#f7f7f7;}
+.person_info{padding:4px; font-family:'微软雅黑',Verdana, Geneva, sans-serif; background:#f7f7f7;}
+.person_img{float:left; margin:2px;}
+.person_text{width:auto; overflow:hidden;}
+.person_text table td{ padding:2px 4px; white-space:nowrap;}
+.blue_button{background:url(../images/button_blue.png) no-repeat; height:20px; width:77px; border:none; color:#fff; cursor:pointer;}
+.blue_button:hover{ background-position:-86px 0px;}
+.blue_button:active{  background-position:-172px 0px;}
+.login_info{clear:both; background:#f7f7f7; padding:0 4px; text-align:center;}
+.login_info h4{ line-height:24px;}
+.login_info h4 span{font-weight:normal;}

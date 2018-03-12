@@ -1,0 +1,148 @@
+/* 一些公用的类 */
+
+.m0a{margin:0 auto;}
+
+/* 设置float，兼容IE6双外边距错误 */
+.fl{float:left; _display:inline; zoom:1;}
+.fr{float:right; _display:inline; zoom:1;}
+.inline{ display:inline-block; *+display:inline; _display:inline; zoom:1;}
+/* 字体行高 */
+.lh30{line-height:30px;}
+
+/* 字体大小 */
+.f-z14{font-size:14px;}
+.f-z16{font-size:16px;}
+
+/* 字体对齐方式 */
+.tl{text-align:left;}
+.tr{text-align:right;}
+.tc{text-align:center;}
+
+/* border */
+.nbt{border-top:none;}
+.nbr{border-right:none;}
+.nbb{border-bottom:none;}
+.nbl{border-left:none;}
+
+#tl{text-align:left;}
+#tr{text-align:right;}
+#tc{text-align:center;}
+
+.f-bold{font-weight:bold;}
+.f-normal{font-weight:normal;}
+
+.vm {vertical-align: middle !important;}
+.vt {vertical-align: top !important;}
+
+.opacity0{opacity:0; filter:alpha(opacity=0); }
+.cur{cursor: pointer;}
+.clear{clear:both;}
+
+/* color */
+.red, .error{color:#f00;}
+.ccc{color:#ccc;}
+.black{ color:#000; padding-left:20px;}
+.grey{color:#666;}
+.blue{color:#00F;}
+
+/* 原子类 */
+.mt2{margin-top:2px !important;}
+.mt10{margin-top:10px !important;}
+.ml10{margin-left:10px !important;}
+.mr10{margin-right:10px !important;}
+.mr30{margin-right:30px !important;}
+.mb10{margin-bottom:10px !important;}
+
+.pt10{padding-top:10px !important;}
+
+/* 增强效果 */
+.radius5{-webkit-border-radius: 5px;-moz-border-radius: 5px; border-radius: 5px;}
+.radius3{-webkit-border-radius: 3px;-moz-border-radius: 3px; border-radius: 3px;}
+.box-shadow2{-webkit-box-shadow:#ddd 2px 2px 2px; -moz-box-shadow:#ddd 2px 2px 2px; box-shadow:#ddd 2px 2px 2px;}
+
+/* 宽度百分比定义 */
+.w100{ width:100%;}
+.w90{ width:90%;}
+.w80{ width:80%;}
+input[type="text"].w100{ width:100%;}
+input[type="text"].w90{ width:90%;}
+input[type="text"].w80{ width:80%;}
+
+/* 表单样式美化 */
+input, select, textarea {
+	font: 12px/1.5 Tahoma, 'Microsoft Yahei', 'Simsun';
+	outline:none;
+}
+input[type="checkbox"], input[type="radio"] {
+	position:relative;
+	*+position:static;
+	top:2px;
+	*+top:0px;
+	left:-2px;
+	cursor:pointer;
+}
+input[type="text"],input[type="password"] {
+	width:110px;
+	padding:4px;
+	*+padding:2px;
+	background:url(../images/input.png) 0px -75px repeat-x;
+	*+background:#fff;
+	border:1px solid #CDCDCD;
+	border-color: #9A9A9A #CDCDCD #CDCDCD #9A9A9A;
+	color:#555;
+}
+textarea{
+	width:400px;
+	height:60px;
+	padding:2px 0px 0px 2px;
+	background:#FFF url(../images/input.png) 0px -75px repeat-x;
+	border:1px solid #cdcdcd;
+	border-color: #9A9A9A #CDCDCD #CDCDCD #9A9A9A;
+	overflow-y:auto;
+	resize:none;
+}
+input[type="text"]:hover,input[type="password"]:hover,textarea:hover{
+	border:1px solid #99BBE8;
+}
+select {
+	width:auto;
+	*+width:116px;
+	padding:2px;
+	background:url(../images/input.png) no-repeat 0px -75px;
+	border:1px solid #CDCDCD;
+	border-color: #9A9A9A #CDCDCD #CDCDCD #9A9A9A;
+}
+input[type="button"],input[type="submit"],input[type="reset"] {
+	cursor:pointer;
+	height:24px;
+	line-height: 24px;
+	border-right:1px solid #c8c8c8;
+	border-left:none;
+	border-top:none;
+	border-bottom:none;
+	background:url(../images/input.png) no-repeat;
+	*+height:20px;
+	*+line-height: 12px;
+	*+background:url(../images/input.png) -1px -1px no-repeat;
+	*+border:1px solid #ccc;
+} 
+input[type="button"]:hover,input[type="submit"]:hover,input[type="reset"]:hover {
+	background-position:0px -25px;
+	border-right:1px solid #cccbcb;
+	*+background-position:-1px -26px;
+	*+border:1px solid #ccc;
+}
+input[type="button"]:active,input[type="submit"]:active,input[type="reset"]:active {
+	background-position:0px -50px;
+	border-right:1px solid #cccbcb;
+	*+background-position:-1px -51px;
+	*+border:1px solid #ccc;
+}
+
+.date_button{ cursor:pointer; height:20px; width:20px; background:url(../images/date_choose.png) no-repeat;display: inline-block; margin:1px 0 0 -22px; position: absolute; }
+
+/*树结构图标*/
+.orgButton, .dateButton, .areaButton{display:inline-block; *+display:inline; height:20px; width:20px; margin:2px 0 0 -22px; *+margin:0px 0px 0px -20px; position:absolute;}
+.orgButton {background: url("../images/orgButton.png") no-repeat scroll 0 0 transparent;}
+.dateButton {background: url("../images/dateButton.png") no-repeat scroll 0 0 transparent;}
+.areaButton {background: url("../images/areaButton.png") no-repeat scroll 0 0 transparent;}

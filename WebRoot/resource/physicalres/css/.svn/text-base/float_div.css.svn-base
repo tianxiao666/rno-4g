@@ -1,0 +1,12 @@
+/* CSS Document */
+
+.float_div{position:absolute; left:200px; top:100px; width:220px; border:1px solid #ccc; background:#fff; z-index:998;}
+.float_div.closed{height:30px; width:30px; overflow:hidden;}
+.float_title{height:30px; width:100%; border-bottom:1px solid #ccc; line-height:30px; background:#eee; cursor:move;}
+.float_title h4{margin-left:38px;}
+.float_open{background:#9F0 url(../images/float_title.png) -14px -18px no-repeat; height:30px; width:30px; border-right:1px solid #ccc; cursor:pointer; vertical-align:top; position:absolute; top:0px; left:0px; z-index:999; zoom:1;}
+.float_open:hover{background-position:-14px -53px;}
+.float_main{padding:4px; height:240px; overflow:auto; margin-bottom:30px;}
+.float_main li{line-height:22px; border-bottom:1px solid #eee; cursor:pointer; padding-left:4px;}
+.float_main li:hover{color:#F00;}
+.float_bottom{position:absolute; width:100%; height:30px; line-height:30px; background:#eee; bottom:0px; border-top:1px solid #ccc; }

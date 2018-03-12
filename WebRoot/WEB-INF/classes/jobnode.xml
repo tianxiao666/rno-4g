@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+        <property>
+                <name>jobnode.manager.host</name>
+                <value>192.168.6.82</value>
+        </property>
+        <property>
+                <name>jobnode.manager.canbe.worker</name>
+                <value>true</value>
+        </property>
+        <property>
+                <name>jobnode.manager.client.port</name>
+                <value>6660</value>
+        </property>
+        <property>
+                <name>jobnode.manager.worker.port</name>
+                <value>6661</value>
+        </property>
+         <property>
+                <name>jobnode.worker.control.port</name>
+                <value>6662</value>
+        </property>
+        <property>
+        		<name>node.heartbeat.time.interval</name>
+        		<value>40000</value>
+        </property>
+        <property>
+                <name>jobnode.worker.runnableManager</name>
+                <value>com.iscreate.op.service.rno.job.client.SimpleJobRunnableMgr</value>
+        </property>
+        <property>
+                <name>vm.host.list</name>
+                <value></value>
+        </property>
+        <property>
+                <name>hadoop.user.name</name>
+                <value>rnohbase</value>
+        </property>
+</configuration>

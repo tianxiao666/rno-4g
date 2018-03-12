@@ -1,0 +1,125 @@
+/* CSS Document */
+dd .gantt_relative,#gantt_relative{
+	position:relative;
+}
+.gantt,#gantt {
+
+	position:absolute;
+	border:1px solid #ccc;
+	border-radius:5px;
+	padding:22px 2px 8px;
+	background:#fff;
+}
+.gantt_point,#gantt_point {
+	position:absolute;
+	height:8px;
+	width:16px;
+	overflow:hidden;
+	margin-left:48px;
+	margin-top:-30px;
+	color:#ccc;
+}
+.gantt_title,#gantt_title{
+	position:relative;
+	top:-10px;
+	text-align:center;
+	}
+.gantt_title span h4,#gantt_title span h4{position:relative; top:-8px;}
+.gantt_point .gantt_point_front,#gantt_point #gantt_point_front {
+	font-size:16px;
+	position: absolute;
+	color:#ccc;
+}
+.gantt_point .gantt_point_back,#gantt_point #gantt_point_back {
+	color: #FFFFFF;
+	margin-left: 2px;
+	margin-top:2px;
+	position: absolute;
+}
+.gantt_main,#gantt_main {
+	width:300px;
+	background:#fff url(../images/time_line_small.png) no-repeat;
+}
+.gantt_top,#gantt_top {
+	width:100%;
+	height:46px;
+}
+.gantt_top_time,#gantt_top_time{
+	font-size:10px;
+	float:right;
+	font-family: Verdana;
+	}
+.date_select,#date_select{
+	font-size: 12px;
+    height: 12px;
+    line-height: 12px;
+    position: absolute;
+    right: 80px;
+    text-align: center;
+    text-decoration: underline;
+    top: 10px;
+    width: 140px;
+	}
+.date_select .date_left,#date_select #date_left{
+	background:url(../images/date_left_small.png) no-repeat;
+	height:12px;
+	width:12px;
+	display:inline-block;
+	float:left;
+	cursor:pointer;
+	}
+.date_select .date_right,#date_select #date_right{
+	background:url(../images/date_right_small.png) no-repeat;
+	height:12px;
+	width:12px;
+	display:inline-block;
+	float:right;
+	cursor:pointer;
+	}
+.now_time,#now_time {
+	position:absolute;
+	height:8px;
+	width:14px;
+	background:url(../images/time_pointer.png) no-repeat;
+	margin-top:39px;
+}
+.gantt_content,#gantt_content {
+	width:100%;
+}
+.gantt_line,#gantt_line {
+	height:4px;
+	background:blue;
+	border:1px solid #063;
+	margin-top:2px;
+	position:relative;
+	filter:Alpha(Opacity=70);
+	opacity:0.7;
+}
+.page_up,#page_up{
+	position:absolute;
+	background:url(../images/up_down1_small.png);
+	height:12px;
+	width:16px;
+	cursor:pointer;
+	}
+.page_down,#page_down{
+	position:absolute;
+	margin-top:12px;
+	background:url(../images/up_down1_small.png) 0px -12px;
+	height:12px;
+	width:16px;
+	cursor:pointer;
+	}
+	
+	
+/*现在工作时间*/
+.now_work,#now_work{
+	background:#FF0000;
+    height: 4px;
+    margin-left: 100px;
+    margin-top: 32px;
+    position: absolute;
+    width: 75px;
+	filter:Alpha(Opacity=60);
+	border-top: 1px solid #333333;
+	opacity:0.6;}

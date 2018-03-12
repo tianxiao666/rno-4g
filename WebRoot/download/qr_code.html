@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>二维码</title>
+<link href="https://res.wx.qq.com/zh_CN/htmledition/style/comm13e01f.css" type="text/css" rel="stylesheet">
+<style type="text/css">
+ body {
+    background: none repeat scroll 0 0 #dbdbdb;
+    color: #666666;
+    font: 14px/1.5 Helvetica,"微软雅黑","黑体",Arial,Tahoma;
+    height: 100%;
+    overflow-y: hidden;
+    text-align: center;
+}
+.main{margin:20px 0;}
+.code{background-color: #FFFFFF;border: 2px solid #333333;}
+h1{font-size:24px; padding: 10px;}
+h2{font-size:16px; padding: 10px;}
+.footer {
+    bottom: 20px;
+    color: #242627;
+    left: 50%;
+    margin-left: -188px;
+    position: absolute;
+    text-shadow: 0 1px 0 #5B5C5E;
+    width: 376px;
+}
+.btn{margin: 0 auto;cursor:pointer;}
+a.btn_download {
+    background: url("./image/but.png") no-repeat scroll -1px 0 transparent;
+    display: inline-block;
+    height: 64px;
+    width: 224px;
+	margin-top:50px;
+}
+a.btn_download:hover{
+    background-position: -1px -64px;
+}
+</style>
+
+<script type="text/javascript">
+
+	function downloadFile()
+	{  
+		document.getElementById('downloadapk').submit();
+	}
+
+</script>
+</head>
+	<body>
+		<form id="downloadapk" action = "downloadApkAction" method="post">
+			<div class="main">
+				<h1>终端二维码</h1>
+				<img src="./image/qr_code.png" id="qr_code" class="code">
+				<h2>请使用手机扫描二维码下载</h2>
+				<div class="btn">
+					<a href="#" onclick="downloadFile()" class="btn_download"></a>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 人员查询 BEGIN -->
+	<bean id="staffDao" class="com.iscreate.op.dao.staffduty.StaffDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="staffService" class="com.iscreate.op.service.staffduty.StaffServiceImpl">
+		<property name="staffDao" ref="staffDao"></property>
+		<property name="workManageService" ref="workManageService"></property>
+		<property name="pdaGpsService" ref="pdaGpsService"></property>
+		<property name="staffSkillService" ref="staffSkillService"></property>
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<property name="sysRoleService" ref="sysRoleService" />
+		<!-- ou.jh -->
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+		<property name="sysAccountService" ref="sysAccountService" />
+		
+		
+		
+	</bean>
+	
+	<bean id="staffQueryAction" class="com.iscreate.op.action.staffduty.StaffQueryAction">
+		<property name="staffService" ref="staffService"></property>
+	</bean>
+	<!-- 人员查询 END -->
+	
+	
+	<!-- 终端人员值班 BEGIN-->
+	<bean id="staffDutyDao" class="com.iscreate.op.dao.staffduty.StaffDutyDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="staffDutyService" class="com.iscreate.op.service.staffduty.StaffDutyServiceImpl">
+		<property name="staffDutyDao" ref="staffDutyDao"></property>
+	</bean>
+	
+	<bean id="staffDutyActionForMobile" class="com.iscreate.op.action.staffduty.staffDutyActionForMobile">
+		<property name="staffDutyService" ref="staffDutyService"></property>
+	</bean>
+	<!-- 终端人员值班 END -->
+	
+	
+	
+	<!-- 人员排班 BEGIN  -->
+	<bean id="staffPlanDutyDao" class="com.iscreate.op.dao.staffduty.StaffPlanDutyDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="staffPlanDutyService" class="com.iscreate.op.service.staffduty.StaffPlanDutyServiceImpl">
+		<property name="staffPlanDutyDao" ref="staffPlanDutyDao"></property>
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	
+	<bean id="staffPlanDutyAction" class="com.iscreate.op.action.staffduty.StaffPlanDutyAction">
+		<property name="staffPlanDutyService" ref="staffPlanDutyService"></property>
+	</bean>
+	<!-- 人员排班 END -->
+	
+	
+	<!-- 人员技能管理 BEGIN -->
+	<bean id="staffSkillDao" class="com.iscreate.op.dao.staffduty.StaffSkillDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="staffSkillService" class="com.iscreate.op.service.staffduty.StaffSkillServiceImpl">
+		<property name="staffSkillDao" ref="staffSkillDao"></property>
+		<!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+		<!-- ou.jh -->
+		<property name="sysOrgUserService" ref="sysOrgUserService" />
+	</bean>
+	
+	<bean id="staffSkillAction" class="com.iscreate.op.action.staffduty.StaffSkillAction">
+		<property name="staffSkillService" ref="staffSkillService"></property>
+	</bean>
+	<!-- 人员技能管理 END -->
+	
+</beans>

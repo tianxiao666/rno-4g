@@ -1,0 +1,24 @@
+/* CSS Document */
+#header{width:100%;text-align:center; width:300px; border:1px solid #99BBE8; }
+#header img{ cursor:pointer;}
+.header-top{ background:url(../images/white-top-bottom.gif) repeat-x;height:25px; line-height:25px; color:#15428B; font-size:12px;text-align:left; padding-left:5px;}
+.header-main{ line-height:20px; border:1px solid #99BBE8; background:#DFE8F6; padding:3px 5px;}
+.container-tab2{width:300px;}
+.container-tab2 ul{width:100%;line-height:25px; border-bottom:none;}
+.container-tab2 ul li{ float:left; height:25px; padding:0 5px; border-right:1px solid #99BBE8; min-width:50px; text-align:center; cursor:pointer; }
+.container-tab2 ul li a{ display:block; color:#333; font-size:12px; font-weight:bold;}
+.tab2-li-show{background:#DFE8F6;}
+.main-table1{ width:100%; background:#FFF;}
+.main-table1 .menuTd{width: 100px; background:#DFE8F6; text-align:center; white-space:nowrap;}
+.main-table1 tr td{ border:1px solid #CCC; text-align:left; padding:3px; padding-left:15px; color:#000; line-height:21px; vertical-align:middle; white-space:nowrap;}
+.main-table1 tr td select{ width:62px;}
+.main-table1 tr td .shortText{ width:150px;}
+.main-table1 tr td input { width:150px;}
+.container-main-table1{border:1px solid #99BBE8; border-bottom:none;width:300px; background:#f9f9f9; min-height:140px;}
+.container-bottom{ background:#F9F9F9; border:1px solid #99BBE8; border-top:none;text-align:center; width:300px;}
+
+.result{ background:#F9F9F9; border:1px solid #99bbe8; width:300px;}
+.result tr{ background:#F9F9F9;}
+.result table th{ background:#DFE8F6; text-align:left; line-height:25px; padding-left:5px; text-align:left; color:#15428B; font-weight:bold;}
+
+.fanye{ float:right; line-height:20px;}

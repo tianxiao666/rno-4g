@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="networkResourceMaintenanceService" class="com.iscreate.op.service.maintain.NetworkResourceMaintenanceServiceImpl" singleton="false">
+		<property name="contextFactory" ref="contextFactory"></property>
+		<property name="staffOrganizationService" ref="staffOrganizationService"></property>
+	</bean>
+	<bean id="networkResourceMaintenanceAction" class="com.iscreate.op.action.maintain.NetworkResourceMaintenanceAction" singleton="false">
+		<property name="networkResourceMaintenanceService" ref="networkResourceMaintenanceService"></property>
+		<property name="dictionary" ref="dictionary"></property>
+	</bean>
+</beans>

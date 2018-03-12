@@ -1,0 +1,36 @@
+/* CSS Document */
+
+#container{margin-top:4px; padding:0 5px;}
+/* 搜索栏 */
+.tab_content_container{ border:1px solid #99BBE8; position:relative;top:-1px; padding:4px; background:#DFE8F6;}
+.search_tab{}
+.search_tab ul{background:none;}
+.search_tab ul li {float:left; border:1px solid #999; background:mintcream; text-align:center; margin-left:8px; width:85px;padding:0px 3px;cursor:pointer; line-height:23px; position:relative;border-radius:2px;}
+.search_tab ul li.ontab{background:#86c1c3; color:#fff; cursor:default;}
+.search_tab_content{margin-top:4px; display:none;}
+.search_table{width:100%; position:relative;}
+.search_table td{padding:2px 4px; white-space:nowrap;}
+.search_table td select,.search_table td input[type="text"]{ width:120px;}
+.search_table td input[type="button"]{width:60px;}
+
+/* 搜索结果 */
+.main_tab_container{position:relative;}
+.main_tab_tool{position:absolute; right:0px; top:2px;}
+.search_result{border:1px solid #99BBE8; margin-top:5px;}
+.search_result_table{width:100%; border:none;}
+.search_result_table th{background:url(../images/grid3-hrow.gif) repeat-x; height:22px; text-align:center; line-height:22px; border-right:1px solid #ccc; border-bottom:1px solid #ccc; white-space:nowrap;}
+.search_result_table td{ border-bottom:1px solid #eee; text-align:center; height:24px; line-height:24px; padding:2px 4px; overflow:hidden; white-space:nowrap;}
+.search_result_table td.tr_num{background:#eee; border-right:1px solid #ccc; text-align:right; border-bottom:1px solid #fff;}
+.present_tab{margin-top:4px;}
+.present_tab li {float: left;}
+.present_tab a{height:24px; line-height:24px; background-color: #FFFFFF; border: 1px solid #CCCCCC; display: block; padding: 0 8px; width: 75px; *+width: 80px;}
+.present_tab a:hover{background: url("../images/frameBg.png") repeat-x scroll 0 -88px transparent; border-color: #478DCB; text-decoration: none;}
+.present_tab a.select{background: url("../images/frameBg.png") repeat-x scroll 0 -24px transparent; border: 1px solid #F18934; color: #843900; text-decoration: none;}
+.present_tab a em { background: url("../images/list.png") no-repeat scroll 0px 0px transparent; width:12px; height:12px; display:inline-block; margin-right: 5px; position: relative; top: 2px; *+top:-2px;}
+.present_tab a.list em{background: url("../images/list.png") repeat-x scroll 0px 0px transparent;}
+.present_tab a.gis em{background: url("../images/gis.png") no-repeat scroll 0px 0px transparent;}
+
+.map_ico{display:inline-block; height:16px;cursor:pointer; vertical-align:middle;}
+.map_ico.position{background:url(../images/h4Icon.png) no-repeat;}
+.map_ico.linelist{background:url(../images/linelist.png) no-repeat;}
+.map_ico.operate{background:url(../images/operate_line.png) no-repeat;}

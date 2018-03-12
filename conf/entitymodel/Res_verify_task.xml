@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+ <name>Res_verify_task</name>
+ <attribute type="java.lang.Long" length="128" primary="TRUE" index="TRUE" nullable="FALSE" regex="">id</attribute>
+<attribute type="java.lang.String" length="100" primary="FALSE" index="TRUE" nullable="FALSE" regex="">task_name</attribute>
+<attribute type="java.lang.String" length="500" primary="FALSE" index="FALSE" nullable="TRUE" regex="">task_content</attribute>
+<attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">task_status</attribute>
+<attribute type="java.lang.String" length="500" primary="FALSE" index="FALSE" nullable="TRUE" regex="">description</attribute>
+<attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">creator</attribute>
+<attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">executer</attribute>
+<attribute type="java.util.Date" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">creat_time</attribute>
+<attribute type="java.util.Date" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">plan_start_time</attribute>
+<attribute type="java.util.Date" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">plan_finish_time</attribute>
+</entity>

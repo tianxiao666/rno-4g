@@ -1,0 +1,121 @@
+﻿/*Deson Edit*/
+@charset "utf-8";
+
+.systemManage_main{ margin:5px;background:#C3D5ED;}
+.systemManage_top{background: url("../images/white-top-bottom.gif") repeat-x scroll 0 -1px transparent; border-bottom:1px solid #99BBE8; color: #15428B;line-height: 26px; padding: 0 5px;font-weight:bold;}
+.redStar{color:red}
+
+/*左边树级菜单*/
+.systemManage_menu{background:#fff;width:198px;float:left;border:1px solid #99BBE8;min-height:750px;margin-right: 5px;-moz-user-select: none;/* for Firefox */-webkit-user-select: none; /* for Chrome */} 
+.systemManage_menu_ul li {background-color:#F0F0F0; border-bottom: 1px solid #99BCE8; margin:1px 0; line-height: 26px; padding: 0 10px 0 20px; cursor:pointer;}
+.systemManage_menu_ul li span{background: url("../images/forum.gif") no-repeat; width:16px; height:20px; display:inline-block; margin-right: 5px; vertical-align: middle;}
+.systemManage_menu_ul .menu_selected{background-color:#d6e5f7; font-weight: bold;}
+.menu_title_tool .tool{background: url("../images/tool-sprites.gif") no-repeat scroll 0 -180px transparent;cursor: pointer;width: 15px;height: 15px;float: left;margin:5px 0 0 -25px;}
+.menu_title_tool_selected { border:1px solid #99BBE8;min-height:750px;float: left;width:20px;cursor: pointer;margin-right: 5px;}
+.menu_title_tool_selected .tool{ background: url("../images/tool-sprites.gif") no-repeat scroll 0 -165px transparent;cursor: pointer; width: 15px; height: 15px;margin: 2px 0 0 2px;}
+.systemManage_menu_info{margin-bottom: 1px;}
+
+/*右边工作区*/
+.systemManage_content{ border:1px solid #99BCE8;background: none repeat scroll 0 0 #FFFFFF;overflow: hidden;min-height:750px;}
+.tab_menu {clear: both;height: 25px;}
+.tab_menu ul {position: absolute; z-index: 2;}
+.tab_menu ul li { background: none repeat scroll 0 0 #EEEEEE;border: 1px solid #99BBE8;border-bottom: none;cursor: pointer; float: left;line-height: 24px; padding: 0 3px; position: relative; text-align: center; width: 100px;border-radius: 3px 3px 0 0; margin:0 2px;}
+.tab_menu ul li.selected {background: none repeat scroll 0 0 #FFFFFF; border-right: 1px solid #99BBE8;border-top: 3px solid #99BCE8; height: 23px; line-height: 22px;}
+/*受控资源注册*/
+.resources_tab{padding:10px 0 0 10px;}
+.resources_tab h3{float: left; line-height: 26px;}
+.resources_tab ul{padding-left:90px;}
+.resources_content{border-top:1px solid #99BCE8; padding-top: 10px;}
+.resourcesType_tree{border-top:1px solid #99BCE8; border-right:1px solid #99BCE8; float:left; width:300px; height:676px;}
+.resourcesType_content{border-top:1px solid #99BCE8; padding:20px; overflow: hidden;}
+.resourcesType_content h2{text-align:center; font-size:14px; padding-bottom: 10px;}
+.resourcesType_content label{display: block; line-height: 40px; text-align: right; width: 120px; float: left;}
+.resourcesType_content span{display: block; line-height: 40px; margin-left:120px;}
+.resourcesType_but{padding-top:20px; text-align:center;}
+
+/*角色管理*/
+.role_tab{padding:10px 0 0 10px;}
+.role_content{border-top:1px solid #99BCE8; padding:20px 10px 0px 10px;}
+.role_top{padding-bottom:20px;}
+.role_top span{font-weight:bold;}
+.role_top select{width: 200px;margin-right:50px;}
+.role_userGroups{float:left; width:400px; margin-right: 10px;}
+.role_userGroups h3{line-height: 25px;}
+.role_userGroups .role_userGroups_ul{border:1px solid #99BCE8; height: 400px; overflow: auto;}
+.role_userGroups .role_userGroups_ul li{ padding:0 10px; line-height: 25px;}
+.role_userGroups .role_userGroups_ul li.selected{background-color: #DDDDDD;}
+.role_modify{padding: 10px;background-color: #F0F0F0; border: 1px solid #99BCE8; border-top:none;}
+.role_modify ul li{padding:5px 0;}
+.role_modify input[type="text"]{width:290px;}
+.role_modify select{width:300px;}
+.role_modify .roleBut{padding-top: 10px; text-align: center;}
+.roleAdd_dialog{border: 4px solid #CCCCCC; padding:10px; background-color:#f0f0f0; display:none;position: absolute; z-index: 100; margin:-11px 0 0 -11px;}
+.roleAdd_dialog h3{text-align: center;}
+.role_authorize{overflow: hidden;}
+.role_authorize_tab{clear:none;}
+.role_authorize_tab h3{float: left; line-height: 26px;}
+.role_authorize_tab ul{margin-left: 80px; right:14px;}
+.role_authorize .role_authorizeTree{ padding: 0 10px;border:1px solid #99BCE8; height: 400px;}
+.role_authorizeTree em{color:red; padding:0 3px;}
+.role_authorizeBut{ padding: 10px;background-color: #F0F0F0; border: 1px solid #99BCE8; border-top:none;}
+.role_authorizeBut .input_button{margin-left:50px;}
+
+/*用户帐号管理*/
+.systemManage_accountManagement{padding:10px;}
+.systemManage_accountManagement h3{line-height: 30px;}
+.systemManage_accountManagement h3 input[type="button"]{display: inline-block; float: right;}
+.systemManage_accountManagement .main_table{ width:100%; background-color:#FFF; text-align:center;}
+.systemManage_accountManagement .main_table th{ padding:0px 10px; background:url(../images/cmp-bg2.gif) repeat-x; color:#444; white-space:nowrap; border:#CCC 1px solid; line-height:30px;}
+.systemManage_accountManagement .main_table tr td{ border:1px solid #CCC; padding:6px; padding-left:6px; color:#000; line-height:21px; vertical-align:middle; white-space:nowrap; background:WhiteSmoke;}
+.systemManage_accountManagement .main_table tr td a{ color:#03F;}
+
+/*用户帐号管理*/
+.user_accountInfo{padding: 10px; width: 400px; float:left;}
+.user_accountInfo h3, .user_roleAuthorize h3{line-height:30px;}
+.user_accountInfo .redStar{margin-left:5px;}
+.accountInfo{border: 1px solid #99BCE8; padding: 10px;}
+.accountInfo ul li{padding: 5px 0;}
+.accountInfo label, .accountPassword label {text-align: right; width:90px; display: inline-block; line-height:26px;}
+.accountInfo span, .accountPassword span{display: inline-block;}
+.accountInfo input[type="text"], .accountPassword input[type="password"] {width: 200px;}
+.accountInfo .accountInfo_input, .accountPassword .accountPassword_info{display:none;}
+.accountInfo .accountInfo_but{text-align:center; margin-top: 20px;}
+.accountPassword{height: 100px; padding: 10px; margin-top:10px; border: 1px solid #99BCE8;}
+.accountPassword ul li{padding: 5px 0;}
+.accountPassword_modify{margin-top: 40px; text-align:center;}
+.user_roleAuthorize{overflow: hidden;padding: 10px;}
+.user_roleAuthorize_content{border: 1px solid #99BCE8;}
+.roleAuthorize_top{padding: 10px;}
+.roleAuthorize_info .module_content{border: 1px solid #99BCE8; padding: 10px; margin-bottom: 10px;}
+.roleAuthorize_info .module_content ul{border: 1px solid #99BCE8; padding: 10px; max-height:280px; margin-bottom: 10px; overflow: auto;}
+.roleAuthorize_info .module_content p{text-align:center;}
+.roleAuthorize_orgStructure{float: left; margin-right: 10px; width: 400px;}
+.orgStructure_Tree{border: 1px solid #99BCE8; border-bottom:none; height: 362px;overflow: auto;}
+.roleAuthorize_orgRole{overflow: auto;}
+.roleAuthorize_orgRole ul{border: 1px solid #99BCE8; padding: 10px; max-height:300px; overflow: auto;}
+.roleAuthorize_orgRole p{text-align:center; margin-top:10px;}
+/*弹出框*/
+.dialog{background: url("../images/panel_title.png") repeat scroll 0 0 transparent; border: 1px solid #99BBE8; border-radius: 5px 5px 5px 5px; font-size: 12px; overflow: hidden;padding: 5px; position: absolute;}
+.dialog_header{ color: #15428B; font-size: 12px; font-weight: bold; line-height: 15px; padding: 2px 0 4px; position: relative;}
+.dialog_tool { position: absolute; right: 1px; top: 0px;}
+.dialog_tool div {cursor: pointer; display: block;float: right; height: 16px; margin-left: 2px; opacity: 0.8; width: 16px;}
+.dialog_tool_close {background: url("../images/panel_tools.gif") no-repeat scroll -16px 0 transparent;}
+.dialog_content{border: 1px solid #99BBE8; background-color:#fff;padding:10px 0;}
+.dialog_but{text-align: center; white-space: nowrap;}
+.dialog_but button { margin:10px 10px 0 10px; padding: 6px 12px; cursor: pointer; display: inline-block; text-align: center; line-height: 1; *padding:4px 10px; *height:2em; letter-spacing:2px; font-family: Tahoma, Arial/9!important; width:auto; overflow:visible; *width:1; color: #333; border: solid 1px #999; border-radius: 5px; background: #DDD; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DDDDDD'); background: linear-gradient(top, #FFF, #DDD); background: -moz-linear-gradient(top, #FFF, #DDD); background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#DDD)); text-shadow: 0px 1px 1px rgba(255, 255, 255, 1); box-shadow: 0 1px 0 rgba(255, 255, 255, .7),  0 -1px 0 rgba(0, 0, 0, .09); -moz-transition:-moz-box-shadow linear .2s; -webkit-transition: -webkit-box-shadow linear .2s; transition: box-shadow linear .2s; }
+.dialog_but button::-moz-focus-inner{ border:0; padding:0; margin:0; }
+.dialog_but button:focus { outline:none 0; border-color:#426DC9; box-shadow:0 0 8px rgba(66, 109, 201, .9); }
+.dialog_but button:hover { color:#000; border-color:#666; }
+.dialog_but button:active { border-color:#666; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DDDDDD', endColorstr='#FFFFFF'); background: linear-gradient(top, #DDD, #FFF); background: -moz-linear-gradient(top, #DDD, #FFF); background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DDD), to(#FFF)); box-shadow:inset 0 1px 5px rgba(66, 109, 201, .9), inset 0 1px 1em rgba(0, 0, 0, .3); }
+.dialog_but button[disabled] { cursor:default; color:#666; background:#DDD; border: solid 1px #999; filter:alpha(opacity=50); opacity:.5; box-shadow:none; }
+.dialog_but .aui_state_highlight { color: #FFF; border: solid 1px #1c6a9e; background: #2288cc; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bbee', endColorstr='#2288cc'); background: linear-gradient(top, #33bbee, #2288cc); background: -moz-linear-gradient(top, #33bbee, #2288cc); background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#33bbee), to(#2288cc)); text-shadow: -1px -1px 1px #1c6a9e; }
+.dialog_but .aui_state_highlight:hover { color:#FFF; border-color:#0F3A56; }
+.dialog_but .aui_state_highlight:active { border-color:#1c6a9e; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bbee', endColorstr='#2288cc'); background: linear-gradient(top, #33bbee, #2288cc); background: -moz-linear-gradient(top, #33bbee, #2288cc); background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#33bbee), to(#2288cc)); }
+.black{background-color: #000; height: 100%; left: 0; opacity: 0.5; position: fixed; top: 0; width: 100%;display: none; z-index:100; filter:alpha(opacity=50)!important; }
+
+.role_dialog_info li{padding: 5px 0;}
+.role_dialog_info label {text-align: right; width: 120px;float: left; line-height:26px;}
+.role_dialog_info span {display: inline-block;}
+.role_dialog_info input[type="text"], .role_dialog_info input[type="password"] {width: 200px;}
+.role_dialog_info select{width: 210px;}
+.role_dialog{left: 35%; top: 100px; width: 450px; z-index: 101;}

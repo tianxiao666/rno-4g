@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+ <name>Tbl_Unique_Uniquetable</name>
+ <attribute type="java.lang.Long" length="128" primary="FALSE" index="TRUE" nullable="FALSE" regex="">code</attribute>
+ <attribute type="java.lang.String" length="128" primary="FALSE" index="TRUE" nullable="FALSE" regex="">name</attribute>
+</entity>

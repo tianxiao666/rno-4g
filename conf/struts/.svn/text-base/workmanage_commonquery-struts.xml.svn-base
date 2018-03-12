@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="workmanage_commonquery" extends="struts-default">
+	
+		<!-- 公共查询入口action -->
+		<action name="commonQueryIndexAction" class="commonQueryAction" method="commonQueryIndexAction">
+			<result name="success">op/workmanage/commonQueryIndexPage.jsp</result>
+		</action>
+		
+		<!-- 公共查询逻辑 -->
+		<action name="commonQueryAction" class="commonQueryAction" method="commonQueryAction">
+		</action>
+		
+		<action name="commonQueryGroupAction" class="commonQueryAction" method="commonQueryGroupAction">
+		</action>
+		
+		
+	</package>
+</struts>

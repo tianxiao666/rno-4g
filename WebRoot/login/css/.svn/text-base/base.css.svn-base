@@ -1,0 +1,70 @@
+/* 兼容HTML5的 css reset */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content: ""; content: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+input, select { vertical-align: middle; }
+
+
+/**
+ * yui定义字体的方式
+ */
+
+body { font:12px/1.231 微软雅黑,宋体,arial; *font-size:small;background-color:#eef5fc; }
+
+/* 去掉链接点击后的虚线 */
+a:hover, a:active { outline: none; }
+
+/* 重设列表，默认缩进两个字符，定义ol的样式 */
+ul, ol, li { margin: 0;list-style: none outside none; }
+ol { list-style-type: decimal; }
+
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+a{color:#000;text-decoration: none;}
+a:hover{color:#000;}
+
+.vm{vertical-align:middle;}
+.tc{text-align:center;}
+/* 清除浮动 */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+/* 全局定义输入框 */
+input ,textarea{
+    background: #fff; 
+    border-radius: 3px;margin: 0 auto;
+	-webkit-box-shadow:inset 1px 1px 10px #e0e0e0;
+    border-color: #B6B6B6 #CCCCCC #CCC #B6B6B6;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 14px;}
+input{height: 25px;padding: 0 10px;}
+textarea{padding:5px 10px;width:150px;}

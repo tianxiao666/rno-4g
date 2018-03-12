@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 资源模型字典维护 -->
+	<bean id="resourceDictionaryService" class="com.iscreate.op.service.dictionary.ResourceDictionaryServiceImpl" singleton="false">
+	    <property name="contextFactory" ref="contextFactory"></property>
+	</bean>
+	<bean id="resourceDictionaryAction" class="com.iscreate.op.action.dictionary.ResourceDictionaryAction" singleton="false">
+		<property name="dictionary" ref="dictionary"></property>
+		<property name="resourceDictionaryService" ref="resourceDictionaryService"></property>
+		<property name="quickSort" ref="quickSort"></property>
+		<property name="structureCommonService" ref="structureCommonService"></property>
+	</bean>
+
+</beans>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+	<field>
+		<name>MEA_DATE  </name>
+		<type>Date</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>日期  </exceltitle>
+	</field>
+	<field>
+		<name>CELL  </name>
+		<type>String</type>
+		<essential>1</essential>
+		<match>1</match>
+		<exceltitle>小区中文名</exceltitle>
+	</field>
+	<field>
+		<name>NCELL</name>
+		<type>String</type>
+		<essential>0</essential>
+		<match>1</match>
+		<exceltitle>邻区1,邻区2,邻区3,邻区4,邻区5,邻区6,邻区7,邻区8,邻区9,邻区10,邻区11,邻区12,邻区13,邻区14,邻区15,邻区16,邻区17,邻区18,邻区19,邻区20,邻区21,邻区22,邻区23,邻区24,邻区25,邻区26,邻区27,邻区28,邻区29,邻区30,邻区31,邻区32,邻区33,邻区34,邻区35,邻区36,邻区37,邻区38,邻区39,邻区40,邻区41,邻区42,邻区43,邻区44,邻区45,邻区46,邻区47,邻区48,邻区49,邻区50,邻区51,邻区52,邻区53,邻区54,邻区55,邻区56,邻区57,邻区58,邻区59,邻区60
+		</exceltitle>
+	</field>
+	<field>
+		<name>BSC_ID</name>
+		<type>int</type>
+		<essential>0</essential>
+		<match>1</match>
+		<exceltitle>BSC</exceltitle>
+	</field>
+	<field>
+		<name>CITY_ID</name>
+		<type>int</type>
+		<essential>0</essential>
+		<match>1</match>
+		<exceltitle>市</exceltitle>
+	</field>
+</table>

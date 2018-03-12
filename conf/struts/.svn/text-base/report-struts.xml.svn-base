@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="report" extends="struts-default">
+		<!-- 根据受理专业获取故障抢修单 -->
+		<action name="getUrgentRepairReportOrderCountByAcceptProfessionalAction" class="portalReportAction" method="getUrgentRepairReportOrderCountByAcceptProfessionalAction">
+		</action>
+		<!-- 根据时间与组织统计 -->
+		<action name="getUrgentRepairReportOrderCountByByWotemplateAction" class="portalReportAction" method="getUrgentRepairReportOrderCountByByWotemplateAction">
+		</action>
+		<!-- 获取工单（入口） -->
+		<action name="getUrgentRepairAction" class="urgentRepairReportAction" method="getUrgentRepairAction">
+			<result name="reportUrgentRepairworkorderStatistics">/op/report/reportUrgentRepairworkorderStatistics.jsp</result>
+			<result name="stationOrBaseStaion">/op/report/reoportStationAndBaseStation.jsp</result>
+			<result name="WAN">/op/report/reoportWAN.jsp</result>
+			<result name="reportOrgStaffCount">/op/report/reportOrgStaffCount.jsp</result>
+			<result name="reportOrgWorkOrderCount">/op/report/reportOrgWorkOrderCount.jsp</result>
+			<result name="reportCarCensus">/op/report/reportCarCensus.jsp</result>
+			<result name="reportCarMileage">/op/report/reportCarMileage.jsp</result>
+			<result name="reportFaultBaseStationTopTen">/op/report/reportFaultBaseStationTopTen.jsp</result>
+			<result name="reportAnalyseFaultCountAndResourceBalance">/op/report/reportAnalyseFaultCountAndResourceBalance.jsp</result>
+			<result name="reoportBaseStationOut">/op/report/reoportBaseStationOut.jsp</result>
+			<result name="reportCarMileageCensus">/op/report/reportCarMileageCensus.jsp</result>
+			<result name="reportCarOil">/op/report/reportCarOil.jsp</result>
+			<result name="reportCountFaultBaseStationTopFiveTenByOrg">/op/report/reportCountFaultBaseStationTopFiveTenByOrg.jsp</result>
+			<result name="reportOrgCompareCount">/op/report/reportOrgCompareCount.jsp</result>
+			<result name="cmsReportProjectAppraisal">/op/cms/cmsReportProjectAppraisal.jsp</result>
+		</action>
+		<!-- 获取故障工单处理及时率(按组织) -->
+		<action name="getUrgentRepairProcessTimeRateByBizunitinnstAction" class="urgentRepairReportAction" method="getUrgentRepairProcessTimeRateByBizunitinnstAction">
+		</action>
+		<!-- 获取故障工单处理及时率(按基站类型) -->
+		<action name="getUrgentRepairProcessTimeRateByBaseStationLevelAction" class="urgentRepairReportAction" method="getUrgentRepairProcessTimeRateByBaseStationLevelAction">
+		</action>
+		<!-- 获取故障工单处理及时率(按故障类型) -->
+		<action name="getUrgentRepairProcessTimeRateByFaultTypeAction" class="urgentRepairReportAction" method="getUrgentRepairProcessTimeRateByFaultTypeAction">
+		</action>
+		<!-- 获取故障工单处理及时率(按故障级别) -->
+		<action name="getUrgentRepairProcessTimeRateByFaultLevelAction" class="urgentRepairReportAction" method="getUrgentRepairProcessTimeRateByFaultLevelAction">
+		</action>
+		<!-- 获取故障工单处理及时率(按受理专业) -->
+		<action name="getUrgentRepairProcessTimeRateByAcceptProfessionalAction" class="urgentRepairReportAction" method="getUrgentRepairProcessTimeRateByAcceptProfessionalAction">
+		</action>
+		<!-- 获取故障工单处理及时率(按故障大类) -->
+		<action name="getUrgentRepairProcessTimeRateByFaultGeneraAction" class="urgentRepairReportAction" method="getUrgentRepairProcessTimeRateByFaultGeneraAction">
+		</action>
+		<!-- 读取报表评论 -->
+		<action name="getReportCommentAction" class="commentReportAction" method="getReportCommentAction">
+			<result name="success">/op/report/reportComment.jsp</result>
+		</action>
+		<!-- 保存报表评论 -->
+		<action name="saveReportCommentAction" class="commentReportAction" method="saveReportCommentAction">
+		</action>
+		<!-- 跳转报表相应指标说明  -->
+		<action name="getReportIndicatorsDescriptionAction" class="commentReportAction" method="getReportIndicatorsDescriptionAction">
+			<result name="success">/op/report/reportIndicatorsDescription.jsp</result>
+		</action>
+		<!-- 获取工单信息  -->
+		<action name="getUrgentRepairWorkorderManageAction" class="urgentRepairReportAction" method="getUrgentRepairWorkorderManageAction">
+			<result name="success">/op/report/reportUrgentRepairworkorder.jsp</result>
+		</action>
+		<!-- 跳转报表相应指标说明  -->
+		<action name="getUrgentRepairWorkorderByrowNameAction" class="urgentRepairReportAction" method="getUrgentRepairWorkorderByrowNameAction">
+			<result name="success">/op/report/reportUrgentRepairworkorderCount.jsp</result>
+		</action>
+		<!-- 统计人员，车辆，基站，站址  -->
+		<action name="getReportCharAction" class="gisDispatchReportAction" method="getReportCharAction">
+		</action>
+		<!-- 获取人员任务统计监控  -->
+		<action name="getPeakStatisticsByStaffAction" class="gisDispatchReportAction" method="getPeakStatisticsByStaffAction">
+		</action>
+		<!-- 获取车辆任务统计监控  -->
+		<action name="getPeakStatisticsByCarAction" class="gisDispatchReportAction" method="getPeakStatisticsByCarAction">
+		</action>
+		<!-- 获取基站任务统计监控  -->
+		<action name="getPeakStatisticsByStationAction" class="gisDispatchReportAction" method="getPeakStatisticsByStationAction">
+		</action>
+		
+			<!-- 资源统计 -->
+		<action name="getStationByAreaAction" class="netReportAction" method="getStationByAreaAction"></action>
+		<action name="getWANByAreaAction" class="netReportAction" method="getWANByAreaAction"></action>
+		<action name="getStationByOrgAction" class="netReportAction" method="getStationByOrgAction"></action>
+		<action name="getWANByOrgAction" class="netReportAction" method="getWANByOrgAction"></action>
+		<action name="getStationByAreaIdAction" class="netReportAction" method="getStationByAreaIdAction"></action>
+		<action name="getWANByAreaIdAction" class="netReportAction" method="getWANByAreaIdAction"></action>
+		<action name="getStationByOrgIdAction" class="netReportAction" method="getStationByOrgIdAction"></action>
+		<action name="getWANByOrgIdAction" class="netReportAction" method="getWANByOrgIdAction"></action>
+		<action name="getWANByAreaIdAndTopOrgAction" class="netReportAction" method="getWANByAreaIdAndTopOrgAction">
+		</action>
+		<action name="getStationByAreaIdAndTopOrgAction" class="netReportAction" method="getStationByAreaIdAndTopOrgAction">
+		</action>
+		<action name="getStationByOrgIdAndTopOrgAction" class="netReportAction" method="getStationByOrgIdAndTopOrgAction">
+		</action>
+		<action name="getWANByOrgIdAndTopOrgAction" class="netReportAction" method="getWANByOrgIdAndTopOrgAction">
+		</action>
+		
+		<!-- 人员任务量统计 BEGIN -->
+			<!-- 当前用户组织架构下工单数量统计 -->
+			<action name="getUserOrgWorkOrderCountReportAction" class="orgWorkOrderCountMonthReportAction" method="getUserOrgWorkOrderCountReportAction">
+			</action>
+			
+			<!-- 根据组织Id获取下级组织工单数量统计 -->
+			<action name="getNextOrgWorkOrderCountReportByOrgIdAction" class="orgWorkOrderCountMonthReportAction" method="getNextOrgWorkOrderCountReportByOrgIdAction">
+			</action>
+			
+			<!-- 根据组织Id获取上级组织工单数量统计 -->
+			<action name="getUpOrgWorkOrderCountReportByOrgIdAction" class="orgWorkOrderCountMonthReportAction" method="getUpOrgWorkOrderCountReportByOrgIdAction">
+			</action>
+			
+			<!-- 获取组织工单数量环比数据 -->
+			<action name="getOrgWorkOrderCountChainReportAction" class="orgWorkOrderCountMonthReportAction" method="getOrgWorkOrderCountChainReportAction">
+			</action>
+			
+			<!-- 获取上级组织工单数量环比数据 -->
+			<action name="getUpOrgWorkOrderCountChainReportAction" class="orgWorkOrderCountMonthReportAction" method="getUpOrgWorkOrderCountChainReportAction">
+			</action>
+			
+			<!-- 获取组织架构下项目工单数统计 -->
+			<action name="getOrgProjectWorkOrderCountReportAction" class="orgWorkOrderCountMonthReportAction" method="getOrgProjectWorkOrderCountReportAction"></action>
+		<!-- 人员任务量统计 END -->
+		
+		<!-- 人员数量统计 BEGIN -->
+			<!-- 当前用户组织架构下人员数量统计 -->
+			<action name="getUserOrgStaffCountReportAction" class="orgStaffCountMonthReportAction" method="getUserOrgStaffCountReportAction">
+			</action>
+			
+			<!-- 根据组织Id获取下级组织人员数量统计 -->
+			<action name="getNextOrgStaffCountReportByOrgIdAction" class="orgStaffCountMonthReportAction" method="getNextOrgStaffCountReportByOrgIdAction">
+			</action>
+			
+			<!-- 获取组织人员数量环比数据 -->
+			<action name="getOrgStaffCountChainReportAction" class="orgStaffCountMonthReportAction" method="getOrgStaffCountChainReportAction">
+			</action>
+			
+			<!-- 人员技能分类统计 -->
+			<action name="getOrgStaffSkillReportAction" class="orgStaffCountMonthReportAction" method="getOrgStaffSkillReportAction"></action>
+			
+			<!-- 获取上级组织人员数量统计 -->
+			<action name="getUpOrgStaffCountReportByOrgIdAction" class="orgStaffCountMonthReportAction" method="getUpOrgStaffCountReportByOrgIdAction">
+			</action>
+			
+			<!-- 获取上级组织人员数量环比数据 -->
+			<action name="getUpOrgStaffCountChainReportAction" class="orgStaffCountMonthReportAction" method="getUpOrgStaffCountChainReportAction">
+			</action>
+			
+			<!-- 获取组织下项目人员数统计 -->
+			<action name="getOrgProjectStaffCountReportAction" class="orgStaffCountMonthReportAction" method="getOrgProjectStaffCountReportAction"></action>
+		<!-- 人员数量统计 END -->
+		
+		<!-- 人员及任务数统计 BEGIN  -->
+			<!-- 人员数量及任务数统计 当前用户下级组织-->
+			<action name="getUserOrgCompareReportAction" class="orgWorkOrderCountMonthReportAction" method="getUserOrgCompareReportAction"></action>
+			
+			<!-- 人员数量及任务数统计 获取下级-->
+			<action name="getNextOrgCompareReportByOrgIdAction" class="orgWorkOrderCountMonthReportAction" method="getNextOrgCompareReportByOrgIdAction"></action>
+			
+			<!-- 人员数量及任务数统计 环比-->
+			<action name="getOrgCompareChainReportAction" class="orgWorkOrderCountMonthReportAction" method="getOrgCompareChainReportAction"></action>
+			
+			<!-- 获取上级组织 人员及任务量统计 信息-->
+			<action name="getUpOrgCompareReportByOrgIdAction" class="orgWorkOrderCountMonthReportAction" method="getUpOrgCompareReportByOrgIdAction"></action>
+			
+			<!-- 获取上级组织 人员数量及任务数统计 环比-->
+			<action name="getUpOrgCompareChainReportAction" class="orgWorkOrderCountMonthReportAction" method="getUpOrgCompareChainReportAction"></action>
+			
+			<!-- 获取组织下项目的人员及任务量统计-->
+			<action name="getOrgProjectStaffAndWorderCountReportAction" class="orgWorkOrderCountMonthReportAction" method="getOrgProjectStaffAndWorderCountReportAction"></action>
+		<!-- 人员及任务数统计 END -->
+		
+		
+		
+		<!-- 车辆报表 begin -->
+		<action name="carCensusReport" class="carCensusReportAction" >
+			<result name="success">${url}</result>
+		</action>
+		<action name="carCensusReport_ajax" class="carCensusReportAction" >
+		</action>
+		<!-- 车辆报表 end -->
+		
+		
+		<!-- 基站TOP10/每百 -->
+		<!-- 获取基站故障数前十action -->
+		<action name="getFaultBaseStationTopTenDataAction" class="faultBaseStationTopTenReportAction" method="getFaultBaseStationTopTenDataAction">
+		</action>
+		
+		
+		<!-- 获取用户当前组织的下级组织对应的每百个基站的人/车/任务量统计分析的数据action -->
+		<action name="getAnalyseFaultCountAndResourceBalanceDataAction" class="analyseFaultCountAndResourceBalanceReportAction" method="getAnalyseFaultCountAndResourceBalanceDataAction">
+		</action>
+		
+		
+		<!-- 获取下级组织对应的每百个基站的人/车/任务量统计分析的数据action -->
+		<action name="getSubOrgAnalyseFaultCountAndResourceBalanceDataAction" class="analyseFaultCountAndResourceBalanceReportAction" method="getSubOrgAnalyseFaultCountAndResourceBalanceDataAction">
+		</action>
+		
+		
+		<!-- 判断组织是否具有下级组织action -->
+		<action name="judgeOrgIsExistSubOrgAction" class="analyseFaultCountAndResourceBalanceReportAction" method="judgeOrgIsExistSubOrgAction">
+		</action>
+		
+		<!-- 获取每百个基站的人/车/任务量统计分析的环比数据 -->
+		<action name="getAnalyseFaultCountAndResourceBalanceReportLoopCompareDataAction" class="analyseFaultCountAndResourceBalanceReportAction" method="getAnalyseFaultCountAndResourceBalanceReportLoopCompareDataAction">
+		</action>
+		<action name="getbaseStationOutByOrgAction" class="baseStationOutAction" method="getbaseStationOutByOrgAction">
+		</action>
+		<action name="getbaseStationOutByOrgIdAction" class="baseStationOutAction" method="getbaseStationOutByOrgIdAction">
+		</action>
+		<action name="getbaseStationOutByOrgIdTopOrgAction" class="baseStationOutAction" method="getbaseStationOutByOrgIdTopOrgAction">
+		</action>
+		<!-- 获取当前登录人所在当前组织的子组织对应的基站故障数分布的数据action -->
+		<action name="getCountFaultBaseStationTopFiveTenDataAction" class="countFaultBaseStationTopFiveTenByOrgReportAction" method="getCountFaultBaseStationTopFiveTenDataAction">
+		</action>
+		
+		<!-- 获取子组织基站数最差分布的数据 -->
+		<action name="getSubOrgCountFaultBaseStationTopFiveTenDataAction" class="countFaultBaseStationTopFiveTenByOrgReportAction" method="getSubOrgCountFaultBaseStationTopFiveTenDataAction">
+		</action>
+		
+		<!-- 获取组织基站数最差分布的环比数据 -->
+		<action name="getCountFaultBaseStationTopFiveTenLoopCompareDataAction" class="countFaultBaseStationTopFiveTenByOrgReportAction" method="getCountFaultBaseStationTopFiveTenLoopCompareDataAction">
+		</action>
+		
+		<!-- 按地域获取当前登录人所在当前组织的子组织对应的基站故障数分布的数据action -->
+		<action name="getCountFaultBaseStationTopFiveTenDataForAreaAction" class="countFaultBaseStationTopFiveTenByOrgReportAction" method="getCountFaultBaseStationTopFiveTenDataForAreaAction">
+		</action>
+		
+		<!-- 按地域获取下级区域对应的基站故障数分布的数据action -->
+		<action name="getSubAreaCountFaultBaseStationTopFiveTenDataForAreaAction" class="countFaultBaseStationTopFiveTenByOrgReportAction" method="getSubAreaCountFaultBaseStationTopFiveTenDataForAreaAction">
+		</action>
+		
+		
+		<!-- 按地域获取区域对应的基站故障数分布的环比数据action -->
+		<action name="getCountFaultBaseStationTopFiveTenLoopCompareDataForAreaAction" class="countFaultBaseStationTopFiveTenByOrgReportAction" method="getCountFaultBaseStationTopFiveTenLoopCompareDataForAreaAction">
+		</action>
+		
+		<!-- 根据用户所选组织的，获取前10基站故障数的数据 -->
+		<action name="getFaultBaseStationTopTenDataByOrgAction" class="faultBaseStationTopTenReportAction" method="getFaultBaseStationTopTenDataByOrgAction">
+		</action>
+		
+
+		<!-- 获取故障工单处理及时率(按组织) -->
+		<action name="getUrgentRepairProcessTimeRateByBizunitinnstTopOrgAction" class="urgentRepairReportAction" method="getUrgentRepairProcessTimeRateByBizunitinnstTopOrgAction">
+		</action>
+		<!-- 获取故障工单处理及时率(按基站类型) -->
+		<action name="getUrgentRepairProcessTimeRateByBaseStationLevelAndTopOrgAction" class="urgentRepairReportAction" method="getUrgentRepairProcessTimeRateByBaseStationLevelAndTopOrgAction">
+		</action>
+		<!-- 获取故障工单处理及时率(按故障类型) -->
+		<action name="getUrgentRepairProcessTimeRateByFaultTypeAndTopOrgAction" class="urgentRepairReportAction" method="getUrgentRepairProcessTimeRateByFaultTypeAndTopOrgAction">
+		</action>
+		<!-- 获取故障工单处理及时率(按故障级别) -->
+		<action name="getUrgentRepairProcessTimeRateByFaultLevelAndTopOrgAction" class="urgentRepairReportAction" method="getUrgentRepairProcessTimeRateByFaultLevelAndTopOrgAction">
+		</action>
+		<!-- 获取故障工单处理及时率(按受理专业) -->
+		<action name="getUrgentRepairProcessTimeRateByAcceptProfessionalAndTopOrgAction" class="urgentRepairReportAction" method="getUrgentRepairProcessTimeRateByAcceptProfessionalAndTopOrgAction">
+		</action>
+		<!-- 获取故障工单处理及时率(按故障大类) -->
+		<action name="getUrgentRepairProcessTimeRateByFaultGeneraAndTopOrgAction" class="urgentRepairReportAction" method="getUrgentRepairProcessTimeRateByFaultGeneraAndTopOrgAction">
+		</action>
+		<action name="getUrgentRepairProcessTimeRateByProjectAction" class="urgentRepairReportAction" method="getUrgentRepairProcessTimeRateByProjectAction">
+		</action>
+		
+		
+		<!-- 获取用户最高级组织 -->
+		<action name="getUserTopOrgAction" class="analyseFaultCountAndResourceBalanceReportAction" method="getUserTopOrgAction">
+		</action>
+		
+		<!-- 获取父级组织 -->
+		<action name="getParentOrgBySubOrgAction" class="analyseFaultCountAndResourceBalanceReportAction" method="getParentOrgBySubOrgAction">
+		</action>
+		
+		<!-- 获取父级区域 -->
+		<action name="getParentAreaBySubAreaAction" class="countFaultBaseStationTopFiveTenByOrgReportAction" method="getParentAreaBySubAreaAction">
+		</action>
+		
+		<action name="getAreaInfoByAreaIdAction" class="countFaultBaseStationTopFiveTenByOrgReportAction" method="getAreaInfoByAreaIdAction">
+		</action>
+		
+		
+		
+		<!-- 按项目统计退服率 -->
+		<action name="getbaseStationOutByOrgIdProjectAction" class="baseStationOutAction" method="getbaseStationOutByOrgIdProjectAction">
+		</action>
+		
+		<!-- 按项目统计基站/站址 -->
+		<action name="getStationByOrgIdProjectAction" class="netReportAction" method="getStationByOrgIdProjectAction">
+		</action>
+		<!-- 按项目统计无线资源 -->
+		<action name="getWANByOrgIdProjectAction" class="netReportAction" method="getWANByOrgIdProjectAction">
+		</action>
+
+		<!-- 按项目获取当前登录人所在当前组织的对应的项目的基站故障数分布的数据action -->
+		<action name="getCountFaultBaseStationTopFiveTenDataForProjectAction" class="countFaultBaseStationTopFiveTenByOrgReportAction" method="getCountFaultBaseStationTopFiveTenDataForProjectAction">
+		</action>
+		
+		<!-- 按项目获取基站故障数分布的环比数据action -->
+		<action name="getCountFaultBaseStationTopFiveTenLoopCompareDataForProjectAction" class="countFaultBaseStationTopFiveTenByOrgReportAction" method="getCountFaultBaseStationTopFiveTenLoopCompareDataForProjectAction">
+		</action>
+		
+		<!-- 按项目获取每百基站对比数据 -->
+		<action name="getAnalyseFaultCountAndResourceBalanceDataForProjectAction" class="analyseFaultCountAndResourceBalanceReportAction" method="getAnalyseFaultCountAndResourceBalanceDataForProjectAction">
+		</action>
+
+		<!-- 按项目获取每百基站环比数据 -->
+		<action name="getAnalyseFaultCountAndResourceBalanceReportLoopCompareDataForProjectAction" class="analyseFaultCountAndResourceBalanceReportAction" method="getAnalyseFaultCountAndResourceBalanceReportLoopCompareDataForProjectAction">
+		</action>
+		
+		
+		<!-- 按项目获取前10基站故障数的数据 -->
+		<action name="getFaultBaseStationTopTenDataForProjectAction" class="faultBaseStationTopTenReportAction" method="getFaultBaseStationTopTenDataForProjectAction">
+		</action>
+		
+		<!-- 根据用户所选项目，获取前10基站故障数的数据 -->
+		<action name="getFaultBaseStationTopTenDataByProjectAction" class="faultBaseStationTopTenReportAction" method="getFaultBaseStationTopTenDataByProjectAction">
+		</action>
+		
+		<action name="getProjectTreeDataAction" class="faultBaseStationTopTenReportAction" method="getProjectTreeDataAction">
+		</action>
+		
+		
+		<!-- 获取userId获取用户身份  -->
+		<action name="loadRoutineinspectionReportAssortmentAction" class="routineinspectionReportAction" method="loadRoutineinspectionReportAssortmentAction">
+			<result name="success">/op/report/reportRoutineinspection.jsp</result>
+		</action>
+		<!-- 获取项目ID或者组织ID获取该组织以下组织的巡检报表数据TOP4 -->
+		<action name="getRoutineinspectionReportAction" class="routineinspectionReportAction" method="getRoutineinspectionReportAction">
+		</action>
+		
+		<!-- 获取userId获取用户身份  -->
+		<action name="loadUrgentRepairReportAssortmentAction" class="urgentRepairReportAction" method="loadUrgentRepairReportAssortmentAction">
+			<result name="success">/op/report/reportColumnBasic.jsp</result>
+		</action>
+		<action name="getPortalReportUrgentRepairReportReportAction" class="portalReportAction" method="getPortalReportUrgentRepairReportReportAction">
+		</action>
+		
+	</package>
+</struts>

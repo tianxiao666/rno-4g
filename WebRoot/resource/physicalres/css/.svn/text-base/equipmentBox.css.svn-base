@@ -1,0 +1,30 @@
+﻿.equipmentBox{background-color:#abbcad; border:1px solid #999; margin:10px auto; *+padding-bottom: 10px;}
+.equipmentBox table{margin:10px;border-left:1px solid #AAA; border-top:1px solid #AAA; float: left;}
+.equipmentBox td.ddf{width: 62px; text-align:center; float: left;}
+.equipmentBox td.ddf span{background-color:#fff; border-bottom: 1px solid #AAA; border-right: 1px solid #AAA; float: left; width:30px; height:30px; display: inline-block;}
+.equipmentBox td.ddf span em{width:30px; height:30px; display:inline-block; line-height: 30px; font-style: normal; font-size: 10px;}
+.equipmentBox td.ddf span.text{border:none;margin:-40px 0 0 23px; width:16px; height:16px;}
+.equipmentBox td.ddf span.text em{font-size: 14px; font-style: normal; width:16px; height:16px; display:inline-block; border-radius: 0px;line-height:16px; text-align:center; color:#000;}
+.equipmentBox td.ddfType{background-color:#E8EDFF; border-bottom: 1px solid #AAA; border-right: 1px solid #AAA; width:30px; text-align:center; color:#000; font-size: 16px; font-weight:bold; margin-top:-1px\9;}
+.equipmentBox td .c1 em{background: url("../image/terminalBreakCount.png") no-repeat scroll transparent;}
+.equipmentBox td .c2 em{background: url("../image/terminalDiscardCount.png") no-repeat scroll transparent;}
+.equipmentBox td .c3 em{background: url("../image/terminalNoUseCount.png") no-repeat scroll transparent;}
+.equipmentBox td .c4 em{background: url("../image/terminalOtherCount.png") no-repeat scroll transparent;}
+.equipmentBox td .c5 em{background: url("../image/terminalPartUseCount.png") no-repeat scroll transparent;}
+.equipmentBox td .c6 em{background: url("../image/terminalPreUsedCount.png") no-repeat scroll transparent;}
+.equipmentBox td .c7 em{background: url("../image/terminalReadyUseCount.png") no-repeat scroll transparent;}
+.equipmentBox td .c8 em{background: url("../image/terminalUsedCount.png") no-repeat scroll transparent;}
+.equipmentBox td .c8-1 em{background: url("../image/terminalUsedCount1.png") no-repeat scroll transparent;}
+.equipmentBox td .c8-2 em{background: url("../image/terminalUsedCount2.png") no-repeat scroll transparent;}
+.equipmentBox td .c9 em{background: url("../image/terminalUsingCount.png") no-repeat scroll transparent;}
+
+.addDDF .addDDF_title{float:left; display:inline-block; line-height:64px; margin:0 5px;}
+.addDDF ul li{float:left;padding: 5px;}
+.addDDF ul li input[type="text"]{width:30px; text-align:center;}
+.addDDF ul li span{padding:0 5px;}
+.addDDF ul li.c1{border-bottom:1px solid #aaa; border-right:1px dashed #aaa;}
+.addDDF ul li.c2{border-bottom:1px solid #aaa;}
+.addDDF ul li.c3{border-right:1px dashed #aaa;}
+.addDDF ul.addTerminal{width: 180px;float:left;}
+.addDDF ul.showTerminal{width: 65px;float:left;border: 1px solid #AAAAAA; }
+.addDDF ul.showTerminal em{border: 1px solid #AAAAAA; border-radius:10px; color:blue; display: inline-block; height: 20px; width: 20px; line-height: 20px; text-align: center;font-style: normal;}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="workFlowService" class="com.iscreate.plat.workflow.ServiceBeanProxy">
+	</bean>
+	
+	<!-- 
+	<bean id="springHelper" class="org.jbpm.pvm.internal.processengine.SpringHelper">
+		<property name="jbpmCfg" value="jbpm.cfg.xml" />
+	</bean>
+	
+	<bean id="processEngine" factory-bean="springHelper" factory-method="createProcessEngine" />
+	
+	<bean id="flowProcessorBean" class="com.iscreate.workflow.processor.impl.FlowProcessorBeanImpl">
+	    <property name="processEngine" ref="processEngine" />
+	</bean> -->
+	
+	
+</beans>

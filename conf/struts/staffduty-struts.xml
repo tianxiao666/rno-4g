@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="staffduty" extends="struts-default">
+		<!-- 按帐号获取人员基本信息 Action -->
+		<action name="getStaffBaseInfoAction" class="staffQueryAction" method="getStaffBaseInfoAction"></action>
+		
+		<!-- 按条件获取人员信息 Action -->
+		<action name="getStaffListByConditionsAction" class="staffQueryAction" method="getStaffListByConditionsAction"></action>
+		
+		<!-- 按帐号、条件获取人员任务信息 Action-->
+		<action name="getStaffTaskInfoAction" class="staffQueryAction" method="getStaffTaskInfoAction"></action>
+		
+		
+		
+	<!-- 人员值班终端 BEGIN -->
+		<!-- 获取值班详细信息Action -->
+		<action name="showDutyDetailForMobileAction" class="staffDutyActionForMobile" method="showDutyDetailForMobileAction"></action>
+		<!-- 开始值班Action -->
+		<action name="startOnDutyForMobileAction" class="staffDutyActionForMobile" method="startOnDutyForMobileAction"></action>
+		<!-- 跳转到添加工作日志页面Action -->
+		<action name="loadFillLogPageAction" class="staffDutyActionForMobile" method="loadFillLogPageAction"></action>
+		<!-- 添加工作日志Action -->
+		<action name="addWorkLogAction" class="staffDutyActionForMobile" method="addWorkLogAction"></action>
+		<!-- 下班Action -->
+		<action name="offDutyForMobileAction" class="staffDutyActionForMobile" method="offDutyForMobileAction"></action>
+		
+		
+		
+	<!-- 人员值班终端 END -->
+	
+	
+	<!--人员排班 BEGIN -->
+	<action name="staff_planduty_ajax" class="staffPlanDutyAction">
+	</action>
+	<!-- 人员排班 END -->
+
+	
+	<!-- 人员技能管理 BEGIN -->
+	<!-- 条件获取人员列表（包含技能信息） -->
+	<action name="getStaffListByConditionsActionForStaffSkill" class="staffSkillAction" method="getStaffListByConditionsActionForStaffSkill"></action>
+	
+	<!-- 根据人员帐号获取人员技能信息 -->
+	<action name="getStaffSkillInfoByStaffIdAction" class="staffSkillAction" method="getStaffSkillInfoByStaffIdAction"></action>
+	
+	<!-- 获取所有技能信息 -->
+	<action name="getAllSkillInfoAction" class="staffSkillAction" method="getAllSkillInfoAction"></action>
+	
+	<!-- 添加人员技能 -->
+	<action name="addStaffSkillAction" class="staffSkillAction" method="addStaffSkillAction"></action>
+	
+	<!-- 根据id删除人员技能 -->
+	<action name="delStaffSkillByIdAction" class="staffSkillAction" method="delStaffSkillByIdAction"></action>
+	
+	
+	
+	<!-- 人员技能管理 END -->
+	</package>
+</struts>

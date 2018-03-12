@@ -1,0 +1,109 @@
+/*选择组织架构样式*/
+#selectWorkPlace{ z-index:200; display:none; position:absolute; overflow:auto; background:#f9f9f9; border:1px solid #ccc; border-top:none;width: 185px; min-height:186px; text-align:left;line-height:18px; }
+#selectWorkPlace2{z-index:200; display:none; position:absolute; overflow-y:auto; min-width: 185px; background:#f9f9f9; border:1px solid #ccc; border-top:none;height:110px;overflow-y: auto;text-align:left;line-height:18px; }
+#search_button1{display:inline-block; height:25px; width:25px; position:relative;top:-3px; vertical-align:middle;margin-right: 3px;background:url("../images/search.png") no-repeat; height:25px; width:25px;}
+/*组织架构树 样式*/
+#tree span{ cursor:pointer;}
+#tree span:hover{ background:#eee;}
+#tree2 span{ cursor:pointer;}
+#tree2 span:hover{ background:#eee;}
+
+/*选择组织架构样式*/
+#treeDiv{ display:none;z-index:199; zoom:1;text-align: left; position:absolute; overflow:auto; background:#f9f9f9; border:1px solid #ccc; border-top:none;width: 200px;height:200px; text-align:left; left:6px; top: 32px; line-height:18px; }
+#queryButton{display:inline-block; height:25px; width:25px; position:relative;top:-3px; vertical-align:middle;margin-right: 3px;background:url("cardispatch/images/search.png") no-repeat; height:25px; width:25px;}
+/*组织架构树 样式*/
+#tree span{ cursor:pointer;}
+#tree span:hover{ background:#eee;}
+/*车辆排版管理 头部*/
+.search_top_div{ background:url(cardispatch/images/gradback.png) repeat-x; height:32px; line-height:32px;padding-left:5px; border-bottom:1px solid #ccc;}
+
+#tree2 span{ cursor:pointer;}
+#tree2 span:hover{ background:#eee;}
+
+#tree1 span{ cursor:pointer;}
+#tree1 span:hover{ background:#eee;}
+
+
+/* 弹出框 */
+.advanced-search2{ display:none;padding:3px 6px;padding-top:40px;background:#F9F9F9;border:1px solid #999999; border-top:none;position: absolute;right: 0px;top:31px;height: 131px;width:400px;z-index: 101;}
+.advanced-search2-hide{margin-top:3px;margin:4px 6px 0 0; text-align:center;}
+.advanced-search2-grey{ color:#666; font-weight:bold;}
+/*车辆排版管理 头部*/
+.search_top_div{ background:url(../images/gradback.png) repeat-x; height:30px; line-height:30px; padding-left:5px; border-bottom:1px solid #ccc; margin-bottom:8px;}
+
+/* 选择组织架构按钮 */
+.select_button {background: url(../images/select.png) no-repeat scroll;display: inline-block;height: 24px;margin:2px 0 0 -31px;position: absolute;width: 24px;
+}
+/*选择时间按钮*/
+.date_button{height:20px; width:20px; background:url(../images/date_choose.png) no-repeat;display: inline-block; position:absolute; margin:3px 0px 0px -22px;}
+
+/* 白班晚班样式 */
+.duty_kind{display:inline;}
+.duty_kind em{ display:inline-block; height:9px; width:9px; border:1px solid #ccc; background:#FF0; margin-right:5px;position: relative;top: 2px;}
+.duty_kind .day{background:#C9CF74; opacity:0.8; filter:alpha(opacity = 80);}
+.duty_kind .night{background:#0066FF;opacity: 0.8;}
+.duty_kind2{display:inline;}
+.duty_kind2 em{ display:inline-block; height:16px; width:16px;  margin-right:5px;position: relative;top: 2px;}
+.duty_kind2 .day{background-image:url("../images/sun.png");  opacity:0.8; filter:alpha(opacity = 80);}
+.duty_kind2 .night{background-image:url("../images/moon.png");opacity: 0.8; filter:alpha(opacity = 80);}
+
+.duty_add{ float:right; margin:3px 5px 0 0;}
+
+/* container-main-table1-tab 样式 */
+.container-main-table1-tab{ padding:5px;}
+.main-table1 tr td{ padding:2px;}
+/* 排班表点击弹出表样式*/
+.duty_information{ border:1px solid #ccc; padding:5px;}
+.duty_information_top{text-align:center; color:#666; padding:4px 0; line-height:22px; font-weight:bold;}
+.duty_information_tool{ height:30px; line-height:30px;}
+.delete_people{height:20px; width:20px; background:url(../images/delete_button.png) no-repeat; display:inline-block;}
+.add_people{height:20px; width:20px; background:url(../images/add_button.png) no-repeat; display:inline-block;}
+.err_people { height:20px; width:20px;  background:url(../images/add_button_grey.png) no-repeat; display:inline-block; } 
+.err { height:20px; width:20px;  background:url(../images/add_button_grey.png) no-repeat; display:inline-block; } 
+
+
+/* 列表显示样式 */
+.month_work_information{ width:100%;}
+.month_work_information_title{ width:100%; text-align:center;padding:5px 0px;}
+.month_work_information_title h4{padding-bottom:5px;}
+.month_work_information .row2{line-height:40px;}
+.month_work_information th{border:1px solid #ccc; line-height:16px; background:#f9f9f9; text-align:center;}
+.month_work_information td{border:1px solid #ccc; text-align:center; height:50px;}
+.month_work_information td li{height:22px; min-width:22px;line-height:22px;}
+.day_show{height:22px;background:url(../images/sun.png) center no-repeat;width:100%;min-width:22px;}
+.night_show{height:22px; background:url(../images/moon.png) center no-repeat;width:100%;min-width:22px;}
+.weeked_color2{background:#ddffdb;height:12px; width:12px; display:inline-block;position:relative;top:2px; border:1px solid #ccc; }
+.month_work_information th.weeked_color{background:#B3FFB3;}
+.month_work_information td.weeked_color{background:#ddffdb;}
+.date_select{
+	font-size: 12px;
+    height: 12px;
+    line-height: 12px;
+    text-align: center;
+    width: 140px;
+	position:relative;
+	left:50%;
+	margin-left:-70px;
+	}
+.date_select .date_left,.date_select  .left_date_btn{
+	background:url(../images/date_left_small.png) no-repeat;
+	height:12px;
+	width:12px;
+	display:inline-block;
+	float:left;
+	cursor:pointer;
+	}
+.date_select .date_right ,.date_select  .right_date_btn{
+	background:url(../images/date_right_small.png) no-repeat;
+	height:12px;
+	width:12px;
+	display:inline-block;
+	float:right;
+	cursor:pointer;
+	}
+	
+	
+/* 新 */
+#queryButton{display:inline-block; height:25px; width:25px; position:relative;top:-3px; vertical-align:middle;margin-right: 3px;background:url("../images/search.png") no-repeat; height:25px; width:25px;}
+	
+	

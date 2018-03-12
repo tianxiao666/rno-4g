@@ -1,0 +1,8 @@
+/* CSS Document */
+.error_container{ position:relative; top:60px; width:520px; margin:0 auto; }
+.error_image{background:url(../images/error404.png) no-repeat; height:50px;  padding:55px 0 0 210px; }
+.error_image h4{ font-family:'微软雅黑',Verdana, Geneva, sans-serif; font-size:20px; }
+.error_info{ width:500px; margin:0 auto; position:relative; }
+#error_info_title{ position:absolute; right:0px; top:0px; height:20px; line-height:20px; border:1px solid #ddd; background:#fff url(../images/down.png) right no-repeat; padding:0px 20px 0 8px; color:#666; cursor:pointer; -moz-user-select: none;}
+#error_info_title.showed{ background:#f7f7f7 url(../images/down.png) right no-repeat; border:1px solid #ccc;}
+#error_info_main{ display:none; background:#f7f7f7; border:1px solid #ccc; position:absolute; width:484px; height:200px; top:24px; right:0px; padding:8px; line-height:18px; overflow-y:auto;}

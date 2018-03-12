@@ -1,0 +1,21 @@
+/* CSS Document */
+.portlet-container{ width:100%;}
+.portlet-container table{ width:100%;}
+.column {  padding-bottom: 100px; vertical-align:top; }
+.portlet { margin: 5px;}
+.portlet-header {height:26px; line-height:26px; background: url(../images/ti.gif) repeat-x; border-left:1px solid #85bfe1;border-right:1px solid #85bfe1; text-indent:5px;}
+.portlet-header .ui-icon { display:inline-block; float:right; margin:5px 2px 0 0}
+.portlet-header span img{cursor:pointer; margin-right:2px;} 
+.portlet-header h2{font-weight:bold; display:inline-block; float:left}
+.portlet-content { border:1px solid #85bfe1; border-top:0; _height:100px; min-height:100px; padding:5px; line-height:20px }
+.ui-sortable-placeholder { border: 2px dotted ; visibility: visible !important; height: 50px !important; }
+.ui-sortable-placeholder * { visibility: hidden; }
+
+
+/*´ý°ìÊÂÏî*/
+.taskpanel{border:1px solid #999;margin:5px; min-height:100px;}
+.taskpanel_title{ height:26px; line-height:26px; background:url(../images/ti.gif) repeat-x; border-left:1px solid #85bfe1;border-right:1px solid #85bfe1; text-indent:5px;}
+.taskpanel_title h2{font-weight:bold; display:inline-block; float:left}
+.taskpanel_title span{ display:inline-block; float:right; margin:5px 2px 0 0}
+.taskpanel_title span img{ margin-right:4px; cursor:pointer}
+.taskpanel_body{border:1px solid #85bfe1; border-top:0; _height:100px; min-height:100px; max-height:100px; overflow:auto;padding:0px; line-height:20px}

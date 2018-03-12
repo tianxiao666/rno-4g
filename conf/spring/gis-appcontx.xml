@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <!-- 在op包中新添加的网络资源dao du.hw添加 -->
+    <bean id="networkResourceQueryDao" class="com.iscreate.op.dao.networkresourcemanage.NetworkResourceQueryDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property> 
+	</bean>
+
+
+
+	<!-- GIS展现 -->
+	<bean id="showResOnMapAction" class="com.iscreate.op.action.networkresourcemanage.ShowResOnMapAction"
+		singleton="false">
+		<property name="structureCommonService" ref="structureCommonService"></property>
+		<property name="showResOnMapService" ref="showResOnMapService"></property>
+		<property name="networkResourceMaintenanceService" ref="networkResourceMaintenanceService"></property>
+	</bean>
+
+	<!-- GIS展现 Service -->
+	<bean id="showResOnMapService" class="com.iscreate.op.service.networkresourcemanage.ShowResOnMapServiceImpl">
+		<property name="structureCommonService" ref="structureCommonService"></property>
+	</bean>
+	
+	
+	<!-- GIS展现 -->
+	<bean id="infoWindowAction" class="com.iscreate.op.action.networkresourcemanage.InfoWindowAction"
+		singleton="false"> 
+		<property name="structureCommonService" ref="structureCommonService"></property>
+		<property name="showResOnMapService" ref="showResOnMapService"></property>
+		<property name="networkResourceMaintenanceService" ref="networkResourceMaintenanceService"></property>
+	</bean>
+	
+	<!-- GIS区域面板 -->
+	<bean id="gisDispatchAreaResourceAction" class="com.iscreate.op.action.networkresourcemanage.GisDispatchAreaResourceAction" singleton="false" >
+		<property name="gisDispatchAreaService" ref="gisDispatchAreaResourceService"></property>
+		<property name="staffOrganizationService" ref="staffOrganizationService"></property>
+	</bean>
+	<bean id="gisDispatchAreaResourceService" class="com.iscreate.op.service.networkresourcemanage.GisDispatchAreaResourceServiceImpl" singleton="false" >
+		<property name="staffOrganizationService" ref="staffOrganizationService"></property>
+		<property name="structureCommonService" ref="structureCommonService"></property>
+	</bean>
+	
+	
+</beans>

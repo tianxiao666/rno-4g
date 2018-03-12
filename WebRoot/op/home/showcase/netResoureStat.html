@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="../../home/showcase/css/style.css">
+		<script type="text/javascript" src="../../home/resource/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript">
+		
+		$(function() {
+			var url ="getResourceStatsAction";
+			$.ajax({
+		           url : url,
+		           cache : false,
+		           data:{},
+		           async : true,
+		           type : "POST",
+		           dataType : 'json',
+		           success : function (result){
+		           		var appendHTML = "";
+		           		//alert(result.result);
+						$.each(result.result, function(key, value) {
+							if(value==null&&value==""){
+								return false;
+							}
+							var values = value.split("-");
+							appendHTML += '<tr>';
+							appendHTML +='<td align="center">'+values[0]+'</td>';
+							appendHTML +='<td align="center">'+values[1]+'</td>';
+							appendHTML +='<td align="center">'+values[2]+'</td>';
+							appendHTML +='</tr>';		
+						});
+						$('#mytab').append(appendHTML);
+						
+		           }
+		       });
+		});
+		
+		
+		</script>
+		
+		
+		
+	</head>
+	<body style="margin:0 auto;">
+		<div id="tabs-1"
+			style="height: 100%; border: 0px; margin:0 auto;padding: 2px 2px 2px 2px;">
+			<table width="100%" id="mytab" border="1" class="t1">
+				<thead>
+					<th width="40%">
+						维护区域
+					</th>
+					<th width="40%">
+						网络资源类别
+					</th>
+					<th width="20%">
+						资源数量（个）
+					</th>
+				</thead>
+
+			</table>
+
+		</div>
+	</body>
+</html>

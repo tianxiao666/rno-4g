@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="routineinspection" extends="struts-default">
+		<!-- 巡检问题 Action -->
+		<!-- 加载问题列表 -->
+		<action name="loadRoutineinspectionQuestionListAction" class="routineinspectionQuestionAction" method="loadRoutineinspectionQuestionListAction">
+			<result name="success">myRoutineInspectionQuestionPage.jsp</result>
+		</action>
+		<!-- 问题信息-->
+		<action name="loadRoutineinspectionQuestionInfoAction" class="routineinspectionQuestionAction" method="loadRoutineinspectionQuestionInfoAction">
+			<result name="success">showRoutineInspectionQuestionInfo.jsp</result>
+		</action>
+		<!-- 加载问题列表(问题管理)-->
+		<action name="loadRoutineinspectionQuestionListByToIdAction" class="routineinspectionQuestionAction" method="loadRoutineinspectionQuestionListByToIdAction">
+			<result name="success">myRoutineInspectionQuestionByTaskPage.jsp</result>
+		</action>
+		<!-- 加载问题列表(查询)-->
+		<action name="searchRoutineinspectionQuestionListAction" class="routineinspectionQuestionAction" method="searchRoutineinspectionQuestionListAction">
+			<result name="success">searchRoutineInspectionQuestionPage.jsp</result>
+		</action>
+		<!-- 跳转新增问题)-->
+		<action name="jumpAddRoutineinspectionQuestionPageAction" class="routineinspectionQuestionAction" method="jumpAddRoutineinspectionQuestionPageAction">
+			<result name="success">addRoutineInspectionQuestion.jsp</result>
+		</action>
+		
+		
+		<!-- 新增问题 -->
+		<action name="addRoutineinspectionQuestionAction" class="routineinspectionQuestionAction" method="addRoutineinspectionQuestionAction">
+			<result name="success" type="redirect">
+				<param name="location">op/routineinspection/loadRoutineInspectionTaskInfoByToIdAction</param>
+				<param name="TOID">${TOID}</param>
+			</result>
+		</action>
+		<!-- 处理问题 -->
+		<action name="handleRoutineinspectionQuestionAction" class="routineinspectionQuestionAction" method="handleRoutineinspectionQuestionAction"></action>
+		
+		<!-- 加载机房遗留问题列表页面（终端） -->
+		<action name="loadRoutineinspectionQuestionListByResourceActionForMoblie" class="routineinspectionQuestionActionForMobile" method="loadRoutineinspectionQuestionListByResourceActionForMoblie"></action>
+		<!-- 加载添加问题页面（终端） -->
+		<action name="loadAddRoutineinspectionQuestionPageActionForMobile" class="routineinspectionQuestionActionForMobile" method="loadAddRoutineinspectionQuestionPageActionForMobile"></action>
+		<!-- 新增问题（终端） -->
+		<action name="addRoutineinspectionQuestionActionForMoblie" class="routineinspectionQuestionActionForMobile" method="addRoutineinspectionQuestionActionForMoblie"></action>
+		<!-- 加载处理问题页面（终端） -->
+		<action name="loadHandleRoutineinspectionQuestionPageActionForMobile" class="routineinspectionQuestionActionForMobile" method="loadHandleRoutineinspectionQuestionPageActionForMobile"></action>
+		<!-- 处理问题（终端） -->
+		<action name="handleRoutineinspectionQuestionActionForMoblie" class="routineinspectionQuestionActionForMobile" method="handleRoutineinspectionQuestionActionForMoblie"></action>
+		<!-- 加载原图 -->
+		<action name="loadRoutineinspectionQuestionPictureActionForMobile" class="routineinspectionQuestionActionForMobile" method="loadRoutineinspectionQuestionPictureActionForMobile"></action>
+		
+		
+		<!-- 巡检任务 action -->
+		<!-- 跳转到巡检任务 -->
+		<action name="jumpRoutineInspectionTaskActionForMobile" class="routineInspectionTaskActionForMobile" method="jumpRoutineInspectionTaskActionForMobile">
+		</action>
+		
+		<!-- 根据TOID获取任务单信息 -->
+		<action name="getRoutineInspectionTaskByToIdActionForMobile" class="routineInspectionTaskActionForMobile" method="getRoutineInspectionTaskByToIdActionForMobile">
+		</action>
+		
+		<!-- 判断签到 -->
+		<action name="chickSignInActionForMobile" class="routineInspectionTaskActionForMobile" method="chickSignInActionForMobile">
+		</action>
+		
+		<!-- 判断是否已签到 -->
+		<action name="isInspectionTaskOrderSignedActionForMobile" class="routineInspectionTaskActionForMobile" method="isInspectionTaskOrderSignedActionForMobile">
+		</action>
+		<!-- 判断终端偏离位置 -->
+		<action name="chickDeviateActionForMobile" class="routineInspectionTaskActionForMobile" method="chickDeviateActionForMobile">
+		</action>
+		
+		<!-- 签到 -->
+		<action name="signInRoutineInspectionActionForMobile" class="routineInspectionTaskActionForMobile" method="signInRoutineInspectionActionForMobile">
+		</action>
+		
+		<!-- 签退 -->
+		<action name="signOutRoutineInspectionActionForMobile" class="routineInspectionTaskActionForMobile" method="signOutRoutineInspectionActionForMobile">
+		</action>
+		
+		
+		
+		<!-- 签到 -->
+		<action name="signInRoutineInspectionAction" class="routineInspectionTaskAction" method="signInRoutineInspectionAction">
+		</action>
+		
+		<!-- 签退 -->
+		<action name="signOutRoutineInspectionAction" class="routineInspectionTaskAction" method="signOutRoutineInspectionAction">
+		</action>
+		
+		<!-- 判断登陆人是否为维护人员 -->
+		<action name="judgeLoginPeopleIsMaintenanceWorkerAction" class="routineInspectionTaskAction" method="judgeLoginPeopleIsMaintenanceWorkerAction">
+		</action>
+		
+		
+		<!-- 巡检任务记录 -->
+		<!-- 根据专业获取巡检资源 -->
+		<action name="getRoutineInspectionResourceByProfessionAction" class="routineInspectionTaskRecordAction" method="getRoutineInspectionResourceByProfessionAction">
+		</action>
+		
+		<!-- 获取巡检记录模板 -->
+		<action name="getRoutineInspectionRecordTemplateAction" class="routineInspectionTaskRecordAction" method="getRoutineInspectionRecordTemplateAction">
+		</action>
+		
+		<!-- 保存巡检内容 -->
+		<action name="saveRoutineInspectionRecordAction" class="routineInspectionTaskRecordAction" method="saveRoutineInspectionRecordAction">
+		</action>
+		
+		<!-- 获取巡检内容实例 -->
+		<action name="getRoutineInspectionRecordExampleAction" class="routineInspectionTaskRecordAction" method="getRoutineInspectionRecordExampleAction">
+		</action>
+		
+		
+		<!-- 根据专业获取巡检资源 -->
+		<action name="getRoutineInspectionResourceByProfessionActionForMobile" class="routineInspectionTaskRecordActionForMobile" method="getRoutineInspectionResourceByProfessionActionForMobile">
+		</action>
+		
+		<!-- 获取巡检记录模板 -->
+		<action name="getRoutineInspectionRecordTemplateActionForMobile" class="routineInspectionTaskRecordActionForMobile" method="getRoutineInspectionRecordTemplateActionForMobile">
+		</action>
+		
+		<!-- 获取巡检记录模板实例 -->
+		<action name="getRoutineInspectionRecordExampleActionForMobile" class="routineInspectionTaskRecordActionForMobile" method="getRoutineInspectionRecordExampleActionForMobile">
+		</action>
+		
+		<!-- 获取设备 -->
+		<action name="getEquipmentActionForMobile" class="routineInspectionTaskRecordActionForMobile" method="getEquipmentActionForMobile">
+		</action>
+		
+		<!-- 获取设备 -->
+		<action name="saveRoutineInspectionRecordActionForMobile" class="routineInspectionTaskRecordActionForMobile" method="saveRoutineInspectionRecordActionForMobile">
+		</action>
+		<!-- 根据工单加载网络资源 -->
+		<action name="loadNetworResourceByRepairWoIdActionForMobile" class="routineInspectionTaskRecordActionForMobile" method="loadNetworResourceByRepairWoIdActionForMobile">
+		</action>
+		
+		<!-- 巡检计划 -->
+		
+		
+		<!-- 根据工单号关闭工单信息 -->
+		<action name="closePlanWorkOrderAction" class="routineInspectionPlanAction" method="closePlanWorkOrderAction">
+		</action>
+		
+		<!-- 根据工单号删除工单信息及工单以下的任务单信息 -->
+		<action name="deletePlanWorkOrderAction" class="routineInspectionPlanAction" method="deletePlanWorkOrderAction">
+		</action>
+		
+		
+		<!-- che.yd 巡检########### begin ########### -->
+		<action name="createRoutineInspectionPlanWorkOrderAction" class="routineInspectionPlanAction" method="createRoutineInspectionPlanWorkOrderAction">
+			<result name="success" type="redirect">
+				<param name="location">autoCreateRoutineInspectionTaskAction</param>
+				<param name="orgId">${orgId}</param>
+			</result>
+			<result name="error">../fail.jsp</result>
+			<!-- <result name="success">createRoutineInspectionPlanWorkOrder2.jsp</result> -->
+		</action>
+		
+		<action name="showRoutineInspectionPlanWorkOrderAction" class="routineInspectionPlanAction" method="showRoutineInspectionPlanWorkOrderAction">
+			<result name="success">createRoutineInspectionPlanWorkOrder.jsp</result>
+		</action>
+		
+		<action name="autoCreateRoutineInspectionTaskAction" class="routineInspectionPlanAction" method="autoCreateRoutineInspectionTaskAction">
+			<result name="success">op/routineinspection/createRoutineInspectionPlanWorkOrder2.jsp</result>
+		</action>
+		
+		<action name="getAllRoomForAjaxAction" class="routineInspectionPlanAction" method="getAllRoomForAjaxAction">
+		</action>
+		
+		<action name="searchRoomForAjaxAction" class="routineInspectionPlanAction" method="searchRoomForAjaxAction">
+		</action>
+		
+		
+		
+		<action name="submitRoutineInspectionPlanWorkOrderAction" class="routineInspectionPlanAction" method="submitRoutineInspectionPlanWorkOrderAction">
+			<result name="success" type="redirect">
+				<param name="location">op/routineinspection/loadRoutineInspectionPlanWorkOrderInfoAction</param>
+				<param name="WOID">${WOID}</param>
+			</result>
+		</action>
+		
+		<action name="submitSelectRoutineInspectionToPlanAction" class="routineInspectionPlanAction" method="submitSelectRoutineInspectionToPlanAction">
+		</action>
+		
+		<action name="getProviderOrgTreeByOrgIdAndOrgTypeAction" class="routineInspectionPlanAction" method="getProviderOrgTreeByOrgIdAndOrgTypeAction">
+		</action>
+		
+		<action name="getProviderOrgByOrgIdInRoutineInspectionAction" class="routineInspectionPlanAction" method="getProviderOrgByOrgIdInRoutineInspectionAction">
+		</action>
+		
+		<action name="modifyRoutineInspectionTaskToPlanOfRoomAction" class="routineInspectionPlanAction" method="modifyRoutineInspectionTaskToPlanOfRoomAction">
+		</action>
+		
+		<!-- che.yd 巡检########### end ########### -->
+		
+		
+	</package>
+
+	<package name="routineinspection_iscreate" extends="iscreate-struts-default">
+		<!-- 获取工单所属的任务单信息 -->
+		<action name="loadRoutineInspectionTaskInfoByWoIdAction" class="routineInspectionTaskAction" method="loadRoutineInspectionTaskInfoByWoIdAction">
+			<result name="success">loadRoutineInspectionPlanWorkOrderInfoPage.jsp</result>
+		</action>
+		
+		<!-- 根据任务单Id获取任务单详细信息 -->
+		<action name="loadRoutineInspectionTaskInfoByToIdAction" class="routineInspectionTaskAction" method="loadRoutineInspectionTaskInfoByToIdAction">
+			<result name="success">loadRoutineInspectionTaskOrderInfo.jsp</result>
+		</action>
+		
+		<!-- 根据任务单Id获取任务单详细信息 -->
+		<action name="jumpSearchRoutineInspectionTaskAction" class="routineInspectionTaskAction" method="jumpSearchRoutineInspectionTaskAction">
+			<result name="success">searchRoutineInspectionTaskOrder.jsp</result>
+		</action>
+		
+		<!-- 根据条件查询巡检任务页面（分页） -->
+		<action name="searchRoutineInspectionTaskToPageAction" class="routineInspectionTaskAction" method="searchRoutineInspectionTaskToPageAction">
+			<result name="success">searchRoutineInspectionTaskOrderPage.jsp</result>
+		</action>
+		
+		
+		<!-- 获取巡检计划管理里的巡检计划信息 -->
+		<action name="loadRoutineInspectionPlanWorkOrderInfoAction" class="routineInspectionPlanAction" method="loadRoutineInspectionPlanWorkOrderInfoAction">
+			<result name="success">loadRoutineInspectionPlanWorkOrderInfo.jsp</result>
+		</action>
+		
+		<!-- 跳转到查询计划 -->
+		<action name="jumpSearchRoutineInspectionPlanWorkOrderAction" class="routineInspectionPlanAction" method="jumpSearchRoutineInspectionPlanWorkOrderAction">
+			<result name="success">searchRoutineInspectionPlanWorkOrder.jsp</result>
+		</action>
+		
+		<!-- 按条件查询巡检计划 -->
+		<action name="searchRoutineInspectionPlanWorkOrderAction" class="routineInspectionPlanAction" method="searchRoutineInspectionPlanWorkOrderAction">
+			<result name="success">searchRoutineInspectionPlanWorkOrderPage.jsp</result>
+		</action>
+		
+		
+		
+		<!-- 跳转到待巡检任务页面 -->
+		<action name="jumpPendingRoutineInspectionTaskAction" class="routineInspectionTaskAction" method="jumpPendingRoutineInspectionTaskAction">
+			<result name="success">pendingRoutineInspectionTaskOrder.jsp</result>
+		</action>
+		
+		
+		
+		<!-- 获取巡检待办任务列表 -->
+		<action name="getPendingRoutineInspectionTaskToPageAction" class="routineInspectionTaskAction" method="getPendingRoutineInspectionTaskToPageAction">
+			<result name="success">pendingRoutineInspectionTaskOrderPage.jsp</result>
+		</action>
+		
+	</package>
+</struts>

@@ -1,0 +1,15 @@
+
+
+#tags {display:inline; list-style:none;font-size:14px}
+
+#tags li { float:left\9;display:inline-block; height: 27px; margin-top:1px; margin-right:3px\9;margin-right:3px\9; border-left:1px solid #8ac1e3;border-right:1px solid #8ac1e3;}
+
+#tags li a { display:inline-block;padding: 4px 5px 0 10px;line-height: 23px;color: #0d6fac;border-right:1px solid #ebf4fa;border-left:1px solid #ebf4fa}
+
+#tags li.selectTag { background:#fff;height: 29px;margin-bottom:-2px;}
+
+#tags li.selectTag a {color:#000;}
+
+.tagContent {display: none; height:220px; overflow-y:auto;}
+
+#tagContent div.selectTag {display: block}

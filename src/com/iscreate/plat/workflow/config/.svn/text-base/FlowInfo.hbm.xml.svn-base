@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iscreate.plat.workflow.dataconfig.FlowInfo" table="Flow_Info" >
+        <id name="deployment_id">
+            <column name="deployment_id" />
+        </id>
+        <property name="flow_id"  column="flow_id" />
+        <property name="flow_name"  column="flow_name" />
+        <property name="flow_des"   column="flow_des" />
+        <property name="edit_page"  column="edit_page" />
+        <property name="view_page"   column="view_page" />    
+        <property name="other_new_page" column="other_new_page" />        
+        <property name="other_edit_page" column="other_edit_page" />        
+        <property name="other_view_page" column="other_view_page" />        
+        <property name="flow_status" column="flow_status" />        
+        <property name="summary_sql" column="summary_sql" />        
+        <property name="instance_Type" column="instance_Type" /> 
+        <property name="deployer_id" column="deployer_id" />           
+    </class>
+</hibernate-mapping>

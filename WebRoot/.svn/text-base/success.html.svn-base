@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>跳转</title>
+<link rel="stylesheet" type="text/css" href="css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/public.css" />
+<style>
+.jump{width:360px; background:#eee url(images/jump.png) 100px 48px no-repeat; border:1px solid #F90; position:absolute; left:50%; margin-left:-220px; top:150px;padding:45px 0 40px 70px; border-radius:5px; box-shadow:1px 1px 5px #999;}
+.jump_title{ text-align:center; line-height:30px; font-size:14px;}
+.jump_content{ text-align:center; line-height:30px; color:#666; margin-top:12px;}
+.jump_content em{color:red;padding:0px 4px;}
+</style>
+<script>
+window.onload = function(){
+	setTimeout(function(){
+		window.close();
+	},5000)
+	setInterval(function(){
+		if(document.getElementById("jump_second").innerHTML > 0){
+			document.getElementById("jump_second").innerHTML --;
+		}
+	},1000);
+}
+</script>
+</head>
+
+<body>
+	<div class="jump">
+    	<h4 class="jump_title">操作成功！</h4>
+        <p class="jump_content">页面将于<em id="jump_second">5</em>秒后跳转</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+ <name>Service_Maintenance</name>
+ <attribute type="java.lang.Long" length="128" primary="TRUE" index="TRUE" nullable="FALSE" regex="">id</attribute>
+ <attribute type="java.lang.String" length="100" primary="FALSE" index="FALSE" nullable="FALSE" regex="">biz_module</attribute>
+ <attribute type="java.lang.String" length="100" primary="FALSE" index="FALSE" nullable="FALSE" regex="">biz_processcode</attribute>
+ <attribute type="java.lang.Long" length="20" primary="FALSE" index="FALSE" nullable="FALSE" regex="">biz_processId</attribute>
+ <attribute type="java.lang.Long" length="20" primary="FALSE" index="FALSE" nullable="FALSE" regex="">maintenance_id</attribute>
+</entity>

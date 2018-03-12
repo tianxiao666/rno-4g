@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"  
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:context="http://www.springframework.org/schema/context" 
+xmlns:aop="http://www.springframework.org/schema/aop"  
+xsi:schemaLocation="http://www.springframework.org/schema/beans    
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd   
+http://www.springframework.org/schema/context   
+http://www.springframework.org/schema/context/spring-context-2.5.xsd   
+http://www.springframework.org/schema/aop   
+http://www.springframework.org/schema/aop/spring-aop-2.5.xsd"> 
+ 
+   <!--  	
+   <bean id="LoginAction" class="com.iscreate.portal.login.LoginAction" singleton="false">
+   		<property name="userLoginService" ref="userLoginService"></property>
+   </bean>
+   -->
+
+<!--  
+   <bean id="purviewAdvice" class="com.iscreate.plat.loginteceptor.service.PurviewAdvice"></bean>
+   <bean id="purviewAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+	   <property name="advice" ref="purviewAdvice"></property>
+	   <property name="patterns">
+	   		<list>
+	   			<value>.*ActionForMobile</value>
+	   			<value>.*TryCatch.*</value>
+	   		</list>
+	   </property>
+   </bean>
+   <bean id="autoproxyaop" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+	   <property name="beanNames">
+	   		<value>*Action*,*Service*</value>
+	   </property>
+	   <property name="interceptorNames">
+		   <list>
+		   		<value>purviewAdvisor</value>
+		   </list>
+	   </property>
+   </bean>
+   -->
+ <!--  <aop:aspectj-autoproxy />
+  <bean id="logAdvice" class="com.iscreate.plat.loginteceptor.service.LogAdviceImpl"></bean>
+  <bean id="exceptionAdvice" class="com.iscreate.plat.exceptioninteceptor.service.ExceptionAdviceImpl"></bean>
+   --><!-- log通知 -->
+ <!--  <aop:config>
+  		log通知切点
+   		<aop:pointcut id="logPointcut" expression="execution(* com.iscreate.op..*.*(..))" />
+   		log通知切面
+		<aop:aspect id="logAspect" ref="logAdvice" order="1" >     
+		    <aop:around pointcut-ref="logPointcut" method="invoke"/>
+		</aop:aspect>
+   </aop:config> -->
+   
+   <!-- 捕捉异常通知 -->
+	<!-- <aop:config>
+		捕捉异常通知切点
+		<aop:pointcut id="exceptionPointcut" expression="execution(* com.iscreate.op..*.*(..))" /> 
+		捕捉异常通知切面
+		<aop:aspect id="exceptionAspect" ref="exceptionAdvice" order="2" >     
+		    <aop:after-throwing pointcut-ref="exceptionPointcut" method="catchException" throwing="e" />     
+		</aop:aspect>
+	</aop:config> -->
+	
+   <!-- 
+   <bean id="businesslogicbean" class="org.springframework.aop.framework.ProxyFactoryBean">
+      <property name="beanNames">
+         <value>*Action*,*Service*</value>
+      </property>
+      <property name="interceptorNames">
+         <list>
+            <value>purviewAdvisor</value>
+         </list>
+         </property>
+   </bean>
+
+   
+   <bean id="purviewAdvisor"
+      class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+      <property name="advice">
+         <ref local="purviewAdvice"/>
+      </property>
+      <property name="pattern">
+         <list>
+   			<value>.*ActionForMobile</value>
+   			<value>.*TryCatch.*</value>
+   		</list>
+      </property>
+   </bean>
+	
+  
+   <bean id="purviewAdvice" class="com.iscreate.plat.loginteceptor.service.PurviewAdvice"></bean>
+ -->
+   
+</beans>

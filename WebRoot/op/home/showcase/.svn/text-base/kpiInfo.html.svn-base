@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="../../home/showcase/css/style.css">
+	</head>
+	<body style="margin:0 auto;">
+		<div id="tabs-1"
+			style="height: 100%; border: 0px; margin:0 auto;padding: 0px 5px 0px 5px;">
+			<table width="100%" id="mytab" border="1" class="t1">
+				<thead>
+					<th width="40%">
+						考核细项
+					</th>
+					<th width="15%">
+						基准值
+					</th>
+					<th width="15%">
+						挑战值
+					</th>
+					<th width="15%">
+						天河值
+					</th>
+					<th width="15%">
+						截止日期
+					</th>
+				</thead>
+				<tr class="a1">
+					<td>每万用户原始无线投诉比</td>
+					<td>14.34</td>
+					<td>14.02</td>
+					<td>11.29</td>
+					<td>2011-8-15</td>
+				</tr>
+				<tr>
+					<td>站点保有率</td>
+					<td>98.30%</td>
+					<td>99.50%</td>
+					<td>100%</td>
+					<td>2011-8-16</td>
+				</tr>
+				<tr class="a1">
+					<td>GSM小区完好性</td>
+					<td>98%</td>
+					<td>99%</td>
+					<td>99.21%</td>
+					<td>2011-8-16</td>
+				</tr>
+				<tr>
+					<td>TD小区完好性</td>
+					<td>98%</td>
+					<td>99%</td>
+					<td>99.00%</td>
+					<td>2011-8-16</td>
+				</tr>
+				<tr class="a1">
+					<td>直放站完好率</td>
+					<td>98%</td>
+					<td>99%</td>
+					<td>99.41%</td>
+					<td>2011-8-15</td>
+				</tr>
+				<tr>
+					<td>WLAN AP退服率</td>
+					<td>2.50%</td>
+					<td>1.50%</td>
+					<td>1.04%</td>
+					<td>2011-8-16</td>
+				</tr>
+			</table>
+
+		</div>
+	</body>
+</html>

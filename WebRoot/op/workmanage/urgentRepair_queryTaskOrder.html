@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/base.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/public.css"/>
+<link rel="stylesheet" type="text/css" href="css/input.css" />
+<link rel="stylesheet" type="text/css" href="css/search_bar.css" />
+<script type="text/javascript"" src="../../jslib/date/date.js"></script>
+<script type="text/javascript" src="../../jslib/jquery/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="jslib/commonUtil.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(":button,:submit").mousedown(function(){
+		$(this).addClass("input_button_down");
+	})
+	$(":button,:submit").mouseup(function(){
+		$(this).removeClass("input_button_down");
+	})
+	
+	$(".gd_search").change(function(){
+		var index = $(this).get(0).selectedIndex;
+		if(index == 1){
+			$(".gd_search_toggle").show();
+		}else{
+			$(".gd_search_toggle").hide();
+		}
+	})
+	
+	$(".checked_search").hide();
+	$("#gj_search").click(function(){
+		if($("#gj_search").attr("checked")){
+			$(".checked_search").show();
+		}else{
+			$(".checked_search").hide();
+		}
+	})
+	
+	//点击查询按钮
+	$("#btnSubmit").click(function(){
+		submitQuery();
+	});
+
+	
+	//提交查询
+	function submitQuery(){
+		var formValue="";
+		var queryData=getInputsByForm("form1");
+		formValue=jsonToStr(queryData);
+		var resultItemId=window.parent.subPage_resultItemId;
+		var gridStore=window.parent.Ext.getCmp(resultItemId+"_grid").getStore();
+		gridStore.baseParams= {queryParams:formValue};
+		gridStore.reload();
+	}
+	
+	//获取受理专业数据字典
+	var acceptProfessionalData=getDictionaryDataByTreeId(6);
+	constructSelectData("select_acceptProfessional",acceptProfessionalData);
+	
+	//获取基站等级数据字典
+	var baseStationLevelData=getDictionaryDataByTreeId(3);
+	constructSelectData("select_baseStationLevel",baseStationLevelData);
+})
+</script>
+<title>信息</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="search_bar">
+            <h4>查询条件</h4>
+           	<form id="form1">
+	            <table class="search_table">
+	                <tr>
+	                	<td>
+	                    	<span class="td_m">任务单类型：</span>
+	                    	<select class="gd_search">
+	                        	<option value="">请选择任务单类型</option>
+	                        	<option value="抢修">抢修任务单</option>
+	                        	<option>修缮任务单</option>
+	                        </select>
+	                        <input name="toType_operator" type="hidden" value="=" />
+	                        <input name="toType_type" type="hidden" value="select" />
+	                    </td>
+	                	<td>
+	                    	<span class="td_m">任务单状态：</span>
+	                    	<select name="status">
+	                    		<option value="">请选择任务单状态</option>
+	                        	<option value="8">待受理</option>
+	                        	<option value="9">处理中</option>
+	                        	<option value="10">已派发</option>
+	                        	<option value="18">升级中</option>
+	                        	<option value="11">已结束</option>
+	                        </select>
+	                        <input name="status_operator" type="hidden" value="=" />
+	                        <input name="status_type" type="hidden" value="text" />
+	                    </td>
+	                	<td>
+	                    	<span class="td_m">任务单主题：</span>
+	                    	<input name="toTitle" type="text" placeholder="请输入任务单主题" />
+	                    	<input name="toTitle_operator" type="hidden" value="like" />
+	                        <input name="toTitle_type" type="hidden" value="text" />
+	                        <div style="position:absolute; right:4px; top:4px;">
+	                        	<input type="checkbox" id="gj_search" /><label for="gj_search">高级</label>
+	                        </div>
+	                    </td>
+	                </tr>
+	                <tr class="gd_search_toggle" style="display:none;">
+	                	<td>
+	                    	<span class="td_m">基站类型：</span>
+	                    	<select name="baseStationType">
+	                        	<option value="">请选择基站类型</option>
+	                        	<option>2G主设备</option>
+	                        	<option>2G直放站</option>
+	                            <option>TD主设备</option>
+	                            <option>TD直放站</option>
+	                        </select>
+	                        <input name="baseStationType_operator" type="hidden" value="=" />
+	                        <input name="baseStationType_type" type="hidden" value="select" />
+	                    </td>
+	                	<td>
+	                    	<span class="td_m">受理专业：</span>
+	                    	<select id="select_acceptProfessional" name="acceptProfessional">
+	                        	<option value="">请选择受理专业</option>
+	                        	<!-- <option value="无线">无线</option>
+	                        	<option value="传输">传输</option>
+	                        	<option value="主设备">主设备</option> -->
+	                        </select>
+	                        <input name="acceptProfessional_operator" type="hidden" value="=" />
+	                        <input name="acceptProfessional_type" type="hidden" value="select" />
+	                    </td>
+	                	<td>
+	                    	<span class="td_m">基站名称：</span>
+	                    	<input name="faultStationName" type="text" placeholder="请输入基站名称" />
+	                    	<input name="faultStationName_operator" type="hidden" value="like" />
+	                        <input name="faultStationName_type" type="hidden" value="text" />
+	                    </td>
+	                </tr>
+	                <tr class="checked_search">
+	                	<td>
+	                    	<span class="td_m">是否超时：</span>
+	                        <select name="requireCompleteTime">
+		                        	<option value="">全部</option>
+		                        	<option>是</option>
+		                        	<option>否</option>
+		                        </select>
+		                        <input name="requireCompleteTime_operator" type="hidden" value="=" />
+		                        <input name="requireCompleteTime_type" type="hidden" value="text" />
+	                    </td>
+	                	<td>
+	                    	<span class="td_m">基站等级：</span>
+	                        <select id="select_baseStationLevel" name="baseStationLevel">
+	                        	<option value="">请选择基站等级</option>
+	                        </select>
+	                        <input name="baseStationLevel_operator" type="hidden" value="=" />
+	                        <input name="baseStationLevel_type" type="hidden" value="select" />
+	                    </td>
+	                	<td>
+	                    	<span class="td_m">任务单编号：</span>
+	                        <input name="toId" type="text" placeholder="请输入任务单编号" />
+	                    	<input name="toId_operator" type="hidden" value="=" />
+	                        <input name="toId_type" type="hidden" value="select" />
+	                    </td>
+	                </tr>
+	                <tr class="checked_search">
+	                	<td>
+	                    	<span class="td_m">创建时间：</span>
+	                        <input name="assignTime" type="text" id="date_text1" style="width:60px;" onclick="fPopCalendar(event,document.getElementById('date_text1'),document.getElementById('date_text1'),true)" /> - 
+	                        <input name="assignTime_" type="text" style="width:60px;" id="date_text2" onclick="fPopCalendar(event,document.getElementById('date_text2'),document.getElementById('date_text2'),true)"  />
+	                        <input name="assignTime_operator" type="hidden" value=">=" />
+	                        <input name="assignTime_type" type="hidden" value="dateTime" />
+	                        <input name="assignTime__operator" type="hidden" value="&lt;=" />
+	                        <input name="assignTime__type" type="hidden" value="dateTime" />
+	                    </td>
+	                	<td>
+	                    	<span class="td_m">关闭时间：</span>
+	                        <input type="text" id="date_text3" style="width:60px;" onclick="fPopCalendar(event,document.getElementById('date_text3'),document.getElementById('date_text3'),true)" /> - 
+	                        <input type="text" style="width:60px;" id="date_text4" onclick="fPopCalendar(event,document.getElementById('date_text4'),document.getElementById('date_text4'),true)"  />
+	                    </td>
+	                	<td></td>
+	                </tr>
+	                <tr>
+	                	<td class="tc" colspan="3">
+	                    	<input name="btnSubmit" id="btnSubmit" type="button" value="查询" />
+	                    </td>
+	                </tr>
+	            </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

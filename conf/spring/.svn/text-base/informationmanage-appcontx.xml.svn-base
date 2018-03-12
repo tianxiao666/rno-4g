@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>	  
+
+
+	<!-- 企业信息管理类 -->
+	<bean id="enterpriseInformationAction" class="com.iscreate.op.action.informationmanage.EnterpriseInformationAction" singleton="false">
+	    <property name="enterpriseInformationService" ref="enterpriseInformationService" />
+	</bean>
+	<bean id="enterpriseInformationService" class="com.iscreate.op.service.informationmanage.EnterpriseInformationServiceImpl" parent="baseService">
+	    <property name="enterpriseInformationDao" ref="enterpriseInformationDao" />
+	</bean>
+	<bean id="enterpriseInformationDao" class="com.iscreate.op.dao.informationmanage.EnterpriseInformationDaoImpl" parent="baseDao">
+	</bean>
+	
+	<!-- 项目信息管理类 -->
+	<bean id="projectInformationAction" class="com.iscreate.op.action.informationmanage.ProjectInformationAction" singleton="false">
+	    <property name="projectInformationService" ref="projectInformationService" />
+	</bean>
+	<bean id="projectInformationService" class="com.iscreate.op.service.informationmanage.ProjectInformationServiceImpl" parent="baseService">
+	    <property name="projectInformationDao" ref="projectInformationDao" />
+	    <property name="networkResourceInterfaceService" ref="networkResourceService" />
+	    <property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	<bean id="projectInformationDao" class="com.iscreate.op.dao.informationmanage.ProjectInformationDaoImpl" parent="baseDao">
+	</bean>
+	
+	<!-- 信息管理外部引用类 -->
+	<bean id="informationManageForeignAction" class="com.iscreate.op.action.informationmanage.InformationManageForeignAction" singleton="false">
+	    <property name="sysOrganizationService" ref="sysOrganizationService" />
+	    
+	</bean>
+	
+	<!-- 信息管理区域类 -->
+	<bean id="informationManageAreaService" class="com.iscreate.op.service.informationmanage.InformationManageAreaServiceImpl" parent="baseService">
+	    <property name="informationManageAreaDao" ref="informationManageAreaDao" />
+	    <property name="networkResourceInterfaceService" ref="networkResourceService" />
+	</bean>
+	<bean id="informationManageAreaAction" class="com.iscreate.op.action.informationmanage.InformationManageAreaAction" singleton="false">
+	    <property name="informationManageAreaService" ref="informationManageAreaService" />
+	    <property name="sysAreaService" ref="sysAreaService" />
+	    <property name="informationManageNetworkResourceDao" ref="informationManageNetworkResourceDao" />    
+	</bean>
+	<bean id="informationManageAreaDao" class="com.iscreate.op.dao.informationmanage.InformationManageAreaDaoImpl" parent="baseDao">
+	</bean>
+	
+	
+	<!-- 项目信息管理连接网络资源类 -->
+	<bean id="informationNetworkService" class="com.iscreate.op.service.informationmanage.InformationNetworkServiceImpl">
+		<property name="structureCommonService" ref="structureCommonService"></property>
+		<property name="dictionary" ref="dictionary"></property>
+		<property name="quickSort" ref="quickSort"></property>
+	</bean>
+	
+	<!-- 网络资源管理类 -->
+	<bean id="informationManageNetworkResourceAction" class="com.iscreate.op.action.informationmanage.InformationManageNetworkResourceAction" singleton="false">
+	    <property name="informationManageNetworkResourceService" ref="informationManageNetworkResourceService" />
+	</bean>
+	<bean id="informationManageNetworkResourceService" class="com.iscreate.op.service.informationmanage.InformationManageNetworkResourceServiceImpl" parent="baseService">
+	    <property name="informationManageNetworkResourceDao" ref="informationManageNetworkResourceDao" />
+	    <property name="projectInformationDao" ref="projectInformationDao" />
+	    <property name="informationNetworkService" ref="informationNetworkService" />
+	    <!-- yuan.yw -->
+		<property name="sysOrganizationService" ref="sysOrganizationService" />
+	</bean>
+	<bean id="informationManageNetworkResourceDao" class="com.iscreate.op.dao.informationmanage.InformationManageNetworkResourceDaoImpl" parent="baseDao">
+	</bean>
+	
+	
+	
+	
+	
+	<!-- 基本数据操作类 -->
+	<bean id="baseDao" class="com.iscreate.op.dao.informationmanage.BaseDaoImpl" singleton="false">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="baseService" class="com.iscreate.op.service.informationmanage.BaseServiceImpl" singleton="false">
+		<property name="baseDao" ref="baseDao" />
+	</bean>
+	
+</beans>

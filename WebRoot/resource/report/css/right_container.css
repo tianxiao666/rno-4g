@@ -1,0 +1,32 @@
+/* CSS Document */
+html, body {height:100%; margin: 0; padding: 0; }
+html>body {font-size: 16px; font-size: 75%;} /* Reset Base Font Size */
+body {font-family: Verdana, helvetica, arial, sans-serif;font-size: 68.75%;background: #fff;color: #333;}
+table { border-collapse: collapse; border-spacing: 0;}
+.tl{ text-align:left;}
+.tr{ text-align:right;}
+input[type="text"]{ background:url(../image/text-bg.gif) repeat-x;border: solid 1px #d5d5d5; padding:2px; width:135px;}
+input[type="button"]{ margin:0px; padding:0px;padding:2px 3px;}
+
+h1, h2 { font-family: 'trebuchet ms', verdana, arial; padding: 10px; margin: 0 }
+h1 { font-size: large }
+
+#banner { padding: 15px; background-color: #06b; color: white; font-size: large; border-bottom: 1px solid #ccc;
+    background: url(bg.gif) repeat-x; text-align: center }
+#banner a { color: white; }
+
+#main { padding: 1em; }
+
+a img { border: none; }
+
+#right_container{ width:300px;background-color: #fff;}
+.right_tab_list{ clear:both; height:30px;}
+.right_tab_list ul{ list-style:none;margin:0; padding:0; }
+.right_tab_list ul li{ float:left; padding:5px; cursor:pointer; border:1px solid #CCC;background:#E2EBF4;}
+.right_tab_list ul li.show_li{ background:#fff;}
+
+.right_tab_table{width:100%; margin-bottom:10px;}
+.right_tab_table th{ font-weight:normal; padding-left:5px; height:30px; background:url(../image/cmp-bg2.gif) repeat-x; border:1px solid #ccc;}
+.right_tab_table td{ border:1px solid #CCC; padding:5px 2px; color:#000; vertical-align:middle;  background:WhiteSmoke;}
+.right_tab_table .menuTd{white-space:nowrap; background:#E2EBF4; text-align:right; width:20%;}
+.right_tab_table .table_bottom{ background:#eee; text-align:right;}

@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="cardispatch" extends="struts-default">
+	
+		<!-- test -->
+		<action name="car_test" class="com.iscreate.op.action.cardispatch.CarTestAction">
+		</action>
+	
+	
+		<!-- 车辆排班 begin -->
+		<action name="cardispatchDuty" class="cardispatchDutyAction" >
+			<result name="success">${url}</result>
+		</action>
+		<action name="cardispatchDuty_ajax" class="cardispatchDutyAction" >
+		</action>
+		<!-- 车辆排班 end -->
+		
+		<!-- 车辆管理 begin -->
+		<action name="cardispatchManage" class="cardispatchManageAction" >
+			<result name="success">${url}</result>
+		</action>
+		<action name="cardispatchManage_ajax" class="cardispatchManageAction" >
+		</action>
+		<!-- 车辆管理 end -->
+		
+		<!-- 车辆工单 begin -->
+		<action name="cardispatchWorkorder" class="cardispatchWorkorderAction" >
+			<result name="success">${url}</result>
+			<result name="redirect" type="redirect">
+				<param name="location">op/cardispatch/${url}</param>
+			</result>
+			<result name="redirectAction" type="redirectAction">
+				<param name="actionName">${url}</param>
+				<param name="WOID">${WOID}</param>
+			</result>
+			<result name="action" type="redirect">
+				<param name="location">${url}</param>
+				<param name="WOID">${WOID}</param>
+			</result>
+		</action>
+		<action name="cardispatchWorkorder_ajax" class="cardispatchWorkorderAction" >
+		</action>
+		<!-- 车辆工单 end -->
+		
+		
+		<!-- 车辆外连接 begin -->
+		<action name="cardispatchForeign_ajax" class="cardispatchForeignAction" >
+		</action>
+		<!-- 车辆外连接 end -->
+		
+		<!-- 车辆公共 begin -->
+		<action name="cardispatchCommon_ajax" class="cardispatchCommonAction" >
+		</action>
+		<!-- 车辆公共 end -->
+		
+		<action name="carTimer" class="cardispatchTimerAction">
+		</action>
+		
+		
+		<!-- mobile begin -->
+		
+		<!-- 根据状态,获取车辆调度单集合 -->
+		<action name="findCardispatchWordorderByStateForMobile" class="cardispatchWorkorderActionForMobile" method="findCardispatchWordorderByStateForMobile" >
+		</action>
+		<!-- 根据条件,获取车辆调度单集合 -->
+		<action name="findCarWorkOrderListBySearchForMobile" class="cardispatchWorkorderActionForMobile" method="findCarWorkOrderListBySearchForMobile" >
+		</action>
+		<!-- 根据woTitle,获取车辆调度单集合 -->
+		<action name="findCarWorkOrderListByWoTitleForMobile" class="cardispatchWorkorderActionForMobile" method="findCarWorkOrderListByWoTitleForMobile" >
+		</action>
+		<!-- 根据车辆调度单状态,进入相应页面 -->
+		<action name="enterCardispatchWorkorderActionForMobile" class="cardispatchWorkorderActionForMobile" method="enterCardispatchWorkorderActionForMobile" >
+		</action>
+		<!-- 根据woId,获取单个车辆调度单 -->
+		<action name="findSingleCardispatchWorkorderByWoIdForMobile" class="cardispatchWorkorderActionForMobile" method="findSingleCardispatchWorkorderByWoIdForMobile" >
+		</action>
+		<!-- 根据车辆调度单woId,获取关联工单 -->
+		<action name="findCardispatchWorkorderAssociateTaskByWoIdForMobile" class="cardispatchWorkorderActionForMobile" method="findCardispatchWorkorderAssociateTaskByWoIdForMobile" >
+		</action>
+		<!-- 根据车辆调度单,获取行车费用集合 -->
+		<action name="findCardispatchWorkorderFeerecordByWoIdForMobile" class="cardispatchWorkorderActionForMobile" method="findCardispatchWorkorderFeerecordByWoIdForMobile" >
+		</action>
+		<!-- 删除行车费用 -->
+		<action name="deleteFeerecordByFeeIdForMobile" class="cardispatchWorkorderActionForMobile" method="deleteFeerecordByFeeIdForMobile" >
+		</action>
+		<!-- 用车人自动补全 -->
+		<action name="notDriverStaffAutoCompleteForMobile" class="cardispatchWorkorderActionForMobile" method="notDriverStaffAutoCompleteForMobile" >
+		</action>
+		<!-- 获取当前登录人区域 -->
+		<action name="getAreaIdByLoginPersonForMobile" class="cardispatchWorkorderActionForMobile" method="getAreaIdByLoginPersonForMobile" >
+		</action>
+		<!-- 创建工单 -->
+		<action name="createCarDispatchWorkOrderActionForMobile" class="cardispatchWorkorderActionForMobile" method="createCarDispatchWorkOrderActionForMobile" >
+		</action>
+		<!-- 获取当前登录人信息 -->
+		<action name="getLoginUserForMobile" class="cardispatchWorkorderActionForMobile" method="getLoginUserForMobile" >
+		</action>
+		<!-- 车辆调度单数量 -->
+		<action name="findCardispatchWordorderByStateCountForMobile" class="cardispatchWorkorderActionForMobile" method="findCardispatchWordorderByStateCountForMobile" >
+		</action>	
+		<!-- 车辆调度单数量 -->
+		<action name="findCardispatchWordorderByStateWithCountForMobile" class="cardispatchWorkorderActionForMobile" method="findCardispatchWordorderByStateWithCountForMobile" >
+		</action>	
+		<!-- 查询车辆最后次里程 -->
+		<action name="findCarLastMileage" class="cardispatchWorkorderActionForMobile" method="findCarLastMileage">
+		</action>
+		<!-- 进入 -->
+		<action name="enterCardispatchWorkorderUrgePageActionForMobile" class="cardispatchWorkorderActionForMobile" method="enterCardispatchWorkorderUrgePageActionForMobile">
+		</action>
+		
+		
+		<!-- mobile end -->
+		
+		
+		
+		<!-- 杰辉mobile begin -->
+		
+		<!-- 用车 -->
+		<action name="useCarAction" class="cardispatchWorkorderActionForMobile" method="useCarAction" >
+		</action>
+		<!-- 还车 -->
+		<action name="returnCar" class="cardispatchWorkorderActionForMobile" method="returnCar" >
+		</action>
+		<!-- 添加行车费用 -->
+		<action name="saveFeeAmount" class="cardispatchWorkorderActionForMobile" method="saveFeeAmount" >
+		</action>
+		<!-- 催办 -->
+		<action name="remindersCarTaskAction" class="cardispatchWorkorderActionForMobile" method="remindersCarTaskAction" >
+		</action>	
+		<!-- 根据调度单woId,查询服务跟踪记录 -->
+		<action name="findCardispatchTasktracerecordByWoIdActionForMobile" class="cardispatchWorkorderActionForMobile" method="findCardispatchTasktracerecordByWoIdActionForMobile" >
+		</action>	
+		
+		
+		<!-- 杰辉mobile end -->
+		
+		<!-- 车辆轨迹 BEGIN -->
+			<!-- 获取车辆轨迹信息 -->
+			<action name="getGpsInfoForCarLocusAction" class="cardispatchCarLocusAction" method="getGpsInfoForCarLocusAction"></action>
+			<!-- 跳转到车辆状态监控页面Action -->
+			<action name="loadCarStateMonitoringPageAction" class="cardispatchCarLocusAction" method="loadCarStateMonitoringPageAction">
+				<result name="success">carStateMonitoringPage.jsp</result>
+			</action>
+		<!-- 车辆轨迹 END -->
+		
+		<!-- 车辆里程导出 BEGIN -->
+		<action name="CardispatchExportExcelAction" class="CardispatchExportDateCar" >
+			<result name="success" type="stream">
+				<param name="contentType"> application/vnd.ms-excel</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		
+		<!-- 车辆里程导出 END -->
+		
+		<!-- yuan.yw -->
+		<!-- 根据组织id获取子组织列表 -->
+		<action name="getChildOrgListByOrgIdActionForMobile" class="cardispatchCarMonitorActionForMobile" method="getChildOrgListByOrgIdActionForMobile">
+		</action>
+		<!-- 获取车辆状态监控列表 -->
+		<action name="getCarStateMonitorListActionForMobile" class="cardispatchCarMonitorActionForMobile" method="getCarStateMonitorListActionForMobile">
+		</action>
+		<!-- 根据车辆id获取相关信息 -->
+		<action name="getCarRelatedInformationByCarIdActionForMobile" class="cardispatchCarMonitorActionForMobile" method="getCarRelatedInformationByCarIdActionForMobile">
+		</action>
+		<!-- 根据经纬度获取实际地址 -->
+		<action name="getAddressByLngLatActionForMobile" class="cardispatchCarMonitorActionForMobile" method="getAddressByLngLatActionForMobile">
+		</action>
+		
+		<!-- ou.jh -->
+		<action name="addReadingAndBillsViewAction" class="cardispatchManageAction" method="addReadingAndBillsViewAction">
+			<result name="success">addReadingAndBills.jsp</result>
+		</action>
+		
+		<!-- ou.jh -->
+		<action name="carReadingAndBillsPageViewAction" class="cardispatchManageAction" method="carReadingAndBillsPageViewAction">
+			<result name="success">carReadingAndBillsPage.jsp</result>
+		</action>
+		
+		<!-- ou.jh -->
+		<action name="selectReadingOrBillsAction" class="cardispatchManageAction" method="selectReadingOrBillsAction">
+			<result name="Bills">carBillsPageTable.jsp</result>
+			<result name="Reading">carReadingPageTable.jsp</result>
+		</action>
+		
+		<!-- ou.jh 删除仪表读数或者油费(逻辑删除) -->
+		<action name="deleteReadingOrBillsAction" class="cardispatchManageAction" method="deleteReadingOrBillsAction">
+		</action>
+		
+		<!-- ou.jh 根据ID获取仪表读数与油费 -->
+		<action name="getReadingAndBillsAction" class="cardispatchManageAction" method="getReadingAndBillsAction">
+			<result name="success">carReadingAndBills.jsp</result>
+		</action>
+		
+		<!-- ou.jh 导出仪表读数或油费 -->
+		<action name="exportCarReadingOrBillsAction" class="cardispatchManageAction" method="exportCarReadingOrBillsAction" >
+			<result name="success" type="stream">
+				<param name="contentType"> application/vnd.ms-excel</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		
+		<!-- yuan.yw -->
+		<!-- 车辆油费统计-->
+		<action name="getCarFuelBillsAction" class="carFuelReportAction" method="getCarFuelBillsAction">
+			<result name="success">carfuel_result.jsp</result>
+		</action>
+		<!-- 车辆油费统计导出 BEGIN -->
+		<action name="exportCarFuelBillsAction" class="carFuelReportAction" method="exportCarFuelBillsAction" >
+			<result name="success" type="stream">
+				<param name="contentType"> application/vnd.ms-excel</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+	</package>
+</struts>

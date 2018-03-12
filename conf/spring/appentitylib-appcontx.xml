@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="moduleLibrary" class="com.iscreate.plat.networkresource.application.tool.XMLAEMLibrary"
+		init-method="init">
+	</bean>
+	<bean id="applicationPrimary" class="com.iscreate.plat.networkresource.application.tool.ApplicationPrimary"
+		init-method="init">
+		<property name="contextFactory" ref="contextFactory"></property>
+	</bean>
+</beans>

@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="rnov1_2" extends="struts-default">
+	
+	<!-- 初始化用户自定义统计报表 -->
+	 <action name="initRnoReportTemplateManagePageAction" class="rnoReportAction"
+			method="initRnoReportTemplateManagePageAction">
+			<result name="success">/op/rno/rno_report_manage.jsp</result>
+		</action>
+		<action name="getRnoTableDictsAction" class="rnoReportAction"
+			method="getRnoTableDictsAction">
+		</action>
+		<!-- 通过分页方式查询报表模板列表 -->
+		<action name="queryReportTemplateListByPageForAjaxAction" class="rnoReportAction"
+			method="queryReportTemplateListByPageForAjaxAction">
+		</action>
+		<!-- 通过报表模板ID查看字段详情 -->
+		<action name="queryRptTemplateDetailListByRptTempIdForAjaxAction" class="rnoReportAction"
+			method="queryRptTemplateDetailListByRptTempIdForAjaxAction">
+		</action>
+		<!-- 根据报表模板ID删除报表模板及其详情信息 -->
+		<action name="rmvRptTemplateAndDetailListByRptTempIdForAjaxAction" class="rnoReportAction"
+			method="rmvRptTemplateAndDetailListByRptTempIdForAjaxAction">
+		</action>
+		<!-- ##########################用户自定义指标分析 开始##################### -->
+		<!-- 初始化用户自定义统计报表 -->
+	 	<action name="initRnoUserDefinedFormulAnalysisPageAction" class="rnoUserDefinedAction"
+			method="initRnoUserDefinedFormulAnalysisPageAction">
+			<result name="success">/op/rno/rno_userdefined_formul_analysispage.jsp</result>
+		</action>
+		<!-- 接收话统用户自定义条件并存储 -->
+		<action name="reciveStsUserDefinedConditionAndStorageAction" class="rnoUserDefinedAction" method="reciveStsUserDefinedConditionAndStorageAction"></action>
+		<!-- ##########################用户自定义指标分析 结束##################### -->
+		<!-- 保存报表模板 -->
+		<action name="saveReportTemplateForAjaxAction" class="rnoReportAction" method="saveReportTemplateForAjaxAction"></action>
+			<!-- result name="success" type="redirect">/op/rno/initRnoReportTemplateManagePageAction.action</result -->
+		
+		<!-- 获取适用于指定用户的统计报表模板 -->
+		<action name="getPersonalReportTemplateForAjaxAction" class="rnoReportAction" method="getPersonalReportTemplateForAjaxAction"></action>
+		<!-- 通过模板ID获取话统报表详情字段信息 -->
+		<action name="getStsRptTemplateFiledForAjaxAction" class="rnoReportAction" method="getStsRptTemplateFiledForAjaxAction"></action>
+		<!-- 按照模板分页查询话统数据 -->
+		<action name="queryStsByRptTemplateForAjaxAction" class="rnoReportAction" method="queryStsByRptTemplateForAjaxAction"></action>
+		
+		
+		<!-- 初始化结构优化ncs原始文件导入页面 -->
+		<action name="initRnoStructNcsOriFileImportAction" class="rnoStructureAction"
+			method="initRnoStructNcsOriFileImportAction">
+			<result name="success">/op/rno/rno_structure_ncs_orifile_import.jsp</result>
+		</action>
+		<!-- ncs 描述信息查询 -->
+		<action name="queryNcsDescpByPageForAjaxAction" class="rnoStructureAction" method="queryNcsDescpByPageForAjaxAction">
+		</action>
+		<!-- 查询ncs下的簇 -->
+		<action name="queryNcsClusterByPageForAjaxAction" class="rnoStructureAction" method="queryNcsClusterByPageForAjaxAction">
+		</action>
+		<!-- 获取簇下面的小区情况 -->
+		<action name="queryNcsClusterCellForAjaxAction" class="rnoStructureAction" method="queryNcsClusterCellForAjaxAction">
+		</action>
+				<!-- 初始化结构小区测量数据 -->
+		<action name="initStructureCellDataAction" class="rnoStructureAction"
+			method="initStructureCellDataAction">
+			<result name="success">/op/rno/rno_structure_cell_data.jsp</result>
+		</action>
+		<!-- 初始化结构邻区测量数据 -->
+		<action name="initStructureNCellDataAction" class="rnoStructureAction"
+		      method="initStructureNCellDataAction">
+			<result name="success">/op/rno/rno_structure_ncell_data.jsp</result>
+		</action>
+		<!-- 初始化结构干扰矩阵测量数据 -->
+		<action name="initStructureInterferMatrixDataAction" class="rnoStructureAction"
+		      method="initStructureInterferMatrixDataAction">
+			<result name="success">/op/rno/rno_structure_interfer_matrix.jsp</result>
+		</action>
+		<!-- 查询NCS小区测量DATA -->
+		<action name="queryNcsCellDataByPageForAjaxAction" class="rnoStructureAction" method="queryNcsCellDataByPageForAjaxAction"></action>
+		<!-- 查询NCS邻区测量DATA -->
+		<action name="queryNcsNcellDataByPageForAjaxAction" class="rnoStructureAction" method="queryNcsNcellDataByPageForAjaxAction"></action>
+		<!-- 查询NCS干扰矩阵DATA -->
+		<action name="queryNcsInterferMatrixByPageForAjaxAction" class="rnoStructureAction" method="queryNcsInterferMatrixByPageForAjaxAction"></action>
+		<!-- 获取ncs的连通簇 -->
+		<action name="queryNcsClusterByPageForAjaxAction" class="rnoStructureAction" method="queryNcsClusterByPageForAjaxAction" />
+		<!-- 获取连通簇下面的小区 -->
+		<action name="queryNcsClusterCellForAjaxAction" class="rnoStructureAction" method="queryNcsClusterCellForAjaxAction" />
+		<!-- 查询区域结构信息 -->
+		<action name="queryAreaDamageDataForAjaxAction" class="rnoStructureAction" method="queryAreaDamageDataForAjaxAction"></action>
+		<!-- 查询区域结构信息 -->
+		<action name="queryNcsClusterCellAndOutputEachOtherInterValueForAjaxAction" class="rnoStructureAction" method="queryNcsClusterCellAndOutputEachOtherInterValueForAjaxAction"></action>
+		
+		
+		<!-- 进入报表页面 -->
+		<action name="initNcsCellDetailQueryPageAction" class="rnoStructureAction" method="initNcsCellDetailQueryPageAction">
+		   <result name="success">/op/rno/rno_structure_ncs_cell_report.jsp</result>
+		</action>
+		<!-- 单个ncs的详情查看页面 -->
+		<action name="initRnoStructNcsDetailDisplayAction" class="rnoStructureAction" method="initRnoStructNcsDetailDisplayAction">
+		   <result name="success">/op/rno/rno_structure_ncs_detail_display.jsp</result>
+		</action>
+		<!-- ncs的综合分析页面 -->
+		<action name="initNcsAnalysisPageAction" class="rnoStructureAction" method="initNcsAnalysisPageAction">
+		   <result name="success">/op/rno/rno_structure_ncs_analysis_v2.jsp</result>
+		</action>
+		
+		<!-- 获取指定城市下的所有bsc -->
+		<action name="getAllBscInCityForAjaxAction" class="rnoCommonAction" method="getAllBscInCityForAjaxAction"></action>
+		<!-- 获取bsc下的所有cell -->
+		<action name="getAllCellsInBscForAjaxAction" class="rnoCommonAction" method="getAllCellsInBscForAjaxAction"></action>
+		<!-- 模糊匹配小区 -->
+		<action name="searchCellWithKeyWordForAjaxAction" class="rnoCommonAction" method="searchCellWithKeyWordForAjaxAction"></action>
+		<!-- 获取所有的bsc以及其下的cell，按照jquery treeview的格式 -->
+		<action name="getAllBscCellsInCityForAjaxAction" class="rnoCommonAction" method="getAllBscCellsInCityForAjaxAction"></action>
+		<!-- 获取包含有指定小区的ncs的信息 -->
+		<action name="searchNcsContainsCellForAjaxAction" class="rnoStructureAction" method="searchNcsContainsCellForAjaxAction"></action>
+		<!-- 获取小区的在某次ncs测量信息的详情 -->
+		<action name="getNcsCellInfoForAjaxAction" class="rnoStructureAction" method="getNcsCellInfoForAjaxAction"></action>
+		<!-- 计算指定小区在某个ncs的频点干扰情况 -->
+		<action name="getCellFreqInterferInNcsForAjaxAction" class="rnoStructureAction" method="getCellFreqInterferInNcsForAjaxAction"></action>
+		
+		<!-- 获取单个ncs的结构指标数据 -->
+		<action name="getSingleNcsStructAnaResForAjaxAction" class="rnoStructureAction" method="getSingleNcsStructAnaResForAjaxAction"></action>
+		<!-- 获取单个ncs的所有连通簇数据 -->
+		<action name="getSingleNcsStructClusterListForAjaxAction" class="rnoStructureAction" method="getSingleNcsStructClusterListForAjaxAction"></action>
+		<!-- 获取单个ncs的最大连通簇小区数据 -->
+		<action name="getSingleNcsStructMaxClusterCellListForAjaxAction" class="rnoStructureAction" method="getSingleNcsStructMaxClusterCellListForAjaxAction"></action>
+	    <!-- 获取单个ncs的连通簇小区干扰关系数据 -->
+		<action name="getSingleNcsStructClusterCellInterListForAjaxAction" class="rnoStructureAction" method="getSingleNcsStructClusterCellInterListForAjaxAction"></action>
+	    <!-- 提交联合分析ncs数据的任务 -->
+		<action name="submitNcsAnalysisTaskAction" class="rnoStructureAction" method="submitNcsAnalysisTaskAction"></action>
+	    <!-- 查询ncs汇总任务 -->
+		<action name="queryNcsAnalysisTaskForAjaxAction" class="rnoStructureAction" method="queryNcsAnalysisTaskForAjaxAction"></action>
+	    <!-- 进入ncs小区渲染页面 -->
+		<action name="initNcsCellMapAction" class="rnoStructureAction" method="initNcsCellMapAction">
+			<result name="success">/op/rno/rno_structure_ncs_cell_map.jsp</result>
+		</action>
+		<!-- 获取ncs小区信息 -->
+		<action name="getNcsCellByPageForAjaxAction" class="rnoStructureAction" method="getNcsCellByPageForAjaxAction"></action>
+	    <!-- 文件下载 start-->
+		<action name="exportNcsAnalysisReportAction" class="rnoStructureAction" method="exportNcsAnalysisReportAction">
+             <result name="success" type="stream">
+                          <param name="contentType">application/octet-stream</param>
+                          <param name="inputName">reportInputStream</param>
+                          <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                          <param name="bufferSize">4096</param>
+                          <param name="maximumSize">52428800</param> 
+              </result>
+              <result name="fail">
+                         /op/rno/rno_fail.jsp
+              </result>
+		</action>
+		<!-- 结构分析结果文件下载 -->
+		<action name="downloadStructureFileAction" class="rnoStructureAction" method="downloadStructureFileAction">
+             <result name="success" type="stream">
+                          <param name="contentType">application/octet-stream</param>
+                          <param name="inputName">reportInputStream</param>
+                          <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                          <param name="bufferSize">4096</param>
+                          <param name="maximumSize">52428800</param> 
+              </result>
+              <result name="fail">
+                         /op/rno/rno_fail.jsp
+              </result>
+		</action>
+		<!-- 文件下载 end-->
+		<!-- 重新执行计算任务 -->
+		<action name="recalculateRnoNcsTaskAction" class="rnoStructureAction"  method="recalculateRnoNcsTaskAction"></action>
+		<!-- 获取ncs分析报告的某类数据 -->
+		<action name="getNcsReportDataForAjaxAction" class="rnoStructureAction" method="getNcsReportDataForAjaxAction"></action>
+		
+		<!-- ##############################baidu map to google earth 改造开始 #########################-->
+		
+		<action name="storageMapIdBySessForAjaxAction" class="rnoCommonAction" method="storageMapIdBySessForAjaxAction"></action>
+		<!-- ##############################baidu map to google earth 改造开始 #########################-->
+		
+		<!-- 按ncsid标记删除ncs记录 -->
+		<action name="deleteNcsRecByIdForAjaxAction" class="rnoStructureAction" method="deleteNcsRecByIdForAjaxAction"></action>
+		<!-- 按逗号分隔的ncs id标记删除ncs记录 -->
+		<action name="deleteNcsSelectedRecByIdForAjaxAction" class="rnoStructureAction" method="deleteNcsSelectedRecByIdForAjaxAction"></action>
+		
+		<!-- 定时更新ncs desc的状态 -->
+		<action name="queryNcsDescStatusForAjaxAction" class="rnoStructureAction" method="queryNcsDescStatusForAjaxAction"></action>
+		<!-- 获取指定小区的干扰分析数据－小区干扰分析 -->
+		<action name="getSpecifyCellInterferenceAnalysisAction" class="rnoPlanDesignAction"
+			method="getSpecifyCellInterferenceAnalysisAction">
+		</action>
+		<!-- 获取指定ncsid的的全部干扰分析数据－总干扰分析 -->
+		<action name="getTotalAnalysisGisCellByPageWithNcsDescIdForAjaxAction" class="rnoPlanDesignAction"
+			method="getTotalAnalysisGisCellByPageWithNcsDescIdForAjaxAction">
+		</action>
+		<!-- 通过ncsid获取ncs描述表的区域信息[city,area]－总干扰分析 -->
+		<action name="getNcsAreaInfoByNcsIdForAjaxAction" class="rnoPlanDesignAction"
+			method="getNcsAreaInfoByNcsIdForAjaxAction">
+		</action>
+		
+		<!-- 检查是否存在已完成的ncs分析任务 -->
+		<action name="checkNcsTaskByNcsIdsForAjaxAction" class="rnoStructureAction" method="checkNcsTaskByNcsIdsForAjaxAction"></action>
+		<!-- 停止ncs分析任务 -->
+		<action name="stopNcsAnalysisTaskForAjaxAction" class="rnoStructureAction" method="stopNcsAnalysisTaskForAjaxAction"></action>
+		<!-- 检查是否存在已完成的ncs分析任务 -->
+		<action name="checkNcsTaskByNcsIdsForAjaxAction" class="rnoStructureAction" method="checkNcsTaskByNcsIdsForAjaxAction"></action>
+		<!-- 停止ncs分析任务 -->
+		<action name="stopNcsAnalysisTaskForAjaxAction" class="rnoStructureAction" method="stopNcsAnalysisTaskForAjaxAction"></action>
+		<!-- 检查是否存在已完成的ncs分析任务 -->
+		<action name="checkNcsTaskByNcsIdsForAjaxAction" class="rnoStructureAction" method="checkNcsTaskByNcsIdsForAjaxAction"></action>
+		<!-- 通过任务id获取已成功完成的ncs分析任务 -->
+		<action name="queryOldNcsTaskByTaskIdForAjaxAction" class="rnoStructureAction" method="queryOldNcsTaskByTaskIdForAjaxAction"></action>
+		<!-- 通过areaid获取ncs任务最新的汇总时间－总干扰分析 -->
+		<action name="getLatelyNcsTaskTimeForAjaxAction" class="rnoPlanDesignAction"
+			method="getLatelyNcsTaskTimeForAjaxAction">
+		</action>
+		<!-- 获取小区干扰矩阵数据详情信息－总干扰分析 -->
+		<action name="getCellInterferMatrixDataDetailForAjaxAction" class="rnoPlanDesignAction"
+			method="getCellInterferMatrixDataDetailForAjaxAction">
+		</action>
+		
+		<!-- 初始化干扰矩阵管理页面 -->
+		<action name="initInterferMartixManageAction" class="rnoStructureAction"
+			method="initInterferMartixManageAction">
+			<result name="success">/op/rno/rno_interfer_martix_manage.jsp</result>
+		</action>
+		<!-- 分页查询干扰矩阵 -->
+		<action name="queryInterferMartixByPageForAjaxAction" class="rnoStructureAction"
+			method="queryInterferMartixByPageForAjaxAction">
+		</action>
+		<!-- 初始化新增NCS干扰矩阵页面 -->
+		<action name="initInterferMartixAddForAjaxAction" class="rnoStructureAction"
+			method="initInterferMartixAddForAjaxAction">
+			<result name="success">/op/rno/rno_interfer_martix_ncs_add.jsp</result>
+		</action>
+		<!-- 检查这周是否计算过NCS干扰矩阵 -->
+		<action name="isExistedInterMartixThisWeekAction" class="rnoStructureAction"
+			method="isExistedInterMartixThisWeekAction">
+		</action>
+		<!-- 加载对应的NCS数据 -->
+		<action name="queryNcsDataByPageForAjaxAction" class="rnoStructureAction"
+			method="queryNcsDataByPageForAjaxAction">
+		</action>
+		<!-- 新增NCS干扰矩阵 -->
+		<action name="addInterMartixByNcsForAjaxAction" class="rnoStructureAction"
+			method="addInterMartixByNcsForAjaxAction">
+		</action>
+		
+		<!-- 获取小区bcch与tch -->
+		<action name="getCellFreqByCellNameForAjaxAction" class="rnoPlanDesignAction"
+			method="getCellFreqByCellNameForAjaxAction">
+		</action>
+		<!-- 更新小区bcch与tch -->
+		<action name="updateCellFreqThroughCellNameForAjaxAction" class="rnoPlanDesignAction"
+			method="updateCellFreqThroughCellNameForAjaxAction">
+		</action>
+		<!-- 初始化mrr数据导入页面 -->
+		<!--<action name="initRnoStructMrrOriFileImportAction" class="rnoStructureAction"
+		 	method="initRnoStructMrrOriFileImportAction">
+		 	<result name="success">/op/rno/rno_structure_mrr_orifile_import.jsp</result>
+		</action>-->
+		<!-- 初始化mrr数据查询页面 -->
+		<action name="initRnoStructMrrDetailDisplayAction" class="rnoStructureAction"
+		 	method="initRnoStructMrrDetailDisplayAction">
+		 	<result name="success">/op/rno/rno_structure_mrr_detail_display.jsp</result>
+		</action>
+		<!-- mrr描述查询 -->
+		<action name="queryMrrDescriptorByPageForAjaxAction" class="rnoStructureAction"
+		 	method="queryMrrDescriptorByPageForAjaxAction">
+		</action>
+		<!-- 检查区域是否在导入mrr -->
+		<action name="checkAreaLockedForImportMrrAction" class="rnoStructureAction"
+		 	method="checkAreaLockedForImportMrrAction">
+		</action>
+		<!-- mrr管理信息查询 -->
+		<action name="queryMrrAdmDataByPageForAjaxAction" class="rnoStructureAction"
+		 	method="queryMrrAdmDataByPageForAjaxAction">
+		</action>
+		<!-- mrr上下行信号强度信息查询 -->
+		<action name="queryMrrStrenDataByPageForAjaxAction" class="rnoStructureAction"
+		 	method="queryMrrStrenDataByPageForAjaxAction">
+		</action>
+		<!-- mrr上下行信号质量信息查询 -->
+		<action name="queryMrrQualiDataByPageForAjaxAction" class="rnoStructureAction"
+		 	method="queryMrrQualiDataByPageForAjaxAction">
+		</action>
+		<!-- mrr传输功率信息查询 -->
+		<action name="queryMrrPowerDataByPageForAjaxAction" class="rnoStructureAction"
+		 	method="queryMrrPowerDataByPageForAjaxAction">
+		</action>
+		<!-- mrr实时预警信息查询 -->
+		<action name="queryMrrTaDataByPageForAjaxAction" class="rnoStructureAction"
+		 	method="queryMrrTaDataByPageForAjaxAction">
+		</action>
+		<!-- mrr路径损耗信息查询 -->
+		<action name="queryMrrPlDataByPageForAjaxAction" class="rnoStructureAction"
+		 	method="queryMrrPlDataByPageForAjaxAction">
+		</action>
+		<!-- mrr路径损耗差异查询 -->
+		<action name="queryMrrPldDataByPageForAjaxAction" class="rnoStructureAction"
+		 	method="queryMrrPldDataByPageForAjaxAction">
+		</action>
+		<!-- mrr测量结果查询 -->
+		<action name="queryMrrMeaDataByPageForAjaxAction" class="rnoStructureAction"
+		 	method="queryMrrMeaDataByPageForAjaxAction">
+		</action>
+		<!-- mrr的上下行FER查询 -->
+		<action name="queryMrrFerDataByPageForAjaxAction" class="rnoStructureAction"
+		 	method="queryMrrFerDataByPageForAjaxAction">
+		</action>
+		
+		<!-- 加载区域渲染图 -->
+		<action name="getRenderImgByParamAndTaskIdForAjaxAction" class="rnoStructureAction"
+		 	method="getRenderImgByParamAndTaskIdForAjaxAction">
+		</action>
+		<!-- 获取渲染图的颜色规则 -->
+		<action name="getRenderColorRuleAjaxForAction" class="rnoStructureAction"
+		 	method="getRenderColorRuleAjaxForAction">
+		</action>
+		<!-- 渲染进度查询 -->
+		<action name="queryRenderProgressAjaxForAction" class="rnoStructureAction"
+		 	method="queryRenderProgressAjaxForAction">
+		</action>
+		<!-- 停止job任务执行 -->
+		<action name="stopJobByJobIdForAjaxAction" class="rnoStructureAction"
+		 	method="stopJobByJobIdForAjaxAction">
+		</action>
+		<!-- 提交结构分析计算任务 Ver 2 -->
+		<action name="submitEriAndHwStructureTaskAction" class="rnoStructureAction" 
+			method="submitEriAndHwStructureTaskAction">
+		</action>
+		<!-- 查询结构分析任务保存的文件路径 -->
+		<action name="getRenderImgDetailByjobIdAjaxForAction" class="rnoStructureAction" 
+			method="getRenderImgDetailByjobIdAjaxForAction">
+		</action>
+		<!-- 查询结构分析计算任务 -->
+		<action name="queryStructureAnalysisTaskByPageForAjaxAction" class="rnoStructureAction" 
+			method="queryStructureAnalysisTaskByPageForAjaxAction">
+		</action>
+		<!-- 进入任务信息页面不同条件下的跳转 -->
+		<action name="stepByStepOperateStructureTaskInfoPageForAjaxAction" class="rnoStructureAction" method="stepByStepOperateStructureTaskInfoPageForAjaxAction">
+			<!-- <result name="taskInfoForward">/op/rno/rno_structure_ncs_ncsinfo.jsp</result> -->
+			<result name="goTaskInfoPage">/op/rno/rno_structure_ncs_taskinfo.jsp</result>
+			<result name="taskInfoForward">/op/rno/rno_structure_param_info.jsp</result>
+			<result name="paramInfoForward">/op/rno/rno_structure_ncs_overviewinfo.jsp</result>
+			<!-- <result name="ncsInfoForward">/op/rno/rno_structure_ncs_mrrinfo.jsp</result>
+			<result name="mrrInfoForward">/op/rno/rno_structure_ncs_overviewinfo.jsp</result> -->
+			
+			<result name="paramInfoBack">/op/rno/rno_structure_ncs_taskinfo.jsp</result>
+			<result name="overviewInfoBack">/op/rno/rno_structure_param_info.jsp</result>
+			<!-- <result name="ncsInfoBack">/op/rno/rno_structure_ncs_taskinfo.jsp</result>
+			<result name="mrrInfoBack">/op/rno/rno_structure_ncs_ncsinfo.jsp</result> 
+			<result name="overviewInfoBack">/op/rno/rno_structure_ncs_mrrinfo.jsp</result>-->
+			
+			<result type="chain" name="submitTask">initNcsAnalysisPageAction</result>
+		</action>
+		<!-- 在创建新任务消息过程中主导存储结构分析任务对象信息（下一步操作和提交任务操作） -->
+		<action name="storageStructureAnalysisTaskObjInfoForAjaxAction" class="rnoStructureAction"
+			method="storageStructureAnalysisTaskObjInfoForAjaxAction">
+		</action>
+		<!-- mrr 描述信息查询 -->
+		<action name="queryMrrDescpByPageForAjaxAction" class="rnoStructureAction" method="queryMrrDescpByPageForAjaxAction">
+		</action>
+		<!-- 按mrrid标记删除mrr记录 -->
+		<action name="deleteMrrRecByIdForAjaxAction" class="rnoStructureAction" method="deleteMrrRecByIdForAjaxAction"></action>
+		<!-- 提交联合分析ncs与mrr数据的任务 -->
+		<action name="submitNcsAndMrrAnalysisTaskAction" class="rnoStructureAction" method="submitNcsAndMrrAnalysisTaskAction"></action>
+		<!-- 初始化2G华为小区及MRR信息导入页面 -->
+		<action name="init2GHWCellAndMrrImportPageAction" class="rnoResourceManagerAction"
+			method="init2GHWCellAndMrrImportPageAction">
+			<result name="success">/op/rno/rno_2g_hw_cell_mrr_import.jsp</result>
+		</action>
+
+		<!-- 查询 爱立信mrr信息详情的action-->
+		<action name="queryEriMrrDetailV2AjaxAction" class="rnoResourceManagerAction" method="queryEriMrrDetailV2AjaxAction">
+		</action>
+		
+		<!-- 初始化爱立信小区参数一致性检查页面 -->
+		<action name="init2GEriCellParamCheckPageAction" class="rno2GCellAnalysisAction"
+			method="init2GEriCellParamCheckPageAction">
+			<result name="success">/op/rno/rno_2g_eri_cell_param_check.jsp</result>
+		</action>
+		<action name="getEriCellParamCheckByTypeForAjaxAction" class="rno2GCellAnalysisAction"
+			method="getEriCellParamCheckByTypeForAjaxAction">
+		</action>
+		
+		<!-- 初始化爱立信小区参数对比页面 -->
+		<action name="init2GEriCellParamComparePageAction" class="rno2GCellAnalysisAction"
+			method="init2GEriCellParamComparePageAction">
+			<result name="success">/op/rno/rno_2g_eri_cell_param_compare.jsp</result>
+		</action>
+		<!-- 通过城市id加载bsc -->
+		<action name="getAllBscByCityIdForAjaxAction" class="rnoCommonAction"
+			method="getAllBscByCityIdForAjaxAction">
+		</action>
+		<!-- 获取爱立信小区某两个日期的参数对比结果 -->
+		<action name="eriCellParamsCompareForAjaxAction" class="rno2GCellAnalysisAction"
+			method="eriCellParamsCompareForAjaxAction">
+		</action>
+		<!-- 获取爱立信小区某两个日期的参数不一致的详情 -->
+		<action name="getEriCellParamsDiffDetailForAjaxAction" class="rno2GCellAnalysisAction"
+			method="getEriCellParamsDiffDetailForAjaxAction">
+		</action>
+		<!-- 导出爱立信小区参数对比结果csv -->
+		<action name="exportEriCellCompareDataAjaxForAction" class="rno2GCellAnalysisAction"
+			method="exportEriCellCompareDataAjaxForAction">
+		</action>
+		<!-- 导出爱立信小区参数一致性结果excel -->
+		<action name="exportEriCellCheckDataAjaxForAction" class="rno2GCellAnalysisAction"
+			method="exportEriCellCheckDataAjaxForAction">
+		</action>		
+		<!-- 查询文件导出进度 -->
+		<action name="queryExportProgressAjaxForAction" class="rno2GCellAnalysisAction"
+			method="queryExportProgressAjaxForAction">
+		</action>
+		<!-- 导出参数结果文件 -->
+		<action name="downloadEriCellAnalysisDataFileAction" class="rno2GCellAnalysisAction" 
+			method="downloadEriCellAnalysisDataFileAction">
+             <result name="success" type="stream">
+                          <param name="contentType">application/octet-stream</param>
+                          <param name="inputName">exportInputStream</param>
+                          <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                          <param name="bufferSize">4096</param>
+                          <param name="maximumSize">52428800</param> 
+              </result>
+        </action>
+
+		
+		<!-- 新的 查询 爱立信mrr描述信息的action-->
+		<action name="queryEriMrrDescV2AjaxAction" class="rnoResourceManagerAction" method="queryEriMrrDescV2AjaxAction">
+		</action>
+		<!-- 新的 查询 爱立信ncs描述信息的action-->
+		<action name="queryEriNcsDescV2AjaxAction" class="rnoResourceManagerAction" method="queryEriNcsDescV2AjaxAction">
+		</action>
+		<!-- 新的 查询华为ncs描述信息的action-->
+		<action name="queryHwNcsDescV2AjaxAction" class="rnoResourceManagerAction" method="queryHwNcsDescV2AjaxAction">
+		</action>
+		<!-- 新的 查询华为mrr描述信息的action-->
+		<action name="queryHwMrrDescV2AjaxAction" class="rnoResourceManagerAction" method="queryHwMrrDescV2AjaxAction">
+		</action>
+		<!-- 查询 爱立信 cell描述信息的action-->
+		<action name="queryEriCellDescAjaxAction" class="rno2GEriCellManageAction" method="queryEriCellDescAjaxAction">
+		</action>
+		<!-- 查询 爱立信fas描述信息的action-->
+		<action name="queryEriFasDescAjaxAction" class="rnoResourceManagerAction" method="queryEriFasDescAjaxAction">
+		</action>
+		<!-- 初始化爱立信2G小区数据查询页面 -->
+	 	<action name="init2GEriCellQueryPageAction" class="rno2GEriCellManageAction"
+			method="init2GEriCellQueryPageAction">
+			<result name="success">/op/rno/rno_2g_eri_cell_query.jsp</result>
+		</action>
+		<!-- 获取2G爱立信小区查询页面所有列表填充信息 -->
+	 	<action name="get2GEriCellQueryPageAllListInfoAction" class="rno2GEriCellManageAction"
+			method="get2GEriCellQueryPageAllListInfoAction">
+		</action>
+		<!-- 获取2G爱立信小区查询页面日期及BSC列表填充信息 -->
+	 	<action name="get2GEriCellQueryPageDateAndBscListInfoAction" class="rno2GEriCellManageAction"
+			method="get2GEriCellQueryPageDateAndBscListInfoAction">
+		</action>
+		<!-- 爱立信2G小区分页查询信息的方法 -->
+	 	<action name="queryEri2GCellByPageAjaxAction" class="rno2GEriCellManageAction"
+			method="queryEri2GCellByPageAjaxAction">
+		</action>
+		<!-- 爱立信2G小区信道分页查询信息的方法 -->
+	 	<action name="queryEri2GCellChannelByPageAjaxAction" class="rno2GEriCellManageAction"
+			method="queryEri2GCellChannelByPageAjaxAction">
+		</action>
+		<!-- 爱立信2G邻区分页查询信息的方法 -->
+	 	<action name="queryEri2GNcellByPageAjaxAction" class="rno2GEriCellManageAction"
+			method="queryEri2GNcellByPageAjaxAction">
+		</action>
+		<!-- 导出爱立信小区数据结果到文件的方法 -->
+	 	<action name="exportEri2GCellDataAjaxForAction" class="rno2GEriCellManageAction"
+			method="exportEri2GCellDataAjaxForAction">
+		</action>
+		<!-- 导出爱立信小区信道数据结果到文件的方法 -->
+	 	<action name="exportEri2GCellChannelDataAjaxForAction" class="rno2GEriCellManageAction"
+			method="exportEri2GCellChannelDataAjaxForAction">
+		</action>
+		<!-- 导出爱立信小区邻区数据结果到文件的方法 -->
+	 	<action name="exportEri2GCellNcellDataAjaxForAction" class="rno2GEriCellManageAction"
+			method="exportEri2GCellNcellDataAjaxForAction">
+		</action>
+		<!-- 导出爱立信小区数据文件的导出进度方法 -->
+	 	<action name="queryExportProgressAjaxForAction" class="rno2GEriCellManageAction"
+			method="queryExportProgressAjaxForAction">
+		</action>
+		<!-- 导出爱立信小区数据文件的导出进度方法 -->
+	 	<action name="queryExportProgressAjaxForAction" class="rno2GEriCellManageAction"
+			method="queryExportProgressAjaxForAction">
+		</action>
+		<!-- 导出爱立信小区数据结果csv方法 -->
+	 	<action name="downloadEri2GCellDataFileAction" class="rno2GEriCellManageAction"
+			method="downloadEri2GCellDataFileAction">
+			 <result name="success" type="stream">
+                          <param name="contentType">application/octet-stream</param>
+                          <param name="inputName">exportInputStream</param>
+                          <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                          <param name="bufferSize">4096</param>
+                          <param name="maximumSize">52428800</param> 
+              </result>
+		</action>
+		<!-- 确认爱立信2G小区数据的数量通过日期和市ID的方法 -->
+	 	<action name="confirmEri2GCellCntAjaxAction" class="rno2GEriCellManageAction"
+			method="confirmEri2GCellCntAjaxAction">
+		</action>
+		<!-- 获取2G爱立信小区查询页面更多日期填充信息的方法 -->
+	 	<action name="get2GEriCellQueryPageMoreDateInfoAction" class="rno2GEriCellManageAction"
+			method="get2GEriCellQueryPageMoreDateInfoAction">
+		</action>
+		
+		<!-- 通过城市id获取BSC和小区信息的映射 -->
+		<action name="getAllBscCellsByCityIdInMapForAjaxAction" class="rnoCommonAction"
+			method="getAllBscCellsByCityIdInMapForAjaxAction">
+		</action>
+		
+		<!-- 查询 华为 cell描述信息的action-->
+		<action name="queryHwCellDescAjaxAction" class="rno2GHwCellManageAction" method="queryHwCellDescAjaxAction">
+		</action>
+		<!-- 初始化华为2G小区数据查询页面 -->
+	 	<action name="init2GHwCellQueryPageAction" class="rno2GHwCellManageAction"
+			method="init2GHwCellQueryPageAction">
+			<result name="success">/op/rno/rno_2g_hw_cell_query.jsp</result>
+		</action>
+		<!-- 获取2G华为小区查询页面所有列表填充信息 -->
+	 	<action name="get2GHwCellQueryPageAllListInfoAction" class="rno2GHwCellManageAction"
+			method="get2GHwCellQueryPageAllListInfoAction">
+		</action>
+		<!-- 获取2G华为小区查询页面日期及BSC列表填充信息 -->
+	 	<action name="get2GHwCellQueryPageDateAndBscListInfoAction" class="rno2GHwCellManageAction"
+			method="get2GHwCellQueryPageDateAndBscListInfoAction">
+		</action>
+		<!-- 华为2G小区分页查询信息的方法 -->
+	 	<action name="queryHw2GCellByPageAjaxAction" class="rno2GHwCellManageAction"
+			method="queryHw2GCellByPageAjaxAction">
+		</action>
+		<!-- 华为2G邻区分页查询信息的方法 -->
+	 	<action name="queryHw2GNcellByPageAjaxAction" class="rno2GHwCellManageAction"
+			method="queryHw2GNcellByPageAjaxAction">
+		</action>
+		<!-- 导出华为2G小区信息的方法 -->
+	 	<action name="exportHw2GCellDataAjaxForAction" class="rno2GHwCellManageAction"
+			method="exportHw2GCellDataAjaxForAction">
+		</action>
+		<!-- 导出华为2G小区邻区信息的方法 -->
+	 	<action name="exportHw2GCellNcellDataAjaxForAction" class="rno2GHwCellManageAction"
+			method="exportHw2GCellNcellDataAjaxForAction">
+		</action>
+		<!-- 导出华为小区数据文件的导出进度方法 -->
+	 	<action name="queryExportProgressAjaxForAction" class="rno2GHwCellManageAction"
+			method="queryExportProgressAjaxForAction">
+		</action>
+		<!-- 导出华为小区数据结果csv方法 -->
+	 	<action name="downloadHw2GCellDataFileAction" class="rno2GHwCellManageAction"
+			method="downloadHw2GCellDataFileAction">
+			 <result name="success" type="stream">
+                          <param name="contentType">application/octet-stream</param>
+                          <param name="inputName">exportInputStream</param>
+                          <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                          <param name="bufferSize">4096</param>
+                          <param name="maximumSize">52428800</param> 
+              </result>
+		</action>
+		<!-- 初始化PCI干扰分析页面 -->
+		<action name="initPciAnalysisPageAction" class="rno4GPciAction"
+			method="initPciAnalysisPageAction">
+		   <result name="success">/op/rno/rno_lte_pci_interanalysis.jsp</result>
+		</action>
+		<!-- 获取最近十次lte干扰矩阵信息 -->
+		<action name="getLatelyLteMatrixByCityIdForAjaxAction" class="rno4GPciAction"
+			method="getLatelyLteMatrixByCityIdForAjaxAction">
+		</action>
+		<!-- 获取干扰矩阵数据 -->
+		<action name="getLteMatrixByIdForAjaxAction" class="rno4GPciAction"
+			method="getLteMatrixByIdForAjaxAction">
+		</action>
+		<!-- 获取同站lte小区和pci -->
+		<action name="getSameStationCellsByLteCellIdForAjaxAction" class="rno4GPciAction"
+			method="getSameStationCellsByLteCellIdForAjaxAction">
+		</action>
+		<!-- 调换ltecell和同站小区的pci -->
+		<action name="changeLteCellPciForAjaxAction" class="rno4GPciAction"
+			method="changeLteCellPciForAjaxAction">
+		</action>		
+		
+		<!-- 初始化小区动态覆盖页面 -->
+		<action name="initCellDynaCoveragePageAction" class="rnoNcsDynaCoverageAction"
+			method="initCellDynaCoveragePageAction">
+		   <result name="success">/op/rno/rno_ncs_dynamic_coverage.jsp</result>
+		</action>
+		<!-- 获取画小区动态覆盖图（曲线）所需的数据 -->
+		<action name="getDynaCoverageDataForAction" class="rnoNcsDynaCoverageAction"
+			method="getDynaCoverageDataForAction">
+		</action>
+		<!-- 获取画小区动态覆盖图（折线）所需的数据 -->
+		<action name="getDynaCoverageData2ForAction" class="rnoNcsDynaCoverageAction"
+			method="getDynaCoverageData2ForAction">
+		</action>
+		<!-- 初始化全网2g小区方向角计算的任务管理 -->
+		<action name="init2GCellDirectionAngleTaskManageAction" class="rnoNcsDynaCoverageAction"
+			method="init2GCellDirectionAngleTaskManageAction">
+			<result name="success">/op/rno/rno_2g_directionAngle_manage.jsp</result>
+		</action>
+		<!-- 分页查询全网2g小区方向角计算的任务信息 -->
+		<action name="query2GDirectionAngleTaskForAjaxAction" class="rnoNcsDynaCoverageAction"
+			method="query2GDirectionAngleTaskForAjaxAction">
+		</action>
+		<!-- 初始化新增全网2g小区方向角计算的任务页面 -->
+		<action name="initDirectionAngleTaskAddForAjaxAction" class="rnoNcsDynaCoverageAction"
+			method="initDirectionAngleTaskAddForAjaxAction">
+			<result name="success">/op/rno/rno_2g_directionAngle_add.jsp</result>
+		</action>
+		<!-- 新增全网2g小区方向角计算的任务 -->
+		<action name="add2GDirectionAngleTaskForAjaxAction" class="rnoNcsDynaCoverageAction"
+			method="add2GDirectionAngleTaskForAjaxAction">
+		</action>
+		<!-- 导出2G小区方向角结果文件 -->
+		<action name="downloadDirAngleFileAction" class="rnoNcsDynaCoverageAction" 
+			method="downloadDirAngleFileAction">
+			<result name="fail" >
+                   /op/rno/rno_fail.jsp
+             </result>
+             <result name="success" type="stream">
+                          <param name="contentType">application/octet-stream</param>
+                          <param name="inputName">exportInputStream</param>
+                          <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                          <param name="bufferSize">4096</param>
+                          <param name="maximumSize">52428800</param> 
+              </result>
+        </action>
+        
+        <!-- 初始化4G小区动态覆盖页面 -->
+		<action name="init4GCellDynaCoveragePageAction" class="rnoNcsDynaCoverageAction"
+			method="init4GCellDynaCoveragePageAction">
+		   <result name="success">/op/rno/rno_4g_dynamic_coverage.jsp</result>
+		</action>
+		<!-- 获取画4G小区动态覆盖图（曲线）所需的数据 -->
+		<action name="get4GDynaCoverageDataForAction" class="rnoNcsDynaCoverageAction"
+			method="get4GDynaCoverageDataForAction">
+		</action>
+		<!-- 获取画4G小区动态覆盖图（折线）所需的数据 -->
+		<action name="get4GDynaCoverageData2ForAction" class="rnoNcsDynaCoverageAction"
+			method="get4GDynaCoverageData2ForAction">
+		</action>
+		
+		
+		
+		<!-- 查询 爱立信切换数据描述信息的action-->
+		<action name="queryEri4GHoDescAjaxAction" class="rnoResourceManagerAction"
+			method="queryEri4GHoDescAjaxAction">
+		</action>
+		<!-- 查询 中兴切换数据描述信息的action-->
+		<action name="queryZte4GHoDescAjaxAction" class="rnoResourceManagerAction"
+			method="queryZte4GHoDescAjaxAction">
+		</action>
+		
+		<!-- 查询 HO数据描述信息的action-->
+		<action name="queryHoDescAjaxAction" class="rnoResourceManagerAction"
+			method="queryHoDescAjaxAction">
+		</action>
+		<!-- 查询 MR数据描述信息的action-->
+		<action name="queryMrDescAjaxAction" class="rnoResourceManagerAction"
+			method="queryMrDescAjaxAction">
+		</action>
+		<!-- 初始化MRR指标图表展现小区查看页面 -->
+		<action name="initEri2GMrrIndexDisplayCellQueryPageAction" class="rnoIndexDisplayAction" method="initEri2GMrrIndexDisplayCellQueryPageAction">
+		   <result name="success">/op/rno/rno_index_display_mrr_chart.jsp</result>
+		</action>
+		<action name="searchEri2GMrrCellIndexForAjaxAction" class="rnoIndexDisplayAction" method="searchEri2GMrrCellIndexForAjaxAction">
+		</action>
+		<!-- 获取2G华为小区查询页面所有列表填充信息-->
+	 	<action name="get2GHwCellQueryPageMoreDateInfoAction" class="rno2GHwCellManageAction"
+			method="get2GHwCellQueryPageMoreDateInfoAction">
+		</action>
+		<!-- 初始化FAS指标图表展现小区查看页面 -->
+		<action name="initEri2GFasIndexDisplayCellQueryPageAction" class="rnoIndexDisplayAction" method="initEri2GFasIndexDisplayCellQueryPageAction">
+		   <result name="success">/op/rno/rno_index_display_fas_chart.jsp</result>
+		</action>
+		<action name="searchEri2GFasCellIndexForAjaxAction" class="rnoIndexDisplayAction" method="searchEri2GFasCellIndexForAjaxAction">
+		</action>
+		<!-- 初始化lte的干扰计算页面 -->
+		<action name="initLteInterferCalcPageAction" class="rnoStructureAction" method="initLteInterferCalcPageAction">
+		   <result name="success">/op/rno/rno_lte_interfer_calc.jsp</result>
+		</action>
+		<!-- 进入lte干扰计算任务信息页面不同条件下的跳转 -->
+		<action name="stepByStepOperateLteInterCalcTaskInfoPageForAjaxAction" class="rnoStructureAction" method="stepByStepOperateLteInterCalcTaskInfoPageForAjaxAction">
+			<!-- <result name="taskInfoForward">/op/rno/rno_structure_ncs_ncsinfo.jsp</result> -->
+			<result name="goTaskInfoPage">/op/rno/rno_lte_interfer_calc_taskinfo.jsp</result>
+			<result name="taskInfoForward">/op/rno/rno_lte_interfer_calc_paraminfo.jsp</result>
+			<result name="paramInfoForward">/op/rno/rno_lte_interfer_calc_overviewinfo.jsp</result>
+
+			<result name="paramInfoBack">/op/rno/rno_lte_interfer_calc_taskinfo.jsp</result>
+			<result name="overviewInfoBack">/op/rno/rno_lte_interfer_calc_paraminfo.jsp</result>
+
+			<result type="chain" name="submitTask">initLteInterferCalcPageAction</result>
+		</action>
+		<!-- 在创建新任务消息过程中主导存储lte干扰计算任务对象信息（下一步操作和提交任务操作） -->
+		<action name="storageLteInterferCalcTaskObjInfoForAjaxAction" class="rnoStructureAction"
+			method="storageLteInterferCalcTaskObjInfoForAjaxAction">
+		</action>
+		<!-- 提交lte PCI规划任务 -->
+		<action name="submitPciPlanAnalysisTaskAction" class="rnoStructureAction"
+			method="submitPciPlanAnalysisTaskAction">
+		</action>
+		<!-- 查询PCI计算任务 -->
+		<action name="queryPciPlanAnalysisTaskByPageForAjaxAction" class="rnoStructureAction" 
+			method="queryPciPlanAnalysisTaskByPageForAjaxAction">
+		</action>
+		<!-- 停止PCI计算任务 -->
+		<action name="stopPciJobByJobIdAndMrJobIdForAjaxAction" class="rnoStructureAction" 
+			method="stopPciJobByJobIdAndMrJobIdForAjaxAction">
+		</action>
+		<!-- 导出PCI计算结果文件 -->
+		<action name="downloadPciFileAction" class="rnoStructureAction" 
+			method="downloadPciFileAction">
+			<result name="fail" >
+                   /op/rno/rno_fail.jsp
+             </result>
+             <result name="success" type="stream">
+                          <param name="contentType">application/octet-stream</param>
+                          <param name="inputName">exportInputStream</param>
+                          <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                          <param name="bufferSize">4096</param>
+                          <param name="maximumSize">52428800</param> 
+              </result>
+        </action>
+        <!-- 初始化4g干扰矩阵管理页面 -->
+		<action name="init4GInterferMartixManageAction" class="rno4GPciAction"
+			method="init4GInterferMartixManageAction">
+			<result name="success">/op/rno/rno_4g_interfer_martix_manage.jsp</result>
+		</action>
+		<!-- 初始化新增4g干扰矩阵页面 -->
+		<action name="init4GInterferMartixAddForAjaxAction" class="rno4GPciAction"
+			method="init4GInterferMartixAddForAjaxAction">
+			<result name="success">/op/rno/rno_4g_interfer_martix_add.jsp</result>
+		</action>
+		<!-- 查询 分页加载MR数据的action-->
+		<action name="queryMrDataByPageForAjaxAction" class="rno4GPciAction" method="queryMrDataByPageForAjaxAction">
+		</action>
+		<!-- 查询 分页查询4g干扰矩阵信息的action-->
+		<action name="query4GInterferMartixByPageForAjaxAction" class="rno4GPciAction" method="query4GInterferMartixByPageForAjaxAction">
+		</action>
+		<!-- 检查这周是否计算过4g pci干扰矩阵的action-->
+		<action name="isExisted4GInterMartixThisWeekAction" class="rno4GPciAction" method="isExisted4GInterMartixThisWeekAction">
+		</action>
+		<!-- 新增4g pci  干扰矩阵的action-->
+		<action name="add4GInterMartixByMrForAjaxAction" class="rno4GPciAction" method="add4GInterMartixByMrForAjaxAction">
+		</action>
+		<!-- 初始化lte azimuth方位角计算页面 -->
+		<action name="init4GAzimuthCalcPageAction" class="rno4GPciAction"
+			method="init4GAzimuthCalcPageAction">
+			<result name="success">/op/rno/rno_4g_azimuth_calc.jsp</result>
+		</action>
+		<!-- 查询4g方位角计算任务的action-->
+		<action name="query4GAzimuthCalcTaskByPageForAjaxAction" class="rno4GPciAction" method="query4GAzimuthCalcTaskByPageForAjaxAction">
+		</action>
+		<!-- 提交4g方位角计算任务的action-->
+		<action name="submit4GAzimuthCalcTaskAction" class="rno4GPciAction" method="submit4GAzimuthCalcTaskAction">
+		</action>
+		<!-- 终止4g方位角计算任务的action-->
+		<action name="stop4GAzimuthJobByJobIdForAjaxAction" class="rno4GPciAction" method="stop4GAzimuthJobByJobIdForAjaxAction">
+		</action>
+		<!-- 下载4g方位角计算任务结果文件的action-->
+		<action name="download4GAzimuthFileAction" class="rno4GPciAction" 
+			method="download4GAzimuthFileAction">
+			<result name="fail" >
+                   /op/rno/rno_fail.jsp
+             </result>
+             <result name="success" type="stream">
+                          <param name="contentType">application/octet-stream</param>
+                          <param name="inputName">exportInputStream</param>
+                          <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                          <param name="bufferSize">4096</param>
+                          <param name="maximumSize">52428800</param> 
+              </result>
+        </action>
+        <!-- 下载4g矩阵计算任务结果文件的action-->
+		<action name="download4GMatrixFileAction" class="rno4GPciAction" 
+			method="download4GMatrixFileAction">
+			<result name="fail" >
+                   /op/rno/rno_fail.jsp
+             </result>
+             <result name="success" type="stream">
+                          <param name="contentType">application/octet-stream</param>
+                          <param name="inputName">exportInputStream</param>
+                          <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                          <param name="bufferSize">4096</param>
+                          <param name="maximumSize">52428800</param> 
+              </result>
+        </action>
+        <!-- 获取画LTE小区动态覆盖In干扰连线所需的数据-->
+		<action name="get4GDynaCoverageInInferDataForAction" class="rnoNcsDynaCoverageAction"
+			method="get4GDynaCoverageInInferDataForAction">
+		</action>
+		<!-- 获取画LTE小区动态覆盖out干扰连线所需的数据-->
+		<action name="get4GDynaCoverageOutInferDataForAction" class="rnoNcsDynaCoverageAction"
+			method="get4GDynaCoverageOutInferDataForAction">
+		</action>
+	</package>
+</struts>

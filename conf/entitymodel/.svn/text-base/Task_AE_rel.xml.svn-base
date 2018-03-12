@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+ <name>Task_AE_rel</name>
+<attribute type="java.lang.Long" length="128" primary="TRUE" index="TRUE" nullable="FALSE" regex="">id</attribute>
+<attribute type="java.lang.Long" length="128" primary="FALSE" index="TRUE" nullable="FALSE" regex="">task_id</attribute>
+<attribute type="java.lang.Long" length="128" primary="FALSE" index="FALSE" nullable="FALSE" regex="">a_ae_id</attribute>
+<attribute type="java.lang.String" length="100" primary="FALSE" index="FALSE" nullable="TRUE" regex="">a_ae_type</attribute>
+<attribute type="java.lang.Long" length="128" primary="FALSE" index="FALSE" nullable="TRUE" regex="">z_ae_id</attribute>
+<attribute type="java.lang.String" length="100" primary="FALSE" index="FALSE" nullable="TRUE" regex="">z_ae_type</attribute>
+<attribute type="java.lang.String" length="100" primary="FALSE" index="FALSE" nullable="TRUE" regex="">rel_type</attribute>
+<attribute type="java.lang.String" length="50" primary="FALSE" index="FALSE" nullable="TRUE" regex="">user</attribute>
+
+</entity>

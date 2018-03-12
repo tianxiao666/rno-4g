@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="mapConfigurationAction" class="com.iscreate.map.action.MapConfigurationAction" singleton="false">
+	    <property name="mapConfigurationService" ref="mapConfigurationService"></property>
+	</bean>
+	<bean id="mapConfigurationService" class="com.iscreate.map.service.MapConfigurationServiceImpl" singleton="false">
+		<property name="xmlService" ref="xmlService"></property>
+	</bean>
+
+</beans>

@@ -1,0 +1,61 @@
+/* 兼容HTML5的 css reset */
+html, body, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  font-style: normal;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content: ""; content: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+/**
+ * yui定义字体的方式
+ */
+
+body { font:12px/1.231 sans-serif; *font-size:small; height:100%; width:100%; }
+select, input, textarea, button { font:99% sans-serif; }
+
+/* 重置等宽字体 */
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+/*链接*/
+a{ color:#15428B; text-decoration:none; cursor:pointer;}
+
+/* 去掉链接点击后的虚线 */
+a:hover{ text-decoration:underline; outline: none; }
+a:active{ color:#15428B}
+
+/* 重设列表，默认缩进两个字符，定义ol的样式 */
+ul, li, ol { list-style: none outside none;}
+ol { list-style-type: decimal; }
+
+
+/* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+
+
+/* clearfix */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+

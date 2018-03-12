@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="networkresourceActionForMobile" class="com.iscreate.op.action.networkresourcemanage.NetworkresourceActionForMobile">
+		<property name="structureCommonService" ref="structureCommonService"></property>
+		<property name="dictionary" ref="dictionary"></property>
+		<property name="quickSort" ref="quickSort"></property>
+		<property name="networkResourceMaintenanceService" ref="networkResourceMaintenanceService"></property>
+		<property name="moduleLibrary" ref="moduleLibrary"></property>
+		<property name="staffOrganizationService" ref="staffOrganizationService"></property>
+	</bean>
+	<bean id="newNetworkresourceOperaActionForMobile" class="com.iscreate.op.action.networkresourcemanage.NewNetworkresourceOperaActionForMobile">
+		<property name="structureCommonService" ref="structureCommonService"></property>
+		<property name="dictionary" ref="dictionary"></property>
+		<property name="quickSort" ref="quickSort"></property>
+		<property name="moduleLibrary" ref="moduleLibrary"></property>
+		
+	</bean>
+	
+</beans>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>	 
+	<bean id="excelService" class="com.iscreate.plat.tools.excelhelper.ExcelServiceImpl"/>
+	<bean id="xmlService" class="com.iscreate.plat.tools.xmlhelper.XmlServiceImpl"/>
+	<bean id="firstLetterService" class="com.iscreate.plat.tools.firstLetter.FirstLetterServiceImpl"/>
+	<bean id="writeExcel2003Service" class="com.iscreate.plat.tools.excelhelper.WriteExcel2003ServiceImpl"></bean>
+	
+</beans>

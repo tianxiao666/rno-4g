@@ -1,0 +1,73 @@
+9
+
+dir
+12376
+http://svn.iscreate.com:8088/srcsvn/source/iosm/4g_rno_branches/v1/src/com/iscreate/plat
+http://svn.iscreate.com:8088/srcsvn/source
+
+
+
+2014-09-16T09:23:09.794521Z
+10243
+chao.xj
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+f7628612-1de5-0147-986c-5ff4a2e890d6
+
+datadictionary
+dir
+
+email
+dir
+
+exceptioninteceptor
+dir
+
+gantt
+dir
+
+home
+dir
+
+location
+dir
+
+login
+dir
+
+loginteceptor
+dir
+
+mobile
+dir
+
+networkresource
+dir
+
+notify
+dir
+
+system
+dir
+
+tools
+dir
+
+tree
+dir
+
+workflow
+dir
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.iscreate.plat.workflow.datainput.NotionInfo" table="flow_todo_notion" >
+        <id name="notion_id">
+            <column name="notion_id" />
+        </id>
+            <property name="task_id" column="task_id" />
+            <property name="notion_type" column="notion_type" />  
+            <property name="notion_content" column="notion_content" />        
+            <property name="create_Time" column="create_Time"  type="java.util.Date" />
+            <property name="create_User_Id" column="create_User_Id" />
+    </class>
+</hibernate-mapping>               

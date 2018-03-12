@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+	<bean id="cardispatchTimerAction" class="com.iscreate.op.action.cardispatch.CardispatchTimerAction" singleton="true" >
+		<property name="cardispatchTimerService" ref="cardispatchTimerService"></property>
+	</bean>
+	
+	<!--
+	<bean id="cardispatchTimerAction" class="com.iscreate.op.action.cardispatch.CardispatchTimerAction" singleton="true" lazy-init="false" init-method="init" >
+		<property name="cardispatchTimerService" ref="cardispatchTimerService"></property>
+	</bean>
+	-->
+	<bean id="cardispatchTimerService" class="com.iscreate.op.service.cardispatch.CardispatchTimerServiceImpl" parent="baseService">
+		<property name="cardispatchTimerDao" ref="cardispatchTimerDao"></property>
+	</bean>
+	
+	<bean id="cardispatchTimerDao" class="com.iscreate.op.dao.cardispatch.CardispatchTimerDaoImpl" parent="baseDao"></bean>
+	
+	
+	<!-- 
+	<bean id="schedulerJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+         <property name="targetObject" ref="cardispatchTimerAction"/>
+         <property name="targetMethod" value="updateDayGpsMileageTimer"/>
+         <property name="concurrent" value="false"/>
+     </bean> 
+     <bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean" > 
+          <property name="jobDetail" ref="schedulerJobDetail"/> 
+          <property name="cronExpression"> 
+              <value>0 0 0 * * ?</value> 
+          </property> 
+     </bean> 
+     <bean id="schedulerFactory" class="org.springframework.scheduling.quartz.SchedulerFactoryBean"> 
+         <property name="triggers"> 
+             <list> 
+                 <ref local="cronTrigger"/> 
+             </list> 
+         </property> 
+	</bean> 
+ -->
+	<!--<bean class="com.iscreate.op.action.cardispatch.CardispatchTimerActiona"></bean>-->
+
+	
+	 <!--
+	 <bean id="schedulerJobDetail2" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+         <property name="targetObject" ref="cardispatchTimerActiona"/>
+         <property name="targetMethod" value="updateDayGpsMileageTimer"/> 
+         <property name="concurrent" value="false"/>
+     </bean> 
+
+     <bean id="cronTrigger2" class="org.springframework.scheduling.quartz.CronTriggerBean" > 
+          <property name="jobDetail" ref="schedulerJobDetail2"/> 
+          <property name=""></property>
+          <property name="cronExpression"> 
+              <value>0/-1 * * * * ?</value> 
+          </property> 
+          <property name="startDelay" value="10" />
+          <property name="repeatInterval" value="60000" />
+     </bean>
+-->
+
+</beans>

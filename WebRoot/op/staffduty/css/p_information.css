@@ -1,0 +1,63 @@
+.p_container{height:100%;; width:960px; margin:0 auto; background:#f4f4f4; min-width:900px;}
+.pi_menu_title{ border:1px solid #99BCE8; background: url("../images/white-top-bottom.gif") repeat-x scroll 0 -1px transparent; border-bottom:1px solid #99BBE8; color: #15428B;line-height: 26px; padding: 0 5px;font-weight:bold; white-space:nowrap;}
+.pi_right{overflow: hidden;min-height:700px;min-width:750px;}
+.pi_right_content{ width:auto; overflow:hidden;min-height:600px; overflow-y:auto; padding:5px;}
+.pi_right_content_title{ background:AliceBlue; height:30px; line-height:30px; text-align:center; border:1px solid #ddd;margin-top:5px;}
+.pi_right_content_bottom{ margin-top:10px; text-align:right; padding:5px;}
+.pi_right_content_bottom_tc{ text-align:center;margin-top:10px; padding:5px;}
+
+
+.content_left{ border:1px solid #ccc; padding:1px; display:inline-block; float:left;}
+.content_right{margin-left:185px;overflow:hidden; min-height:180px; padding:5px;}
+.content_m{ clear:both;}
+.content_m_tit{margin-bottom: 5px;margin-top: 5px;border-bottom:1px solid #ccc; line-height:32px; padding-left:6px;height:30px;}
+
+
+.pi_table{ width:100%;}
+.pi_table.hover_tr tr:hover{ background:beige; cursor:default;}
+.pi_table th{ background:#f3f3f3; line-height:32px; border-bottom:1px solid #BBBBBB;}
+.pi_table td{ line-height:30px; padding:0 5px; border-bottom:1px solid #e1e1e1; width:35%;}
+.pi_table .menuTd{ color:#666;width:12%;white-space:nowrap; font-weight:bold; }
+.pi_table2{ width:100%;}
+.pi_table2.hover_tr tr:hover{ background:beige; cursor:default;}
+.pi_table2 th{ background:#f3f3f3; line-height:32px; border-bottom:1px solid #BBBBBB;}
+.pi_table2 td{ line-height:18px; padding:5px; border-bottom:1px solid #e1e1e1;}
+.pi_table2 td.tl{text-align: left;}
+
+.s_table_div{margin-left:62px; height:120px; width:400px;overflow-y:scroll; border:1px solid #ccc;}
+.s_table{width:100%;}
+.s_table th{ background:#eee; border-right:2px solid #fff; border-bottom:1px solid #ddd;}
+.s_table td{  border-right:2px solid #eee; }
+
+.pi_ul{}
+.pi_ul li{ line-height:30px; padding: 8px 5px;}
+.pi_ul li p{ display:inline-block;}
+em.menuEm{ color:#666; font-weight:bold;}
+
+.pi_position_ico{ background:url(../images/map_position.png) -104px -119px no-repeat; width:20px; height:27px; display:inline-block; position:absolute; cursor:pointer; margin-left:10px;margin-top: 1px; }
+.pi_position_ico:hover{ background:url(../images/map_position.png) -128px -119px no-repeat; }
+.right_tool_bar{position:absolute; right:20px;top: 8px; display: inline-block;}
+
+.search_button{background:url(../images/search_ico.png) -1px -1px no-repeat ;height:22px;width:22px; display:inline-block; cursor:pointer;position: relative;margin-top: -4px;top: 4px;}
+
+.table_div{ margin-top:5px;}
+.table_div_bottom{line-height:32px;height:30px;}
+.doc_tit{display:inline-block;background:url(../images/doc.png) 0px 8px no-repeat; padding-left:20px;}
+
+
+
+
+/*分页*/
+.paging_div input[type="text"]{width:40px;height:20px;padding:0;}
+.task_tips{position: absolute;top: 0;}
+.pr{position: relative;}
+/* alert_div样式 */
+.alert_div{ display:none; position:fixed; top:0px; left:0px; height:100%; width:100%; z-index:5;}
+.alert_div_cover{width:100%; height:100%; background:#fff;filter:Alpha(Opacity=60);opacity:0.6;-moz-user-select: none;-webkit-user-select: none;}
+.alert_div_container{ position:absolute; left:50%;top:60px; margin-left:-280px; z-index:3;box-shadow: 2px 2px 10px;}
+.alert_div_top{width:576px; height:25px; background:url(../images/corners-sprite.gif); color:#15428B;}
+.alert_div_top_middle{width:560px; height:25px;line-height:25px; background:url(../images/top-bottom.gif) repeat-x; margin:0 auto;}
+.alert_div_main{ background:#fff;min-height: 300px;width: 574px; max-height:494px; overflow-y:scroll;border:1px solid #99bbe8;}
+.alert_div_bottom{ background:#f9f9f9; text-align:center;border:1px solid #99bbe8; border-top:none; padding:5px 0px; border-bottom-right-radius:3px; border-bottom-left-radius:3px;}
+.alert_div_close{ background:url(../images/tool-sprites.gif) no-repeat; background-position:0 0; height:15px; width:15px; float:right;margin-top:5px; cursor:pointer;}
+.alert_div_close:hover{background:url(../images/tool-sprites.gif) no-repeat; background-position:-15px 0;}

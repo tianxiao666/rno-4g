@@ -1,0 +1,10 @@
+﻿/* CSS Document */
+.container{ margin-top:10px;padding:0px 5px;}
+/*搜索栏*/
+.search_bar{background:#fff; line-height:18px; min-width:800px; padding:2px 4px; position:relative;z-index:2;zoom:1;}
+.search_bar h4{border-bottom:1px solid #99BBE8; background:#DFE8F6;padding:2px 8px;line-height:24px; position:relative; }
+.search_table{width:863px; margin:4px auto; position:relative;}
+.search_table td{padding:4px; white-space:nowrap;}
+.search_table td select,.search_table td input[type="text"]{ width:150px;}
+.search_table td input[type="button"]{width:60px;}
+.td_m{display: inline-block; text-align: right;width:80px;}

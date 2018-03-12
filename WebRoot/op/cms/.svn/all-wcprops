@@ -1,0 +1,55 @@
+END
+addInfoRelease.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/op/cms/addInfoRelease.jsp
+END
+cmsIndex.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/op/cms/cmsIndex.jsp
+END
+news_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/op/cms/news_list.jsp
+END
+showInfoRelease.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/op/cms/showInfoRelease.jsp
+END
+approveInfoRelease.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/op/cms/approveInfoRelease.jsp
+END
+news_detail.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/op/cms/news_detail.jsp
+END
+approveInfoItem.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/op/cms/approveInfoItem.jsp
+END
+showInfoItem.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/op/cms/showInfoItem.jsp
+END
+addInfoItem.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/srcsvn/source/!svn/ver/12967/iosm/4g_rno_branches/v1/WebRoot/op/cms/addInfoItem.jsp
+END

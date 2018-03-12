@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+       "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 集中调度 外部接口工厂 -->
+	<!-- <bean id="gisDaiFactory" class="com.iscreate.op.service.gisdispatch.GisDaiFactory">
+		<property name="networkResourceService" ref="networkResourceService"></property>
+		<property name="pdaGpsService" ref="pdaGpsService"></property>
+		<property name="workManageService" ref="workManageService"></property>
+		<property name="workOrderAssnetResourceDao" ref="workOrderAssnetResourceDao"></property>
+		<property name="cardispatchCarDao" ref="cardispatchCarDao"></property>
+		<property name="cardispatchDriverDao" ref="cardispatchDriverDao"></property>
+		<property name="cardispatchTerminalDao" ref="cardispatchTerminalDao"></property>
+		<property name="staffSkillService" ref="staffSkillService"></property>
+		<property name="staffDutyService" ref="staffDutyService"></property>
+		<property name="cardispatchDutyService" ref="cardispatchDutyService"></property>
+		<property name="cardispatchManageService" ref="cardispatchManageService"></property>
+		<property name="orgStaffCountMonthReportService" ref="orgStaffCountMonthReportService"></property>
+	</bean> -->
+	
+	<!-- 集中调度Dao BEGIN -->
+	<!-- <bean id="gisDispatchDao" class="com.iscreate.op.dao.gisdispatch.GisDispatchDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean> -->
+	
+	<!-- 集中调度Dao END -->
+	
+	
+	<!-- 集中调度Service BEGIN -->
+	<!-- <bean id="gisDispatchService" class="com.iscreate.op.service.gisdispatch.GisDispatchServiceImpl">
+		<property name="gisDaiFactory" ref="gisDaiFactory"></property>
+		<property name="gisDispatchDao" ref="gisDispatchDao"></property>
+		<property name="networkResourceQueryDao" ref="networkResourceQueryDao"></property>
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+		<property name="cardispatchCarDao" ref="cardispatchCarDao"></property>
+		<property name="sysOrganizationDao" ref="sysOrganizationDao"></property>
+		<property name="sysOrgUserDao" ref="sysOrgUserDao"></property>
+		<property name="sysRoleService" ref="sysRoleService"></property>
+		<property name="sysOrgUserService" ref="sysOrgUserService"></property>
+		<property name="sysOrganizationService" ref="sysOrganizationService"></property>
+		<property name="staffOrganizationService" ref="staffOrganizationService"></property>
+		<property name="networkResourceManageDao" ref="networkResourceManageDao"></property>
+	</bean> -->
+	
+	<!-- 集中调度Service END -->
+
+	
+	<!-- 集中调度Action BEGIN -->
+	<!-- <bean id="gisDispatchAction" class="com.iscreate.op.action.gisdispatch.GisDispatchAction">
+		<property name="gisDispatchService" ref="gisDispatchService"></property>
+		<property name="stationQueryTimer" ref="stationQueryTimer"></property>
+	</bean> -->
+	
+	<!-- 集中调度Action END -->
+
+
+	<!-- wang.ja2 BEGIN -->
+	<!-- <bean id="gisDispatchAreaAction" class="com.iscreate.op.action.gisdispatch.GisDispatchAreaAction">
+		<property name="gisDispatchAreaService" ref="gisDispatchAreaService"></property>
+	</bean>
+	<bean id="gisDispatchAreaService" class="com.iscreate.op.service.gisdispatch.GisDispatchAreaServiceImpl">
+		<property name="gisDispatchAreaDao" ref="gisDispatchAreaDao"></property>
+		<property name="networkResourceInterfaceService" ref="networkResourceService" />
+	</bean>
+	<bean id="gisDispatchAreaDao" class="com.iscreate.op.dao.gisdispatch.GisDispatchAreaDaoImpl">
+	</bean> -->
+	<!-- wang.ja2 END -->
+
+</beans>

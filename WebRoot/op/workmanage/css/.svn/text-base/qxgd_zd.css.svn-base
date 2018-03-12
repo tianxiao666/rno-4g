@@ -1,0 +1,11 @@
+.dialog_left{width:150px; height:100%; float:left; border-right:1px solid #99BBE8;background:#eee;}
+.dialog_right{width:auto; overflow:hidden; padding-left:4px;}
+.dialog_tab li{border-bottom:1px solid #99BBE8; line-height:35px; height:35px; background:url(../images/li_bg.png) repeat-x; padding-left:8px; cursor:pointer;}
+.dialog_tab li:hover{background-position:0 -35px;}
+.dialog_tab li:active{background-position:0 -70px;}
+.dialog_tab li.on{background:#fff; position:relative; right:-1px;}
+
+.zd_table{width:100%;}
+.zd_table td{line-height:32px; padding:2px 4px; width:25%;border-bottom: 1px dotted #ddd;}
+
+.excel_button{vertical-align:top; background:#f7f7f7 url('../images/excel.png') 3px 3px no-repeat;display:inline-block; *+display:inline;line-height:24px; height:24px; width:80px;padding-left:20px;border:1px solid #ccc;}

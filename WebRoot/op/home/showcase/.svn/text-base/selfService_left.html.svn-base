@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<link rel="stylesheet"
+			href="../../home/resource/jquery-ui/themes/base/jquery.ui.all.css">
+		<script src="../../home/resource/jquery-ui/jquery-1.5.1.js"></script>
+		<script src="../../home/resource/jquery-ui/ui/jquery.ui.core.js"></script>
+		<script src="../../home/resource/jquery-ui/ui/jquery.ui.widget.js"></script>
+		<script src="../../home/resource/jquery-ui/ui/jquery.ui.tabs.js"></script>
+		<link rel="stylesheet"
+			href="../../home/resource/jquery-ui/demos/demos.css">
+		<link rel="stylesheet" href="../../home/showcase/css/style.css">
+	<script type="text/javascript">
+    $(function() {
+		$( "input: button" ).button();		
+	});
+	
+	function personInfoAction(){
+		var table =document.getElementById("mytab1");
+		if(table.style.display=="none"){
+			table.style.display="";			
+		}else{
+			table.style.display="none";	
+		}		
+	}
+	
+	function homeCustomAction(){
+		var table =document.getElementById("mytab2");
+		if(table.style.display=="none"){
+			table.style.display="";			
+		}else{
+			table.style.display="none";	
+		}		
+	}
+	
+	function personInfoDisplayAction(){
+		var table =document.getElementById("mytab3");
+		if(table.style.display=="none"){
+			table.style.display="";			
+		}else{
+			table.style.display="none";	
+		}		
+	}
+	
+	
+	function personInfoModify(){	
+		window.open("../../home/showcase/selfService_personInfoModify.html","right_2");
+	}
+	
+	function personPasswdModify(){	
+		window.open("../../home/showcase/selfService_personPasswdModify.html","right_2");
+	}
+	
+    </script>
+</head>
+<body style="margin:0 auto;">
+<button  onclick="personInfoAction()" style="width:215px;height:25px;margin:2px auto;cursor: pointer;">用户个人资料</button>
+	<table width="95%" id="mytab1" border="1" class="t1">
+		<tr style="cursor: pointer;" onclick="personInfoModify()">
+			<td align='center'>个人资料查看/修改</td>
+		</tr>
+		<tr style="cursor: pointer;" onclick="personPasswdModify()">
+			<td align='center'>用户帐号密码修改</td>
+		</tr>
+	</table>
+<button  onclick="alert('此功能开发进行中...')" style="width:215px;height:25px;margin:2px auto;cursor: pointer;">个人页面显示风格定制</button>
+
+<button  style="width:215px;height:25px;margin:2px auto;cursor: pointer;" onclick="homeCustomAction()">个性化门户定制</button>
+<table width="95%" id="mytab2" border="1" class="t1" style="display:none;">
+		<tr>
+			<td align='center'><a href="javascript:alert('此功能开发进行中...')">子系统入口栏定制</a></td>
+		</tr>
+		<tr>
+			<td align='center'><a href="javascript:alert('此功能开发进行中...')">个性化标签栏定制</a></td>
+		</tr>
+</table>
+
+<button  style="width:215px;height:25px;margin:2px auto;cursor: pointer;" onclick="personInfoDisplayAction()">个人显示信息定制</button>
+<table width="95%" id="mytab3" border="1" class="t1" style="display:none;">
+		<tr>
+			<td align='center'><a href="javascript:alert('此功能开发进行中...')">常用功能快捷方式定制</a></td>
+		</tr>
+		<tr>
+			<td align='center'><a href="javascript:alert('此功能开发进行中...')">常用通讯录设置</a></td>
+		</tr>
+</table>
+<button  style="width:215px;height:25px;margin:2px auto;cursor: pointer;" onclick="alert('此功能开发进行中...')">个人操作日志查询</button>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>待办工单</title>
+		<link rel="stylesheet"
+			href="../../home/resource/jquery-ui/themes/base/jquery.ui.all.css">
+		<script src="../../home/resource/jquery-ui/jquery-1.5.1.js"></script>
+		<script src="../../home/resource/jquery-ui/ui/jquery.ui.core.js"></script>
+		<script src="../../home/resource/jquery-ui/ui/jquery.ui.widget.js"></script>
+		<script src="../../home/resource/jquery-ui/ui/jquery.ui.tabs.js"></script>
+		<link rel="stylesheet"
+			href="../../home/resource/jquery-ui/demos/demos.css">
+		<link rel="stylesheet" href="../../home/showcase/css/style.css">
+		<script>
+	$(function() {
+		$( "#tabs" ).tabs({
+			beforeLoad: function( event, ui ) {
+				ui.jqXHR.error(function() {
+					ui.panel.html(
+						"Couldn't load this tab. We'll try to fix this as soon as possible. " +
+						"If this wouldn't be a demo." );
+				});
+			}
+			
+		});
+		
+	});
+	</script>
+
+		<style type="text/css">
+body {
+	margin: 0 auto;
+	padding: 0px 0 0;
+	padding-bottom: 0em;
+	height: 100%;
+	width: 100%;
+	font-size: 12px;
+	position: absolute;
+}
+</style>
+	</head>
+	<body>
+
+
+		<div id="tabs" style="border:0px;">
+			<ul>
+				<li>
+					<a href="#tabs-1">待办工单</a>
+				</li>
+				<li>
+					<a href="#tabs-2">待审批事宜</a>
+				</li>
+				<li>
+					<a href="#tabs-3">待阅事宜</a>
+				</li>
+			</ul>
+			<div id="tabs-1" style="height: 190px;border:0px;padding: 5px 5px 5px 5px;" >
+				<table width="100%" id="mytab" border="1" class="t1">
+					<thead>
+						<th width="20%">
+							工单类别
+						</th>
+						<th width="25%">
+							主题
+						</th>
+						<th width="20%">
+							建单时间
+						</th>
+						<th width="20%">
+							处理时限
+						</th>
+						<th width="15%">
+							状态
+						</th>
+					</thead>
+					<tr class="a1">
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr class="a1">
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr class="a1">
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+				</table>
+				<br>
+				30分钟内受理超时的工单数(0)
+				30分钟内受理超时的工单数(0)<br>
+				2小时内受理超时的工单数(0)
+				&nbsp;30分钟内受理超时的工单数(0)
+				
+			</div>
+			<div id="tabs-2" style="height: 190px;border:0px;padding: 5px 5px 5px 5px;" >
+				<table width="100%" id="mytab" border="1" class="t1">
+					<thead>
+						<th width="20%">
+							工单类别
+						</th>
+						<th width="25%">
+							主题
+						</th>
+						<th width="20%">
+							建单时间
+						</th>
+						<th width="20%">
+							处理时限
+						</th>
+						<th width="15%">
+							状态
+						</th>
+					</thead>
+					<tr class="a1">
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr class="a1">
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr class="a1">
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+				</table>
+				<br>
+				30分钟内受理超时的工单数(0)
+				30分钟内受理超时的工单数(0)<br>
+				2小时内受理超时的工单数(0)
+				&nbsp;30分钟内受理超时的工单数(0)
+				
+			</div>
+			<div id="tabs-3" style="height: 190px;border:0px;padding: 5px 5px 5px 5px;" >
+				<table width="100%" id="mytab" border="1" class="t1">
+					<thead>
+						<th width="20%">
+							工单类别
+						</th>
+						<th width="25%">
+							主题
+						</th>
+						<th width="20%">
+							建单时间
+						</th>
+						<th width="20%">
+							处理时限
+						</th>
+						<th width="15%">
+							状态
+						</th>
+					</thead>
+					<tr class="a1">
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr class="a1">
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr class="a1">
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+				</table>
+				<br>
+				30分钟内受理超时的工单数(0)
+				30分钟内受理超时的工单数(0)<br>
+				2小时内受理超时的工单数(0)
+				&nbsp;30分钟内受理超时的工单数(0)
+				
+			</div>
+		</div>
+
+	</body>
+</html>
